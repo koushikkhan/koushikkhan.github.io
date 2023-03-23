@@ -1,0 +1,6 @@
+<iframe
+    width="800"
+    height="800"
+    src="/assets/pdf/resume/koushik_khan_resume_one_page.pdf">
+</iframe>
+

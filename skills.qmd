@@ -5,8 +5,6 @@ from: markdown+emoji
 
 Along the journey in my career, I have worked on various projects, all of them may not be worth of mentioning. I have handpicked few of them here along with the tools and methodologies used.
 
-You can also find my latest *resume* [here](/assets/pdf/resume/koushik_khan_resume_one_page.pdf).
-
 ## :mortar_board: At my University
 + Digitization of class notes, preparation of project reports
     + :hammer_and_wrench: Tools
