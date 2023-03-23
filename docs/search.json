@@ -39,7 +39,7 @@
     "href": "index.html",
     "title": "Koushik Khan",
     "section": "",
-    "text": "The advancement in the world of technology is fast-paced that makes it difficult to keep track of everything. But most of these advancements follow some fundamentals.\nBeing strong at fundamentals not only make us stand out among others but also helps to upskill in a far better way while enjoying every bit of the journey.\nThe whole intention of putting this website is to share knowledge on various things that I am learning, in a lucid way as it is the best way to learn things correctly.\nIf you like this approach, I am sure you will enjoy the contents.\nThe list below is to help you navigate through the site.\n\n🏡 Home: this is where you are at right now\n📚 Blog: find the posts that I have written\n⚙️ Projects: links to all my personal projects in GitHub\n🌱 Skills: you will find my skills and expertises here\n☺️ About: things to know about myself\n\nThanks."
+    "text": "The advancement in the world of technology is fast-paced that makes it difficult to keep track of everything. But most of these advancements follow some fundamentals.\nBeing strong at fundamentals not only make us stand out among others but also helps to upskill in a far better way while enjoying every bit of the journey.\nThe whole intention of putting this website is to share knowledge on various things that I am learning, in a lucid way as it is the best way to learn things correctly.\nIf you like this approach, I am sure you will enjoy the contents.\nThe list below is to help you navigate through the site.\n\n🏡 Home: this is where you are at right now\n📚 Blog: find the posts that I have written\n⚙️ Projects: links to all my personal projects in GitHub\n🌱 Skills: you will find my skills and expertises here\n👨‍💻 About: things to know about myself\n\nThanks."
   },
   {
     "objectID": "posts/2023-03-19-stat-hypothesis-test/index.html",
@@ -108,21 +108,21 @@
     "objectID": "skills.html#bcause-enterprise-pvt.-limited-2015-2016",
     "href": "skills.html#bcause-enterprise-pvt.-limited-2015-2016",
     "title": "Skills and Expertises",
-    "section": "🏢 BCausE Enterprise Pvt. Limited (2015-2016)",
-    "text": "🏢 BCausE Enterprise Pvt. Limited (2015-2016)\n\nPredicting the names of human body parts from a corpus of digitized prescriptions using text classification\n\n🛠️ Tools\n\nHeavily relied on regex for data cleansing\nNLP libraries based on Python\nMongoDB at the back-end\nFlask for REST API as front-end"
+    "section": "💼 BCausE Enterprise Pvt. Limited (2015-2016)",
+    "text": "💼 BCausE Enterprise Pvt. Limited (2015-2016)\n\nPredicting the names of human body parts from a corpus of digitized prescriptions using text classification\n\n🛠️ Tools\n\nHeavily relied on regex for data cleansing\nNLP libraries based on Python\nMongoDB at the back-end\nFlask for REST API as front-end"
   },
   {
     "objectID": "skills.html#ibm-india-pvt.-ltd.-2016-2021",
     "href": "skills.html#ibm-india-pvt.-ltd.-2016-2021",
     "title": "Skills and Expertises",
-    "section": "🏢 IBM India Pvt. Ltd. (2016-2021)",
-    "text": "🏢 IBM India Pvt. Ltd. (2016-2021)\n\nAnalysing customer complaints (a.k.a tickets) from various sources and predicting root causes using clustering and text classification respectively\n\n🛠️ Tools\n\nPython (as machine learning base)\nSQL at the back-end\nLittle bit of ShellScript to integrate the model with other modules\nFlask for REST API as front-end\ndocker for packaging the ml application\nKubernetes used for deployment of the docker image\n\n\nServing search queries to customers by designing a small scale search engine built on customer Feedbacks and FAQs using information retrieval algorithm\n\n🛠️ Tools\n\nSingular value decomposition to understand word-to-word relationship\nPandas as data processing toolkit\nNumpy for matrix facorization implementation\n\n\nUnderstanding the effects of various factors like advertisement, promotion, weather on sales of several commodities, analysing ROI year-on-year basis and forecasting the furure sales using Marketing Mix Modeling\n\n🛠️ Tools\n\nR with dplyr as the data processing toolkit\nBase R for model development\nSQL at the back-end"
+    "section": "💼 IBM India Pvt. Ltd. (2016-2021)",
+    "text": "💼 IBM India Pvt. Ltd. (2016-2021)\n\nAnalysing customer complaints (a.k.a tickets) from various sources and predicting root causes using clustering and text classification respectively\n\n🛠️ Tools\n\nPython (as machine learning base)\nSQL at the back-end\nLittle bit of ShellScript to integrate the model with other modules\nFlask for REST API as front-end\ndocker for packaging the ml application\nKubernetes used for deployment of the docker image\n\n\nServing search queries to customers by designing a small scale search engine built on customer Feedbacks and FAQs using information retrieval algorithm\n\n🛠️ Tools\n\nSingular value decomposition to understand word-to-word relationship\nPandas as data processing toolkit\nNumpy for matrix facorization implementation\n\n\nUnderstanding the effects of various factors like advertisement, promotion, weather on sales of several commodities, analysing ROI year-on-year basis and forecasting the furure sales using Marketing Mix Modeling\n\n🛠️ Tools\n\nR with dplyr as the data processing toolkit\nBase R for model development\nSQL at the back-end"
   },
   {
     "objectID": "skills.html#ihs-markit-and-sp-global-inc.-2021-present",
     "href": "skills.html#ihs-markit-and-sp-global-inc.-2021-present",
     "title": "Skills and Expertises",
-    "section": "🏢 IHS Markit and S&P Global Inc. (2021-Present)",
-    "text": "🏢 IHS Markit and S&P Global Inc. (2021-Present)\n\nAnalysing shipping data on a daily basis\n\n🛠️ Tools\n\nPySpark as the data processing engine\nExcel for adhoc analysis and reporting\nAWS as the cloud platform\n\n\nCargo grade identification using text classification\n\n🛠️ Tools\n\nPython (as machine learning base)\nS3 for Local Deployment\nShellScript for automation\n\n\nBuilding data pipeline incorporate external data from various sources\n\n🛠️ Tools\n\nR for writing scripts for pipelines\nShellScript for integration as automation\nAWS as cloud platform\n\n\n\nYou can find my latest resume here"
+    "section": "💼 IHS Markit and S&P Global Inc. (2021-Present)",
+    "text": "💼 IHS Markit and S&P Global Inc. (2021-Present)\n\nAnalysing shipping data on a daily basis\n\n🛠️ Tools\n\nPySpark as the data processing engine\nExcel for adhoc analysis and reporting\nAWS as the cloud platform\n\n\nCargo grade identification using text classification\n\n🛠️ Tools\n\nPython (as machine learning base)\nS3 for Local Deployment\nShellScript for automation\n\n\nBuilding data pipeline incorporate external data from various sources\n\n🛠️ Tools\n\nR for writing scripts for pipelines\nShellScript for integration as automation\nAWS as cloud platform\n\n\n\nYou can find my latest resume here"
   }
 ]

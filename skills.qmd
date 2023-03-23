@@ -15,7 +15,7 @@ Along the journey in my career, I have worked on various projects, all of them m
     + :hammer_and_wrench: Tools
         + C programming 
 
-## :office: BCausE Enterprise Pvt. Limited (2015-2016)
+## :briefcase: BCausE Enterprise Pvt. Limited (2015-2016)
 + Predicting the names of human body parts from a corpus of digitized prescriptions using text classification
     + :hammer_and_wrench: Tools
         + Heavily relied on regex for data cleansing
@@ -23,7 +23,7 @@ Along the journey in my career, I have worked on various projects, all of them m
         + MongoDB at the back-end
         + Flask for REST API as front-end
 
-## :office: IBM India Pvt. Ltd. (2016-2021)
+## :briefcase: IBM India Pvt. Ltd. (2016-2021)
 + Analysing customer complaints (a.k.a tickets) from various sources and predicting root causes using clustering and text classification respectively
     + :hammer_and_wrench: Tools
         + Python (as machine learning base)
@@ -45,7 +45,7 @@ Along the journey in my career, I have worked on various projects, all of them m
         + Base R for model development
         + SQL at the back-end
 
-## :office: IHS Markit and S&P Global Inc. (2021-Present)
+## :briefcase: IHS Markit and S&P Global Inc. (2021-Present)
 + Analysing shipping data on a daily basis
     + :hammer_and_wrench: Tools
         + PySpark as the data processing engine 

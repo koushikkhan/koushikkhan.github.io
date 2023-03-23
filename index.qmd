@@ -32,6 +32,6 @@ The list below is to help you navigate through the site.
 + :books: Blog: find the posts that I have written
 + :gear: Projects: links to all my personal projects in GitHub
 + :seedling: Skills: you will find my skills and expertises here
-+ :relaxed: About: things to know about myself
++ :man_technologist: About: things to know about myself
 
 Thanks.
