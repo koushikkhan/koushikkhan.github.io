@@ -20,7 +20,15 @@ website:
         text: Skills
       - href: resume.qmd
         text: Resume
+
+    right:
       - href: about.qmd
+      - icon: github
+        href: https://www.github.com/koushikkhan/
+      - icon: twitter
+        href: https://www.twitter.com/koushikKhan92/
+      - icon: linkedin
+        href: https://linkedin.com/in/koushikkhan/
 
 format:
   html:
