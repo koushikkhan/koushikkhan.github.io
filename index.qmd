@@ -22,13 +22,20 @@ about:
         href: mailto:koushikkhan38@gmail.com
 ---
 
-The advancement in the world of technology is fast-paced that makes it difficult to keep track of everything. But most of these advancements follow some fundamentals.
+Hello, I am Koushik Khan. I work as a Sr. Data Scientist in S&P Global Inc., Bangalore. I have more than seven years of industry experience in working with varied data sets with right set of tools to help stakeholders taking informed decisions. 
+
+This website is my personal page where I usually share my experiences in the form of blog posts while working with different problems. 
+
+
+
+
+<!-- The advancement in the world of technology is fast-paced that makes it difficult to keep track of everything. But most of these advancements follow some fundamentals.
 
 Being strong at fundamentals not only make us stand out among others but also helps to upskill in a far better way while enjoying every bit of the journey.
 
 The whole intention of putting this website is to share knowledge on various things that I am learning, in a lucid way as it is the best way to learn things correctly.
 
-If you like this approach, I am sure you will enjoy the contents.
+If you like this approach, I am sure you will enjoy the contents. -->
 
 The list below is to help you navigate through the site.
 
@@ -36,6 +43,7 @@ The list below is to help you navigate through the site.
 + :books: Blog: find the posts that I have written
 + :gear: Projects: links to all my personal projects in GitHub
 + :seedling: Skills: you will find my skills and expertises here
++ :clipboard: Resume: my latest resume is attached here 
 + :man_technologist: About: things to know about myself
 
 Thanks.

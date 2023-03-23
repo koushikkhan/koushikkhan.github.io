@@ -4,10 +4,6 @@ subtitle: "Educational, Professional and Personal Background"
 from: markdown+emoji
 ---
 
-Hi there! :wave:
-
-I am Koushik.
-
 ## :man_student: Education
 + B.Sc. in Statistics (2013) - Visva Bharati University, India
 + M.Sc. in Statistics (2015) - Visva Bharati University, India
