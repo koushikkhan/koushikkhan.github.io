@@ -1,0 +1,32 @@
+project:
+  type: website
+  output-dir: docs
+  preview: 
+    port: 4005
+    browser: true
+
+website:
+  favicon: favicon.png
+  title: "Koushik's Page"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: posts_listing.qmd
+        text: Blog
+      - href: projects.qmd
+        text: Projects
+      - href: skills.qmd
+        text: Skills
+      - href: about.qmd
+
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    css: styles.css
+    toc: true
+
+editor: visual
+

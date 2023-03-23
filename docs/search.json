@@ -1,0 +1,128 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Hi there! 👋\nI am Koushik."
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About",
+    "section": "👨‍🎓 Education",
+    "text": "👨‍🎓 Education\n\nB.Sc. in Statistics (2013) - Visva Bharati University, India\nM.Sc. in Statistics (2015) - Visva Bharati University, India"
+  },
+  {
+    "objectID": "about.html#professional-career-history",
+    "href": "about.html#professional-career-history",
+    "title": "About",
+    "section": "💼 Professional career history",
+    "text": "💼 Professional career history\n\nBCausE Enterprise Pvt. Ltd. as a Junior Data Analyst (2015 - 2016)\nIBM India Pvt. Ltd. as a Data Scientist (2016 - 2021)\nIHS Markit as a Sr. Data Scientist (2021 - 2022)\nS&P Global Inc. as a Sr. Data Scientist (2022 - Present)"
+  },
+  {
+    "objectID": "about.html#current-job-responsibilities",
+    "href": "about.html#current-job-responsibilities",
+    "title": "About",
+    "section": "👨‍💻 Current job responsibilities",
+    "text": "👨‍💻 Current job responsibilities\n\nAnalysing maritime data\nProduct development and maintenance\nLeading a team to build data pipelines for consuming data from external sources"
+  },
+  {
+    "objectID": "about.html#things-i-like-to-do-apart-from-work",
+    "href": "about.html#things-i-like-to-do-apart-from-work",
+    "title": "About",
+    "section": "🏖️ Things I like to do apart from work",
+    "text": "🏖️ Things I like to do apart from work\n\nTravelling to historical places\nReading books, especially Bengali Novels\nWriting articles on something interesting I learn\nTeaching\nLearning and experimenting with different ideas and tools\nCooking - thanks to Covid to help me in discovering this skill 😄"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Koushik Khan",
+    "section": "",
+    "text": "The advancement in the world of technology is fast-paced that makes it difficult to keep track of everything. But most of these advancements follow some fundamentals.\nBeing strong at fundamentals not only make us stand out among others but also helps to upskill in a far better way while enjoying every bit of the journey.\nThe whole intention of putting this website is to share knowledge on various things that I am learning, in a lucid way as it is the best way to learn things correctly.\nIf you like this approach, I am sure you will enjoy the contents.\nThe list below is to help you navigate through the site.\n\n🏡 Home: this is where you are at right now\n📚 Blog: find the posts that I have written\n⚙️ Projects: links to all my personal projects in GitHub\n🌱 Skills: you will find my skills and expertises here\n☺️ About: things to know about myself\n\nThanks."
+  },
+  {
+    "objectID": "posts/2023-03-19-stat-hypothesis-test/index.html",
+    "href": "posts/2023-03-19-stat-hypothesis-test/index.html",
+    "title": "Testing of Hypotheses: A Quick Refresher",
+    "section": "",
+    "text": "The small story, that I am going to share with you today, is on Statistical Testing of Hypothesis. It is a method of statistical inference with a very powerful theoretical support in the literature and a wide domain of application, especially in today’s world of analytics and machine learning.\nIt was popularized early in the 20th century, early forms were used in the 1700s. The first use is credited to John Arbuthnot (1710) followed by Pierre-Simon Laplace (1770s), in analyzing the human sex ratio at birth.\nThe word Hypothesis means belief about something. People from various domains like theoretical research, medical industry, consumer packaged goods (CPG) industry etc., mainly deal with data to boost-up their research works, or to maximize their revenue, whatever may be the case, they use this important tool to justify their believes. Now, here the question comes…what are these believes about? The answer is parameters. For example: suppose you are going to calculate the average height of people in a district, which you can by measuring the height of each people and taking the average or by taking a sample of people from that district, calculating the sample average and making an inference about the average height.\nIf you go by the first approach, you need patience, man power, money and of course a lot of time, whereas in the second approach you can get a ruff estimate of the actual average height which will help you to draw an inference.\nNow, clearly the actual average height is unknown as long as you are not dealing with all the people in that district. This unknown average height is called a parameter, often expressed as \\(\\mu\\) and the sample average is known as statistic, expressed as \\(\\bar{X}\\).\nBy using a statistic, we try to get some plausible guesses about our parameter of interest. Since, we are guessing or having some believes about the parameter, these believes must be justified logically by the help of some mathematical tools as well as data. Hypothesis Testing comes here to rescue us."
+  },
+  {
+    "objectID": "posts/2023-03-19-stat-hypothesis-test/index.html#some-real-life-examples",
+    "href": "posts/2023-03-19-stat-hypothesis-test/index.html#some-real-life-examples",
+    "title": "Testing of Hypotheses: A Quick Refresher",
+    "section": "Some Real Life Examples",
+    "text": "Some Real Life Examples\nI will try to relate the definitions with couple of examples:\n\nSuppose the Honorable judge is about to give his verdict to the accused. Now let’s assume that our null hypothesis or prior belief about that person is, the person is not guilty. If the judge’s verdict is against the accused even if the person has really not done anything wrong, then it is the Type-I error, whereas if the verdict is in favor of the accused when in reality the person has done something wrong, then it is the Type-II error. If you’d think for a moment, you would understand the fact that Type-I error is more severe in nature.\nThis one is going to be of great impotance for the society. We know that almost every country has their own military radar system to detect any missilies aimed at them. Assume that, the null hypothesis is the enemy is in war mode, they will attack. Now, could you imagine the situation, if the military radar system would have failed to detect the missiles that had been aimed at your country and they were few miles away from their target…the lives of innocent citizens would have been devastated.\n\n\n\nfig-1\n\n\n\nHaving understood the importance of Type-I error in decision making, the usual tendency of the experimenter is to keep the chance of making Type-I error fixed at a very low level, which, by years of research and experimentations, has been chosen as 1% or 5%, depending on the situation."
+  },
+  {
+    "objectID": "posts/2023-03-22-bash-commands-for-cloud-1/index.html",
+    "href": "posts/2023-03-22-bash-commands-for-cloud-1/index.html",
+    "title": "Bash Commands to Get Started on Linux Clouds",
+    "section": "",
+    "text": "The era of computing has come a long way, starting from the punched card to today’s cloud platforms, a significant progress has been made. We are now habituated in using such cloud platforms. The most popular example can be Google’s Colab, which has made cloud computing available publicly. If you have ever used Google’s Colab, you are probably familiar with Linux.\nLinux is the community driven operating system based on something called Linux Kernel which empowers devices starting from smart phones to large cloud servers. So, the fact is knowingly or unknowingly we are using devices in our daily lives which are powered by Linux Kernel.\nThe linux kernel was first developed by Linus Torvald in 1991 as a personal hobby project and later it was made available publicly. You can refer to this article to know more on this.\nIn this post, I will be sharing some basic to intermediate linux commands which will help you to start your journey with linux based systems, may be on your personal computer or on a cloud platform.\ndisclaimer: I will be using a rendering engine called Quarto to develop this post as a GitHub flavored markdown and it needs Python to run bash commands, this is why there is ! right before the actual bash command everywhere. ! should not be considered as a part of any of the bash commands that will be used here unless I explicitly mention."
+  },
+  {
+    "objectID": "posts/2023-03-22-bash-commands-for-cloud-1/index.html#getting-the-basic-information",
+    "href": "posts/2023-03-22-bash-commands-for-cloud-1/index.html#getting-the-basic-information",
+    "title": "Bash Commands to Get Started on Linux Clouds",
+    "section": "Getting the basic information",
+    "text": "Getting the basic information\n\n👉 The whoami command\nwhoami is a command that returns the user name currently logged in.\n!whoami\nkoushik\n\n\n👉 The date command\ndate gives you the current date and time.\n!date\nWed Mar 22 17:23:23 IST 2023\n\n\n👉 The pwd command\npwd stands for the present working directory which is pointed out by the terminal. For me the pwd is /home/koushik/\n!pwd\n/home/koushik/quarto-docs\n\n\n👉 The ls command\nls stands for listing, which returns names of all the files and directories (folders) availble inside the pwd.\n!ls\nbash-commands-for-cloud.ipynb  koushik.txt     records.txt\nbash-commands-for-cloud.md     my_first_file.txt   test_dir\nbash-commands-for-cloud.qmd    my_second_file.txt\nNote that ls only returns the names of files and directories which are not hidden, this is the default behavior of ls, if you want to see something more you need some other options while using it, which are often called flags.\nI will use some flags below and try to explain what they mean.\ndifferent flags of ls\n!ls -a\n.                  bash-commands-for-cloud.qmd  records.txt\n..                 koushik.txt          test_dir\nbash-commands-for-cloud.ipynb  my_first_file.txt\nbash-commands-for-cloud.md     my_second_file.txt\n-a flag is used for showing all the files and directories within pwd including hidden ones. In linux hidden files are directories have . in their names at the the very beginning.\n!ls -h\nbash-commands-for-cloud.ipynb  koushik.txt     records.txt\nbash-commands-for-cloud.md     my_first_file.txt   test_dir\nbash-commands-for-cloud.qmd    my_second_file.txt\n-h flag is used for better representation for the users (human being, that’s why h)\n!ls -l\ntotal 68\n-rw-r--r-- 1 koushik koushik 16787 Mar 22 17:23 bash-commands-for-cloud.ipynb\n-rw-r--r-- 1 koushik koushik 17507 Mar 22 17:13 bash-commands-for-cloud.md\n-rw-r--r-- 1 koushik koushik  9697 Mar 22 17:23 bash-commands-for-cloud.qmd\n-rw-r--r-- 1 koushik koushik    58 Mar 22 12:58 koushik.txt\n-rw-r--r-- 1 koushik koushik     0 Mar 22 17:13 my_first_file.txt\n-rw-r--r-- 1 koushik koushik    58 Mar 22 12:49 my_second_file.txt\n-rw-r--r-- 1 koushik koushik    87 Mar 22 17:13 records.txt\ndrwxr-xr-x 2 koushik koushik  4096 Mar 22 17:12 test_dir\n-l flag is used for showing entries in a long format\n!ls -t\nbash-commands-for-cloud.ipynb  records.txt    koushik.txt\nbash-commands-for-cloud.qmd    my_first_file.txt  my_second_file.txt\nbash-commands-for-cloud.md     test_dir\n-t flag is used for showing entries sorted based on when they are created\n!ls -s\ntotal 68\n20 bash-commands-for-cloud.ipynb   4 koushik.txt      4 records.txt\n20 bash-commands-for-cloud.md      0 my_first_file.txt    4 test_dir\n12 bash-commands-for-cloud.qmd     4 my_second_file.txt\n-s flag is used for showing the allocated sizes of the files\nYou can definitely combine multiple flags together just by putting them next to each other like below and obviously you will get the combined effect of them\n!ls -lahts\ntotal 76K\n 20K -rw-r--r--  1 koushik koushik  17K Mar 22 17:23 bash-commands-for-cloud.ipynb\n4.0K drwxr-xr-x  3 koushik koushik 4.0K Mar 22 17:23 .\n 12K -rw-r--r--  1 koushik koushik 9.5K Mar 22 17:23 bash-commands-for-cloud.qmd\n 20K -rw-r--r--  1 koushik koushik  18K Mar 22 17:13 bash-commands-for-cloud.md\n4.0K -rw-r--r--  1 koushik koushik   87 Mar 22 17:13 records.txt\n   0 -rw-r--r--  1 koushik koushik    0 Mar 22 17:13 my_first_file.txt\n4.0K drwxr-xr-x  2 koushik koushik 4.0K Mar 22 17:12 test_dir\n4.0K -rw-r--r--  1 koushik koushik   58 Mar 22 12:58 koushik.txt\n4.0K -rw-r--r--  1 koushik koushik   58 Mar 22 12:49 my_second_file.txt\n4.0K drwxr-xr-x 14 koushik koushik 4.0K Mar 22 12:39 ..\nOne more thing to note here is that, you can use ls to see the contents of any directory just by putting the path next to ls call followed by a space character like below\n!ls -lahts /\ntotal 2.0M\n4.0K drwxrwxrwt   8 root root 4.0K Mar 22 17:23 tmp\n4.0K drwxr-xr-x  80 root root 4.0K Mar 22 10:44 etc\n4.0K drwxr-xr-x   4 root root 4.0K Mar 22 10:44 opt\n4.0K drwx------   3 root root 4.0K Mar 22 10:44 root\n   0 drwxr-xr-x   7 root root  140 Mar 22 08:52 run\n4.0K drwxr-xr-x  19 root root 4.0K Mar 22 08:50 .\n4.0K drwxr-xr-x  19 root root 4.0K Mar 22 08:50 ..\n   0 drwxr-xr-x  11 root root 3.0K Mar 22 08:50 dev\n   0 dr-xr-xr-x 202 root root    0 Mar 22 08:50 proc\n   0 dr-xr-xr-x  11 root root    0 Mar 22 08:50 sys\n4.0K drwxr-xr-x   3 root root 4.0K Mar 20 19:58 home\n4.0K drwxr-xr-x   5 root root 4.0K Mar 20 19:57 mnt\n 16K drwx------   2 root root  16K Mar 20 19:57 lost+found\n4.0K drwxr-xr-x   8 root root 4.0K Feb 11 03:06 snap\n4.0K drwxr-xr-x  13 root root 4.0K Feb 11 03:06 var\n4.0K drwxr-xr-x  14 root root 4.0K Feb 11 03:05 usr\n4.0K drwxr-xr-x   2 root root 4.0K Feb 11 03:05 media\n4.0K drwxr-xr-x   2 root root 4.0K Feb 11 03:05 srv\n   0 lrwxrwxrwx   1 root root    7 Feb 11 03:05 lib -> usr/lib\n   0 lrwxrwxrwx   1 root root    9 Feb 11 03:05 lib32 -> usr/lib32\n   0 lrwxrwxrwx   1 root root    9 Feb 11 03:05 lib64 -> usr/lib64\n   0 lrwxrwxrwx   1 root root   10 Feb 11 03:05 libx32 -> usr/libx32\n   0 lrwxrwxrwx   1 root root    8 Feb 11 03:05 sbin -> usr/sbin\n   0 lrwxrwxrwx   1 root root    7 Feb 11 03:05 bin -> usr/bin\n4.0K drwxr-xr-x   2 root root 4.0K Apr 18  2022 boot\n1.9M -rwxrwxrwx   1 root root 1.9M Jan  1  1970 init\nHere ls is showing the contents of a special directory a.k.a root, this is equivalent to the C:\\ drive on Windows.\n\n\n👉 The echo command\necho evaluates an expression and prints that on the terminal.\n!echo $(date)\nWed Mar 22 17:23:24 IST 2023\nhere date is evaluated by echo and the output of echo is printed on the terminal (or console).\nHere is another example of echo.\n!name=\"Julia\" && \\\necho \"$name claims to be faster that Python\"\nJulia claims to be faster that Python\nthere are two things to note here:\n\nwe are creating a shell variable called name with the value Julia and this variable is referred in the echo call to print a formatted string on the console\ncreation of name and calling echo are two separate commands which are being executed in a sequence by using && operator. The \\ is used for breaking the lines to make the command flow through multiple lines."
+  },
+  {
+    "objectID": "posts/2023-03-22-bash-commands-for-cloud-1/index.html#working-with-files-and-directories",
+    "href": "posts/2023-03-22-bash-commands-for-cloud-1/index.html#working-with-files-and-directories",
+    "title": "Bash Commands to Get Started on Linux Clouds",
+    "section": "Working with files and directories",
+    "text": "Working with files and directories\nNow, you know the basics of running commands and getting some simple yet useful information, it is the time to see a bit more interesting commands.\n\n👉 Creating a file with touch\n!touch my_first_file.txt\ntouch creates a file with the name given by the user right next to it followed by a space character.\n\n\n👉 Writing data to a file using tee\n# writing date to file, the file will be created if it does not exist\n!date | tee records.txt\n\n# writing data in append mode with flag '-a'\n!date | tee -a records.txt\n\n# evaluate and then write in append mode\n!echo $(date) | tee -a records.txt\nWed Mar 22 17:23:25 IST 2023\n\nWed Mar 22 17:23:25 IST 2023\n\nWed Mar 22 17:23:25 IST 2023\nBy default, tee overwrites the data to the file, -a is used to avoid this.\nWe have one more operator (|) here, it is called pipe operator. It takes the output of the previous command and passes to the next command.\nWriting same data to multiple files is also very intuitive as in date | tee -a file1.txt file2.txt file3.txt\nThe same operations can also be performed using redirect operator >. date > record.txt will write the system date time by overrwriting the file and date >> record.txt will write the data to the file in append mode.\nA file can be removed using the rm command, e.g. rm record.txt\n\n\n👉 Working with directory (folder)\n# create directory with 'mkdir'\n!mkdir test_dir_1\n!mkdir test_dir_2\n\n# create directory recussively along a path with flag '-p'\n!mkdir -p test_dir_1/sub_dir/sub_sub_dir\n\n# remove directories with 'rm'\n!rm -d test_dir_2 # '-d' flag (directory) is used to remove an empty directory\n!rm -r test_dir_1 # '-r' flag (recurive) is used to remove a directory and all of its contents\n# rm -rf test_dir_1 '-f' flag (force) is used to remove a directory and all of its contents forcefully\nmultiple directories can also be removed just by specifying their paths one by one. One very useful flag for rm command is -i, which makes the removal process interactive.\nNote: In linux, if you add a . before the file and diretory name, then it will be hidden which means simple ls command cannot show you these, you must to use ls -a to locate them 😉 .\n\n\n👉 Copying files and directories from source to destination\nTo copy a file or directory from source to destination, we have the command cp. See the examples below to understand how it works,\n\ncopy a file: cp source_path/file.txt destination_path/\ncopy a directory: cp -r source_path/test_dir/ destination_path/\n\n\n\n👉 Searching for files and directories using grep\nSometimes you may need a search for a file or directory inside the terminal. This can be done using the command called grep. It is used with ls through a pipe operator as if we are telling bash to filter the ls output by the pattern. See the examples below,\n# will only show files and directories with the word 'first' in their names \n!ls -lahts | grep first\n   0 -rw-r--r--  1 koushik koushik    0 Mar 22 17:23 my_first_file.txt\n\n\n👉 Editing a file with nano\nnano is a text editor which typically available in almost all linux based systems. It is very useful if you quickly want to edit a file without leaving the terminal.\nnano <your_file_name> is the command to open a file with nano. Once you are done with the editing, you can use Ctrl+S (Cmd+S in case you’re using clound from a Mac) to save the file and Ctrl+X (or Cmd+X in Mac) to close the editor.\n\n\n👉 Viewing the content of a file using cat\nIn case you want to see the content of a file, you have a command called cat. It has several flags to use based on your requirements. Be careful, when using cat for a large file, by default it will show you everything that is there in the file.\ncat records.txt\nWed Mar 22 17:23:25 IST 2023\nWed Mar 22 17:23:25 IST 2023\nWed Mar 22 17:23:25 IST 2023\nYou can use the flag -n to see the line numbers right before the lines.\ncat -n records.txt\n     1  Wed Mar 22 17:23:25 IST 2023\n     2  Wed Mar 22 17:23:25 IST 2023\n     3  Wed Mar 22 17:23:25 IST 2023\nThat’s all for the part 1. I hope you have enjoyed reading the post, stay tuned for the next part."
+  },
+  {
+    "objectID": "posts_listing.html",
+    "href": "posts_listing.html",
+    "title": "Blog Posts",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n\n\n\n\n  \n\n\n\n\nBash Commands to Get Started on Linux Clouds\n\n\n\n\n\n\n\nlinux\n\n\ncloud\n\n\n\n\nPart 1: Basics\n\n\n\n\n\n\nMar 22, 2023\n\n\nKoushik Khan\n\n\n\n\n\n\n  \n\n\n\n\nTesting of Hypotheses: A Quick Refresher\n\n\n\n\n\n\n\nstatistics\n\n\n\n\nPart 1: Basics\n\n\n\n\n\n\nMar 19, 2023\n\n\nKoushik Khan\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Personal Projects",
+    "section": "",
+    "text": "Coming Soon."
+  },
+  {
+    "objectID": "skills.html",
+    "href": "skills.html",
+    "title": "Skills and Expertises",
+    "section": "",
+    "text": "Along the journey in my career, I have worked on various projects, all of them may not be worth of mentioning. I have handpicked few of them here along with the tools and methodologies used."
+  },
+  {
+    "objectID": "skills.html#at-my-university",
+    "href": "skills.html#at-my-university",
+    "title": "Skills and Expertises",
+    "section": "🎓 At my University",
+    "text": "🎓 At my University\n\nDigitization of class notes, preparation of project reports\n\n🛠️ Tools\n\n\\(\\LaTeX\\) as the rendering engine\nR with Sweave and knitr packages\n\n\nPerforming computations for ‘Design of Experiments’ problems\n\n🛠️ Tools\n\nC programming"
+  },
+  {
+    "objectID": "skills.html#bcause-enterprise-pvt.-limited-2015-2016",
+    "href": "skills.html#bcause-enterprise-pvt.-limited-2015-2016",
+    "title": "Skills and Expertises",
+    "section": "🏢 BCausE Enterprise Pvt. Limited (2015-2016)",
+    "text": "🏢 BCausE Enterprise Pvt. Limited (2015-2016)\n\nPredicting the names of human body parts from a corpus of digitized prescriptions using text classification\n\n🛠️ Tools\n\nHeavily relied on regex for data cleansing\nNLP libraries based on Python\nMongoDB at the back-end\nFlask for REST API as front-end"
+  },
+  {
+    "objectID": "skills.html#ibm-india-pvt.-ltd.-2016-2021",
+    "href": "skills.html#ibm-india-pvt.-ltd.-2016-2021",
+    "title": "Skills and Expertises",
+    "section": "🏢 IBM India Pvt. Ltd. (2016-2021)",
+    "text": "🏢 IBM India Pvt. Ltd. (2016-2021)\n\nAnalysing customer complaints (a.k.a tickets) from various sources and predicting root causes using clustering and text classification respectively\n\n🛠️ Tools\n\nPython (as machine learning base)\nSQL at the back-end\nLittle bit of ShellScript to integrate the model with other modules\nFlask for REST API as front-end\ndocker for packaging the ml application\nKubernetes used for deployment of the docker image\n\n\nServing search queries to customers by designing a small scale search engine built on customer Feedbacks and FAQs using information retrieval algorithm\n\n🛠️ Tools\n\nSingular value decomposition to understand word-to-word relationship\nPandas as data processing toolkit\nNumpy for matrix facorization implementation\n\n\nUnderstanding the effects of various factors like advertisement, promotion, weather on sales of several commodities, analysing ROI year-on-year basis and forecasting the furure sales using Marketing Mix Modeling\n\n🛠️ Tools\n\nR with dplyr as the data processing toolkit\nBase R for model development\nSQL at the back-end"
+  },
+  {
+    "objectID": "skills.html#ihs-markit-and-sp-global-inc.-2021-present",
+    "href": "skills.html#ihs-markit-and-sp-global-inc.-2021-present",
+    "title": "Skills and Expertises",
+    "section": "🏢 IHS Markit and S&P Global Inc. (2021-Present)",
+    "text": "🏢 IHS Markit and S&P Global Inc. (2021-Present)\n\nAnalysing shipping data on a daily basis\n\n🛠️ Tools\n\nPySpark as the data processing engine\nExcel for adhoc analysis and reporting\nAWS as the cloud platform\n\n\nCargo grade identification using text classification\n\n🛠️ Tools\n\nPython (as machine learning base)\nS3 for Local Deployment\nShellScript for automation\n\n\nBuilding data pipeline incorporate external data from various sources\n\n🛠️ Tools\n\nR for writing scripts for pipelines\nShellScript for integration as automation\nAWS as cloud platform\n\n\n\nYou can find my latest resume here"
+  }
+]
