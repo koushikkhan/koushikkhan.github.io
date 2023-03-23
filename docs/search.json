@@ -53,7 +53,7 @@
     "href": "skills.html",
     "title": "Skills and Expertises",
     "section": "",
-    "text": "Along the journey in my career, I have worked on various projects, all of them may not be worth of mentioning. I have handpicked few of them here along with the tools and methodologies used."
+    "text": "Along the journey in my career, I have worked on various projects, all of them may not be worth of mentioning. I have handpicked few of them here along with the tools and methodologies used.\nYou can also find my latest resume here."
   },
   {
     "objectID": "skills.html#at-my-university",
@@ -81,7 +81,7 @@
     "href": "skills.html#ihs-markit-and-sp-global-inc.-2021-present",
     "title": "Skills and Expertises",
     "section": "💼 IHS Markit and S&P Global Inc. (2021-Present)",
-    "text": "💼 IHS Markit and S&P Global Inc. (2021-Present)\n\nAnalysing shipping data on a daily basis\n\n🛠️ Tools\n\nPySpark as the data processing engine\nExcel for adhoc analysis and reporting\nAWS as the cloud platform\n\n\nCargo grade identification using text classification\n\n🛠️ Tools\n\nPython (as machine learning base)\nS3 for Local Deployment\nShellScript for automation\n\n\nBuilding data pipeline incorporate external data from various sources\n\n🛠️ Tools\n\nR for writing scripts for pipelines\nShellScript for integration as automation\nAWS as cloud platform\n\n\n\nYou can find my latest resume here"
+    "text": "💼 IHS Markit and S&P Global Inc. (2021-Present)\n\nAnalysing shipping data on a daily basis\n\n🛠️ Tools\n\nPySpark as the data processing engine\nExcel for adhoc analysis and reporting\nAWS as the cloud platform\n\n\nCargo grade identification using text classification\n\n🛠️ Tools\n\nPython (as machine learning base)\nS3 for Local Deployment\nShellScript for automation\n\n\nBuilding data pipeline incorporate external data from various sources\n\n🛠️ Tools\n\nR for writing scripts for pipelines\nShellScript for integration as automation\nAWS as cloud platform"
   },
   {
     "objectID": "posts/2023-03-19-stat-hypothesis-test/index.html",
