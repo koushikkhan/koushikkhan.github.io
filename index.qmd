@@ -5,16 +5,20 @@ from: markdown+emoji
 image: profile-pic.jpg
 about:
     template: trestles
-    image-shape: rounded
+    image-shape: round
     image-width: 15em
     links:
       - icon: twitter
+        text: Twitter
         href: https://twitter.com/koushikKhan92
       - icon: linkedin
+        text: LinkedIn
         href: https://linkedin.com/in/koushikkhan
       - icon: github
+        text: GitHub
         href: https://github.com/koushikkhan
       - icon: mailbox
+        text: Contact Me
         href: mailto:koushikkhan38@gmail.com
 ---
 
