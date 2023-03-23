@@ -22,7 +22,7 @@ about:
         href: mailto:koushikkhan38@gmail.com
 ---
 
-Hello, I am Koushik Khan. I work as a Sr. Data Scientist at S&P Global Inc., Bangalore. I have more than seven years of industry experience in working with varied data sets with right set of tools to help stakeholders taking informed decisions. 
+Hello, I am Koushik Khan. I work as a Sr. Data Scientist at S&P Global Inc., Bangalore, India. I have more than seven years of industry experience in working with varied data sets with right set of tools to help stakeholders taking informed decisions. 
 
 This website is my personal page where I usually share my experiences in the form of blog posts while working with different problems. 
 
