@@ -3,4 +3,4 @@ title: "Personal Projects"
 from: markdown+emoji
 ---
 
-Coming Soon.
+Yet to be listed.
