@@ -22,11 +22,11 @@ about:
         href: mailto:koushikkhan38@gmail.com
 ---
 
-Hello, I am Koushik Khan. I work as a Sr. Data Scientist at S&P Global Inc., Bangalore, India. I have more than seven years of industry experience in working with varied data sets with right set of tools to help stakeholders taking informed decisions. 
+Hello, I am Koushik Khan. I work as a Sr. Data Scientist at S&P Global Inc., Bangalore, India. 
 
-This website is my personal page where I usually share my experiences in the form of blog posts while working with different problems. 
+I have more than seven years of industry experience in working with varied data sets with right set of tools to help stakeholders taking informed decisions. 
 
-
+This website is my personal page where I usually share my experiences in the form of blog posts. 
 
 
 <!-- The advancement in the world of technology is fast-paced that makes it difficult to keep track of everything. But most of these advancements follow some fundamentals.
@@ -40,10 +40,10 @@ If you like this approach, I am sure you will enjoy the contents. -->
 The list below is to help you navigate through the site.
 
 + :house_with_garden: Home: this is where you are at right now
-+ :books: Blog: find the posts that I have written
++ :books: Blog: posts that I have written are available here
 + :gear: Projects: links to all my personal projects in GitHub
-+ :seedling: Skills: you will find my skills and expertises here
++ :seedling: Skills: detailes of some handpicked projects where I have contributed as a professional
 + :clipboard: Resume: my latest resume is attached here 
-+ :man_technologist: About: things to know about myself
++ :man: About: things to know about myself
 
 Thanks.
