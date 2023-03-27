@@ -4,7 +4,7 @@ from: markdown+emoji
 description: "Part 1: Basics"
 author:
   - name: Koushik Khan
-    url: https://koushikkhan.github.io/mysite 
+    url: https://koushikkhan.github.io/
 date: 03-22-2023
 categories: [linux, cloud]
 image: cloud.jpg

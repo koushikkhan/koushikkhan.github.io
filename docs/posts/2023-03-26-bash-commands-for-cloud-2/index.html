@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Koushik Khan">
+<meta name="dcterms.date" content="2023-03-22">
+<meta name="description" content="Part 2: Advanced Tools for Commandline">
 
-<title>Koushik’s Page - Blog Posts</title>
+<title>Koushik’s Page - Bash Commands to Get Started on Linux Clouds</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,27 +26,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -63,44 +64,9 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-<style>
-    .quarto-title-block .quarto-title-banner {
-      background: flase;
-    }
-    </style>
-
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -110,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Koushik’s Page</span>
     </a>
   </div>
@@ -120,29 +86,29 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
+    <a class="nav-link" href="../../index.html">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" aria-current="page">
+    <a class="nav-link" href="../../posts.html">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projects.html">
+    <a class="nav-link" href="../../projects.html">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./skills.html">
+    <a class="nav-link" href="../../skills.html">
  <span class="menu-text">Skills</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resume.html">
+    <a class="nav-link" href="../../resume.html">
  <span class="menu-text">Resume</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html">
+    <a class="nav-link" href="../../about.html">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -172,179 +138,89 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Blog Posts</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Bash Commands to Get Started on Linux Clouds</h1>
+                  <div>
+        <div class="description">
+          Part 2: Advanced Tools for Commandline
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">linux</div>
+                <div class="quarto-category">cloud</div>
+              </div>
+                  </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Koushik Khan </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 22, 2023</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="cloud">cloud <span class="quarto-category-count">(2)</span></div><div class="category" data-category="linux">linux <span class="quarto-category-count">(2)</span></div><div class="category" data-category="statistics">statistics <span class="quarto-category-count">(1)</span></div></div></div>
-<!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
-
-
-
-
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Author
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#working-with-permissions" id="toc-working-with-permissions" class="nav-link active" data-scroll-target="#working-with-permissions">Working with Permissions</a></li>
+  </ul>
+</nav>
     </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="linux,cloud" data-listing-date-sort="1679423400000" data-listing-file-modified-sort="1679899221688" data-listing-reading-time-sort="0.465">
-<div class="thumbnail">
-<p><a href="./posts/2023-03-26-bash-commands-for-cloud-2/index.html"> <img src="./posts/2023-03-26-bash-commands-for-cloud-2/cloud.jpg" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/2023-03-26-bash-commands-for-cloud-2/index.html">
-<h3 class="no-anchor listing-title">
-Bash Commands to Get Started on Linux Clouds
-</h3>
-<div class="listing-subtitle">
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('linux'); return false;">
-linux
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('cloud'); return false;">
-cloud
-</div>
-</div>
-<a href="./posts/2023-03-26-bash-commands-for-cloud-2/index.html">
-<div class="listing-description">
-<p>Part 2: Advanced Tools for Commandline</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2023-03-26-bash-commands-for-cloud-2/index.html">
-<div class="listing-date">
-Mar 22, 2023
-</div>
-<div class="listing-author">
-Koushik Khan
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="linux,cloud" data-listing-date-sort="1679423400000" data-listing-file-modified-sort="1679833288777" data-listing-reading-time-sort="12.695">
-<div class="thumbnail">
-<p><a href="./posts/2023-03-22-bash-commands-for-cloud-1/index.html"> <img src="./posts/2023-03-22-bash-commands-for-cloud-1/cloud.jpg" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/2023-03-22-bash-commands-for-cloud-1/index.html">
-<h3 class="no-anchor listing-title">
-Bash Commands to Get Started on Linux Clouds
-</h3>
-<div class="listing-subtitle">
 
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('linux'); return false;">
-linux
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('cloud'); return false;">
-cloud
-</div>
-</div>
-<a href="./posts/2023-03-22-bash-commands-for-cloud-1/index.html">
-<div class="listing-description">
-<p>Part 1: Basics</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2023-03-22-bash-commands-for-cloud-1/index.html">
-<div class="listing-date">
-Mar 22, 2023
-</div>
-<div class="listing-author">
-Koushik Khan
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="statistics" data-listing-date-sort="1679164200000" data-listing-file-modified-sort="1679833267497" data-listing-reading-time-sort="8.515">
-<div class="thumbnail">
-<p><a href="./posts/2023-03-19-stat-hypothesis-test/index.html"> <img src="./posts/2023-03-19-stat-hypothesis-test/numbers.jpg" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/2023-03-19-stat-hypothesis-test/index.html">
-<h3 class="no-anchor listing-title">
-Testing of Hypotheses: A Quick Refresher
-</h3>
-<div class="listing-subtitle">
 
+
+<p>In our previous <a href="https://koushikkhan.github.io/posts/2023-03-22-bash-commands-for-cloud-1/">post</a>, we have seen examples to become confident enough for getting a grip on linux commands. This is the time now to jump into more advanced topics. Let’s go.</p>
+<section id="working-with-permissions" class="level1">
+<h1>Working with Permissions</h1>
+<p>The word ‘Permission’ typically stands for putting a guard wall while accessing any resource. For example, someone may or may not has permission to access a specific folder (directory) in a computer. It all depend on roles and responsibilities of the users.</p>
+<p>In linux, permission to access files and directories is categorized into three levels, these are <strong>user</strong>, <strong>group</strong> and <strong>others</strong>. Let’s see what do they mean when they are in action,</p>
+<ul>
+<li><p><strong>user</strong>: this category refers to the owner of the file or directory. Being the owner, user has the highest level of access to the file or directory and an user can modify or delete it.</p></li>
+<li><p><strong>group</strong>: this category refers to a group of users having the same level of access to a file or directory. If a group is assigned a specific permission, then all users within the group are also having same permission.</p></li>
+<li><p><strong>others</strong>: this category refers to all other users who are not the owner or part of the group assigned to the file or directory. These users are having lowest level of access to the file or directory.</p></li>
+</ul>
+<p>There are three specific access types for all users - <em>read</em>, <em>write</em> and <em>execute</em> and these are denoted by <em>r</em>, <em>w</em> and <em>x</em> respectively.</p>
+<p>Therefore, for each file, access level is represented by a sequence of nine characters just like below:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="file_permissions.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">fig-1</figcaption><p></p>
+</figure>
 </div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
-statistics
-</div>
-</div>
-<a href="./posts/2023-03-19-stat-hypothesis-test/index.html">
-<div class="listing-description">
-<p>Part 1: Basics</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2023-03-19-stat-hypothesis-test/index.html">
-<div class="listing-date">
-Mar 19, 2023
-</div>
-<div class="listing-author">
-Koushik Khan
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+<p>Now, let’s consider one file e.g.&nbsp;<em>records.txt</em>. For this file,</p>
+<ul>
+<li>the user ‘koushik’ is owner of the file as mentioned and ‘koushik’ has both read and write permission but not the execute permission</li>
+<li>the group has only read permission</li>
+<li>others also have read access.</li>
+</ul>
+<p><em>Don’t consider the very first character as part of access level string as it just denotes whether the corresponding entity is a file or directory, for file it is shown as ‘-’ (hyphen) and for directory it is shown as ‘d’</em></p>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -592,6 +468,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
+</script>
+<script src="https://utteranc.es/client.js" repo="koushikkhan/blog-discussions" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 
