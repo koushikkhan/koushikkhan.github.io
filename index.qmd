@@ -33,7 +33,7 @@ The list below is to help you navigate through the site.
 + {{< fa house >}} Home: This is where you are at right now
 + {{< fa blog >}} Blog: List of blog posts that I've written 
 + {{< fa laptop-file >}} Projects: Links to my personal projects
-+ {{< fa life-ring >}} Skills: A curated list of projects with skills in professional career
++ {{< fa life-ring >}} Skills: A curated list of projects with skills in academic and professional career
 + {{< fa clipboard >}} Resume: My latest resume is attached here 
 + {{< fa id-card-clip >}} About: Things to know about myself
 
