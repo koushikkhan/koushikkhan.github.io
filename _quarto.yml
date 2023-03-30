@@ -6,8 +6,9 @@ project:
     browser: true
 
 website:
-  favicon: favicon.png
   title: "Koushik's Page"
+  site-url: "" # a.k.a baseurl
+  favicon: "resources/img/favicon.png"
   navbar:
     left:
       - href: index.qmd

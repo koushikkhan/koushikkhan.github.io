@@ -3,4 +3,4 @@ title: "Personal Projects"
 from: markdown+emoji
 ---
 
-Yet to be listed.
+Yet to be added.

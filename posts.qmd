@@ -10,5 +10,5 @@ listing:
   sort-ui: true
   filter-ui: true
 page-layout: full
-title-block-banner: flase 
+title-block-banner: flase
 ---

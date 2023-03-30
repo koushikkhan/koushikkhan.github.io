@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "Koushik Khan",
     "section": "",
-    "text": "Hello, myself Koushik Khan. I work as a Sr. Data Scientist at S&P Global Inc., Bangalore, India.\nI have more than seven years of industry experience in working with varied data sets with right set of tools to help stakeholders taking informed decisions.\nThis website is my personal page where I usually share my experiences in the form of blog posts.\n\nThe list below is to help you navigate through the site.\n\n🏡 Home: this is where you are at right now\n📚 Blog: posts that I have written are available here\n⚙️ Projects: links to all my personal projects in GitHub\n🌱 Skills: detailes of some handpicked projects where I have contributed as a professional\n📋 Resume: my latest resume is attached here\n👨 About: things to know about myself\n\nThanks."
+    "text": "Hello, myself Koushik Khan. I work as a Sr. Data Scientist at S&P Global Inc., Bangalore, India.\nI have more than seven years of industry experience in working with varied data sets with right set of tools to help stakeholders taking informed decisions.\nThis website is my personal page where I usually share my experiences in the form of blog posts.\nThe list below is to help you navigate through the site.\n\n Home: This is where you are at right now\n Blog: List of blog posts that I’ve written\n Projects: Links to my personal projects\n Skills: A curated list of projects with skills in professional career\n Resume: My latest resume is attached here\n About: Things to know about myself\n\nThanks."
   },
   {
     "objectID": "projects.html",
     "href": "projects.html",
     "title": "Personal Projects",
     "section": "",
-    "text": "Yet to be listed."
+    "text": "Yet to be added."
   },
   {
     "objectID": "posts/2023-03-19-stat-hypothesis-test/index.html",
@@ -26,6 +26,20 @@
     "title": "Testing of Hypotheses: A Quick Refresher",
     "section": "Some Real Life Examples",
     "text": "Some Real Life Examples\nI will try to relate the definitions with couple of examples:\n\nSuppose the Honorable judge is about to give his verdict to the accused. Now let’s assume that our null hypothesis or prior belief about that person is, the person is not guilty. If the judge’s verdict is against the accused even if the person has really not done anything wrong, then it is the Type-I error, whereas if the verdict is in favor of the accused when in reality the person has done something wrong, then it is the Type-II error. If you’d think for a moment, you would understand the fact that Type-I error is more severe in nature.\nThis one is going to be of great impotance for the society. We know that almost every country has their own military radar system to detect any missilies aimed at them. Assume that, the null hypothesis is the enemy is in war mode, they will attack. Now, could you imagine the situation, if the military radar system would have failed to detect the missiles that had been aimed at your country and they were few miles away from their target…the lives of innocent citizens would have been devastated.\n\n\n\nfig-1\n\n\n\nHaving understood the importance of Type-I error in decision making, the usual tendency of the experimenter is to keep the chance of making Type-I error fixed at a very low level, which, by years of research and experimentations, has been chosen as 1% or 5%, depending on the situation."
+  },
+  {
+    "objectID": "posts/2023-03-26-bash-commands-for-cloud-2/index.html",
+    "href": "posts/2023-03-26-bash-commands-for-cloud-2/index.html",
+    "title": "Bash Commands to Get Started on Linux Clouds",
+    "section": "",
+    "text": "In our previous post, we have seen examples to become confident enough for getting a grip on linux commands. This is the time now to jump into more advanced topics. Let’s go."
+  },
+  {
+    "objectID": "posts/2023-03-26-bash-commands-for-cloud-2/index.html#permission-in-numeric-mode",
+    "href": "posts/2023-03-26-bash-commands-for-cloud-2/index.html#permission-in-numeric-mode",
+    "title": "Bash Commands to Get Started on Linux Clouds",
+    "section": "Permission in numeric mode",
+    "text": "Permission in numeric mode\nAll these three characters i.e. ‘r’, ‘w’ and ‘x’ are also represented by numbers as follows:\n\nr (read): 4\nw (write): 2\nx (execute): 1\n\nand their sum is expressed as the desired permission for an user. Some examples below will make the concept clear.\n\nr = 4, w = 2, x = 1\n\nsum = 7\nthe user has read, write and execute permission for the corresponding file\n\nr = 4, w = 2, x = 0\n\nsum = 6\nthe user has read and write permission only for the corresponding file, but the file cannot be executed as a program\n\nr = 4, w = 0, x = 1\n\nsum = 5\nthe user has read and execute permission only for the corresponding file, but the file cannot be modified"
   },
   {
     "objectID": "posts/2023-03-22-bash-commands-for-cloud-1/index.html",
@@ -56,25 +70,25 @@
     "text": "B.Sc. in Statistics (2013) - Visva Bharati University, India\nM.Sc. in Statistics (2015) - Visva Bharati University, India"
   },
   {
-    "objectID": "about.html#professional-career-history",
-    "href": "about.html#professional-career-history",
+    "objectID": "about.html#fa-user-tie-professional-career-history",
+    "href": "about.html#fa-user-tie-professional-career-history",
     "title": "About",
-    "section": "💼 Professional career history",
-    "text": "💼 Professional career history\n\nBCausE Enterprise Pvt. Ltd. as a Junior Data Analyst (2015 - 2016)\nIBM India Pvt. Ltd. as a Data Scientist (2016 - 2021)\nIHS Markit as a Sr. Data Scientist (2021 - 2022)\nS&P Global Inc. as a Sr. Data Scientist (2022 - Present)"
+    "section": " Professional career history",
+    "text": "Professional career history\n\nBCausE Enterprise Pvt. Ltd. as a Junior Data Analyst (2015 - 2016)\nIBM India Pvt. Ltd. as a Data Scientist (2016 - 2021)\nIHS Markit as a Sr. Data Scientist (2021 - 2022)\nS&P Global Inc. as a Sr. Data Scientist (2022 - Present)"
   },
   {
-    "objectID": "about.html#current-job-responsibilities",
-    "href": "about.html#current-job-responsibilities",
+    "objectID": "about.html#fa-laptop-current-job-responsibilities",
+    "href": "about.html#fa-laptop-current-job-responsibilities",
     "title": "About",
-    "section": "👨‍💻 Current job responsibilities",
-    "text": "👨‍💻 Current job responsibilities\n\nAnalysing maritime data\nProduct development and maintenance\nLeading a team to build data pipelines for consuming data from external sources"
+    "section": " Current job responsibilities",
+    "text": "Current job responsibilities\n\nAnalysing maritime data\nProduct development and maintenance\nLeading a team to build data pipelines for consuming data from external sources"
   },
   {
-    "objectID": "about.html#things-i-like-to-do-apart-from-work",
-    "href": "about.html#things-i-like-to-do-apart-from-work",
+    "objectID": "about.html#fa-umbrella-beach-things-i-like-to-do-apart-from-work",
+    "href": "about.html#fa-umbrella-beach-things-i-like-to-do-apart-from-work",
     "title": "About",
-    "section": "🏖️ Things I like to do apart from work",
-    "text": "🏖️ Things I like to do apart from work\n\nTravelling to historical places\nReading books, especially Bengali Novels\nWriting articles on something interesting I learn\nTeaching\nLearning and experimenting with different ideas and tools\nCooking - thanks to Covid to help me in discovering this skill 😄"
+    "section": " Things I like to do apart from work",
+    "text": "Things I like to do apart from work\n\nTravelling to historical places\nReading books, especially Bengali Novels\nWriting articles on something interesting I learn\nTeaching\nLearning and experimenting with different ideas and tools\nCooking - thanks to Covid to help me in discovering this skill"
   },
   {
     "objectID": "skills.html",
@@ -84,32 +98,32 @@
     "text": "Along the journey in my career, I have worked on various projects, all of them may not be worth of mentioning. I have handpicked few of them here along with the tools and methodologies used."
   },
   {
-    "objectID": "skills.html#at-my-university",
-    "href": "skills.html#at-my-university",
+    "objectID": "skills.html#fa-building-columns-academics",
+    "href": "skills.html#fa-building-columns-academics",
     "title": "Skills and Expertises",
-    "section": "🎓 At my University",
-    "text": "🎓 At my University\n\nDigitization of class notes, preparation of project reports\n\n🛠️ Tools\n\n\\(\\LaTeX\\) as the rendering engine\nR with Sweave and knitr packages\n\n\nPerforming computations for ‘Design of Experiments’ problems\n\n🛠️ Tools\n\nC programming"
+    "section": " Academics",
+    "text": "Academics\n\nDigitization of class notes, preparation of project reports\n\n Tools\n\n\\(\\LaTeX\\) as the rendering engine\nR with Sweave and knitr packages\n\n\nPerforming computations for ‘Design of Experiments’ problems\n\n Tools\n\nC programming"
   },
   {
-    "objectID": "skills.html#bcause-enterprise-pvt.-limited-2015-2016",
-    "href": "skills.html#bcause-enterprise-pvt.-limited-2015-2016",
+    "objectID": "skills.html#fa-briefcase-bcause-enterprise-pvt.-limited-2015-2016",
+    "href": "skills.html#fa-briefcase-bcause-enterprise-pvt.-limited-2015-2016",
     "title": "Skills and Expertises",
-    "section": "💼 BCausE Enterprise Pvt. Limited (2015-2016)",
-    "text": "💼 BCausE Enterprise Pvt. Limited (2015-2016)\n\nPredicting the names of human body parts from a corpus of digitized prescriptions using text classification\n\n🛠️ Tools\n\nHeavily relied on regex for data cleansing\nNLP libraries based on Python\nMongoDB at the back-end\nFlask for REST API as front-end"
+    "section": " BCausE Enterprise Pvt. Limited (2015-2016)",
+    "text": "BCausE Enterprise Pvt. Limited (2015-2016)\n\nPredicting the names of human body parts from a corpus of digitized prescriptions using text classification\n\n Tools\n\nHeavily relied on regex for data cleansing\nNLP libraries based on Python\nMongoDB at the back-end\nFlask for REST API as front-end"
   },
   {
-    "objectID": "skills.html#ibm-india-pvt.-ltd.-2016-2021",
-    "href": "skills.html#ibm-india-pvt.-ltd.-2016-2021",
+    "objectID": "skills.html#fa-briefcase-ibm-india-pvt.-ltd.-2016-2021",
+    "href": "skills.html#fa-briefcase-ibm-india-pvt.-ltd.-2016-2021",
     "title": "Skills and Expertises",
-    "section": "💼 IBM India Pvt. Ltd. (2016-2021)",
-    "text": "💼 IBM India Pvt. Ltd. (2016-2021)\n\nAnalysing customer complaints (a.k.a tickets) from various sources and predicting root causes using clustering and text classification respectively\n\n🛠️ Tools\n\nPython (as machine learning base)\nSQL at the back-end\nLittle bit of ShellScript to integrate the model with other modules\nFlask for REST API as front-end\ndocker for packaging the ml application\nKubernetes used for deployment of the docker image\n\n\nServing search queries to customers by designing a small scale search engine built on customer Feedbacks and FAQs using information retrieval algorithm\n\n🛠️ Tools\n\nSingular value decomposition to understand word-to-word relationship\nPandas as data processing toolkit\nNumpy for matrix facorization implementation\n\n\nUnderstanding the effects of various factors like advertisement, promotion, weather on sales of several commodities, analysing ROI year-on-year basis and forecasting the furure sales using Marketing Mix Modeling\n\n🛠️ Tools\n\nR with dplyr as the data processing toolkit\nBase R for model development\nSQL at the back-end"
+    "section": " IBM India Pvt. Ltd. (2016-2021)",
+    "text": "IBM India Pvt. Ltd. (2016-2021)\n\nAnalysing customer complaints (a.k.a tickets) from various sources and predicting root causes using clustering and text classification respectively\n\n Tools\n\nPython (as machine learning base)\nSQL at the back-end\nLittle bit of ShellScript to integrate the model with other modules\nFlask for REST API as front-end\ndocker for packaging the ml application\nKubernetes used for deployment of the docker image\n\n\nServing search queries to customers by designing a small scale search engine built on customer Feedbacks and FAQs using information retrieval algorithm\n\n Tools\n\nSingular value decomposition to understand word-to-word relationship\nPandas as data processing toolkit\nNumpy for matrix facorization implementation\n\n\nUnderstanding the effects of various factors like advertisement, promotion, weather on sales of several commodities, analysing ROI year-on-year basis and forecasting the furure sales using Marketing Mix Modeling\n\n Tools\n\nR with dplyr as the data processing toolkit\nBase R for model development\nSQL at the back-end"
   },
   {
-    "objectID": "skills.html#ihs-markit-and-sp-global-inc.-2021-present",
-    "href": "skills.html#ihs-markit-and-sp-global-inc.-2021-present",
+    "objectID": "skills.html#fa-briefcase-ihs-markit-and-sp-global-inc.-2021-present",
+    "href": "skills.html#fa-briefcase-ihs-markit-and-sp-global-inc.-2021-present",
     "title": "Skills and Expertises",
-    "section": "💼 IHS Markit and S&P Global Inc. (2021-Present)",
-    "text": "💼 IHS Markit and S&P Global Inc. (2021-Present)\n\nAnalysing shipping data on a daily basis\n\n🛠️ Tools\n\nPySpark as the data processing engine\nExcel for adhoc analysis and reporting\nAWS as the cloud platform\n\n\nCargo grade identification using text classification\n\n🛠️ Tools\n\nPython (as machine learning base)\nS3 for Local Deployment\nShellScript for automation\n\n\nBuilding data pipeline incorporate external data from various sources\n\n🛠️ Tools\n\nR for writing scripts for pipelines\nShellScript for integration as automation\nAWS as cloud platform"
+    "section": " IHS Markit and S&P Global Inc. (2021-Present)",
+    "text": "IHS Markit and S&P Global Inc. (2021-Present)\n\nAnalysing shipping data on a daily basis\n\n Tools\n\nPySpark as the data processing engine\nExcel for adhoc analysis and reporting\nAWS as the cloud platform\n\n\nCargo grade identification using text classification\n\n Tools\n\nPython (as machine learning base)\nS3 for Local Deployment\nShellScript for automation\n\n\nBuilding data pipeline incorporate external data from various sources\n\n Tools\n\nR for developing data pipelines\nShellScript for integration as automation\nAWS as cloud platform"
   },
   {
     "objectID": "posts.html",
@@ -117,19 +131,5 @@
     "title": "Blog Posts",
     "section": "",
     "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nBash Commands to Get Started on Linux Clouds\n\n\n\n\n\n\n\nlinux\n\n\ncloud\n\n\n\n\nPart 2: Advanced Tools for Commandline\n\n\n\n\n\n\nMar 26, 2023\n\n\nKoushik Khan\n\n\n\n\n\n\n  \n\n\n\n\nBash Commands to Get Started on Linux Clouds\n\n\n\n\n\n\n\nlinux\n\n\ncloud\n\n\n\n\nPart 1: Basics\n\n\n\n\n\n\nMar 22, 2023\n\n\nKoushik Khan\n\n\n\n\n\n\n  \n\n\n\n\nTesting of Hypotheses: A Quick Refresher\n\n\n\n\n\n\n\nstatistics\n\n\n\n\nPart 1: Basics\n\n\n\n\n\n\nMar 19, 2023\n\n\nKoushik Khan\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/2023-03-26-bash-commands-for-cloud-2/index.html",
-    "href": "posts/2023-03-26-bash-commands-for-cloud-2/index.html",
-    "title": "Bash Commands to Get Started on Linux Clouds",
-    "section": "",
-    "text": "In our previous post, we have seen examples to become confident enough for getting a grip on linux commands. This is the time now to jump into more advanced topics. Let’s go."
-  },
-  {
-    "objectID": "posts/2023-03-26-bash-commands-for-cloud-2/index.html#permission-in-numeric-mode",
-    "href": "posts/2023-03-26-bash-commands-for-cloud-2/index.html#permission-in-numeric-mode",
-    "title": "Bash Commands to Get Started on Linux Clouds",
-    "section": "Permission in numeric mode",
-    "text": "Permission in numeric mode\nAll these three characters i.e. ‘r’, ‘w’ and ‘x’ are also represented by numbers as follows:\n\nr (read): 4\nw (write): 2\nx (execute): 1\n\nand their sum is expressed as the desired permission for an user. Some examples below will make the concept clear.\n\nr = 4, w = 2, x = 1\n\nsum = 7\nthe user has read, write and execute permission for the corresponding file\n\nr = 4, w = 2, x = 0\n\nsum = 6\nthe user has read and write permission only for the corresponding file, but the file cannot be executed as a program\n\nr = 4, w = 0, x = 1\n\nsum = 5\nthe user has read and execute permission only for the corresponding file, but the file cannot be modified"
   }
 ]
