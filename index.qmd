@@ -4,29 +4,29 @@ description: "A data scientist by profession, an avid learner and a techie by he
 from: markdown+emoji
 image: "resources/img/profile-pic.jpg"
 about:
-    template: trestles
-    image-shape: round
-    image-width: 15em
-    links:
-      - icon: twitter
-        text: Twitter
-        href: https://twitter.com/koushikKhan92
-      - icon: linkedin
-        text: LinkedIn
-        href: https://linkedin.com/in/koushikkhan
-      - icon: github
-        text: GitHub
-        href: https://github.com/koushikkhan
-      - icon: mailbox
-        text: Contact Me
-        href: mailto:koushikkhan38@gmail.com
+  template: trestles
+  image-shape: round
+  image-width: 15em
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/koushikKhan92
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com/in/koushikkhan
+    - icon: github
+      text: GitHub
+      href: https://github.com/koushikkhan
+    - icon: mailbox
+      text: Contact Me
+      href: mailto:koushikkhan38@gmail.com
 ---
 
 Hello, myself Koushik Khan. I work as a Sr. Data Scientist at S&P Global Inc., Bangalore, India.
 
 I have more than seven years of industry experience in working with varied data sets with right set of tools to help stakeholders taking informed decisions. 
 
-This website is my personal page where I usually share my experiences in the form of blog posts. 
+This is my personal portfolio where I usually share my experiences in the form of blog posts. 
 
 The list below is to help you navigate through the site.
 
@@ -35,6 +35,6 @@ The list below is to help you navigate through the site.
 + {{< fa laptop-file >}} Projects: Links to my personal projects
 + {{< fa life-ring >}} Skills: A curated list of projects with skills in academic and professional career
 + {{< fa clipboard >}} Resume: My latest resume is attached here 
-+ {{< fa id-card-clip >}} About: Things to know about myself
++ {{< fa id-card-clip >}} About: About myself
 
 Thanks.

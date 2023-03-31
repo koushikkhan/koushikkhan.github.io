@@ -38,6 +38,10 @@ format:
       dark: darkly
     css: styles.css
     toc: true
+    code-block-bg: true
+    code-block-border-left: true
+    highlight-style: atom-one
+    code-line-numbers: true
 
 editor: visual
 

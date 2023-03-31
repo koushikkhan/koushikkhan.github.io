@@ -7,6 +7,6 @@ freeze: auto
 title-block-banner: true
 
 # comment section
-# comments: 
-#   utterances: 
-#     repo: koushikkhan/blog-discussions
+comments: 
+  utterances: 
+    repo: koushikkhan/blog-discussions
