@@ -8,12 +8,12 @@ about:
   image-shape: round
   image-width: 15em
   links:
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/koushikKhan92
     - icon: linkedin
       text: LinkedIn
       href: https://linkedin.com/in/koushikkhan
+    - icon: twitter
+      text: Twitter
+      href: https://www.twitter.com/__koushikkhan__/
     - icon: github
       text: GitHub
       href: https://github.com/koushikkhan

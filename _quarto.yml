@@ -24,12 +24,14 @@ website:
 
     right:
       - href: about.qmd
-      - icon: github
-        href: https://www.github.com/koushikkhan/
-      - icon: twitter
-        href: https://www.twitter.com/koushikKhan92/
       - icon: linkedin
         href: https://linkedin.com/in/koushikkhan/
+      - icon: twitter
+        href: https://www.twitter.com/__koushikkhan__/
+      - icon: github
+        href: https://www.github.com/koushikkhan/
+      
+
 
 format:
   html:
