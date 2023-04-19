@@ -4,7 +4,7 @@ from: markdown+emoji
 description: "Part 1: Basics"
 author:
   - name: Koushik Khan
-    url: https://koushikkhan.gitlab.io/ 
+    url: https://koushikkhan.github.io/ 
 date: 03-19-2023
 categories: [statistics]
 image: numbers.jpg
