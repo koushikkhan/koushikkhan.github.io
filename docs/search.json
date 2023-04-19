@@ -145,5 +145,26 @@
     "title": "Gradient Calculation Through Computational Graph",
     "section": "Derivative of a scalar valued function w.r.t a vector valued input",
     "text": "Derivative of a scalar valued function w.r.t a vector valued input\nLet us consider a scalar valued function \\(f\\) based on a vector valued input \\(\\vec{x}\\) with dimension \\(k\\).\nIn this case, the function can be any simple function like \\(sin(.)\\) or \\(log(.)\\) depending on the requirements and for each component of \\(\\vec{x}\\), the function has to be evaluated. Hence, the output is also vector valued.\nConsider the following example:\nWe have the input \\(\\vec{x} = \\left(x_1,\\ldots,x_k\\right)\\) and the function is \\(f(u) = log(u)\\). Hence the output vector is \\(\\vec{y} = f(\\vec{x})\\)"
+  },
+  {
+    "objectID": "posts/2023-04-19-autograd/index.html#derivative-of-vector-functions",
+    "href": "posts/2023-04-19-autograd/index.html#derivative-of-vector-functions",
+    "title": "Gradient Calculation Through Computational Graph",
+    "section": "Derivative of vector functions",
+    "text": "Derivative of vector functions"
+  },
+  {
+    "objectID": "posts/2023-04-19-autograd/index.html#f-mathbbrn-to-mathbbr",
+    "href": "posts/2023-04-19-autograd/index.html#f-mathbbrn-to-mathbbr",
+    "title": "Gradient Calculation Through Computational Graph",
+    "section": "\\(f: \\mathbb{R}^n \\to \\mathbb{R}\\)",
+    "text": "\\(f: \\mathbb{R}^n \\to \\mathbb{R}\\)\nSuch functions take vector (s) as input (s) and return a scalar. Loss functions like MSE or Cross Entropy can be couple of examples.\nIn this case, derivative of \\(f(\\vec{x})\\) will also be a vector of the same dimension, as given below:\n\\[\n\\frac{df}{d\\vec{x}} = \\left(\\frac{df}{dx_1}, \\ldots, \\frac{df}{dx_n}\\right)\n\\]"
+  },
+  {
+    "objectID": "posts/2023-04-19-autograd/index.html#f-mathbbrn-to-mathbbrm",
+    "href": "posts/2023-04-19-autograd/index.html#f-mathbbrn-to-mathbbrm",
+    "title": "Gradient Calculation Through Computational Graph",
+    "section": "\\(f: \\mathbb{R}^n \\to \\mathbb{R}^m\\)",
+    "text": "\\(f: \\mathbb{R}^n \\to \\mathbb{R}^m\\)\nSuch functions take vector (s) as input (s) and return another vector with different dimension as output.\nA simple example can be a function \\(f: \\mathbb{R}^2 \\to \\mathbb{R}^3\\):\n\ninput: \\(\\vec{x} = \\left(x_1, x_2\\right)\\)\noutput: \\(\\vec{y} = \\mathbf{f(\\vec{x})} = \\left(x_1x_2, \\log(x_1x_2),sin(x_1+x_2)\\right)\\)\n\nIn this case, derivative of \\(\\mathbf{f(\\vec{x})}\\) will be a matrix of dimension \\(m \\times n\\), as given below:\n\\[\\begin{align}\n    \\frac{d\\vec{y}}{d\\vec{x}} &= \\left(\\frac{d\\vec{y}}{dx_1}, \\ldots, \\frac{d\\vec{y}}{dx_n}\\right) \\\\\n    &= \\begin{pmatrix}\n            \\frac{dy_1}{dx_1} & \\frac{dy_1}{dx_2} & \\ldots & \\frac{dy_1}{dx_n} \\\\\n            \\frac{dy_2}{dx_1} & \\frac{dy_2}{dx_2} & \\ldots & \\frac{dy_2}{dx_n} \\\\\n            \\vdots & \\vdots & \\ddots & \\vdots \\\\\n            \\frac{dy_m}{dx_1} & \\frac{dy_m}{dx_2} & \\ldots & \\frac{dy_m}{dx_n} \\\\\n        \\end{pmatrix}\n\\end{align}\\]\nThis matrix is often referred to as Jacobian of \\(\\vec{y}\\) with respect to \\(\\vec{x}\\)."
   }
 ]

@@ -6,7 +6,7 @@ author:
   - name: Koushik Khan
     url: https://koushikkhan.github.io/ 
 date: 03-19-2023
-categories: [statistics]
+categories: [deep learning]
 image: numbers.jpg
 draft: false
 ---
@@ -25,31 +25,81 @@ $$
 \frac{df}{dx} = \lim_{h \to 0} \frac{f(x+h) - f(x)}{(x+h) - x}
 $$
 
-The figure below, will make the definition easier to understand.
+The animation below, made with [geogebra](https://www.geogebra.org), will make the definition easier to understand.
 
-![fig-1: Derivative of a function](derivative.png)
+<!-- ![fig-1: Derivative of a function](derivative.png) -->
+<iframe src="https://www.geogebra.org/calculator/n8r2jcvq?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
-As you can see, because of a change in $x$ (by an amount $h$), there is a change on the output. The output has become $f(x+h)$ from $f(x)$. 
+Once you open this, you will see there are two sliders controlling:
 
-Now, as per the definition, the ratio $\frac{f(x+h) - f(x)}{(x+h) - x}$ is nothing but the *tangent* of the angle $\angle{DAA'} = \alpha$ of the triangle $\triangle{DAA'}$.
++ the coordinate of the point $A$ and 
++ the amount of change $h$ (only positive now) to put on point $A$. 
 
-Now, let us think about the interpretation of putting a limit on $h$. Obviously, the limiting term is indicating a very small change on the input $x$, not only that, when $h$ is very close to zero which is in turn the case when the points $(x, 0)$ and $(x+h, 0)$ are very close to each other, then the line segment $\overline{AD}$ will eventually become the tangent of the curve at the point $(x, 0)$.
+If you make $h$ very close to zero, you will understand how the line segment $\overline{PQ}$ gradually becomes the tangent of the curve at point $A$.  
 
-Therefore, the definition of derivative of a function, geometrically refers to a tangent of the curve $y = f(x)$ at the point $x$.
+So, as per the definition, the ratio $\frac{f(x+h) - f(x)}{(x+h) - x}$ is nothing but the *tangent* or $tan()$ of the angle $\angle{QPP'}$ from the triangle $\triangle{QPP'}$.
+
+Theoratically, when $h$ is very close to zero, the ratio gives you the value of the tangent of the curve at the point $(x,0)$.
+
+Therefore, the overall definition of derivative of a function, geometrically refers to the tangent value of the curve $y = f(x)$ at the point $x$.
 
 The tangent of a curve at some point $x$ is important as it gives us an idea about the nature of the curve locally. Geometrically, if the tangent line makes an acute angle with the $X-Axis$ (which is the case here), then it denotes a positive change on the output and when it makes an obtuse angle, it denotes a negative change on the output. If the tangent line horizontal to the $X-Axis$, then there is no change on the output.
 
 Similar information can also be obtained by evaluating the expression of derivative at some point $x$. If the limiting value of the ratio is positive, then obviously, there is a positive change on the output otherwise the change is negative and having a value as zero indicates there is no change on the output.
 
-Note that, till now, we have discussed only on a scalar valued function with a scalar valued input. We will now try to get some ideas when either of the function and input or both of them are vector valued. 
+Note that, till now, we have discussed only on a scalar valued function with a scalar valued input. We will now try to get some ideas to calculate derivative when either of the function and input or both of them are vector valued.
 
-## Derivative of a scalar valued function w.r.t a vector valued input
+# Derivative of vector valued functions
 
-Let us consider a scalar valued function $f$ based on a vector valued input $\vec{x}$ with dimension $k$. 
+## $f: \mathbb{R}^n \to \mathbb{R}$
 
-In this case, the function can be any simple function like $sin(.)$ or $log(.)$ depending on the requirements and for each component of $\vec{x}$, the function has to be evaluated. Hence, the output is also vector valued.
+Such functions take vector (s) as input (s) and return a scalar. Loss functions like **MSE** or **Cross Entropy** can be couple of examples.
 
-Consider the following example:
+In this case, derivative of $f(\vec{x})$ will also be a vector of the same dimension, as given below:
 
-We have the input $\vec{x} = \left(x_1,\ldots,x_k\right)$ and the function is $f(u) = log(u)$. Hence the output vector is $\vec{y} = f(\vec{x})$
+$$
+\frac{df}{d\vec{x}} = \left(\frac{df}{dx_1}, \ldots, \frac{df}{dx_n}\right)
+$$
+
+
+## $f: \mathbb{R}^n \to \mathbb{R}^m$
+
+Such functions take vector (s) as input (s) and return another vector with different dimension as output. 
+
+A simple example can be a function $f: \mathbb{R}^2 \to \mathbb{R}^3$:
+
++ input: $\vec{x} = \left(x_1, x_2\right)$
++ output: $\vec{y} = \mathbf{f(\vec{x})} = \left(x_1x_2, \log(x_1x_2),sin(x_1+x_2)\right)$
+
+In this case, derivative of $\mathbf{f(\vec{x})}$ will be a matrix of dimension $m \times n$, as given below:
+
+\begin{align}
+    \frac{d\vec{y}}{d\vec{x}} &= \left(\frac{d\vec{y}}{dx_1}, \ldots, \frac{d\vec{y}}{dx_n}\right) \\
+    &= \begin{pmatrix}
+            \frac{dy_1}{dx_1} & \frac{dy_1}{dx_2} & \ldots & \frac{dy_1}{dx_n} \\
+            \frac{dy_2}{dx_1} & \frac{dy_2}{dx_2} & \ldots & \frac{dy_2}{dx_n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            \frac{dy_m}{dx_1} & \frac{dy_m}{dx_2} & \ldots & \frac{dy_m}{dx_n} \\
+        \end{pmatrix}
+\end{align}
+
+This matrix is often referred to as **Jacobian** of $\vec{y}$ with respect to $\vec{x}$.
+
+# Computational graph
+
+A *computational graph* is a directed acyclic graph that keeps track of sequence of operations performed in a computer.
+
+Let us take an example to understand it.
+
+```{mermaid}
+%%| fig-width: 4.5
+graph LR
+  a(a = 3) --> c(c = a + 1)
+  a(a = 3) --> d(d = a + b)
+  b(b = 2) --> d(d = a + b)
+  c(c = a + 1) --> e(e = c * d)
+  d(d = a + b) --> e(e = c * d) 
+```
+
+The above diagram is typically referred to as a computational graph, where both **a** and **b** are inputs to the graph and **e** is the output of the graph.
 
