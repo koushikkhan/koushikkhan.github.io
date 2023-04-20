@@ -1,6 +1,6 @@
 ---
 title: "Gradient Calculation Through Computational Graph"
-description: "The way, your favorite deep learning library performs back propagation"
+description: "The way, your favorite deep learning library learns"
 from: markdown+emoji
 author:
   - name: Koushik Khan
@@ -94,7 +94,7 @@ Let us take an example to understand it.
 ```{mermaid}
 %%| fig-width: 4.5
 graph LR
-  a(a = 3) --> c(c = a + 1)
+  a(a = 3) --> c(c = a + 1) --> a(a = 3)
   a(a = 3) --> d(d = a + b)
   b(b = 2) --> d(d = a + b)
   c(c = a + 1) --> e(e = c * d)
