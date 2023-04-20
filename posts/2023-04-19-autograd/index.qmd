@@ -51,7 +51,7 @@ Note that, till now, we have discussed only on a scalar valued function with a s
 
 # Derivative of vector valued functions
 
-## $f: \mathbb{R}^n \to \mathbb{R}$
+## Functions of type $f: \mathbb{R}^n \to \mathbb{R}$
 
 Such functions take vector (s) as input (s) and return a scalar. Loss functions like **MSE** or **Cross Entropy** can be couple of examples.
 
@@ -62,14 +62,14 @@ $$
 $$
 
 
-## $f: \mathbb{R}^n \to \mathbb{R}^m$
+## Functions of type $f: \mathbb{R}^n \to \mathbb{R}^m$
 
 Such functions take vector (s) as input (s) and return another vector with different dimension as output. 
 
 A simple example can be a function $f: \mathbb{R}^2 \to \mathbb{R}^3$:
 
-+ input: $\vec{x} = \left(x_1, x_2\right)$
-+ output: $\vec{y} = \mathbf{f(\vec{x})} = \left(x_1x_2, \log(x_1x_2),sin(x_1+x_2)\right)$
++ input: $\vec{x} = \left(x_1, x_2\right)$ and a matrix of parameters $\mathbf{W}_{3 \times 2}$
++ output: $\vec{y} = \mathbf{f(\vec{x})} = \left(w_{11}x_1+w_{12}x_2, w_{21}x_1+w_{22}x_2, w_{31}x_1+w_{32}x_2)\right)$
 
 In this case, derivative of $\mathbf{f(\vec{x})}$ will be a matrix of dimension $m \times n$, as given below:
 
@@ -87,7 +87,7 @@ This matrix is often referred to as **Jacobian** of $\vec{y}$ with respect to $\
 
 # Computational graph
 
-A *computational graph* is a directed acyclic graph that keeps track of sequence of operations performed in a computer.
+A *computational graph* is a directed acyclic graph that keeps track of the sequence of operations performed during the run time of an algorithm.
 
 Let us take an example to understand it.
 
@@ -102,4 +102,6 @@ graph LR
 ```
 
 The above diagram is typically referred to as a computational graph, where both **a** and **b** are inputs to the graph and **e** is the output of the graph.
+
+Each of the boxes in the graph is called a *node* where a mathematical operation is performed.
 

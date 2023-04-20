@@ -188,8 +188,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#derivative-of-a-function" id="toc-derivative-of-a-function" class="nav-link" data-scroll-target="#derivative-of-a-function">Derivative of a function</a></li>
   <li><a href="#derivative-of-vector-valued-functions" id="toc-derivative-of-vector-valued-functions" class="nav-link" data-scroll-target="#derivative-of-vector-valued-functions">Derivative of vector valued functions</a>
   <ul class="collapse">
-  <li><a href="#f-mathbbrn-to-mathbbr" id="toc-f-mathbbrn-to-mathbbr" class="nav-link" data-scroll-target="#f-mathbbrn-to-mathbbr"><span class="math inline">\(f: \mathbb{R}^n \to \mathbb{R}\)</span></a></li>
-  <li><a href="#f-mathbbrn-to-mathbbrm" id="toc-f-mathbbrn-to-mathbbrm" class="nav-link" data-scroll-target="#f-mathbbrn-to-mathbbrm"><span class="math inline">\(f: \mathbb{R}^n \to \mathbb{R}^m\)</span></a></li>
+  <li><a href="#functions-of-type-f-mathbbrn-to-mathbbr" id="toc-functions-of-type-f-mathbbrn-to-mathbbr" class="nav-link" data-scroll-target="#functions-of-type-f-mathbbrn-to-mathbbr">Functions of type <span class="math inline">\(f: \mathbb{R}^n \to \mathbb{R}\)</span></a></li>
+  <li><a href="#functions-of-type-f-mathbbrn-to-mathbbrm" id="toc-functions-of-type-f-mathbbrn-to-mathbbrm" class="nav-link" data-scroll-target="#functions-of-type-f-mathbbrn-to-mathbbrm">Functions of type <span class="math inline">\(f: \mathbb{R}^n \to \mathbb{R}^m\)</span></a></li>
   </ul></li>
   <li><a href="#computational-graph" id="toc-computational-graph" class="nav-link" data-scroll-target="#computational-graph">Computational graph</a></li>
   </ul>
@@ -231,21 +231,21 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="derivative-of-vector-valued-functions" class="level1">
 <h1>Derivative of vector valued functions</h1>
-<section id="f-mathbbrn-to-mathbbr" class="level2">
-<h2 class="anchored" data-anchor-id="f-mathbbrn-to-mathbbr"><span class="math inline">\(f: \mathbb{R}^n \to \mathbb{R}\)</span></h2>
+<section id="functions-of-type-f-mathbbrn-to-mathbbr" class="level2">
+<h2 class="anchored" data-anchor-id="functions-of-type-f-mathbbrn-to-mathbbr">Functions of type <span class="math inline">\(f: \mathbb{R}^n \to \mathbb{R}\)</span></h2>
 <p>Such functions take vector (s) as input (s) and return a scalar. Loss functions like <strong>MSE</strong> or <strong>Cross Entropy</strong> can be couple of examples.</p>
 <p>In this case, derivative of <span class="math inline">\(f(\vec{x})\)</span> will also be a vector of the same dimension, as given below:</p>
 <p><span class="math display">\[
 \frac{df}{d\vec{x}} = \left(\frac{df}{dx_1}, \ldots, \frac{df}{dx_n}\right)
 \]</span></p>
 </section>
-<section id="f-mathbbrn-to-mathbbrm" class="level2">
-<h2 class="anchored" data-anchor-id="f-mathbbrn-to-mathbbrm"><span class="math inline">\(f: \mathbb{R}^n \to \mathbb{R}^m\)</span></h2>
+<section id="functions-of-type-f-mathbbrn-to-mathbbrm" class="level2">
+<h2 class="anchored" data-anchor-id="functions-of-type-f-mathbbrn-to-mathbbrm">Functions of type <span class="math inline">\(f: \mathbb{R}^n \to \mathbb{R}^m\)</span></h2>
 <p>Such functions take vector (s) as input (s) and return another vector with different dimension as output.</p>
 <p>A simple example can be a function <span class="math inline">\(f: \mathbb{R}^2 \to \mathbb{R}^3\)</span>:</p>
 <ul>
-<li>input: <span class="math inline">\(\vec{x} = \left(x_1, x_2\right)\)</span></li>
-<li>output: <span class="math inline">\(\vec{y} = \mathbf{f(\vec{x})} = \left(x_1x_2, \log(x_1x_2),sin(x_1+x_2)\right)\)</span></li>
+<li>input: <span class="math inline">\(\vec{x} = \left(x_1, x_2\right)\)</span> and a matrix of parameters <span class="math inline">\(\mathbf{W}_{3 \times 2}\)</span></li>
+<li>output: <span class="math inline">\(\vec{y} = \mathbf{f(\vec{x})} = \left(w_{11}x_1+w_{12}x_2, w_{21}x_1+w_{22}x_2, w_{31}x_1+w_{32}x_2)\right)\)</span></li>
 </ul>
 <p>In this case, derivative of <span class="math inline">\(\mathbf{f(\vec{x})}\)</span> will be a matrix of dimension <span class="math inline">\(m \times n\)</span>, as given below:</p>
 <p><span class="math display">\[\begin{align}
@@ -262,7 +262,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="computational-graph" class="level1">
 <h1>Computational graph</h1>
-<p>A <em>computational graph</em> is a directed acyclic graph that keeps track of sequence of operations performed in a computer.</p>
+<p>A <em>computational graph</em> is a directed acyclic graph that keeps track of the sequence of operations performed during the run time of an algorithm.</p>
 <p>Let us take an example to understand it.</p>
 <div class="cell" data-fig-width="4.5">
 <div class="cell-output-display">
@@ -283,6 +283,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p>The above diagram is typically referred to as a computational graph, where both <strong>a</strong> and <strong>b</strong> are inputs to the graph and <strong>e</strong> is the output of the graph.</p>
+<p>Each of the boxes in the graph is called a <em>node</em> where a mathematical operation is performed.</p>
 
 
 </section>
