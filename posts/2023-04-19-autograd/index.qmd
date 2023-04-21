@@ -1,6 +1,6 @@
 ---
 title: "Gradient Calculation Through Computational Graph"
-description: "The way, your favorite deep learning library learns"
+description: "The way, a deep neural network learns"
 from: markdown+emoji
 author:
   - name: Koushik Khan
@@ -15,7 +15,9 @@ draft: false
 
 In our high school mathematics, we have learnt *Differential Calculus*, which has introduced the term 'differentiation' or 'derivative' of a function with respect to a variable. This derivative has played a significant role in today's deep learning algorithms. 
 
-We all are familiar with the concept of derivative and hopefully, have solved a lot of exercises. I this post, I will revisit the core idea of computing derivativea and also try to develop the idea that is being used behind the learning process of a neural network.
+We all are familiar with the concept of derivative and hopefully, have solved a lot of exercises as well. 
+
+I this post, I will revisit the core idea of computing derivative and also try to develop the idea that is used behind the efficient learning process of a neural network, which is also known as *back propagation*.
 
 # Derivative of a function
 
@@ -27,8 +29,7 @@ $$
 
 The animation below, made with [geogebra](https://www.geogebra.org), will make the definition easier to understand.
 
-<!-- ![fig-1: Derivative of a function](derivative.png) -->
-<iframe src="https://www.geogebra.org/calculator/n8r2jcvq?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+<!-- <iframe src="https://www.geogebra.org/calculator/n8r2jcvq?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe> -->
 
 Once you open this, you will see there are two sliders controlling:
 
@@ -37,21 +38,21 @@ Once you open this, you will see there are two sliders controlling:
 
 If you make $h$ very close to zero, you will understand how the line segment $\overline{PQ}$ gradually becomes the tangent of the curve at point $A$.  
 
-So, as per the definition, the ratio $\frac{f(x+h) - f(x)}{(x+h) - x}$ is nothing but the *tangent* or $tan()$ of the angle $\angle{QPP'}$ from the triangle $\triangle{QPP'}$.
+As you understand, the ratio $\frac{f(x+h) - f(x)}{(x+h) - x}$ is nothing but the *tangent* or $tan()$ of the angle $\angle{QPP'}$ from the triangle $\triangle{QPP'}$.
 
 Theoratically, when $h$ is very close to zero, the ratio gives you the value of the tangent of the curve at the point $(x,0)$.
 
 Therefore, the overall definition of derivative of a function, geometrically refers to the tangent value of the curve $y = f(x)$ at the point $x$.
 
-The tangent of a curve at some point $x$ is important as it gives us an idea about the nature of the curve locally. Geometrically, if the tangent line makes an acute angle with the $X-Axis$ (which is the case here), then it denotes a positive change on the output and when it makes an obtuse angle, it denotes a negative change on the output. If the tangent line horizontal to the $X-Axis$, then there is no change on the output.
+The tangent of a curve at some point $x$ is important as it gives us an idea about the nature of the curve locally. Geometrically, if the tangent line makes an acute angle with the x-axis (which is the case here), then it denotes a positive change on the output and when it makes an obtuse angle, it denotes a negative change on the output. If the tangent line horizontal to the x-axis, then there is no change on the output.
 
 Similar information can also be obtained by evaluating the expression of derivative at some point $x$. If the limiting value of the ratio is positive, then obviously, there is a positive change on the output otherwise the change is negative and having a value as zero indicates there is no change on the output.
 
 Note that, till now, we have discussed only on a scalar valued function with a scalar valued input. We will now try to get some ideas to calculate derivative when either of the function and input or both of them are vector valued.
 
-# Derivative of vector valued functions
+## Derivative of vector valued functions
 
-## Functions of type $f: \mathbb{R}^n \to \mathbb{R}$
+### Functions of type $f: \mathbb{R}^n \to \mathbb{R}$
 
 Such functions take vector (s) as input (s) and return a scalar. Loss functions like **MSE** or **Cross Entropy** can be couple of examples.
 
@@ -62,7 +63,7 @@ $$
 $$
 
 
-## Functions of type $f: \mathbb{R}^n \to \mathbb{R}^m$
+### Functions of type $f: \mathbb{R}^n \to \mathbb{R}^m$
 
 Such functions take vector (s) as input (s) and return another vector with different dimension as output. 
 
@@ -85,23 +86,79 @@ In this case, derivative of $\mathbf{f(\vec{x})}$ will be a matrix of dimension 
 
 This matrix is often referred to as **Jacobian** of $\vec{y}$ with respect to $\vec{x}$.
 
-# Computational graph
+## The chain rule of differentiation
+
+Consider the situation, where you have two different functions $f()$ and $g()$ defined as follows $y = f(x)$ and $z = g(y) = g\left(f(x)\right)$.
+
+While forming $z$, $f()$ is the inner function and $g()$ is the outer function. This is known as function composition as often denoted as $g \circ f(x)$.
+
+We want to measure the rate of change in $z$ w.r.t $x$ i.e. $\frac{dz}{dx}$. 
+
+This derivative is computed as follws:
+
+$$
+\frac{dz}{dx} = \frac{dz}{dy} \times \frac{dy}{dx}
+$$
+
+and it is known as the *chain rule* of differentiation.
+
+[Wikipedia](https://en.wikipedia.org/wiki/Chain_rule) has an intutive explanation as given below:
+
+::: {.callout-tip}
+## Understanding chain rule
+Intuitively, the chain rule states that knowing the instantaneous rate of change of $z$ relative to $y$ and that of $y$ relative to $x$ allows one to calculate the instantaneous rate of change of $z$ relative to $x$ as the product of the two rates of change.
+
+As put by George F. Simmons: "if a car travels twice as fast as a bicycle and the bicycle is four times as fast as a walking man, then the car travels 2 × 4 = 8 times as fast as the man." 
+:::
+
+# The computational graph
 
 A *computational graph* is a directed acyclic graph that keeps track of the sequence of operations performed during the run time of an algorithm.
 
 Let us take an example to understand it.
 
 ```{mermaid}
-%%| fig-width: 4.5
+%%| fig-width: 3.0
 graph LR
-  a(a = 3) --> c(c = a + 1) --> a(a = 3)
-  a(a = 3) --> d(d = a + b)
-  b(b = 2) --> d(d = a + b)
-  c(c = a + 1) --> e(e = c * d)
-  d(d = a + b) --> e(e = c * d) 
+  a((a)) --> c((c = a+1))
+  a((a)) --> d((d = a+b))
+  b((b)) --> d((d = a+b))
+  c((c = a+1)) --> e((e = c * d))
+  d((d = a+b)) --> e((e = c * d))
+  e((e = c * d)) --> l((l = e+f))
+  f((f)) --> l((l = e+f))
 ```
 
 The above diagram is typically referred to as a computational graph, where both **a** and **b** are inputs to the graph and **e** is the output of the graph.
 
-Each of the boxes in the graph is called a *node* where a mathematical operation is performed.
+Each of the circles in the graph is called a *node* where a mathematical operation is performed. So, if you imagine, deep neural network is actually such a massive computational graph where, depending on the depth of the network, millions (or may be billions) of mathematical operations are performed.
+
+## Derivative through a graph
+
+Neural networks learn (i.e. update the parameters) using an iterative process where at the core it uses back propagation algorithm to compute derivative of a loss function.
+
+Let us revisit the previous computational graph:
+
+```{mermaid}
+%%| fig-width: 3.0
+graph LR
+  a((a)) --> c((c = a+1))
+  a((a)) --> d((d = a+b))
+  b((b)) --> d((d = a+b))
+  c((c = a+1)) --> e((e = c * d))
+  d((d = a+b)) --> e((e = c * d))
+  e((e = c * d)) --> l((l = e+f))
+  f((f)) --> l((l = e+f))
+```
+
+Here, we can assume $l$ as the *loss* and we want to measure the rate of change w.r.t each of the other nodes.
+
+This whole computation is performed in multiple steps as follows:
+
++ Step 1: rate of change of $l$ w.r.t $l$ itself i.e. $\frac{dl}{dl} = 1$
++ Step 2: rate of change of $l$ w.r.t $e$ i.e. $\frac{dl}{de} = \frac{dl}{de} \times \frac{dl}{dl} = \frac{d(e+f)}{de} \times \frac{dl}{dl} = 1$
++ Step 3: rate of change of $l$ w.r.t $f$ i.e. $\frac{dl}{df} = \frac{dl}{df} \times \frac{dl}{dl} = \frac{d(e+f)}{df} \times \frac{dl}{dl} = 1$
++ Step 4: rate of change of $l$ w.r.t $c$ i.e. $\frac{dl}{dc} = \frac{de}{dc} \times \frac{dl}{de} = \frac{d(c*d)}{dc} \times \frac{dl}{de} = d$
++ Step 5: rate of change of $l$ w.r.t $d$ i.e. $\frac{dl}{dc} = \frac{de}{dc} \times \frac{dl}{de} = \frac{d(c*d)}{dc} \times \frac{dl}{de} = d$
+
 
