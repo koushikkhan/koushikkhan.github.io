@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -197,6 +197,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#the-computational-graph" id="toc-the-computational-graph" class="nav-link" data-scroll-target="#the-computational-graph">The computational graph</a>
   <ul class="collapse">
   <li><a href="#derivative-through-a-graph" id="toc-derivative-through-a-graph" class="nav-link" data-scroll-target="#derivative-through-a-graph">Derivative through a graph</a></li>
+  <li><a href="#important-takeways" id="toc-important-takeways" class="nav-link" data-scroll-target="#important-takeways">Important takeways</a></li>
+  <li><a href="#sorting-nodes-before-performing-back-propagation" id="toc-sorting-nodes-before-performing-back-propagation" class="nav-link" data-scroll-target="#sorting-nodes-before-performing-back-propagation">Sorting nodes before performing back propagation</a></li>
+  <li><a href="#the-efficient-vector-jacobian-product" id="toc-the-efficient-vector-jacobian-product" class="nav-link" data-scroll-target="#the-efficient-vector-jacobian-product">The efficient vector-jacobian product</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -242,6 +245,7 @@ ul.task-list li input[type="checkbox"] {
 <p><span class="math display">\[
 \frac{df}{d\vec{x}} = \left(\frac{df}{dx_1}, \ldots, \frac{df}{dx_n}\right)
 \]</span></p>
+<p>This vector is often referred to as <em>gradient vector</em>.</p>
 </section>
 <section id="functions-of-type-f-mathbbrn-to-mathbbrm" class="level3">
 <h3 class="anchored" data-anchor-id="functions-of-type-f-mathbbrn-to-mathbbrm">Functions of type <span class="math inline">\(f: \mathbb{R}^n \to \mathbb{R}^m\)</span></h3>
@@ -289,24 +293,25 @@ Understanding chain rule
 <p>As put by George F. Simmons: “if a car travels twice as fast as a bicycle and the bicycle is four times as fast as a walking man, then the car travels 2 × 4 = 8 times as fast as the man.”</p>
 </div>
 </div>
+<p>This chain rule is very important as it powers the back propagation heavily which will be discussed in the next section.</p>
 </section>
 </section>
 <section id="the-computational-graph" class="level1">
 <h1>The computational graph</h1>
 <p>A <em>computational graph</em> is a directed acyclic graph that keeps track of the sequence of operations performed during the run time of an algorithm.</p>
 <p>Let us take an example to understand it.</p>
-<div class="cell" data-fig-width="3">
+<div class="cell" data-fig-width="4.5">
 <div class="cell-output-display">
 <div>
 <p>
 </p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">graph LR
-  a((a)) --&gt; c((c = a+1))
-  a((a)) --&gt; d((d = a+b))
-  b((b)) --&gt; d((d = a+b))
-  c((c = a+1)) --&gt; e((e = c * d))
-  d((d = a+b)) --&gt; e((e = c * d))
-  e((e = c * d)) --&gt; l((l = e+f))
-  f((f)) --&gt; l((l = e+f))
+  a(a) --&gt; c(c = a+1)
+  a(a) --&gt; d(d = a+b)
+  b(b) --&gt; d(d = a+b)
+  c(c = a+1) --&gt; e(e = c * d)
+  d(d = a+b) --&gt; e(e = c * d)
+  e(e = c * d) --&gt; l(l = e+f)
+  f(f) --&gt; l(l = e+f)
 </pre>
 <div id="mermaid-tooltip-1" class="mermaidTooltip">
 
@@ -321,18 +326,18 @@ Understanding chain rule
 <h2 class="anchored" data-anchor-id="derivative-through-a-graph">Derivative through a graph</h2>
 <p>Neural networks learn (i.e.&nbsp;update the parameters) using an iterative process where at the core it uses back propagation algorithm to compute derivative of a loss function.</p>
 <p>Let us revisit the previous computational graph:</p>
-<div class="cell" data-fig-width="3">
+<div class="cell" data-fig-width="4.5">
 <div class="cell-output-display">
 <div>
 <p>
 </p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-2">graph LR
-  a((a)) --&gt; c((c = a+1))
-  a((a)) --&gt; d((d = a+b))
-  b((b)) --&gt; d((d = a+b))
-  c((c = a+1)) --&gt; e((e = c * d))
-  d((d = a+b)) --&gt; e((e = c * d))
-  e((e = c * d)) --&gt; l((l = e+f))
-  f((f)) --&gt; l((l = e+f))
+  a(a) --&gt; c(c = a+1)
+  a(a) --&gt; d(d = a+b)
+  b(b) --&gt; d(d = a+b)
+  c(c = a+1) --&gt; e(e = c * d)
+  d(d = a+b) --&gt; e(e = c * d)
+  e(e = c * d) --&gt; l(l = e+f)
+  f(f) --&gt; l(l = e+f)
 </pre>
 <div id="mermaid-tooltip-2" class="mermaidTooltip">
 
@@ -341,15 +346,147 @@ Understanding chain rule
 </div>
 </div>
 </div>
-<p>Here, we can assume <span class="math inline">\(l\)</span> as the <em>loss</em> and we want to measure the rate of change w.r.t each of the other nodes.</p>
+<p>Here, we can assume <span class="math inline">\(l\)</span> as the <em>loss</em> and we want to measure the rate of change w.r.t each of the other nodes in the backward direction (why backward? … I’ll explain later).</p>
 <p>This whole computation is performed in multiple steps as follows:</p>
 <ul>
 <li>Step 1: rate of change of <span class="math inline">\(l\)</span> w.r.t <span class="math inline">\(l\)</span> itself i.e.&nbsp;<span class="math inline">\(\frac{dl}{dl} = 1\)</span></li>
 <li>Step 2: rate of change of <span class="math inline">\(l\)</span> w.r.t <span class="math inline">\(e\)</span> i.e.&nbsp;<span class="math inline">\(\frac{dl}{de} = \frac{dl}{de} \times \frac{dl}{dl} = \frac{d(e+f)}{de} \times \frac{dl}{dl} = 1\)</span></li>
 <li>Step 3: rate of change of <span class="math inline">\(l\)</span> w.r.t <span class="math inline">\(f\)</span> i.e.&nbsp;<span class="math inline">\(\frac{dl}{df} = \frac{dl}{df} \times \frac{dl}{dl} = \frac{d(e+f)}{df} \times \frac{dl}{dl} = 1\)</span></li>
 <li>Step 4: rate of change of <span class="math inline">\(l\)</span> w.r.t <span class="math inline">\(c\)</span> i.e.&nbsp;<span class="math inline">\(\frac{dl}{dc} = \frac{de}{dc} \times \frac{dl}{de} = \frac{d(c*d)}{dc} \times \frac{dl}{de} = d\)</span></li>
-<li>Step 5: rate of change of <span class="math inline">\(l\)</span> w.r.t <span class="math inline">\(d\)</span> i.e.&nbsp;<span class="math inline">\(\frac{dl}{dc} = \frac{de}{dc} \times \frac{dl}{de} = \frac{d(c*d)}{dc} \times \frac{dl}{de} = d\)</span></li>
+<li>Step 5: rate of change of <span class="math inline">\(l\)</span> w.r.t <span class="math inline">\(d\)</span> i.e.&nbsp;<span class="math inline">\(\frac{dl}{dd} = \frac{de}{dd} \times \frac{dl}{de} = \frac{d(c*d)}{dd} \times \frac{dl}{de} = c\)</span></li>
+<li>Step 6: rate of change of <span class="math inline">\(l\)</span> w.r.t <span class="math inline">\(a\)</span> i.e.&nbsp;<span class="math inline">\(\frac{dl}{da}\)</span>, this step can be broken into two parts as changing <span class="math inline">\(a\)</span>, can change <span class="math inline">\(l\)</span> either through <span class="math inline">\(c\)</span> or through <span class="math inline">\(d\)</span>, therefore,
+<ul>
+<li><span class="math inline">\(\frac{dl}{da} = \underbrace{\left( \frac{dc}{da} \times \frac{dl}{dc} \right)}_{\text{changes through c}} + \underbrace{\left( \frac{dd}{da} \times \frac{dl}{dd} \right)}_{\text{changes through d}} = d + c\)</span></li>
+</ul></li>
+<li>Step 7: rate of change of <span class="math inline">\(l\)</span> w.r.t <span class="math inline">\(b\)</span> i.e.&nbsp;<span class="math inline">\(\frac{dl}{db} = \frac{dd}{db} \times \frac{dl}{dd} = 1 \times c = c\)</span></li>
 </ul>
+<p>The real benefit of computing derivatives (a.k.a gradients) in the backward direction is that it allows the learning algorithm to compute gradients for all the nodes with a single attempt. If we would have started in the forward direction, then the learning algorithm would have travelled the entire graph for each of the input nodes at the very beginning and this is the computational victory.</p>
+<p><a href="https://pytorch.org">Pytorch</a>, being most popular deep learning toolkit, has implemented a <code>.backward()</code> method to compute the derivatives for all the nodes (technically not all, only for them with <code>requires_grad=True</code>) in a computational graph with a single attempt.</p>
+</section>
+<section id="important-takeways" class="level2">
+<h2 class="anchored" data-anchor-id="important-takeways">Important takeways</h2>
+<p>When we have a <span class="math inline">\('+'\)</span> operation in the graph, like the one below,</p>
+<div class="cell" data-fig-width="4.5">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-3">graph LR
+  x(x) --&gt; c(z = x+y) -.-&gt; x(x)
+  y(y) --&gt; c(z = x+y) -.-&gt; y(y)
+</pre>
+<div id="mermaid-tooltip-3" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<p>computing gradients with respect to the input nodes is fairly simple as the backward gradient computation just copies the gradient of the output node to all the input nodes.</p>
+<p>However, when we have a <span class="math inline">\('\times'\)</span> operation in the graph, like the next one,</p>
+<div class="cell" data-fig-width="4.5">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-4">graph LR
+  x(x) --&gt; c(z = x*y) -.-&gt; x(x)
+  y(y) --&gt; c(z = x*y) -.-&gt; y(y)
+</pre>
+<div id="mermaid-tooltip-4" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<p>gradient of one input node is just the product of the gradient of output node and value of other input node.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(+\)</span> and <span class="math inline">\(\times\)</span> are the two building blocks powering up any mathematical computation.</p>
+</div>
+</div>
+</section>
+<section id="sorting-nodes-before-performing-back-propagation" class="level2">
+<h2 class="anchored" data-anchor-id="sorting-nodes-before-performing-back-propagation">Sorting nodes before performing back propagation</h2>
+<div class="cell" data-fig-width="3.5">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-5">graph LR
+  a(a) --&gt; c(c = a+b)
+  b(b) --&gt; c(c = a+b)
+</pre>
+<div id="mermaid-tooltip-5" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<p>If we observe the above graph, it clear that while performing back propagation, computing gradient of any of the leaf nodes i.e.&nbsp;<span class="math inline">\(\left\{a, b\right\}\)</span> is possible only when gradient value for the node <span class="math inline">\(c\)</span> is already available. This is just because of the chain rule we use.</p>
+<p>So the fact is that we cannot choose a node randomly and try computing gradient for it. We must compute the gradient of node <span class="math inline">\(c\)</span>, which is essentially 1, then we can take either of node <span class="math inline">\(a\)</span> or node <span class="math inline">\(b\)</span>.</p>
+<p>Nodes must be sorted in order to perform back propagation. <em>Topological Sort</em> is an way to achieve this ordering before performing the back propagation.</p>
+</section>
+<section id="the-efficient-vector-jacobian-product" class="level2">
+<h2 class="anchored" data-anchor-id="the-efficient-vector-jacobian-product">The efficient vector-jacobian product</h2>
+<p>Consider our tiny network:</p>
+<div class="cell" data-fig-width="3.5">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-6">  graph LR
+  x1(x1) --&gt; y1(y1)
+  x2(x2) --&gt; y1(y1)
+  x1(x1) --&gt; y2(y2)
+  x2(x2) --&gt; y2(y2)
+  x1(x1) --&gt; y3(y3)
+  x2(x2) --&gt; y3(y3)
+  y1(y1) --&gt; o(l)
+  y2(y2) --&gt; o(l)
+  y3(y3) --&gt; o(l)
+</pre>
+<div id="mermaid-tooltip-6" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<p>It has only two input nodes, a single output node and in between them three additional nodes forming the hidden layer.</p>
+<p>The mapping from input layer to hidden layer is supported by a matrix of parameters <span class="math inline">\(\mathbf{W}_{3 \times 2}\)</span> and ofcourse by a vector valued linear function, say, <span class="math inline">\(\mathbf{\vec{f}}\)</span>.</p>
+<p>Hidden layer values are formed using the equation below:</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+  y_1 \\
+  y_2 \\
+  y_3
+\end{pmatrix} = \begin{pmatrix}
+                  w_{11} &amp; w_{12} \\
+                  w_{21} &amp; w_{22} \\
+                  w_{31} &amp; w_{32}
+                \end{pmatrix} \begin{pmatrix}
+                                x_1 \\
+                                x_2
+                              \end{pmatrix}
+\]</span></p>
+<p>and consider some differentiable scalar valued function <span class="math inline">\(g()\)</span> that combines hidden layer values to form the output <span class="math inline">\(l\)</span>.</p>
+<p>Computing <span class="math inline">\(l\)</span> from the given fixed set of input values and with the help of some values of the parameters, is called the <em>forward pass</em>.</p>
+<p>At this stage, we can definitely compute the jacobian matrix of <span class="math inline">\(\mathbf{\vec{f}}\)</span> w.r.t <span class="math inline">\(\vec{x}\)</span>, which is given below:</p>
+<p><span class="math display">\[
+\mathbf{J} = \begin{pmatrix}
+                \frac{dy_1}{dx_1} &amp; \frac{dy_1}{dx_2} \\
+                \frac{dy_2}{dx_1} &amp; \frac{dy_2}{dx_2} \\
+                \frac{dy_3}{dx_1} &amp; \frac{dy_3}{dx_2}
+              \end{pmatrix}
+\]</span></p>
+<p>Now, suppose <span class="math inline">\(\vec{v}\)</span> is the gradient vector of <span class="math inline">\(l\)</span> i.e.&nbsp;<span class="math inline">\(\vec{v} = \left(\frac{dl}{dy_1}, \frac{dl}{dy_2}, \frac{dl}{dy_3}\right)\)</span></p>
 
 
 </section>

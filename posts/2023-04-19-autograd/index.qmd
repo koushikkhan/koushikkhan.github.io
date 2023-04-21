@@ -62,6 +62,7 @@ $$
 \frac{df}{d\vec{x}} = \left(\frac{df}{dx_1}, \ldots, \frac{df}{dx_n}\right)
 $$
 
+This vector is often referred to as *gradient vector*.
 
 ### Functions of type $f: \mathbb{R}^n \to \mathbb{R}^m$
 
@@ -111,6 +112,8 @@ Intuitively, the chain rule states that knowing the instantaneous rate of change
 As put by George F. Simmons: "if a car travels twice as fast as a bicycle and the bicycle is four times as fast as a walking man, then the car travels 2 × 4 = 8 times as fast as the man." 
 :::
 
+This chain rule is very important as it powers the back propagation heavily which will be discussed in the next section.
+
 # The computational graph
 
 A *computational graph* is a directed acyclic graph that keeps track of the sequence of operations performed during the run time of an algorithm.
@@ -118,15 +121,15 @@ A *computational graph* is a directed acyclic graph that keeps track of the sequ
 Let us take an example to understand it.
 
 ```{mermaid}
-%%| fig-width: 3.0
+%%| fig-width: 4.5
 graph LR
-  a((a)) --> c((c = a+1))
-  a((a)) --> d((d = a+b))
-  b((b)) --> d((d = a+b))
-  c((c = a+1)) --> e((e = c * d))
-  d((d = a+b)) --> e((e = c * d))
-  e((e = c * d)) --> l((l = e+f))
-  f((f)) --> l((l = e+f))
+  a(a) --> c(c = a+1)
+  a(a) --> d(d = a+b)
+  b(b) --> d(d = a+b)
+  c(c = a+1) --> e(e = c * d)
+  d(d = a+b) --> e(e = c * d)
+  e(e = c * d) --> l(l = e+f)
+  f(f) --> l(l = e+f)
 ```
 
 The above diagram is typically referred to as a computational graph, where both **a** and **b** are inputs to the graph and **e** is the output of the graph.
@@ -140,18 +143,18 @@ Neural networks learn (i.e. update the parameters) using an iterative process wh
 Let us revisit the previous computational graph:
 
 ```{mermaid}
-%%| fig-width: 3.0
+%%| fig-width: 4.5
 graph LR
-  a((a)) --> c((c = a+1))
-  a((a)) --> d((d = a+b))
-  b((b)) --> d((d = a+b))
-  c((c = a+1)) --> e((e = c * d))
-  d((d = a+b)) --> e((e = c * d))
-  e((e = c * d)) --> l((l = e+f))
-  f((f)) --> l((l = e+f))
+  a(a) --> c(c = a+1)
+  a(a) --> d(d = a+b)
+  b(b) --> d(d = a+b)
+  c(c = a+1) --> e(e = c * d)
+  d(d = a+b) --> e(e = c * d)
+  e(e = c * d) --> l(l = e+f)
+  f(f) --> l(l = e+f)
 ```
 
-Here, we can assume $l$ as the *loss* and we want to measure the rate of change w.r.t each of the other nodes.
+Here, we can assume $l$ as the *loss* and we want to measure the rate of change w.r.t each of the other nodes in the backward direction (why backward? ... I'll explain later).
 
 This whole computation is performed in multiple steps as follows:
 
@@ -159,6 +162,110 @@ This whole computation is performed in multiple steps as follows:
 + Step 2: rate of change of $l$ w.r.t $e$ i.e. $\frac{dl}{de} = \frac{dl}{de} \times \frac{dl}{dl} = \frac{d(e+f)}{de} \times \frac{dl}{dl} = 1$
 + Step 3: rate of change of $l$ w.r.t $f$ i.e. $\frac{dl}{df} = \frac{dl}{df} \times \frac{dl}{dl} = \frac{d(e+f)}{df} \times \frac{dl}{dl} = 1$
 + Step 4: rate of change of $l$ w.r.t $c$ i.e. $\frac{dl}{dc} = \frac{de}{dc} \times \frac{dl}{de} = \frac{d(c*d)}{dc} \times \frac{dl}{de} = d$
-+ Step 5: rate of change of $l$ w.r.t $d$ i.e. $\frac{dl}{dc} = \frac{de}{dc} \times \frac{dl}{de} = \frac{d(c*d)}{dc} \times \frac{dl}{de} = d$
++ Step 5: rate of change of $l$ w.r.t $d$ i.e. $\frac{dl}{dd} = \frac{de}{dd} \times \frac{dl}{de} = \frac{d(c*d)}{dd} \times \frac{dl}{de} = c$
++ Step 6: rate of change of $l$ w.r.t $a$ i.e. $\frac{dl}{da}$, this step can be broken into two parts as changing $a$, can change $l$ either through $c$ or through $d$, therefore,
+  + $\frac{dl}{da} = \underbrace{\left( \frac{dc}{da} \times \frac{dl}{dc} \right)}_{\text{changes through c}} + \underbrace{\left( \frac{dd}{da} \times \frac{dl}{dd} \right)}_{\text{changes through d}} = d + c$
++ Step 7: rate of change of $l$ w.r.t $b$ i.e. $\frac{dl}{db} = \frac{dd}{db} \times \frac{dl}{dd} = 1 \times c = c$
+
+The real benefit of computing derivatives (a.k.a gradients) in the backward direction is that it allows the learning algorithm to compute gradients for all the nodes with a single attempt. If we would have started in the forward direction, then the learning algorithm would have travelled the entire graph for each of the input nodes at the very beginning and this is the computational victory.
+
+[Pytorch](https://pytorch.org), being most popular deep learning toolkit, has implemented a `.backward()` method to compute the derivatives for all the nodes (technically not all, only for them with `requires_grad=True`) in a computational graph with a single attempt.
+
+## Important takeways
+
+When we have a $'+'$ operation in the graph, like the one below,
+
+```{mermaid}
+%%| fig-width: 4.5
+graph LR
+  x(x) --> c(z = x+y) -.-> x(x)
+  y(y) --> c(z = x+y) -.-> y(y)
+```
+
+computing gradients with respect to the input nodes is fairly simple as the backward gradient computation just copies the gradient of the output node to all the input nodes.
 
 
+However, when we have a $'\times'$ operation in the graph, like the next one,
+
+```{mermaid}
+%%| fig-width: 4.5
+graph LR
+  x(x) --> c(z = x*y) -.-> x(x)
+  y(y) --> c(z = x*y) -.-> y(y)
+```
+
+gradient of one input node is just the product of the gradient of output node and value of other input node.
+
+::: {.callout-note}
+$+$ and $\times$ are the two building blocks powering up any mathematical computation. 
+:::
+
+## Sorting nodes before performing back propagation
+
+```{mermaid}
+%%| fig-width: 3.5
+graph LR
+  a(a) --> c(c = a+b)
+  b(b) --> c(c = a+b)
+```
+
+If we observe the above graph, it clear that while performing back propagation, computing gradient of any of the leaf nodes i.e. $\left\{a, b\right\}$ is possible only when gradient value for the node $c$ is already available. This is just because of the chain rule we use.
+
+So the fact is that we cannot choose a node randomly and try computing gradient for it. We must compute the gradient of node $c$, which is essentially 1, then we can take either of node $a$ or node $b$.
+
+Nodes must be sorted in order to perform back propagation. *Topological Sort* is an way to achieve this ordering before performing the back propagation.
+
+## The efficient vector-jacobian product
+
+Consider our tiny network:
+
+```{mermaid}
+%%| fig-width: 3.5
+  graph LR
+  x1(x1) --> y1(y1)
+  x2(x2) --> y1(y1)
+  x1(x1) --> y2(y2)
+  x2(x2) --> y2(y2)
+  x1(x1) --> y3(y3)
+  x2(x2) --> y3(y3)
+  y1(y1) --> o(l)
+  y2(y2) --> o(l)
+  y3(y3) --> o(l)
+```
+
+It has only two input nodes, a single output node and in between them three additional nodes forming the hidden layer.
+
+The mapping from input layer to hidden layer is supported by a matrix of parameters $\mathbf{W}_{3 \times 2}$ and ofcourse by a vector valued linear function, say, $\mathbf{\vec{f}}$.
+
+Hidden layer values are formed using the equation below:
+
+$$
+\begin{pmatrix}
+  y_1 \\
+  y_2 \\
+  y_3 
+\end{pmatrix} = \begin{pmatrix}
+                  w_{11} & w_{12} \\
+                  w_{21} & w_{22} \\
+                  w_{31} & w_{32} 
+                \end{pmatrix} \begin{pmatrix}
+                                x_1 \\
+                                x_2 
+                              \end{pmatrix}
+$$
+
+and consider some differentiable scalar valued function $g()$ that combines hidden layer values to form the output $l$. 
+
+Computing $l$ from the given fixed set of input values and with the help of some values of the parameters, is called the *forward pass*.
+
+At this stage, we can definitely compute the jacobian matrix of $\mathbf{\vec{f}}$ w.r.t $\vec{x}$, which is given below:
+
+$$
+\mathbf{J} = \begin{pmatrix}
+                \frac{dy_1}{dx_1} & \frac{dy_1}{dx_2} \\
+                \frac{dy_2}{dx_1} & \frac{dy_2}{dx_2} \\
+                \frac{dy_3}{dx_1} & \frac{dy_3}{dx_2} 
+              \end{pmatrix}
+$$
+
+Now, suppose $\vec{v}$ is the gradient vector of $l$ i.e. $\vec{v} = \left(\frac{dl}{dy_1}, \frac{dl}{dy_2}, \frac{dl}{dy_3}\right)$

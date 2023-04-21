@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>/resume.html</loc>
+    <lastmod>2023-04-21T09:29:49.152Z</lastmod>
+  </url>
+  <url>
     <loc>/about.html</loc>
-    <lastmod>2023-04-21T05:57:33.473Z</lastmod>
+    <lastmod>2023-04-21T09:29:49.440Z</lastmod>
   </url>
   <url>
     <loc>/index.html</loc>
-    <lastmod>2023-04-21T05:52:57.531Z</lastmod>
-  </url>
-  <url>
-    <loc>/posts/2023-03-19-stat-hypothesis-test/index.html</loc>
-    <lastmod>2023-04-19T06:10:18.559Z</lastmod>
-  </url>
-  <url>
-    <loc>/posts/2023-03-22-bash-commands-for-cloud-1/index.html</loc>
-    <lastmod>2023-04-05T16:14:09.440Z</lastmod>
-  </url>
-  <url>
-    <loc>/posts/2023-03-26-bash-commands-for-cloud-2/index.html</loc>
-    <lastmod>2023-04-05T16:14:17.977Z</lastmod>
+    <lastmod>2023-04-21T12:08:03.128Z</lastmod>
   </url>
   <url>
     <loc>/posts.html</loc>
-    <lastmod>2023-04-21T09:17:05.726Z</lastmod>
-  </url>
-  <url>
-    <loc>/projects.html</loc>
-    <lastmod>2023-04-05T16:14:26.405Z</lastmod>
-  </url>
-  <url>
-    <loc>/resume.html</loc>
-    <lastmod>2023-04-05T16:14:28.800Z</lastmod>
+    <lastmod>2023-04-21T13:31:19.757Z</lastmod>
   </url>
   <url>
     <loc>/skills.html</loc>
-    <lastmod>2023-04-05T16:14:31.195Z</lastmod>
+    <lastmod>2023-04-21T09:29:50.696Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts/2023-03-19-stat-hypothesis-test/index.html</loc>
+    <lastmod>2023-04-21T09:29:51.060Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts/2023-03-22-bash-commands-for-cloud-1/index.html</loc>
+    <lastmod>2023-04-21T09:29:51.436Z</lastmod>
   </url>
   <url>
     <loc>/posts/2023-04-19-autograd/index.html</loc>
-    <lastmod>2023-04-21T09:17:02.281Z</lastmod>
+    <lastmod>2023-04-21T13:31:19.385Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts/2023-03-26-bash-commands-for-cloud-2/index.html</loc>
+    <lastmod>2023-04-21T09:29:52.465Z</lastmod>
+  </url>
+  <url>
+    <loc>/projects.html</loc>
+    <lastmod>2023-04-21T09:31:03.879Z</lastmod>
   </url>
 </urlset>
