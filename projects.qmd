@@ -3,4 +3,6 @@ title: "Personal Projects"
 from: markdown+emoji
 ---
 
-Yet to be added.
+Below is the list of my personal projects.
+
++ My Portfolio [web development, technical writing] - [github repository](https://github.com/koushikkhan/koushikkhan.github.io)
