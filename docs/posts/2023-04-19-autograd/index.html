@@ -197,7 +197,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#the-computational-graph" id="toc-the-computational-graph" class="nav-link" data-scroll-target="#the-computational-graph">The computational graph</a>
   <ul class="collapse">
-  <li><a href="#derivative-through-a-graph" id="toc-derivative-through-a-graph" class="nav-link" data-scroll-target="#derivative-through-a-graph">Derivative through a graph</a></li>
+  <li><a href="#differentiation-through-a-graph" id="toc-differentiation-through-a-graph" class="nav-link" data-scroll-target="#differentiation-through-a-graph">Differentiation through a graph</a></li>
   <li><a href="#important-takeways" id="toc-important-takeways" class="nav-link" data-scroll-target="#important-takeways">Important takeways</a></li>
   <li><a href="#sorting-nodes-before-performing-backpropagation" id="toc-sorting-nodes-before-performing-backpropagation" class="nav-link" data-scroll-target="#sorting-nodes-before-performing-backpropagation">Sorting nodes before performing backpropagation</a></li>
   <li><a href="#the-efficient-vector-jacobian-product" id="toc-the-efficient-vector-jacobian-product" class="nav-link" data-scroll-target="#the-efficient-vector-jacobian-product">The efficient vector-jacobian product</a></li>
@@ -370,8 +370,8 @@ Tip
 </div>
 <p>The above diagram is typically referred to as a computational graph, where both <strong>a</strong> and <strong>b</strong> are inputs to the graph and <span class="math inline">\(l\)</span> is the output of the graph.</p>
 <p>Each box in the graph is called a <em>node</em> where a mathematical operation is performed. So, if you imagine, deep neural network is actually such a massive computational graph where, depending on the depth of the network, millions (or may be billions) of mathematical operations are performed.</p>
-<section id="derivative-through-a-graph" class="level2">
-<h2 class="anchored" data-anchor-id="derivative-through-a-graph">Derivative through a graph</h2>
+<section id="differentiation-through-a-graph" class="level2">
+<h2 class="anchored" data-anchor-id="differentiation-through-a-graph">Differentiation through a graph</h2>
 <p>Neural networks learn (i.e.&nbsp;update the parameters) using an iterative process where at the core it uses backpropagation algorithm to compute derivative of a loss function.</p>
 <p>Let us revisit the previous computational graph to understand it in a better way,</p>
 <div class="cell" data-fig-width="4.5">
