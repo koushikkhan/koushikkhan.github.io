@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/index.html</loc>
-    <lastmod>2023-04-05T16:01:17.520Z</lastmod>
-  </url>
-  <url>
-    <loc>/projects.html</loc>
-    <lastmod>2023-04-05T15:55:55.924Z</lastmod>
-  </url>
-  <url>
-    <loc>/posts/2023-03-19-stat-hypothesis-test/index.html</loc>
-    <lastmod>2023-04-05T15:55:22.196Z</lastmod>
-  </url>
-  <url>
-    <loc>/posts/2023-03-26-bash-commands-for-cloud-2/index.html</loc>
-    <lastmod>2023-04-05T15:55:40.880Z</lastmod>
-  </url>
-  <url>
-    <loc>/posts/2023-03-22-bash-commands-for-cloud-1/index.html</loc>
-    <lastmod>2023-04-05T15:55:30.315Z</lastmod>
+    <loc>/resume.html</loc>
+    <lastmod>2023-04-21T09:29:49.152Z</lastmod>
   </url>
   <url>
     <loc>/about.html</loc>
-    <lastmod>2023-03-31T04:46:40.355Z</lastmod>
+    <lastmod>2023-04-21T09:29:49.440Z</lastmod>
   </url>
   <url>
-    <loc>/skills.html</loc>
-    <lastmod>2023-04-05T16:04:35.265Z</lastmod>
+    <loc>/index.html</loc>
+    <lastmod>2023-04-22T08:59:41.763Z</lastmod>
   </url>
   <url>
     <loc>/posts.html</loc>
-    <lastmod>2023-04-05T15:55:48.297Z</lastmod>
+    <lastmod>2023-04-22T08:40:06.047Z</lastmod>
   </url>
   <url>
-    <loc>/resume.html</loc>
-    <lastmod>2023-04-05T16:03:53.404Z</lastmod>
+    <loc>/skills.html</loc>
+    <lastmod>2023-04-21T09:29:50.696Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts/2023-03-19-stat-hypothesis-test/index.html</loc>
+    <lastmod>2023-04-21T09:29:51.060Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts/2023-03-22-bash-commands-for-cloud-1/index.html</loc>
+    <lastmod>2023-04-21T09:29:51.436Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts/2023-04-19-autograd/index.html</loc>
+    <lastmod>2023-04-22T09:28:07.283Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts/2023-03-26-bash-commands-for-cloud-2/index.html</loc>
+    <lastmod>2023-04-21T09:29:52.465Z</lastmod>
+  </url>
+  <url>
+    <loc>/projects.html</loc>
+    <lastmod>2023-04-22T09:32:49.207Z</lastmod>
   </url>
 </urlset>

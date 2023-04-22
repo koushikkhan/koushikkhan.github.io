@@ -1,1 +1,12 @@
 /* css styles */
+
+@font-face {
+    font-family: 'ComputerModern';
+    src: url('resources/fonts/cmunrm.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: 'ComputerModern', sans-serif;
+  }
