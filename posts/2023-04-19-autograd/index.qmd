@@ -13,28 +13,39 @@ draft: false
 
 # Introduction
 
-In our high school mathematics, we have learnt *Differential Calculus*, which has introduced the term 'differentiation' or 'derivative' of a function with respect to a variable. This derivative has played a significant role in today's deep learning algorithms. 
+In our high school mathematics, we have learnt *Differential Calculus*, which has introduced the term 'differentiation' and 'derivative'.
 
-We all are familiar with the concept of derivative and hopefully, have solved a lot of exercises as well. 
+The concept of computing derivative has played a significant role in today's deep learning algorithms among many of its useful real life applications. 
 
-I this post, I will revisit the core idea of computing derivative and also try to develop the idea that is used behind the efficient learning process of a neural network, which is also known as *back propagation*.
+I this post, I will revisit the core idea of computing derivative by looking at the geometrical interpretation of it and simultaneously try to put some light to the idea that is used behind the efficient learning process of a neural network, also known as *backpropagation*.
 
-# Derivative of a function
+# Differentiation
 
-Let us take a simple function $f(.)$ that depends on the input $x$. The derivative of $f(x)$ w.r.t $x$ is defined as follows:
+The term *differentiation* refers to the process of applying a mathematical operator on a function $f$, with respect to its input $x$ and the output of differentiation is referred to as *derivative* (sometimes *gradient*) and it's denoted by $\frac{df}{dx}$.
+
+Now, let's assume that there is a function $f()$ that can be differentiated w.r.t to its input $x$ i.e. derivative of $f$ exists at some point $x$ (in $f$'s domain of definition).
+
+:::{.callout-note}
+There are functions, for which derivative does not exist at some point. For example, we cannot perform differentiation of $y = |x|$ at point $x=0$.
+
+Read about conditions for differentiability if required.
+:::
+
+The process of differentiation may return *another function*, say, $g()$ or a *constant* depending on the structure of the function $f$.
+
+The definition of drivative of a function $f(.)$ w.r.t the input $x$ is given below:
 
 $$
 \frac{df}{dx} = \lim_{h \to 0} \frac{f(x+h) - f(x)}{(x+h) - x}
 $$
 
-The animation below, made with [geogebra](https://www.geogebra.org), will make the definition easier to understand.
+It's a ratio, where the denominator measures the change in the input $x$ and numerator measures the change in output $f(x)$, hence indicating the rate of change in $f$ w.r.t $x$.
 
-<!-- <iframe src="https://www.geogebra.org/calculator/n8r2jcvq?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe> -->
+The animation below, made with [geogebra](https://www.geogebra.org), will make the definition easier to understand by giving geometrical sense.
 
-Once you open this, you will see there are two sliders controlling:
+<iframe src="https://www.geogebra.org/calculator/neu54jkc?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
-+ the coordinate of the point $A$ and 
-+ the amount of change $h$ (only positive now) to put on point $A$. 
+Once you open this animation in full screen mode, you get to see a slider controlling our $h$. 
 
 If you make $h$ very close to zero, you will understand how the line segment $\overline{PQ}$ gradually becomes the tangent of the curve at point $A$.  
 
@@ -50,9 +61,9 @@ Similar information can also be obtained by evaluating the expression of derivat
 
 Note that, till now, we have discussed only on a scalar valued function with a scalar valued input. We will now try to get some ideas to calculate derivative when either of the function and input or both of them are vector valued.
 
-## Derivative of vector valued functions
+## Derivative for different type of input mappings
 
-### Functions of type $f: \mathbb{R}^n \to \mathbb{R}$
+### Functions of type $f: \mathbb{R}^n \to \mathbb{R}$, vector in, scalar out
 
 Such functions take vector (s) as input (s) and return a scalar. Loss functions like **MSE** or **Cross Entropy** can be couple of examples.
 
@@ -64,7 +75,7 @@ $$
 
 This vector is often referred to as *gradient vector*.
 
-### Functions of type $f: \mathbb{R}^n \to \mathbb{R}^m$
+### Functions of type $f: \mathbb{R}^n \to \mathbb{R}^m$, vector in, vector out
 
 Such functions take vector (s) as input (s) and return another vector with different dimension as output. 
 
@@ -112,7 +123,25 @@ Intuitively, the chain rule states that knowing the instantaneous rate of change
 As put by George F. Simmons: "if a car travels twice as fast as a bicycle and the bicycle is four times as fast as a walking man, then the car travels 2 × 4 = 8 times as fast as the man." 
 :::
 
-This chain rule is very important as it powers the back propagation heavily which will be discussed in the next section.
+This chain rule is very important as it powers the backpropagation heavily which will be discussed in the next section.
+
+## Partial differentiation
+
+Partial differentiation is mainly applicable for a function that depends on several input variables simultaneously.
+
+For example, we might have a function like $f(x,y,z) = ax+by+cz+d$ representing a plane in a three dimensional coordinate system.
+
+If we would like to measure the rate of change only along the x-axis, we would perform partial differentiation w.r.t $x$ and by ignoring other inputs. 
+
+Unlike the previous one (i.e. complete derivative), partial derivative is denoted by $\frac{\partial f}{\partial x}$ and the definition is given below:
+
+$$
+\frac{\partial f}{\partial x} = \lim_{h \to 0} \frac{f(x+h,y,z) - f(x,y,z)}{(x+h) - x}
+$$
+
+::: {.callout-tip}
+In the neural network setup, we usually deal with complex functions that depends on several variables. Hence, it will be meaningful to use partial derivatives while demystifying the underlying operations.
+:::
 
 # The computational graph
 
@@ -121,15 +150,15 @@ A *computational graph* is a directed acyclic graph that keeps track of the sequ
 Let us take an example to understand it.
 
 ```{mermaid}
-%%| fig-width: 4.5
+%%| fig-width: 4.0
 graph LR
-  a(a) --> c(c = a+1)
-  a(a) --> d(d = a+b)
-  b(b) --> d(d = a+b)
-  c(c = a+1) --> e(e = c * d)
-  d(d = a+b) --> e(e = c * d)
-  e(e = c * d) --> l(l = e+f)
-  f(f) --> l(l = e+f)
+  a(a) --> c(c)
+  a(a) --> d(d)
+  b(b) --> d(d)
+  c(c) --> e(e)
+  d(d) --> e(e)
+  e(e) --> l(l)
+  f(f) --> l(l)
 ```
 
 The above diagram is typically referred to as a computational graph, where both **a** and **b** are inputs to the graph and **e** is the output of the graph.
@@ -138,9 +167,9 @@ Each of the circles in the graph is called a *node* where a mathematical operati
 
 ## Derivative through a graph
 
-Neural networks learn (i.e. update the parameters) using an iterative process where at the core it uses back propagation algorithm to compute derivative of a loss function.
+Neural networks learn (i.e. update the parameters) using an iterative process where at the core it uses backpropagation algorithm to compute derivative of a loss function.
 
-Let us revisit the previous computational graph:
+Let us revisit the previous computational graph to understand it in a better way,
 
 ```{mermaid}
 %%| fig-width: 4.5
@@ -154,20 +183,22 @@ graph LR
   f(f) --> l(l = e+f)
 ```
 
-Here, we can assume $l$ as the *loss* and we want to measure the rate of change w.r.t each of the other nodes in the backward direction (why backward? ... I'll explain later).
+Here, we can assume $l$ as the *loss* and we want to measure the rate of change of loss w.r.t each of the nodes (including loss node itself) in the backward direction (why backward? ... I will explain later).
 
 This whole computation is performed in multiple steps as follows:
 
-+ Step 1: rate of change of $l$ w.r.t $l$ itself i.e. $\frac{dl}{dl} = 1$
-+ Step 2: rate of change of $l$ w.r.t $e$ i.e. $\frac{dl}{de} = \frac{dl}{de} \times \frac{dl}{dl} = \frac{d(e+f)}{de} \times \frac{dl}{dl} = 1$
-+ Step 3: rate of change of $l$ w.r.t $f$ i.e. $\frac{dl}{df} = \frac{dl}{df} \times \frac{dl}{dl} = \frac{d(e+f)}{df} \times \frac{dl}{dl} = 1$
-+ Step 4: rate of change of $l$ w.r.t $c$ i.e. $\frac{dl}{dc} = \frac{de}{dc} \times \frac{dl}{de} = \frac{d(c*d)}{dc} \times \frac{dl}{de} = d$
-+ Step 5: rate of change of $l$ w.r.t $d$ i.e. $\frac{dl}{dd} = \frac{de}{dd} \times \frac{dl}{de} = \frac{d(c*d)}{dd} \times \frac{dl}{de} = c$
-+ Step 6: rate of change of $l$ w.r.t $a$ i.e. $\frac{dl}{da}$, this step can be broken into two parts as changing $a$, can change $l$ either through $c$ or through $d$, therefore,
-  + $\frac{dl}{da} = \underbrace{\left( \frac{dc}{da} \times \frac{dl}{dc} \right)}_{\text{changes through c}} + \underbrace{\left( \frac{dd}{da} \times \frac{dl}{dd} \right)}_{\text{changes through d}} = d + c$
-+ Step 7: rate of change of $l$ w.r.t $b$ i.e. $\frac{dl}{db} = \frac{dd}{db} \times \frac{dl}{dd} = 1 \times c = c$
++ Step 1: rate of change of $l$ w.r.t $l$ itself i.e. $\frac{\partial l}{\partial l} = 1$
++ Step 2: rate of change of $l$ w.r.t $e$ i.e. $\frac{\partial l}{\partial e} = \frac{\partial l}{\partial e} \times \frac{\partial l}{\partial l} = \frac{\partial (e+f)}{\partial e} \times \frac{\partial l}{\partial l} = 1$
++ Step 3: rate of change of $l$ w.r.t $f$ i.e. $\frac{\partial l}{\partial f} = \frac{\partial l}{\partial f} \times \frac{\partial l}{\partial l} = \frac{\partial (e+f)}{\partial f} \times \frac{\partial l}{\partial l} = 1$
++ Step 4: rate of change of $l$ w.r.t $c$ i.e. $\frac{\partial l}{\partial c} = \frac{\partial e}{dc} \times \frac{\partial l}{\partial e} = \frac{\partial (c*d)}{\partial c} \times \frac{\partial l}{\partial e} = d$
++ Step 5: rate of change of $l$ w.r.t $d$ i.e. $\frac{\partial l}{\partial d} = \frac{\partial e}{\partial d} \times \frac{\partial l}{\partial e} = \frac{\partial (c*d)}{\partial d} \times \frac{\partial l}{\partial e} = c$
++ Step 6: rate of change of $l$ w.r.t $a$ i.e. $\frac{\partial l}{\partial a}$, this step can be broken into two parts as changing $a$, can change $l$ either through $c$ or through $d$, therefore,
+  + $\frac{\partial l}{\partial a} = \underbrace{\left( \frac{\partial c}{\partial a} \times \frac{\partial l}{\partial c} \right)}_{\text{changes through c}} + \underbrace{\left( \frac{\partial d}{\partial a} \times \frac{\partial l}{\partial d} \right)}_{\text{changes through d}} = d + c$
++ Step 7: rate of change of $l$ w.r.t $b$ i.e. $\frac{\partial l}{\partial b} = \frac{\partial d}{\partial b} \times \frac{\partial l}{\partial d} = 1 \times c = c$
 
-The real benefit of computing derivatives (a.k.a gradients) in the backward direction is that it allows the learning algorithm to compute gradients for all the nodes with a single attempt. If we would have started in the forward direction, then the learning algorithm would have travelled the entire graph for each of the input nodes at the very beginning and this is the computational victory.
+The real benefit of computing derivatives (a.k.a gradients) in the backward direction is that it allows the learning algorithm to compute gradients for all the nodes with a single attempt. 
+
+If we would have started in the forward direction, then the learning algorithm would have travelled the entire graph for each of the input nodes at the very beginning. Unlike a simple graph like the above one, this forward mode differentiation is computationally very costly for a large network.
 
 [Pytorch](https://pytorch.org), being most popular deep learning toolkit, has implemented a `.backward()` method to compute the derivatives for all the nodes (technically not all, only for them with `requires_grad=True`) in a computational graph with a single attempt.
 
@@ -200,7 +231,7 @@ gradient of one input node is just the product of the gradient of output node an
 $+$ and $\times$ are the two building blocks powering up any mathematical computation. 
 :::
 
-## Sorting nodes before performing back propagation
+## Sorting nodes before performing backpropagation
 
 ```{mermaid}
 %%| fig-width: 3.5
@@ -209,11 +240,11 @@ graph LR
   b(b) --> c(c = a+b)
 ```
 
-If we observe the above graph, it clear that while performing back propagation, computing gradient of any of the leaf nodes i.e. $\left\{a, b\right\}$ is possible only when gradient value for the node $c$ is already available. This is just because of the chain rule we use.
+If we observe the above graph, it clear that while performing backpropagation, computing gradient of any of the leaf nodes i.e. $\left\{a, b\right\}$ is possible only when gradient value for the node $c$ is already available. This is just because of the chain rule we use.
 
 So the fact is that we cannot choose a node randomly and try computing gradient for it. We must compute the gradient of node $c$, which is essentially 1, then we can take either of node $a$ or node $b$.
 
-Nodes must be sorted in order to perform back propagation. *Topological Sort* is an way to achieve this ordering before performing the back propagation.
+Nodes must be sorted in order to perform backpropagation. *Topological Sort* is an way to achieve this ordering before performing the backpropagation.
 
 ## The efficient vector-jacobian product
 
@@ -222,15 +253,30 @@ Consider our tiny network:
 ```{mermaid}
 %%| fig-width: 3.5
   graph LR
+  subgraph input layer
+  x1(x1) 
+  x2(x2)
+  end
+
+  subgraph hidden layer
+  y1(y1) 
+  y2(y2)
+  y3(y3)
+  end
+
+  subgraph output layer
+  l(l)
+  end
+
   x1(x1) --> y1(y1)
   x2(x2) --> y1(y1)
   x1(x1) --> y2(y2)
   x2(x2) --> y2(y2)
   x1(x1) --> y3(y3)
   x2(x2) --> y3(y3)
-  y1(y1) --> o(l)
-  y2(y2) --> o(l)
-  y3(y3) --> o(l)
+  y1(y1) --> l(l)
+  y2(y2) --> l(l)
+  y3(y3) --> l(l)
 ```
 
 It has only two input nodes, a single output node and in between them three additional nodes forming the hidden layer.
@@ -262,10 +308,75 @@ At this stage, we can definitely compute the jacobian matrix of $\mathbf{\vec{f}
 
 $$
 \mathbf{J} = \begin{pmatrix}
-                \frac{dy_1}{dx_1} & \frac{dy_1}{dx_2} \\
-                \frac{dy_2}{dx_1} & \frac{dy_2}{dx_2} \\
-                \frac{dy_3}{dx_1} & \frac{dy_3}{dx_2} 
+                \frac{\partial y_2}{\partial x_1} & \frac{\partial y_2}{\partial x_2} \\
+                \frac{\partial y_1}{\partial x_1} & \frac{\partial y_1}{\partial x_2} \\
+                \frac{\partial y_3}{\partial x_1} & \frac{\partial y_3}{\partial x_2} 
               \end{pmatrix}
 $$
 
-Now, suppose $\vec{v}$ is the gradient vector of $l$ i.e. $\vec{v} = \left(\frac{dl}{dy_1}, \frac{dl}{dy_2}, \frac{dl}{dy_3}\right)$
+Now, suppose $\vec{v}$ is the gradient vector of $l$ i.e. $\vec{v} = \left(\frac{dl}{dy_1}, \frac{dl}{dy_2}, \frac{dl}{dy_3}\right)'$ and we will assume that we have already computed it. Strange? No problem, I will explain this assumption at the end of this section.
+
+Now, if we take the dot product of $\mathbf{J}^T$ and $\vec{v}$, this is what we are going to get,
+
+\begin{align}
+\mathbf{J}^T \cdot \vec{v} &= \begin{pmatrix} 
+                                \frac{\partial y_1}{\partial x_1} & \frac{\partial y_2}{\partial x_1} & \frac{\partial y_3}{\partial x_1} \\
+                                \frac{\partial y_1}{\partial x_2} & \frac{\partial y_2}{\partial x_2} & \frac{\partial y_3}{\partial x_2} \\
+                              \end{pmatrix} \begin{pmatrix} 
+                                  \frac{\partial l}{\partial y_1} \\
+                                  \frac{\partial l}{\partial y_2} \\
+                                  \frac{\partial l}{\partial y_3} \\
+                              \end{pmatrix} \\
+                           &= \begin{pmatrix} 
+                                  \frac{\partial l}{\partial x_1} \\
+                                  \frac{\partial l}{\partial x_2}
+                              \end{pmatrix} \\
+                           &= \frac{\partial l}{\partial \vec{x}}
+\end{align}
+
+If we observe the dot product carefully, we will notice a series of chain rules being performed. 
+
+Therefore, this vector-jacobian product helps us to compute the gradient of loss function w.r.t the nodes in another layer which, in reality, might be far behind the output node in the computational graph, ofcourse with the help of a known gradient vector for an intermediate layer.
+
+The intermediate gradient vector has been considered to computed beforehand because while performing reverse mode differentiation, we must know the gradient of the output node before computing the gradients of the input nodes which have defined the output node and we have seen it [here](#derivative-through-a-graph) where we have started taking derivatives from the output node. 
+
+Here $\mathbf{\vec{y}}$ is the output of $\mathbf{f(\vec{x})}$, so we can safely take this assumption to understand the theory.
+
+Now, the next part is to compute $\frac{\partial l}{\partial \mathbf{W}}$ which can again be done using,
+
+$$
+\frac{\partial l}{\partial \mathbf{W}} = \frac{\partial \vec{y}}{\partial \mathbf{W}} \times \frac{\partial l}{\partial \vec{y}}
+$$
+
+
+## The training loop
+
+The last and one of the important parts of training a neural network is the *training loop*. Technically it is a `for` loop where in each iteration some steps are performed. Each of these iterations is also called *epoch*.
+
+It is to be noted that, before entering into the loop, all the parameters are randomly initialized.
+
+Below are the steps that are performed within atraining loop.
+
++ step 1: Forward pass - computes loss with the given data samples and last updated network parameters
++ step 2: Backward pass - computes gradients w.r.t all the parameters
++ step 3: Updating parameters - updating the parameters with the help of computed gradients and a learning rate
+
+You can play with the code in this [colab notebook](https://colab.research.google.com/drive/1GgqYuomhrSgXjLJi01soTX-0h6RU7F0J?usp=sharing).
+
+
+# Conclusion
+
+In conclusion, I hope that this post has provided you with valuable insights and information about the learning process of a neural netwok. 
+
+Remember that learning is a never-ending process, and there is always more to discover and explore. If you have any questions or feedback, please feel free to leave a comment or reach out to me directly.
+
+Thank you for taking the time to read this blog, and I hope to see you again soon.
+
+# References
+
++ [Neural Networks: Zero to Hero](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ) by Andrej Karpathy
++ [Calculus on Computational Graphs: Backpropagation](https://colah.github.io/posts/2015-08-Backprop/)
++ [Derivatives, Backpropagation, and Vectorization](http://cs231n.stanford.edu/handouts/derivatives.pdf)
++ [Topological Sort Algorithm | Graph Theory](https://youtu.be/eL-KzMXSXXI)
+
+
