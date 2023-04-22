@@ -172,7 +172,7 @@ The above diagram is typically referred to as a computational graph, where both 
 
 Each box in the graph is called a *node* where a mathematical operation is performed. So, if you imagine, deep neural network is actually such a massive computational graph where, depending on the depth of the network, millions (or may be billions) of mathematical operations are performed.
 
-## Derivative through a graph
+## Differentiation through a graph
 
 Neural networks learn (i.e. update the parameters) using an iterative process where at the core it uses backpropagation algorithm to compute derivative of a loss function.
 
