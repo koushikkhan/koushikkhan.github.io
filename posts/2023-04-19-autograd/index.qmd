@@ -1,13 +1,13 @@
 ---
 title: "Gradient Calculation Through Computational Graph"
-description: "The way, a deep neural network learns"
+description: "The way, deep neural networks learn"
 from: markdown+emoji
 author:
   - name: Koushik Khan
     url: https://koushikkhan.github.io/ 
-date: 03-19-2023
+date: 03-22-2023
 categories: [deep learning]
-image: numbers.jpg
+image: network.jpg
 draft: false
 ---
 
@@ -43,9 +43,9 @@ It's a ratio, where the denominator measures the change in the input $x$ and num
 
 The animation below, made with [geogebra](https://www.geogebra.org), will make the definition easier to understand by giving geometrical sense.
 
-<iframe src="https://www.geogebra.org/calculator/neu54jkc?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+<iframe src="https://www.geogebra.org/calculator/jbdd9y5v?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
-Once you open this animation in full screen mode, you get to see a slider controlling our $h$. 
+Once you open this animation in full screen mode, you get to see a slider controlling our $h$. On the left panel, there is a play button associated with $h$ and it can be used to play the animation. 
 
 If you make $h$ very close to zero, you will understand how the line segment $\overline{PQ}$ gradually becomes the tangent of the curve at point $A$.  
 
@@ -55,7 +55,7 @@ Theoratically, when $h$ is very close to zero, the ratio gives you the value of 
 
 Therefore, the overall definition of derivative of a function, geometrically refers to the tangent value of the curve $y = f(x)$ at the point $x$.
 
-The tangent of a curve at some point $x$ is important as it gives us an idea about the nature of the curve locally. Geometrically, if the tangent line makes an acute angle with the x-axis (which is the case here), then it denotes a positive change on the output and when it makes an obtuse angle, it denotes a negative change on the output. If the tangent line horizontal to the x-axis, then there is no change on the output.
+The tangent of a curve at some point $x$ is important as it gives us an idea about the nature of the curve locally. Geometrically, if the tangent line makes an acute angle with the x-axis (which is the case here), then it denotes a positive change on the output and when it makes an obtuse angle, it denotes a negative change on the output. If the tangent line is horizontal to the x-axis, then there is no change on the output.
 
 Similar information can also be obtained by evaluating the expression of derivative at some point $x$. If the limiting value of the ratio is positive, then obviously, there is a positive change on the output otherwise the change is negative and having a value as zero indicates there is no change on the output.
 
@@ -70,7 +70,7 @@ Such functions take vector (s) as input (s) and return a scalar. Loss functions 
 In this case, derivative of $f(\vec{x})$ will also be a vector of the same dimension, as given below:
 
 $$
-\frac{df}{d\vec{x}} = \left(\frac{df}{dx_1}, \ldots, \frac{df}{dx_n}\right)
+\frac{df}{d\vec{x}} = \left(\frac{df}{dx_1}, \ldots, \frac{df}{dx_n}\right)'
 $$
 
 This vector is often referred to as *gradient vector*.
@@ -82,7 +82,7 @@ Such functions take vector (s) as input (s) and return another vector with diffe
 A simple example can be a function $f: \mathbb{R}^2 \to \mathbb{R}^3$:
 
 + input: $\vec{x} = \left(x_1, x_2\right)$ and a matrix of parameters $\mathbf{W}_{3 \times 2}$
-+ output: $\vec{y} = \mathbf{f(\vec{x})} = \left(w_{11}x_1+w_{12}x_2, w_{21}x_1+w_{22}x_2, w_{31}x_1+w_{32}x_2)\right)$
++ output: $\vec{y} = \mathbf{f(\vec{x})} = \left(w_{11}x_1+w_{12}x_2, w_{21}x_1+w_{22}x_2, w_{31}x_1+w_{32}x_2\right)$
 
 In this case, derivative of $\mathbf{f(\vec{x})}$ will be a matrix of dimension $m \times n$, as given below:
 
@@ -112,9 +112,16 @@ $$
 \frac{dz}{dx} = \frac{dz}{dy} \times \frac{dy}{dx}
 $$
 
-and it is known as the *chain rule* of differentiation.
+and it is known as the *chain rule* of differentiation. 
 
-[Wikipedia](https://en.wikipedia.org/wiki/Chain_rule) has an intutive explanation as given below:
+We perform derivatives in two steps,
+
++ the local derivative of $z$ w.r.t $y$ as $z$ explicitly depends on $y$
++ the local derivative of $y$ w.r.t $x$ as $y$ explicitly depends on $x$
+
+and these are multiplied together to form the actual derivative.
+
+[Wikipedia](https://en.wikipedia.org/wiki/Chain_rule) has an intutive explanation to this as given below:
 
 ::: {.callout-tip}
 ## Understanding chain rule
@@ -123,7 +130,7 @@ Intuitively, the chain rule states that knowing the instantaneous rate of change
 As put by George F. Simmons: "if a car travels twice as fast as a bicycle and the bicycle is four times as fast as a walking man, then the car travels 2 × 4 = 8 times as fast as the man." 
 :::
 
-This chain rule is very important as it powers the backpropagation heavily which will be discussed in the next section.
+This chain rule is very important as it does all the heavy lifting for backpropagation.
 
 ## Partial differentiation
 
@@ -161,9 +168,9 @@ graph LR
   f(f) --> l(l)
 ```
 
-The above diagram is typically referred to as a computational graph, where both **a** and **b** are inputs to the graph and **e** is the output of the graph.
+The above diagram is typically referred to as a computational graph, where both **a** and **b** are inputs to the graph and $l$ is the output of the graph.
 
-Each of the circles in the graph is called a *node* where a mathematical operation is performed. So, if you imagine, deep neural network is actually such a massive computational graph where, depending on the depth of the network, millions (or may be billions) of mathematical operations are performed.
+Each box in the graph is called a *node* where a mathematical operation is performed. So, if you imagine, deep neural network is actually such a massive computational graph where, depending on the depth of the network, millions (or may be billions) of mathematical operations are performed.
 
 ## Derivative through a graph
 
@@ -207,10 +214,19 @@ If we would have started in the forward direction, then the learning algorithm w
 When we have a $'+'$ operation in the graph, like the one below,
 
 ```{mermaid}
-%%| fig-width: 4.5
-graph LR
-  x(x) --> c(z = x+y) -.-> x(x)
-  y(y) --> c(z = x+y) -.-> y(y)
+%%| fig-width: 3.5
+graph RL
+  subgraph input
+  x(x)
+  y(y)
+  end
+
+  subgraph output
+  z(z = x+y)
+  end
+
+  x(x) --> z(z = x+y) -.-> x(x)
+  y(y) --> z(z = x+y) -.-> y(y)
 ```
 
 computing gradients with respect to the input nodes is fairly simple as the backward gradient computation just copies the gradient of the output node to all the input nodes.
@@ -219,10 +235,19 @@ computing gradients with respect to the input nodes is fairly simple as the back
 However, when we have a $'\times'$ operation in the graph, like the next one,
 
 ```{mermaid}
-%%| fig-width: 4.5
-graph LR
-  x(x) --> c(z = x*y) -.-> x(x)
-  y(y) --> c(z = x*y) -.-> y(y)
+%%| fig-width: 3.5
+graph RL
+  subgraph input
+  x(x)
+  y(y)
+  end
+
+  subgraph output
+  z(z = x*y)
+  end
+
+  x(x) --> z(z = x*y) -.-> x(x)
+  y(y) --> z(z = x*y) -.-> y(y)
 ```
 
 gradient of one input node is just the product of the gradient of output node and value of other input node.
@@ -348,6 +373,8 @@ $$
 \frac{\partial l}{\partial \mathbf{W}} = \frac{\partial \vec{y}}{\partial \mathbf{W}} \times \frac{\partial l}{\partial \vec{y}}
 $$
 
+This gives us an idea to implement automatic differentiation (autograd) in code.
+
 
 ## The training loop
 
@@ -361,14 +388,14 @@ Below are the steps that are performed within atraining loop.
 + step 2: Backward pass - computes gradients w.r.t all the parameters
 + step 3: Updating parameters - updating the parameters with the help of computed gradients and a learning rate
 
-You can play with the code in this [colab notebook](https://colab.research.google.com/drive/1GgqYuomhrSgXjLJi01soTX-0h6RU7F0J?usp=sharing).
-
 
 # Conclusion
 
 In conclusion, I hope that this post has provided you with valuable insights and information about the learning process of a neural netwok. 
 
-Remember that learning is a never-ending process, and there is always more to discover and explore. If you have any questions or feedback, please feel free to leave a comment or reach out to me directly.
+Remember that learning is a never-ending process, and there is always more to discover and explore. I have created a [colab notebook](https://colab.research.google.com/drive/1GgqYuomhrSgXjLJi01soTX-0h6RU7F0J?usp=sharing) based on Andrej's lecture on YouTube, which will definitely be helpful to grasp the whole idea.
+
+If you have any questions or feedback, please feel free to leave a comment or reach out to me directly.
 
 Thank you for taking the time to read this blog, and I hope to see you again soon.
 
@@ -378,5 +405,4 @@ Thank you for taking the time to read this blog, and I hope to see you again soo
 + [Calculus on Computational Graphs: Backpropagation](https://colah.github.io/posts/2015-08-Backprop/)
 + [Derivatives, Backpropagation, and Vectorization](http://cs231n.stanford.edu/handouts/derivatives.pdf)
 + [Topological Sort Algorithm | Graph Theory](https://youtu.be/eL-KzMXSXXI)
-
-
++ [A GENTLE INTRODUCTION TO TORCH.AUTOGRAD](https://pytorch.org/tutorials/beginner/blitz/autograd_tutorial.html)

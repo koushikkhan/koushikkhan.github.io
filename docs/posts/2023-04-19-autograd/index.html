@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Koushik Khan">
-<meta name="dcterms.date" content="2023-03-19">
-<meta name="description" content="The way, a deep neural network learns">
+<meta name="dcterms.date" content="2023-03-22">
+<meta name="description" content="The way, deep neural networks learn">
 
 <title>Koushik’s Page - Gradient Calculation Through Computational Graph</title>
 <style>
@@ -146,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
       <h1 class="title">Gradient Calculation Through Computational Graph</h1>
                   <div>
         <div class="description">
-          The way, a deep neural network learns
+          The way, deep neural networks learn
         </div>
       </div>
                           <div class="quarto-categories">
@@ -168,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">March 19, 2023</p>
+        <p class="date">March 22, 2023</p>
       </div>
     </div>
     
@@ -245,14 +245,14 @@ Note
 \]</span></p>
 <p>It’s a ratio, where the denominator measures the change in the input <span class="math inline">\(x\)</span> and numerator measures the change in output <span class="math inline">\(f(x)\)</span>, hence indicating the rate of change in <span class="math inline">\(f\)</span> w.r.t <span class="math inline">\(x\)</span>.</p>
 <p>The animation below, made with <a href="https://www.geogebra.org">geogebra</a>, will make the definition easier to understand by giving geometrical sense.</p>
-<iframe src="https://www.geogebra.org/calculator/neu54jkc?embed" width="800" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+<iframe src="https://www.geogebra.org/calculator/jbdd9y5v?embed" width="800" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
 </iframe>
-<p>Once you open this animation in full screen mode, you get to see a slider controlling our <span class="math inline">\(h\)</span>.</p>
+<p>Once you open this animation in full screen mode, you get to see a slider controlling our <span class="math inline">\(h\)</span>. On the left panel, there is a play button associated with <span class="math inline">\(h\)</span> and it can be used to play the animation.</p>
 <p>If you make <span class="math inline">\(h\)</span> very close to zero, you will understand how the line segment <span class="math inline">\(\overline{PQ}\)</span> gradually becomes the tangent of the curve at point <span class="math inline">\(A\)</span>.</p>
 <p>As you understand, the ratio <span class="math inline">\(\frac{f(x+h) - f(x)}{(x+h) - x}\)</span> is nothing but the <em>tangent</em> or <span class="math inline">\(tan()\)</span> of the angle <span class="math inline">\(\angle{QPP'}\)</span> from the triangle <span class="math inline">\(\triangle{QPP'}\)</span>.</p>
 <p>Theoratically, when <span class="math inline">\(h\)</span> is very close to zero, the ratio gives you the value of the tangent of the curve at the point <span class="math inline">\((x,0)\)</span>.</p>
 <p>Therefore, the overall definition of derivative of a function, geometrically refers to the tangent value of the curve <span class="math inline">\(y = f(x)\)</span> at the point <span class="math inline">\(x\)</span>.</p>
-<p>The tangent of a curve at some point <span class="math inline">\(x\)</span> is important as it gives us an idea about the nature of the curve locally. Geometrically, if the tangent line makes an acute angle with the x-axis (which is the case here), then it denotes a positive change on the output and when it makes an obtuse angle, it denotes a negative change on the output. If the tangent line horizontal to the x-axis, then there is no change on the output.</p>
+<p>The tangent of a curve at some point <span class="math inline">\(x\)</span> is important as it gives us an idea about the nature of the curve locally. Geometrically, if the tangent line makes an acute angle with the x-axis (which is the case here), then it denotes a positive change on the output and when it makes an obtuse angle, it denotes a negative change on the output. If the tangent line is horizontal to the x-axis, then there is no change on the output.</p>
 <p>Similar information can also be obtained by evaluating the expression of derivative at some point <span class="math inline">\(x\)</span>. If the limiting value of the ratio is positive, then obviously, there is a positive change on the output otherwise the change is negative and having a value as zero indicates there is no change on the output.</p>
 <p>Note that, till now, we have discussed only on a scalar valued function with a scalar valued input. We will now try to get some ideas to calculate derivative when either of the function and input or both of them are vector valued.</p>
 <section id="derivative-for-different-type-of-input-mappings" class="level2">
@@ -262,7 +262,7 @@ Note
 <p>Such functions take vector (s) as input (s) and return a scalar. Loss functions like <strong>MSE</strong> or <strong>Cross Entropy</strong> can be couple of examples.</p>
 <p>In this case, derivative of <span class="math inline">\(f(\vec{x})\)</span> will also be a vector of the same dimension, as given below:</p>
 <p><span class="math display">\[
-\frac{df}{d\vec{x}} = \left(\frac{df}{dx_1}, \ldots, \frac{df}{dx_n}\right)
+\frac{df}{d\vec{x}} = \left(\frac{df}{dx_1}, \ldots, \frac{df}{dx_n}\right)'
 \]</span></p>
 <p>This vector is often referred to as <em>gradient vector</em>.</p>
 </section>
@@ -272,7 +272,7 @@ Note
 <p>A simple example can be a function <span class="math inline">\(f: \mathbb{R}^2 \to \mathbb{R}^3\)</span>:</p>
 <ul>
 <li>input: <span class="math inline">\(\vec{x} = \left(x_1, x_2\right)\)</span> and a matrix of parameters <span class="math inline">\(\mathbf{W}_{3 \times 2}\)</span></li>
-<li>output: <span class="math inline">\(\vec{y} = \mathbf{f(\vec{x})} = \left(w_{11}x_1+w_{12}x_2, w_{21}x_1+w_{22}x_2, w_{31}x_1+w_{32}x_2)\right)\)</span></li>
+<li>output: <span class="math inline">\(\vec{y} = \mathbf{f(\vec{x})} = \left(w_{11}x_1+w_{12}x_2, w_{21}x_1+w_{22}x_2, w_{31}x_1+w_{32}x_2\right)\)</span></li>
 </ul>
 <p>In this case, derivative of <span class="math inline">\(\mathbf{f(\vec{x})}\)</span> will be a matrix of dimension <span class="math inline">\(m \times n\)</span>, as given below:</p>
 <p><span class="math display">\[\begin{align}
@@ -297,7 +297,13 @@ Note
 \frac{dz}{dx} = \frac{dz}{dy} \times \frac{dy}{dx}
 \]</span></p>
 <p>and it is known as the <em>chain rule</em> of differentiation.</p>
-<p><a href="https://en.wikipedia.org/wiki/Chain_rule">Wikipedia</a> has an intutive explanation as given below:</p>
+<p>We perform derivatives in two steps,</p>
+<ul>
+<li>the local derivative of <span class="math inline">\(z\)</span> w.r.t <span class="math inline">\(y\)</span> as <span class="math inline">\(z\)</span> explicitly depends on <span class="math inline">\(y\)</span></li>
+<li>the local derivative of <span class="math inline">\(y\)</span> w.r.t <span class="math inline">\(x\)</span> as <span class="math inline">\(y\)</span> explicitly depends on <span class="math inline">\(x\)</span></li>
+</ul>
+<p>and these are multiplied together to form the actual derivative.</p>
+<p><a href="https://en.wikipedia.org/wiki/Chain_rule">Wikipedia</a> has an intutive explanation to this as given below:</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -312,7 +318,7 @@ Understanding chain rule
 <p>As put by George F. Simmons: “if a car travels twice as fast as a bicycle and the bicycle is four times as fast as a walking man, then the car travels 2 × 4 = 8 times as fast as the man.”</p>
 </div>
 </div>
-<p>This chain rule is very important as it powers the backpropagation heavily which will be discussed in the next section.</p>
+<p>This chain rule is very important as it does all the heavy lifting for backpropagation.</p>
 </section>
 <section id="partial-differentiation" class="level2">
 <h2 class="anchored" data-anchor-id="partial-differentiation">Partial differentiation</h2>
@@ -362,8 +368,8 @@ Tip
 </div>
 </div>
 </div>
-<p>The above diagram is typically referred to as a computational graph, where both <strong>a</strong> and <strong>b</strong> are inputs to the graph and <strong>e</strong> is the output of the graph.</p>
-<p>Each of the circles in the graph is called a <em>node</em> where a mathematical operation is performed. So, if you imagine, deep neural network is actually such a massive computational graph where, depending on the depth of the network, millions (or may be billions) of mathematical operations are performed.</p>
+<p>The above diagram is typically referred to as a computational graph, where both <strong>a</strong> and <strong>b</strong> are inputs to the graph and <span class="math inline">\(l\)</span> is the output of the graph.</p>
+<p>Each box in the graph is called a <em>node</em> where a mathematical operation is performed. So, if you imagine, deep neural network is actually such a massive computational graph where, depending on the depth of the network, millions (or may be billions) of mathematical operations are performed.</p>
 <section id="derivative-through-a-graph" class="level2">
 <h2 class="anchored" data-anchor-id="derivative-through-a-graph">Derivative through a graph</h2>
 <p>Neural networks learn (i.e.&nbsp;update the parameters) using an iterative process where at the core it uses backpropagation algorithm to compute derivative of a loss function.</p>
@@ -409,13 +415,22 @@ Tip
 <section id="important-takeways" class="level2">
 <h2 class="anchored" data-anchor-id="important-takeways">Important takeways</h2>
 <p>When we have a <span class="math inline">\('+'\)</span> operation in the graph, like the one below,</p>
-<div class="cell" data-fig-width="4.5">
+<div class="cell" data-fig-width="3.5">
 <div class="cell-output-display">
 <div>
 <p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-3">graph LR
-  x(x) --&gt; c(z = x+y) -.-&gt; x(x)
-  y(y) --&gt; c(z = x+y) -.-&gt; y(y)
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-3">graph RL
+  subgraph input
+  x(x)
+  y(y)
+  end
+
+  subgraph output
+  z(z = x+y)
+  end
+
+  x(x) --&gt; z(z = x+y) -.-&gt; x(x)
+  y(y) --&gt; z(z = x+y) -.-&gt; y(y)
 </pre>
 <div id="mermaid-tooltip-3" class="mermaidTooltip">
 
@@ -426,13 +441,22 @@ Tip
 </div>
 <p>computing gradients with respect to the input nodes is fairly simple as the backward gradient computation just copies the gradient of the output node to all the input nodes.</p>
 <p>However, when we have a <span class="math inline">\('\times'\)</span> operation in the graph, like the next one,</p>
-<div class="cell" data-fig-width="4.5">
+<div class="cell" data-fig-width="3.5">
 <div class="cell-output-display">
 <div>
 <p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-4">graph LR
-  x(x) --&gt; c(z = x*y) -.-&gt; x(x)
-  y(y) --&gt; c(z = x*y) -.-&gt; y(y)
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-4">graph RL
+  subgraph input
+  x(x)
+  y(y)
+  end
+
+  subgraph output
+  z(z = x*y)
+  end
+
+  x(x) --&gt; z(z = x*y) -.-&gt; x(x)
+  y(y) --&gt; z(z = x*y) -.-&gt; y(y)
 </pre>
 <div id="mermaid-tooltip-4" class="mermaidTooltip">
 
@@ -569,6 +593,7 @@ Note
 <p><span class="math display">\[
 \frac{\partial l}{\partial \mathbf{W}} = \frac{\partial \vec{y}}{\partial \mathbf{W}} \times \frac{\partial l}{\partial \vec{y}}
 \]</span></p>
+<p>This gives us an idea to implement automatic differentiation (autograd) in code.</p>
 </section>
 <section id="the-training-loop" class="level2">
 <h2 class="anchored" data-anchor-id="the-training-loop">The training loop</h2>
@@ -580,13 +605,13 @@ Note
 <li>step 2: Backward pass - computes gradients w.r.t all the parameters</li>
 <li>step 3: Updating parameters - updating the parameters with the help of computed gradients and a learning rate</li>
 </ul>
-<p>You can play with the code in this <a href="https://colab.research.google.com/drive/1GgqYuomhrSgXjLJi01soTX-0h6RU7F0J?usp=sharing">colab notebook</a>.</p>
 </section>
 </section>
 <section id="conclusion" class="level1">
 <h1>Conclusion</h1>
 <p>In conclusion, I hope that this post has provided you with valuable insights and information about the learning process of a neural netwok.</p>
-<p>Remember that learning is a never-ending process, and there is always more to discover and explore. If you have any questions or feedback, please feel free to leave a comment or reach out to me directly.</p>
+<p>Remember that learning is a never-ending process, and there is always more to discover and explore. I have created a <a href="https://colab.research.google.com/drive/1GgqYuomhrSgXjLJi01soTX-0h6RU7F0J?usp=sharing">colab notebook</a> based on Andrej’s lecture on YouTube, which will definitely be helpful to grasp the whole idea.</p>
+<p>If you have any questions or feedback, please feel free to leave a comment or reach out to me directly.</p>
 <p>Thank you for taking the time to read this blog, and I hope to see you again soon.</p>
 </section>
 <section id="references" class="level1">
@@ -596,6 +621,7 @@ Note
 <li><a href="https://colah.github.io/posts/2015-08-Backprop/">Calculus on Computational Graphs: Backpropagation</a></li>
 <li><a href="http://cs231n.stanford.edu/handouts/derivatives.pdf">Derivatives, Backpropagation, and Vectorization</a></li>
 <li><a href="https://youtu.be/eL-KzMXSXXI">Topological Sort Algorithm | Graph Theory</a></li>
+<li><a href="https://pytorch.org/tutorials/beginner/blitz/autograd_tutorial.html">A GENTLE INTRODUCTION TO TORCH.AUTOGRAD</a></li>
 </ul>
 
 
