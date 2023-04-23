@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.336">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,7 +20,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -65,7 +65,22 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -81,57 +96,57 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Koushik’s Page</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../posts.html">
+    <a class="nav-link" href="../../posts.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../projects.html">
+    <a class="nav-link" href="../../projects.html" rel="" target="">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../skills.html">
+    <a class="nav-link" href="../../skills.html" rel="" target="">
  <span class="menu-text">Skills</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resume.html">
+    <a class="nav-link" href="../../resume.html" rel="" target="">
  <span class="menu-text">Resume</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://linkedin.com/in/koushikkhan/"><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://linkedin.com/in/koushikkhan/" rel="" target=""><i class="bi bi-linkedin" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.twitter.com/__koushikkhan__/"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://www.twitter.com/koushikkhan/" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.github.com/koushikkhan/"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://www.github.com/koushikkhan/" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -158,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Koushik Khan </p>
+               <p><a href="https://koushikkhan.github.io/">Koushik Khan</a> </p>
             </div>
     </div>
       
@@ -206,19 +221,19 @@ ul.task-list li input[type="checkbox"] {
 <p>It was popularized early in the 20th century, early forms were used in the 1700s. The first use is credited to John Arbuthnot (1710) followed by Pierre-Simon Laplace (1770s), in analyzing the human sex ratio at birth.</p>
 <p>The word <em>Hypothesis</em> means belief about something. People from various domains like theoretical research, medical industry, consumer packaged goods (CPG) industry etc., mainly deal with data to boost-up their research works, or to maximize their revenue, whatever may be the case, they use this important tool to justify their believes. Now, here the question comes…what are these believes about? The answer is parameters. For example: suppose you are going to calculate the average height of people in a district, which you can by measuring the height of each people and taking the average or by taking a sample of people from that district, calculating the sample average and making an inference about the average height.</p>
 <p>If you go by the first approach, you need patience, man power, money and of course a lot of time, whereas in the second approach you can get a ruff estimate of the actual average height which will help you to draw an inference.</p>
-<p>Now, clearly the actual average height is unknown as long as you are not dealing with all the people in that district. This unknown average height is called a <strong>parameter</strong>, often expressed as <span class="math inline">\(\mu\)</span> and the sample average is known as <strong>statistic</strong>, expressed as <span class="math inline">\(\bar{X}\)</span>.</p>
+<p>Now, clearly the actual average height is unknown as long as you are not dealing with all the people in that district. This unknown average height is called a <strong>parameter</strong>, often expressed as <span class="math inline">\mu</span> and the sample average is known as <strong>statistic</strong>, expressed as <span class="math inline">\bar{X}</span>.</p>
 <p>By using a statistic, we try to get some plausible guesses about our parameter of interest. Since, we are guessing or having some believes about the parameter, these believes must be justified logically by the help of some mathematical tools as well as data. Hypothesis Testing comes here to rescue us.</p>
 </section>
 <section id="an-intuitive-explanation" class="level1">
 <h1>An Intuitive Explanation</h1>
-<p>Before going into more rigorous definitions, let’s understand by taking another example. Suppose, by conducting a small survey, you picked up ten people having the heights (in ft.) as <span class="math inline">\(6.8, 7.3, 6.0, 7.0, 6.3, 7.0, 6.5, 6.5, 7.0, 7.4\)</span>. They are very tall, aren’t they? <span class="emoji" data-emoji="thinking">🤔</span></p>
+<p>Before going into more rigorous definitions, let’s understand by taking another example. Suppose, by conducting a small survey, you picked up ten people having the heights (in ft.) as <span class="math inline">6.8, 7.3, 6.0, 7.0, 6.3, 7.0, 6.5, 6.5, 7.0, 7.4</span>. They are very tall, aren’t they? <span class="emoji" data-emoji="thinking">🤔</span></p>
 <p>Well, this is your artificial survey data, let’s not bother about actual height values. You can calculate the average which is 6.8 ft. But truly speaking, you won’t be satisfied by having a belief that actual average height of the people in that district is 6.8 ft. It can be for that specific sample you have collected. If you take another sample of size 10, you may get a different estimate…right? Yes, so what you have a achieved, is the random guess about the parameter (unknown height) based on a random sample.</p>
 <p>Now, let’s define the various hypotheses that will be in your mind soon:</p>
 <ul>
-<li><p><strong>The Null Hypothesis</strong>, <span class="math inline">\(H_0: \mu = 6.4 = \mu_0\)</span></p></li>
-<li><p><strong>The Alternate Hypothesis</strong>, <span class="math inline">\(H_1: \mu &gt; 6.4\)</span></p></li>
+<li><p><strong>The Null Hypothesis</strong>, <span class="math inline">H_0: \mu = 6.4 = \mu_0</span></p></li>
+<li><p><strong>The Alternate Hypothesis</strong>, <span class="math inline">H_1: \mu &gt; 6.4</span></p></li>
 </ul>
-<p>Note that, <span class="math inline">\(\mu\)</span> is used here to parametrize the scenario. The type of alternate hypothesis we are addressing here, is also called <em>greater than type hypothesis</em> and hence the test is called <em>greater than type test</em>.&nbsp;</p>
+<p>Note that, <span class="math inline">\mu</span> is used here to parametrize the scenario. The type of alternate hypothesis we are addressing here, is also called <em>greater than type hypothesis</em> and hence the test is called <em>greater than type test</em>.&nbsp;</p>
 <p>Null hypothesis is the prior belief you have about the parameter, possibly by conducting other surveys in the adjacent districts i.e.&nbsp;by observing people from other districts, you believe average height may be 6 ft.. The alternate hypothesis is the belief you have gathered from the sample or the data. Since we are guessing based on the data in our hand, it’s very likely to guess wrong or in another words, we may encounter errors.</p>
 </section>
 <section id="the-two-types-of-error" class="level1">
@@ -231,8 +246,8 @@ ul.task-list li input[type="checkbox"] {
 <p>These two situations are generally expressed in terms of probabilities.</p>
 <p>Let’s see how they have been defined in the literature,</p>
 <ul>
-<li><p>Probability of type-I error: <span class="math inline">\(P(\text{Rejecting} \quad H_0 \quad \text{when it is true}) = \alpha\)</span></p></li>
-<li><p>Probability of type-II error: <span class="math inline">\(P(\text{Failing to reject} \quad H_0 \quad \text{when it is false}) = \beta\)</span></p></li>
+<li><p>Probability of type-I error: <span class="math inline">P(\text{Rejecting} \quad H_0 \quad \text{when it is true}) = \alpha</span></p></li>
+<li><p>Probability of type-II error: <span class="math inline">P(\text{Failing to reject} \quad H_0 \quad \text{when it is false}) = \beta</span></p></li>
 </ul>
 <section id="some-real-life-examples" class="level2">
 <h2 class="anchored" data-anchor-id="some-real-life-examples">Some Real Life Examples</h2>
@@ -240,12 +255,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p>Suppose the Honorable judge is about to give his verdict to the accused. Now let’s assume that our null hypothesis or prior belief about that person is, <em>the person is not guilty</em>. If the judge’s verdict is against the accused even if the person has really not done anything wrong, then it is the <em>Type-I error</em>, whereas if the verdict is in favor of the accused when in reality the person has done something wrong, then it is the <em>Type-II error</em>. If you’d think for a moment, you would understand the fact that Type-I error is more severe in nature.</p></li>
 <li><p>This one is going to be of great impotance for the society. We know that almost every country has their own military radar system to detect any missilies aimed at them. Assume that, the null hypothesis is <em>the enemy is in war mode, they will attack</em>. Now, could you imagine the situation, if the military radar system would have failed to detect the missiles that had been aimed at your country and they were few miles away from their target…the lives of innocent citizens would have been devastated.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="radar_not_detecting.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">fig-1</figcaption><p></p>
-</figure>
-</div></li>
+<img src="radar_not_detecting.png" class="img-fluid" alt="fig-1"></li>
 </ul>
 <p>Having understood the importance of Type-I error in decision making, the usual tendency of the experimenter is to keep the chance of making Type-I error fixed at a very low level, which, by years of research and experimentations, has been chosen as 1% or 5%, depending on the situation.</p>
 </section>
@@ -253,41 +263,41 @@ ul.task-list li input[type="checkbox"] {
 <section id="the-testing-criteria-or-the-decision-rule" class="level1">
 <h1>The Testing Criteria or The Decision Rule</h1>
 <p>Having identified the possible scenarioes which may take us to the wrong direction, it’s time to decide which one to go for, based on the current data in hand. The tool which will enable us to make a decision, is going to be the <strong>statistic</strong> along with a decision rule.</p>
-<p>Having the data ready, we can find the realization of the statistic, i.e.&nbsp;<span class="math inline">\(\bar{x}\)</span> and to support our null hypothesis, we are supposed to compare this <span class="math inline">\(\bar{x}\)</span> and <span class="math inline">\(\mu_0\)</span>. Here we perform an additive comparison i.e.&nbsp;we measure the difference between these two values. If the difference is too high, then it depicts the fact that our data is not supporting the null hypothesis.</p>
+<p>Having the data ready, we can find the realization of the statistic, i.e.&nbsp;<span class="math inline">\bar{x}</span> and to support our null hypothesis, we are supposed to compare this <span class="math inline">\bar{x}</span> and <span class="math inline">\mu_0</span>. Here we perform an additive comparison i.e.&nbsp;we measure the difference between these two values. If the difference is too high, then it depicts the fact that our data is not supporting the null hypothesis.</p>
 <p>Wait…, the phrase <em>too high</em> is subjective, isn’t it? That means the threshold to judge whether the difference is <em>too high</em> or not, depends on the experimenter.</p>
-<p>To avoid this problem, Statisticians came up with a universal procedure to compute the threshold (sometimes called <em>cut-off</em> value). It is probabilistic in nature which utilizes the the sampling distribution of the statistic along with <span class="math inline">\(\alpha\)</span>.</p>
-<p>Before going to understand the computation process, let’s modify the statistic. Instead of <span class="math inline">\(\bar{X}\)</span>, we are going to take <span class="math inline">\(\frac{\bar{X} - \mu_0}{\sqrt{\frac{\sigma^2}{n}}}\)</span>. From the theory of sampling distribution, if <span class="math inline">\(\bar{X} \sim N(\mu_0, \sigma^2)\)</span>, then <span class="math inline">\(Z = \frac{\bar{X} - \mu_0}{\sqrt{\frac{\sigma^2}{n}}} \sim N(0, 1)\)</span> i.e.&nbsp;the transformation makes the distribution simplified and easy to deal with.</p>
-<p>To compute a universal threshold or cut-off point (<span class="math inline">\(\tau_{\alpha}\)</span>), <span class="math inline">\(\alpha\)</span> is first kept fixed at a certain level, usually 0.01 or 0.05, then a quantile value is computed such that beyond the quantile area under the curve is equal to <span class="math inline">\(\alpha\)</span>. The figure, given below, will make the idea clear.</p>
+<p>To avoid this problem, Statisticians came up with a universal procedure to compute the threshold (sometimes called <em>cut-off</em> value). It is probabilistic in nature which utilizes the the sampling distribution of the statistic along with <span class="math inline">\alpha</span>.</p>
+<p>Before going to understand the computation process, let’s modify the statistic. Instead of <span class="math inline">\bar{X}</span>, we are going to take <span class="math inline">\frac{\bar{X} - \mu_0}{\sqrt{\frac{\sigma^2}{n}}}</span>. From the theory of sampling distribution, if <span class="math inline">\bar{X} \sim N(\mu_0, \sigma^2)</span>, then <span class="math inline">Z = \frac{\bar{X} - \mu_0}{\sqrt{\frac{\sigma^2}{n}}} \sim N(0, 1)</span> i.e.&nbsp;the transformation makes the distribution simplified and easy to deal with.</p>
+<p>To compute a universal threshold or cut-off point (<span class="math inline">\tau_{\alpha}</span>), <span class="math inline">\alpha</span> is first kept fixed at a certain level, usually 0.01 or 0.05, then a quantile value is computed such that beyond the quantile area under the curve is equal to <span class="math inline">\alpha</span>. The figure, given below, will make the idea clear.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="cutoff.jpg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">fig-2</figcaption><p></p>
+<figcaption class="figure-caption">fig-2</figcaption>
 </figure>
 </div>
-<p>As we can see in the above figure, the universal cut-off is 2.32. Now we are in a situation to make a decision. If the realization of <span class="math inline">\(\frac{\bar{X} - \mu_0}{\sqrt{\frac{\sigma^2}{n}}}\)</span> is more than <span class="math inline">\(\tau_{\alpha}=2.32\)</span>, then we can say that the data is not supporting <span class="math inline">\(H_0\)</span>, hence we should reject it, otherwise we can accept <span class="math inline">\(H_0\)</span>.</p>
-<p>For the survey data example, sample size is <span class="math inline">\(n=10\)</span>, the sample average is <span class="math inline">\(\bar{x}=6.8\)</span> ft. and assuming <span class="math inline">\(\sigma\)</span> to be known as 0.45 ft., the realization of the statistic, also known as <span class="math inline">\(z^{\star}\)</span>, is <span class="math inline">\(\frac{\sqrt{10} \times (6.8 - 6.4)}{0.45}=2.8\)</span> and it is certainly larger than <span class="math inline">\(\tau_{\alpha}\)</span>. Hence, the average height of people of that district cannot be taken as 6 ft., based on the sample in our hand.</p>
+<p>As we can see in the above figure, the universal cut-off is 2.32. Now we are in a situation to make a decision. If the realization of <span class="math inline">\frac{\bar{X} - \mu_0}{\sqrt{\frac{\sigma^2}{n}}}</span> is more than <span class="math inline">\tau_{\alpha}=2.32</span>, then we can say that the data is not supporting <span class="math inline">H_0</span>, hence we should reject it, otherwise we can accept <span class="math inline">H_0</span>.</p>
+<p>For the survey data example, sample size is <span class="math inline">n=10</span>, the sample average is <span class="math inline">\bar{x}=6.8</span> ft. and assuming <span class="math inline">\sigma</span> to be known as 0.45 ft., the realization of the statistic, also known as <span class="math inline">z^{\star}</span>, is <span class="math inline">\frac{\sqrt{10} \times (6.8 - 6.4)}{0.45}=2.8</span> and it is certainly larger than <span class="math inline">\tau_{\alpha}</span>. Hence, the average height of people of that district cannot be taken as 6 ft., based on the sample in our hand.</p>
 </section>
 <section id="the-probabilistic-decision-rule" class="level1">
 <h1>The Probabilistic Decision Rule</h1>
-<p>The decision we made in the last section, was based on a threshold or a cut-off point. It could have been represented in an alternative way, by using a two probability scores, one of which is known to us i.e.&nbsp;<span class="math inline">\(\alpha = 0.01\)</span>.</p>
-<p>The second one is computed as the area under the density curve beyond the observed value of the statistic <span class="math inline">\(z^{\star}\)</span> i.e.&nbsp;<span class="math inline">\(p = P\left[Z &gt; z^{\star}\right]\)</span>, considering null hypothesis to be true, where <span class="math inline">\(Z \sim N(0, 1)\)</span>. This <span class="math inline">\(p\)</span> is known as <em>p-value</em> of the test.</p>
+<p>The decision we made in the last section, was based on a threshold or a cut-off point. It could have been represented in an alternative way, by using a two probability scores, one of which is known to us i.e.&nbsp;<span class="math inline">\alpha = 0.01</span>.</p>
+<p>The second one is computed as the area under the density curve beyond the observed value of the statistic <span class="math inline">z^{\star}</span> i.e.&nbsp;<span class="math inline">p = P\left[Z &gt; z^{\star}\right]</span>, considering null hypothesis to be true, where <span class="math inline">Z \sim N(0, 1)</span>. This <span class="math inline">p</span> is known as <em>p-value</em> of the test.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="p_value.jpg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">fig-3</figcaption><p></p>
+<figcaption class="figure-caption">fig-3</figcaption>
 </figure>
 </div>
-<p>In the above figure, <em>blue</em> region is the <em>p-value</em> and the <em>red</em> region is the <span class="math inline">\(\alpha\)</span>. Note that, the realization of the statistic i.e.&nbsp;<span class="math inline">\(z^{\star}\)</span> is larger than the cut-off, that is why the p-value is smaller than <span class="math inline">\(\alpha\)</span>.</p>
+<p>In the above figure, <em>blue</em> region is the <em>p-value</em> and the <em>red</em> region is the <span class="math inline">\alpha</span>. Note that, the realization of the statistic i.e.&nbsp;<span class="math inline">z^{\star}</span> is larger than the cut-off, that is why the p-value is smaller than <span class="math inline">\alpha</span>.</p>
 <p>Therefore, in an alternative way, we can say that if p-value of the test is smaller than probability of Type-I error, then we should reject the null hypothesis, otherwise it should be accepted. Almost all the modern analytics tools provide p-value for any kind of hypothesis test.</p>
 </section>
 <section id="assumption-of-the-test-and-conclusion" class="level1">
 <h1>Assumption of the Test and Conclusion</h1>
-<p>The test I have discussed here, is based on a single assumption: pupulation variance (<span class="math inline">\(\sigma^2\)</span>) is fixed and known beforehand. It could be unknow as well, in that case, first we had to estimate it from the data. It would also change the distribution of the test statistic.</p>
+<p>The test I have discussed here, is based on a single assumption: pupulation variance (<span class="math inline">\sigma^2</span>) is fixed and known beforehand. It could be unknow as well, in that case, first we had to estimate it from the data. It would also change the distribution of the test statistic.</p>
 <p>Regarding the final conclusion: well, we have seen that the null hypothesis is not supported by the data in our hand, so it should not be accepted.</p>
 </section>
 <section id="future-scope" class="level1">
 <h1>Future Scope</h1>
-<p>In this article, testing procedure for a specific setup has been covered. There are lot more to look into, specifically the scenarios when population variability measure <span class="math inline">\(\sigma\)</span> is not known, comparing variabilities from two different populations etc. Those things will be covered in near future.</p>
+<p>In this article, testing procedure for a specific setup has been covered. There are lot more to look into, specifically the scenarios when population variability measure <span class="math inline">\sigma</span> is not known, comparing variabilities from two different populations etc. Those things will be covered in near future.</p>
 <p>Note that alternative hypothesis can also have three different variants: <em>less than type</em> and <em>unequal type</em>, we have only covered one.</p>
 <p>Preview Image Courtsy: <a href="https://unsplash.com/photos/GQ327RPuxhI">Susan Holt Simpson</a></p>
 
@@ -437,9 +447,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -504,6 +528,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {

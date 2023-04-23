@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.336">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,7 +20,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -64,11 +64,27 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<meta name="mermaid-theme" content="default">
 <script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
 <script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -84,57 +100,57 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Koushik’s Page</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../posts.html">
+    <a class="nav-link" href="../../posts.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../projects.html">
+    <a class="nav-link" href="../../projects.html" rel="" target="">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../skills.html">
+    <a class="nav-link" href="../../skills.html" rel="" target="">
  <span class="menu-text">Skills</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resume.html">
+    <a class="nav-link" href="../../resume.html" rel="" target="">
  <span class="menu-text">Resume</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://linkedin.com/in/koushikkhan/"><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://linkedin.com/in/koushikkhan/" rel="" target=""><i class="bi bi-linkedin" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.twitter.com/__koushikkhan__/"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://www.twitter.com/koushikkhan/" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.github.com/koushikkhan/"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://www.github.com/koushikkhan/" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -161,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Koushik Khan </p>
+               <p><a href="https://koushikkhan.github.io/">Koushik Khan</a> </p>
             </div>
     </div>
       
@@ -189,8 +205,8 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#derivative-for-different-type-of-input-mappings" id="toc-derivative-for-different-type-of-input-mappings" class="nav-link" data-scroll-target="#derivative-for-different-type-of-input-mappings">Derivative for different type of input mappings</a>
   <ul class="collapse">
-  <li><a href="#functions-of-type-f-mathbbrn-to-mathbbr-vector-in-scalar-out" id="toc-functions-of-type-f-mathbbrn-to-mathbbr-vector-in-scalar-out" class="nav-link" data-scroll-target="#functions-of-type-f-mathbbrn-to-mathbbr-vector-in-scalar-out">Functions of type <span class="math inline">\(f: \mathbb{R}^n \to \mathbb{R}\)</span>, vector in, scalar out</a></li>
-  <li><a href="#functions-of-type-f-mathbbrn-to-mathbbrm-vector-in-vector-out" id="toc-functions-of-type-f-mathbbrn-to-mathbbrm-vector-in-vector-out" class="nav-link" data-scroll-target="#functions-of-type-f-mathbbrn-to-mathbbrm-vector-in-vector-out">Functions of type <span class="math inline">\(f: \mathbb{R}^n \to \mathbb{R}^m\)</span>, vector in, vector out</a></li>
+  <li><a href="#functions-of-type-f-mathbbrn-to-mathbbr---vector-in-scalar-out" id="toc-functions-of-type-f-mathbbrn-to-mathbbr---vector-in-scalar-out" class="nav-link" data-scroll-target="#functions-of-type-f-mathbbrn-to-mathbbr---vector-in-scalar-out">Functions of type <span class="math inline">f: \mathbb{R}^n \to \mathbb{R}</span> - vector in, scalar out</a></li>
+  <li><a href="#functions-of-type-f-mathbbrn-to-mathbbrm---vector-in-vector-out" id="toc-functions-of-type-f-mathbbrn-to-mathbbrm---vector-in-vector-out" class="nav-link" data-scroll-target="#functions-of-type-f-mathbbrn-to-mathbbrm---vector-in-vector-out">Functions of type <span class="math inline">f: \mathbb{R}^n \to \mathbb{R}^m</span> - vector in, vector out</a></li>
   </ul></li>
   <li><a href="#the-chain-rule-of-differentiation" id="toc-the-chain-rule-of-differentiation" class="nav-link" data-scroll-target="#the-chain-rule-of-differentiation">The chain rule of differentiation</a></li>
   <li><a href="#partial-differentiation" id="toc-partial-differentiation" class="nav-link" data-scroll-target="#partial-differentiation">Partial differentiation</a></li>
@@ -217,65 +233,65 @@ ul.task-list li input[type="checkbox"] {
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
 <p>In our high school mathematics, we have learnt <em>Differential Calculus</em>, which has introduced the term ‘differentiation’ and ‘derivative’.</p>
-<p>The concept of computing derivative has played a significant role in today’s deep learning algorithms among many of its useful real life applications.</p>
+<p>The concept of differentiating a function has played a significant role in today’s deep learning algorithms among many of its useful real life applications.</p>
 <p>I this post, I will revisit the core idea of computing derivative by looking at the geometrical interpretation of it and simultaneously try to put some light to the idea that is used behind the efficient learning process of a neural network, also known as <em>backpropagation</em>.</p>
 </section>
 <section id="differentiation" class="level1">
 <h1>Differentiation</h1>
-<p>The term <em>differentiation</em> refers to the process of applying a mathematical operator on a function <span class="math inline">\(f\)</span>, with respect to its input <span class="math inline">\(x\)</span> and the output of differentiation is referred to as <em>derivative</em> (sometimes <em>gradient</em>) and it’s denoted by <span class="math inline">\(\frac{df}{dx}\)</span>.</p>
-<p>Now, let’s assume that there is a function <span class="math inline">\(f()\)</span> that can be differentiated w.r.t to its input <span class="math inline">\(x\)</span> i.e.&nbsp;derivative of <span class="math inline">\(f\)</span> exists at some point <span class="math inline">\(x\)</span> (in <span class="math inline">\(f\)</span>’s domain of definition).</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<p>The term <em>differentiation</em> refers to the process of applying a mathematical operator on a function <span class="math inline">f</span>, with respect to its input <span class="math inline">x</span> and the output of differentiation is referred to as <em>derivative</em> (sometimes <em>gradient</em>) and it’s denoted by <span class="math inline">\frac{df}{dx}</span>.</p>
+<p>Now, let’s assume that there is a function <span class="math inline">f()</span> that can be differentiated w.r.t to its input <span class="math inline">x</span> i.e.&nbsp;derivative of <span class="math inline">f</span> exists at some point <span class="math inline">x</span> (in <span class="math inline">f</span>’s domain of definition).</p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>There are functions, for which derivative does not exist at some point. For example, we cannot perform differentiation of <span class="math inline">\(y = |x|\)</span> at point <span class="math inline">\(x=0\)</span>.</p>
+<p>There are functions, for which derivative does not exist at some point. For example, we cannot perform differentiation of <span class="math inline">y = |x|</span> at point <span class="math inline">x=0</span>.</p>
 <p>Read about conditions for differentiability if required.</p>
 </div>
 </div>
-<p>The process of differentiation may return <em>another function</em>, say, <span class="math inline">\(g()\)</span> or a <em>constant</em> depending on the structure of the function <span class="math inline">\(f\)</span>.</p>
-<p>The definition of drivative of a function <span class="math inline">\(f(.)\)</span> w.r.t the input <span class="math inline">\(x\)</span> is given below:</p>
-<p><span class="math display">\[
+<p>The process of differentiation may return <em>another function</em>, say, <span class="math inline">g()</span> or a <em>constant</em> depending on the structure of the function <span class="math inline">f</span>.</p>
+<p>The definition of drivative of a function <span class="math inline">f(.)</span> w.r.t the input <span class="math inline">x</span> is given below:</p>
+<p><span class="math display">
 \frac{df}{dx} = \lim_{h \to 0} \frac{f(x+h) - f(x)}{(x+h) - x}
-\]</span></p>
-<p>It’s a ratio, where the denominator measures the change in the input <span class="math inline">\(x\)</span> and numerator measures the change in output <span class="math inline">\(f(x)\)</span>, hence indicating the rate of change in <span class="math inline">\(f\)</span> w.r.t <span class="math inline">\(x\)</span>.</p>
-<p>The animation below, made with <a href="https://www.geogebra.org">geogebra</a>, will make the definition easier to understand by giving geometrical sense.</p>
+</span></p>
+<p>It’s a ratio, where the denominator measures the change in the input <span class="math inline">x</span> and numerator measures the change in output <span class="math inline">f(x)</span>, hence indicating the rate of change in <span class="math inline">f</span> w.r.t <span class="math inline">x</span>.</p>
+<p>The animation below, made with <a href="https://www.geogebra.org">geogebra</a>, will make the definition easier to understand by giving geometrical sense, especially the limiting nature of the ratio.</p>
 <iframe src="https://www.geogebra.org/calculator/jbdd9y5v?embed" width="800" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
 </iframe>
-<p>Once you open this animation in full screen mode, you get to see a slider controlling our <span class="math inline">\(h\)</span>. On the left panel, there is a play button associated with <span class="math inline">\(h\)</span> and it can be used to play the animation.</p>
-<p>If you make <span class="math inline">\(h\)</span> very close to zero, you will understand how the line segment <span class="math inline">\(\overline{PQ}\)</span> gradually becomes the tangent of the curve at point <span class="math inline">\(A\)</span>.</p>
-<p>As you understand, the ratio <span class="math inline">\(\frac{f(x+h) - f(x)}{(x+h) - x}\)</span> is nothing but the <em>tangent</em> or <span class="math inline">\(tan()\)</span> of the angle <span class="math inline">\(\angle{QPP'}\)</span> from the triangle <span class="math inline">\(\triangle{QPP'}\)</span>.</p>
-<p>Theoratically, when <span class="math inline">\(h\)</span> is very close to zero, the ratio gives you the value of the tangent of the curve at the point <span class="math inline">\((x,0)\)</span>.</p>
-<p>Therefore, the overall definition of derivative of a function, geometrically refers to the tangent value of the curve <span class="math inline">\(y = f(x)\)</span> at the point <span class="math inline">\(x\)</span>.</p>
-<p>The tangent of a curve at some point <span class="math inline">\(x\)</span> is important as it gives us an idea about the nature of the curve locally. Geometrically, if the tangent line makes an acute angle with the x-axis (which is the case here), then it denotes a positive change on the output and when it makes an obtuse angle, it denotes a negative change on the output. If the tangent line is horizontal to the x-axis, then there is no change on the output.</p>
-<p>Similar information can also be obtained by evaluating the expression of derivative at some point <span class="math inline">\(x\)</span>. If the limiting value of the ratio is positive, then obviously, there is a positive change on the output otherwise the change is negative and having a value as zero indicates there is no change on the output.</p>
+<p>Once you open this animation in full screen mode, you get to see a slider controlling our <span class="math inline">h</span>. On the left panel, there is a play button associated with <span class="math inline">h</span> and it can be used to play the animation.</p>
+<p>If you make <span class="math inline">h</span> very close to zero, you will understand how the line segment <span class="math inline">\overline{PQ}</span> gradually becomes the tangent of the curve at point <span class="math inline">A</span>.</p>
+<p>As you understand, the ratio <span class="math inline">\frac{f(x+h) - f(x)}{(x+h) - x}</span> is nothing but the <em>tangent</em> or <span class="math inline">tan()</span> of the angle <span class="math inline">\angle{QPP'}</span> from the triangle <span class="math inline">\triangle{QPP'}</span>.</p>
+<p>Theoratically, when <span class="math inline">h</span> is very close to zero, the ratio gives you the value of the tangent of the curve at the point <span class="math inline">(x,0)</span>.</p>
+<p>Therefore, the overall definition of derivative of a function, geometrically refers to the tangent value of the curve <span class="math inline">y = f(x)</span> at the point <span class="math inline">x</span>.</p>
+<p>The tangent of a curve at some point <span class="math inline">x</span> is important as it gives us an idea about the nature of the curve locally. Geometrically, if the tangent line makes an acute angle with the x-axis (which is the case here), then it denotes a positive change on the output and when it makes an obtuse angle, it denotes a negative change on the output. If the tangent line is horizontal to the x-axis, then there is no change on the output.</p>
+<p>Similar information can also be obtained by evaluating the expression of derivative at some point <span class="math inline">x</span>. If the limiting value of the ratio is positive, then obviously, there is a positive change on the output otherwise the change is negative and having a value as zero indicates there is no change on the output.</p>
 <p>Note that, till now, we have discussed only on a scalar valued function with a scalar valued input. We will now try to get some ideas to calculate derivative when either of the function and input or both of them are vector valued.</p>
 <section id="derivative-for-different-type-of-input-mappings" class="level2">
 <h2 class="anchored" data-anchor-id="derivative-for-different-type-of-input-mappings">Derivative for different type of input mappings</h2>
-<section id="functions-of-type-f-mathbbrn-to-mathbbr-vector-in-scalar-out" class="level3">
-<h3 class="anchored" data-anchor-id="functions-of-type-f-mathbbrn-to-mathbbr-vector-in-scalar-out">Functions of type <span class="math inline">\(f: \mathbb{R}^n \to \mathbb{R}\)</span>, vector in, scalar out</h3>
+<section id="functions-of-type-f-mathbbrn-to-mathbbr---vector-in-scalar-out" class="level3">
+<h3 class="anchored" data-anchor-id="functions-of-type-f-mathbbrn-to-mathbbr---vector-in-scalar-out">Functions of type <span class="math inline">f: \mathbb{R}^n \to \mathbb{R}</span> - vector in, scalar out</h3>
 <p>Such functions take vector (s) as input (s) and return a scalar. Loss functions like <strong>MSE</strong> or <strong>Cross Entropy</strong> can be couple of examples.</p>
-<p>In this case, derivative of <span class="math inline">\(f(\vec{x})\)</span> will also be a vector of the same dimension, as given below:</p>
-<p><span class="math display">\[
+<p>In this case, derivative of <span class="math inline">f(\vec{x})</span> will also be a vector of the same dimension, as given below:</p>
+<p><span class="math display">
 \frac{df}{d\vec{x}} = \left(\frac{df}{dx_1}, \ldots, \frac{df}{dx_n}\right)'
-\]</span></p>
+</span></p>
 <p>This vector is often referred to as <em>gradient vector</em>.</p>
 </section>
-<section id="functions-of-type-f-mathbbrn-to-mathbbrm-vector-in-vector-out" class="level3">
-<h3 class="anchored" data-anchor-id="functions-of-type-f-mathbbrn-to-mathbbrm-vector-in-vector-out">Functions of type <span class="math inline">\(f: \mathbb{R}^n \to \mathbb{R}^m\)</span>, vector in, vector out</h3>
+<section id="functions-of-type-f-mathbbrn-to-mathbbrm---vector-in-vector-out" class="level3">
+<h3 class="anchored" data-anchor-id="functions-of-type-f-mathbbrn-to-mathbbrm---vector-in-vector-out">Functions of type <span class="math inline">f: \mathbb{R}^n \to \mathbb{R}^m</span> - vector in, vector out</h3>
 <p>Such functions take vector (s) as input (s) and return another vector with different dimension as output.</p>
-<p>A simple example can be a function <span class="math inline">\(f: \mathbb{R}^2 \to \mathbb{R}^3\)</span>:</p>
+<p>A simple example can be a function <span class="math inline">f: \mathbb{R}^2 \to \mathbb{R}^3</span>:</p>
 <ul>
-<li>input: <span class="math inline">\(\vec{x} = \left(x_1, x_2\right)\)</span> and a matrix of parameters <span class="math inline">\(\mathbf{W}_{3 \times 2}\)</span></li>
-<li>output: <span class="math inline">\(\vec{y} = \mathbf{f(\vec{x})} = \left(w_{11}x_1+w_{12}x_2, w_{21}x_1+w_{22}x_2, w_{31}x_1+w_{32}x_2\right)\)</span></li>
+<li>input: <span class="math inline">\vec{x} = \left(x_1, x_2\right)</span> and a matrix of parameters <span class="math inline">\mathbf{W}_{3 \times 2}</span></li>
+<li>output: <span class="math inline">\vec{y} = \mathbf{f(\vec{x})} = \left(w_{11}x_1+w_{12}x_2, w_{21}x_1+w_{22}x_2, w_{31}x_1+w_{32}x_2\right)</span></li>
 </ul>
-<p>In this case, derivative of <span class="math inline">\(\mathbf{f(\vec{x})}\)</span> will be a matrix of dimension <span class="math inline">\(m \times n\)</span>, as given below:</p>
-<p><span class="math display">\[\begin{align}
+<p>In this case, derivative of <span class="math inline">\mathbf{f(\vec{x})}</span> will be a matrix of dimension <span class="math inline">m \times n</span>, as given below:</p>
+<p><span class="math display">\begin{align}
     \frac{d\vec{y}}{d\vec{x}} &amp;= \left(\frac{d\vec{y}}{dx_1}, \ldots, \frac{d\vec{y}}{dx_n}\right) \\
     &amp;= \begin{pmatrix}
             \frac{dy_1}{dx_1} &amp; \frac{dy_1}{dx_2} &amp; \ldots &amp; \frac{dy_1}{dx_n} \\
@@ -283,38 +299,38 @@ Note
             \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
             \frac{dy_m}{dx_1} &amp; \frac{dy_m}{dx_2} &amp; \ldots &amp; \frac{dy_m}{dx_n} \\
         \end{pmatrix}
-\end{align}\]</span></p>
-<p>This matrix is often referred to as <strong>Jacobian</strong> of <span class="math inline">\(\vec{y}\)</span> with respect to <span class="math inline">\(\vec{x}\)</span>.</p>
+\end{align}</span></p>
+<p>This matrix is often referred to as <strong>Jacobian</strong> of <span class="math inline">\vec{y}</span> with respect to <span class="math inline">\vec{x}</span>.</p>
 </section>
 </section>
 <section id="the-chain-rule-of-differentiation" class="level2">
 <h2 class="anchored" data-anchor-id="the-chain-rule-of-differentiation">The chain rule of differentiation</h2>
-<p>Consider the situation, where you have two different functions <span class="math inline">\(f()\)</span> and <span class="math inline">\(g()\)</span> defined as follows <span class="math inline">\(y = f(x)\)</span> and <span class="math inline">\(z = g(y) = g\left(f(x)\right)\)</span>.</p>
-<p>While forming <span class="math inline">\(z\)</span>, <span class="math inline">\(f()\)</span> is the inner function and <span class="math inline">\(g()\)</span> is the outer function. This is known as function composition as often denoted as <span class="math inline">\(g \circ f(x)\)</span>.</p>
-<p>We want to measure the rate of change in <span class="math inline">\(z\)</span> w.r.t <span class="math inline">\(x\)</span> i.e.&nbsp;<span class="math inline">\(\frac{dz}{dx}\)</span>.</p>
+<p>Consider the situation, where you have two different functions <span class="math inline">f()</span> and <span class="math inline">g()</span> defined as follows <span class="math inline">y = f(x)</span> and <span class="math inline">z = g(y) = g\left(f(x)\right)</span>.</p>
+<p>While forming <span class="math inline">z</span>, <span class="math inline">f()</span> is the inner function and <span class="math inline">g()</span> is the outer function. This is known as function composition as often denoted as <span class="math inline">g \circ f(x)</span>.</p>
+<p>We want to measure the rate of change in <span class="math inline">z</span> w.r.t <span class="math inline">x</span> i.e.&nbsp;<span class="math inline">\frac{dz}{dx}</span>.</p>
 <p>This derivative is computed as follws:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{dz}{dx} = \frac{dz}{dy} \times \frac{dy}{dx}
-\]</span></p>
+</span></p>
 <p>and it is known as the <em>chain rule</em> of differentiation.</p>
-<p>We perform derivatives in two steps,</p>
+<p>Here, the actual derivative is computed in two steps,</p>
 <ul>
-<li>the local derivative of <span class="math inline">\(z\)</span> w.r.t <span class="math inline">\(y\)</span> as <span class="math inline">\(z\)</span> explicitly depends on <span class="math inline">\(y\)</span></li>
-<li>the local derivative of <span class="math inline">\(y\)</span> w.r.t <span class="math inline">\(x\)</span> as <span class="math inline">\(y\)</span> explicitly depends on <span class="math inline">\(x\)</span></li>
+<li>the local derivative of <span class="math inline">z</span> w.r.t <span class="math inline">y</span> as <span class="math inline">z</span> explicitly depends on <span class="math inline">y</span></li>
+<li>the local derivative of <span class="math inline">y</span> w.r.t <span class="math inline">x</span> as <span class="math inline">y</span> explicitly depends on <span class="math inline">x</span></li>
 </ul>
 <p>and these are multiplied together to form the actual derivative.</p>
 <p><a href="https://en.wikipedia.org/wiki/Chain_rule">Wikipedia</a> has an intutive explanation to this as given below:</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Understanding chain rule
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Intuitively, the chain rule states that knowing the instantaneous rate of change of <span class="math inline">\(z\)</span> relative to <span class="math inline">\(y\)</span> and that of <span class="math inline">\(y\)</span> relative to <span class="math inline">\(x\)</span> allows one to calculate the instantaneous rate of change of <span class="math inline">\(z\)</span> relative to <span class="math inline">\(x\)</span> as the product of the two rates of change.</p>
+<p>Intuitively, the chain rule states that knowing the instantaneous rate of change of <span class="math inline">z</span> relative to <span class="math inline">y</span> and that of <span class="math inline">y</span> relative to <span class="math inline">x</span> allows one to calculate the instantaneous rate of change of <span class="math inline">z</span> relative to <span class="math inline">x</span> as the product of the two rates of change.</p>
 <p>As put by George F. Simmons: “if a car travels twice as fast as a bicycle and the bicycle is four times as fast as a walking man, then the car travels 2 × 4 = 8 times as fast as the man.”</p>
 </div>
 </div>
@@ -323,18 +339,18 @@ Understanding chain rule
 <section id="partial-differentiation" class="level2">
 <h2 class="anchored" data-anchor-id="partial-differentiation">Partial differentiation</h2>
 <p>Partial differentiation is mainly applicable for a function that depends on several input variables simultaneously.</p>
-<p>For example, we might have a function like <span class="math inline">\(f(x,y,z) = ax+by+cz+d\)</span> representing a plane in a three dimensional coordinate system.</p>
-<p>If we would like to measure the rate of change only along the x-axis, we would perform partial differentiation w.r.t <span class="math inline">\(x\)</span> and by ignoring other inputs.</p>
-<p>Unlike the previous one (i.e.&nbsp;complete derivative), partial derivative is denoted by <span class="math inline">\(\frac{\partial f}{\partial x}\)</span> and the definition is given below:</p>
-<p><span class="math display">\[
+<p>For example, we might have a function like <span class="math inline">f(x,y,z) = ax+by+cz+d</span> representing a plane in a three dimensional coordinate system.</p>
+<p>If we would like to measure the rate of change only along the x-axis, we would perform partial differentiation w.r.t <span class="math inline">x</span> and by ignoring other inputs.</p>
+<p>Unlike the previous one (i.e.&nbsp;complete derivative), partial derivative is denoted by <span class="math inline">\frac{\partial f}{\partial x}</span> and the definition is given below:</p>
+<p><span class="math display">
 \frac{\partial f}{\partial x} = \lim_{h \to 0} \frac{f(x+h,y,z) - f(x,y,z)}{(x+h) - x}
-\]</span></p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Tip
 </div>
 </div>
@@ -351,8 +367,8 @@ Tip
 <div class="cell" data-fig-width="4">
 <div class="cell-output-display">
 <div>
-<p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">graph LR
+<div>
+<pre class="mermaid mermaid-js">graph LR
   a(a) --&gt; c(c)
   a(a) --&gt; d(d)
   b(b) --&gt; d(d)
@@ -361,14 +377,11 @@ Tip
   e(e) --&gt; l(l)
   f(f) --&gt; l(l)
 </pre>
-<div id="mermaid-tooltip-1" class="mermaidTooltip">
-
-</div>
-<p></p>
 </div>
 </div>
 </div>
-<p>The above diagram is typically referred to as a computational graph, where both <strong>a</strong> and <strong>b</strong> are inputs to the graph and <span class="math inline">\(l\)</span> is the output of the graph.</p>
+</div>
+<p>The above diagram is typically referred to as a computational graph, where both <strong>a</strong> and <strong>b</strong> are inputs to the graph and <span class="math inline">l</span> is the output of the graph.</p>
 <p>Each box in the graph is called a <em>node</em> where a mathematical operation is performed. So, if you imagine, deep neural network is actually such a massive computational graph where, depending on the depth of the network, millions (or may be billions) of mathematical operations are performed.</p>
 <section id="differentiation-through-a-graph" class="level2">
 <h2 class="anchored" data-anchor-id="differentiation-through-a-graph">Differentiation through a graph</h2>
@@ -377,8 +390,8 @@ Tip
 <div class="cell" data-fig-width="4.5">
 <div class="cell-output-display">
 <div>
-<p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-2">graph LR
+<div>
+<pre class="mermaid mermaid-js">graph LR
   a(a) --&gt; c(c = a+1)
   a(a) --&gt; d(d = a+b)
   b(b) --&gt; d(d = a+b)
@@ -387,26 +400,23 @@ Tip
   e(e = c * d) --&gt; l(l = e+f)
   f(f) --&gt; l(l = e+f)
 </pre>
-<div id="mermaid-tooltip-2" class="mermaidTooltip">
-
-</div>
-<p></p>
 </div>
 </div>
 </div>
-<p>Here, we can assume <span class="math inline">\(l\)</span> as the <em>loss</em> and we want to measure the rate of change of loss w.r.t each of the nodes (including loss node itself) in the backward direction (why backward? … I will explain later).</p>
+</div>
+<p>Here, we can assume <span class="math inline">l</span> as the <em>loss</em> and we want to measure the rate of change of loss w.r.t each of the nodes (including loss node itself) in the backward direction (why backward? … I will explain later).</p>
 <p>This whole computation is performed in multiple steps as follows:</p>
 <ul>
-<li>Step 1: rate of change of <span class="math inline">\(l\)</span> w.r.t <span class="math inline">\(l\)</span> itself i.e.&nbsp;<span class="math inline">\(\frac{\partial l}{\partial l} = 1\)</span></li>
-<li>Step 2: rate of change of <span class="math inline">\(l\)</span> w.r.t <span class="math inline">\(e\)</span> i.e.&nbsp;<span class="math inline">\(\frac{\partial l}{\partial e} = \frac{\partial l}{\partial e} \times \frac{\partial l}{\partial l} = \frac{\partial (e+f)}{\partial e} \times \frac{\partial l}{\partial l} = 1\)</span></li>
-<li>Step 3: rate of change of <span class="math inline">\(l\)</span> w.r.t <span class="math inline">\(f\)</span> i.e.&nbsp;<span class="math inline">\(\frac{\partial l}{\partial f} = \frac{\partial l}{\partial f} \times \frac{\partial l}{\partial l} = \frac{\partial (e+f)}{\partial f} \times \frac{\partial l}{\partial l} = 1\)</span></li>
-<li>Step 4: rate of change of <span class="math inline">\(l\)</span> w.r.t <span class="math inline">\(c\)</span> i.e.&nbsp;<span class="math inline">\(\frac{\partial l}{\partial c} = \frac{\partial e}{dc} \times \frac{\partial l}{\partial e} = \frac{\partial (c*d)}{\partial c} \times \frac{\partial l}{\partial e} = d\)</span></li>
-<li>Step 5: rate of change of <span class="math inline">\(l\)</span> w.r.t <span class="math inline">\(d\)</span> i.e.&nbsp;<span class="math inline">\(\frac{\partial l}{\partial d} = \frac{\partial e}{\partial d} \times \frac{\partial l}{\partial e} = \frac{\partial (c*d)}{\partial d} \times \frac{\partial l}{\partial e} = c\)</span></li>
-<li>Step 6: rate of change of <span class="math inline">\(l\)</span> w.r.t <span class="math inline">\(a\)</span> i.e.&nbsp;<span class="math inline">\(\frac{\partial l}{\partial a}\)</span>, this step can be broken into two parts as changing <span class="math inline">\(a\)</span>, can change <span class="math inline">\(l\)</span> either through <span class="math inline">\(c\)</span> or through <span class="math inline">\(d\)</span>, therefore,
+<li>Step 1: rate of change of <span class="math inline">l</span> w.r.t <span class="math inline">l</span> itself i.e.&nbsp;<span class="math inline">\frac{\partial l}{\partial l} = 1</span></li>
+<li>Step 2: rate of change of <span class="math inline">l</span> w.r.t <span class="math inline">e</span> i.e.&nbsp;<span class="math inline">\frac{\partial l}{\partial e} = \frac{\partial l}{\partial e} \times \frac{\partial l}{\partial l} = \frac{\partial (e+f)}{\partial e} \times \frac{\partial l}{\partial l} = 1</span></li>
+<li>Step 3: rate of change of <span class="math inline">l</span> w.r.t <span class="math inline">f</span> i.e.&nbsp;<span class="math inline">\frac{\partial l}{\partial f} = \frac{\partial l}{\partial f} \times \frac{\partial l}{\partial l} = \frac{\partial (e+f)}{\partial f} \times \frac{\partial l}{\partial l} = 1</span></li>
+<li>Step 4: rate of change of <span class="math inline">l</span> w.r.t <span class="math inline">c</span> i.e.&nbsp;<span class="math inline">\frac{\partial l}{\partial c} = \frac{\partial e}{dc} \times \frac{\partial l}{\partial e} = \frac{\partial (c*d)}{\partial c} \times \frac{\partial l}{\partial e} = d</span></li>
+<li>Step 5: rate of change of <span class="math inline">l</span> w.r.t <span class="math inline">d</span> i.e.&nbsp;<span class="math inline">\frac{\partial l}{\partial d} = \frac{\partial e}{\partial d} \times \frac{\partial l}{\partial e} = \frac{\partial (c*d)}{\partial d} \times \frac{\partial l}{\partial e} = c</span></li>
+<li>Step 6: rate of change of <span class="math inline">l</span> w.r.t <span class="math inline">a</span> i.e.&nbsp;<span class="math inline">\frac{\partial l}{\partial a}</span>, this step can be broken into two parts as changing <span class="math inline">a</span>, can change <span class="math inline">l</span> either through <span class="math inline">c</span> or through <span class="math inline">d</span>, therefore,
 <ul>
-<li><span class="math inline">\(\frac{\partial l}{\partial a} = \underbrace{\left( \frac{\partial c}{\partial a} \times \frac{\partial l}{\partial c} \right)}_{\text{changes through c}} + \underbrace{\left( \frac{\partial d}{\partial a} \times \frac{\partial l}{\partial d} \right)}_{\text{changes through d}} = d + c\)</span></li>
+<li><span class="math inline">\frac{\partial l}{\partial a} = \underbrace{\left( \frac{\partial c}{\partial a} \times \frac{\partial l}{\partial c} \right)}_{\text{changes through c}} + \underbrace{\left( \frac{\partial d}{\partial a} \times \frac{\partial l}{\partial d} \right)}_{\text{changes through d}} = d + c</span></li>
 </ul></li>
-<li>Step 7: rate of change of <span class="math inline">\(l\)</span> w.r.t <span class="math inline">\(b\)</span> i.e.&nbsp;<span class="math inline">\(\frac{\partial l}{\partial b} = \frac{\partial d}{\partial b} \times \frac{\partial l}{\partial d} = 1 \times c = c\)</span></li>
+<li>Step 7: rate of change of <span class="math inline">l</span> w.r.t <span class="math inline">b</span> i.e.&nbsp;<span class="math inline">\frac{\partial l}{\partial b} = \frac{\partial d}{\partial b} \times \frac{\partial l}{\partial d} = 1 \times c = c</span></li>
 </ul>
 <p>The real benefit of computing derivatives (a.k.a gradients) in the backward direction is that it allows the learning algorithm to compute gradients for all the nodes with a single attempt.</p>
 <p>If we would have started in the forward direction, then the learning algorithm would have travelled the entire graph for each of the input nodes at the very beginning. Unlike a simple graph like the above one, this forward mode differentiation is computationally very costly for a large network.</p>
@@ -414,12 +424,12 @@ Tip
 </section>
 <section id="important-takeways" class="level2">
 <h2 class="anchored" data-anchor-id="important-takeways">Important takeways</h2>
-<p>When we have a <span class="math inline">\('+'\)</span> operation in the graph, like the one below,</p>
+<p>When we have a <span class="math inline">'+'</span> operation in the graph, like the one below,</p>
 <div class="cell" data-fig-width="3.5">
 <div class="cell-output-display">
 <div>
-<p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-3">graph RL
+<div>
+<pre class="mermaid mermaid-js">graph RL
   subgraph input
   x(x)
   y(y)
@@ -432,20 +442,17 @@ Tip
   x(x) --&gt; z(z = x+y) -.-&gt; x(x)
   y(y) --&gt; z(z = x+y) -.-&gt; y(y)
 </pre>
-<div id="mermaid-tooltip-3" class="mermaidTooltip">
-
 </div>
-<p></p>
 </div>
 </div>
 </div>
 <p>computing gradients with respect to the input nodes is fairly simple as the backward gradient computation just copies the gradient of the output node to all the input nodes.</p>
-<p>However, when we have a <span class="math inline">\('\times'\)</span> operation in the graph, like the next one,</p>
+<p>However, when we have a <span class="math inline">'\times'</span> operation in the graph, like the next one,</p>
 <div class="cell" data-fig-width="3.5">
 <div class="cell-output-display">
 <div>
-<p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-4">graph RL
+<div>
+<pre class="mermaid mermaid-js">graph RL
   subgraph input
   x(x)
   y(y)
@@ -458,25 +465,22 @@ Tip
   x(x) --&gt; z(z = x*y) -.-&gt; x(x)
   y(y) --&gt; z(z = x*y) -.-&gt; y(y)
 </pre>
-<div id="mermaid-tooltip-4" class="mermaidTooltip">
-
 </div>
-<p></p>
 </div>
 </div>
 </div>
 <p>gradient of one input node is just the product of the gradient of output node and value of other input node.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(+\)</span> and <span class="math inline">\(\times\)</span> are the two building blocks powering up any mathematical computation.</p>
+<p><span class="math inline">+</span> and <span class="math inline">\times</span> are the two building blocks powering up any mathematical computation.</p>
 </div>
 </div>
 </section>
@@ -485,20 +489,17 @@ Note
 <div class="cell" data-fig-width="3.5">
 <div class="cell-output-display">
 <div>
-<p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-5">graph LR
+<div>
+<pre class="mermaid mermaid-js">graph LR
   a(a) --&gt; c(c = a+b)
   b(b) --&gt; c(c = a+b)
 </pre>
-<div id="mermaid-tooltip-5" class="mermaidTooltip">
-
-</div>
-<p></p>
 </div>
 </div>
 </div>
-<p>If we observe the above graph, it clear that while performing backpropagation, computing gradient of any of the leaf nodes i.e.&nbsp;<span class="math inline">\(\left\{a, b\right\}\)</span> is possible only when gradient value for the node <span class="math inline">\(c\)</span> is already available. This is just because of the chain rule we use.</p>
-<p>So the fact is that we cannot choose a node randomly and try computing gradient for it. We must compute the gradient of node <span class="math inline">\(c\)</span>, which is essentially 1, then we can take either of node <span class="math inline">\(a\)</span> or node <span class="math inline">\(b\)</span>.</p>
+</div>
+<p>If we observe the above graph, it clear that while performing backpropagation, computing gradient of any of the leaf nodes i.e.&nbsp;<span class="math inline">\left\{a, b\right\}</span> is possible only when gradient value for the node <span class="math inline">c</span> is already available. This is just because of the chain rule we use.</p>
+<p>So the fact is that we cannot choose a node randomly and try computing gradient for it. We must compute the gradient of node <span class="math inline">c</span>, which is essentially 1, then we can take either of node <span class="math inline">a</span> or node <span class="math inline">b</span>.</p>
 <p>Nodes must be sorted in order to perform backpropagation. <em>Topological Sort</em> is an way to achieve this ordering before performing the backpropagation.</p>
 </section>
 <section id="the-efficient-vector-jacobian-product" class="level2">
@@ -507,8 +508,8 @@ Note
 <div class="cell" data-fig-width="3.5">
 <div class="cell-output-display">
 <div>
-<p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-6">  graph LR
+<div>
+<pre class="mermaid mermaid-js">  graph LR
   subgraph input layer
   x1(x1) 
   x2(x2)
@@ -534,17 +535,14 @@ Note
   y2(y2) --&gt; l(l)
   y3(y3) --&gt; l(l)
 </pre>
-<div id="mermaid-tooltip-6" class="mermaidTooltip">
-
 </div>
-<p></p>
 </div>
 </div>
 </div>
 <p>It has only two input nodes, a single output node and in between them three additional nodes forming the hidden layer.</p>
-<p>The mapping from input layer to hidden layer is supported by a matrix of parameters <span class="math inline">\(\mathbf{W}_{3 \times 2}\)</span> and ofcourse by a vector valued linear function, say, <span class="math inline">\(\mathbf{\vec{f}}\)</span>.</p>
+<p>The mapping from input layer to hidden layer is supported by a matrix of parameters <span class="math inline">\mathbf{W}_{3 \times 2}</span> and ofcourse by a vector valued linear function, say, <span class="math inline">\mathbf{\vec{f}}</span>.</p>
 <p>Hidden layer values are formed using the equation below:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{pmatrix}
   y_1 \\
   y_2 \\
@@ -557,20 +555,20 @@ Note
                                 x_1 \\
                                 x_2
                               \end{pmatrix}
-\]</span></p>
-<p>and consider some differentiable scalar valued function <span class="math inline">\(g()\)</span> that combines hidden layer values to form the output <span class="math inline">\(l\)</span>.</p>
-<p>Computing <span class="math inline">\(l\)</span> from the given fixed set of input values and with the help of some values of the parameters, is called the <em>forward pass</em>.</p>
-<p>At this stage, we can definitely compute the jacobian matrix of <span class="math inline">\(\mathbf{\vec{f}}\)</span> w.r.t <span class="math inline">\(\vec{x}\)</span>, which is given below:</p>
-<p><span class="math display">\[
+</span></p>
+<p>and consider some differentiable scalar valued function <span class="math inline">g()</span> that combines hidden layer values to form the output <span class="math inline">l</span>.</p>
+<p>Computing <span class="math inline">l</span> from the given fixed set of input values and with the help of some values of the parameters, is called the <em>forward pass</em>.</p>
+<p>At this stage, we can definitely compute the jacobian matrix of <span class="math inline">\mathbf{\vec{f}}</span> w.r.t <span class="math inline">\vec{x}</span>, which is given below:</p>
+<p><span class="math display">
 \mathbf{J} = \begin{pmatrix}
                 \frac{\partial y_2}{\partial x_1} &amp; \frac{\partial y_2}{\partial x_2} \\
                 \frac{\partial y_1}{\partial x_1} &amp; \frac{\partial y_1}{\partial x_2} \\
                 \frac{\partial y_3}{\partial x_1} &amp; \frac{\partial y_3}{\partial x_2}
               \end{pmatrix}
-\]</span></p>
-<p>Now, suppose <span class="math inline">\(\vec{v}\)</span> is the gradient vector of <span class="math inline">\(l\)</span> i.e.&nbsp;<span class="math inline">\(\vec{v} = \left(\frac{dl}{dy_1}, \frac{dl}{dy_2}, \frac{dl}{dy_3}\right)'\)</span> and we will assume that we have already computed it. Strange? No problem, I will explain this assumption at the end of this section.</p>
-<p>Now, if we take the dot product of <span class="math inline">\(\mathbf{J}^T\)</span> and <span class="math inline">\(\vec{v}\)</span>, this is what we are going to get,</p>
-<p><span class="math display">\[\begin{align}
+</span></p>
+<p>Now, suppose <span class="math inline">\vec{v}</span> is the gradient vector of <span class="math inline">l</span> i.e.&nbsp;<span class="math inline">\vec{v} = \left(\frac{dl}{dy_1}, \frac{dl}{dy_2}, \frac{dl}{dy_3}\right)'</span> and we will assume that we have already computed it. Strange? No problem, I will explain this assumption at the end of this section.</p>
+<p>Now, if we take the dot product of <span class="math inline">\mathbf{J}^T</span> and <span class="math inline">\vec{v}</span>, this is what we are going to get,</p>
+<p><span class="math display">\begin{align}
 \mathbf{J}^T \cdot \vec{v} &amp;= \begin{pmatrix}
                                 \frac{\partial y_1}{\partial x_1} &amp; \frac{\partial y_2}{\partial x_1} &amp; \frac{\partial y_3}{\partial x_1} \\
                                 \frac{\partial y_1}{\partial x_2} &amp; \frac{\partial y_2}{\partial x_2} &amp; \frac{\partial y_3}{\partial x_2} \\
@@ -584,27 +582,46 @@ Note
                                   \frac{\partial l}{\partial x_2}
                               \end{pmatrix} \\
                            &amp;= \frac{\partial l}{\partial \vec{x}}
-\end{align}\]</span></p>
+\end{align}</span></p>
 <p>If we observe the dot product carefully, we will notice a series of chain rules being performed.</p>
 <p>Therefore, this vector-jacobian product helps us to compute the gradient of loss function w.r.t the nodes in another layer which, in reality, might be far behind the output node in the computational graph, ofcourse with the help of a known gradient vector for an intermediate layer.</p>
 <p>The intermediate gradient vector has been considered to computed beforehand because while performing reverse mode differentiation, we must know the gradient of the output node before computing the gradients of the input nodes which have defined the output node and we have seen it <a href="#derivative-through-a-graph">here</a> where we have started taking derivatives from the output node.</p>
-<p>Here <span class="math inline">\(\mathbf{\vec{y}}\)</span> is the output of <span class="math inline">\(\mathbf{f(\vec{x})}\)</span>, so we can safely take this assumption to understand the theory.</p>
-<p>Now, the next part is to compute <span class="math inline">\(\frac{\partial l}{\partial \mathbf{W}}\)</span> which can again be done using,</p>
-<p><span class="math display">\[
+<p>Here <span class="math inline">\mathbf{\vec{y}}</span> is the output of <span class="math inline">\mathbf{f(\vec{x})}</span>, so we can safely take this assumption to understand the theory.</p>
+<p>Now, the next part is to compute <span class="math inline">\frac{\partial l}{\partial \mathbf{W}}</span> which can again be done using,</p>
+<p><span class="math display">
 \frac{\partial l}{\partial \mathbf{W}} = \frac{\partial \vec{y}}{\partial \mathbf{W}} \times \frac{\partial l}{\partial \vec{y}}
-\]</span></p>
-<p>This gives us an idea to implement automatic differentiation (autograd) in code.</p>
+</span></p>
+<p>Hopefully, it gives us an idea to implement automatic differentiation (autograd) for a large computational graph.</p>
 </section>
 <section id="the-training-loop" class="level2">
 <h2 class="anchored" data-anchor-id="the-training-loop">The training loop</h2>
 <p>The last and one of the important parts of training a neural network is the <em>training loop</em>. Technically it is a <code>for</code> loop where in each iteration some steps are performed. Each of these iterations is also called <em>epoch</em>.</p>
 <p>It is to be noted that, before entering into the loop, all the parameters are randomly initialized.</p>
 <p>Below are the steps that are performed within atraining loop.</p>
-<ul>
-<li>step 1: Forward pass - computes loss with the given data samples and last updated network parameters</li>
-<li>step 2: Backward pass - computes gradients w.r.t all the parameters</li>
-<li>step 3: Updating parameters - updating the parameters with the help of computed gradients and a learning rate</li>
-</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    A(randomly initialize&lt;br&gt;parameters) --&gt; B(compute output&lt;br&gt;for all the nodes&lt;br&gt;in each of the layers)--&gt;|compare with&lt;br&gt;ground truth|C(compute loss) --&gt; D(perform&lt;br&gt;backpropagation) --&gt; E(update&lt;br&gt;parameters) --&gt; B
+
+    subgraph forward pass
+    B
+    C
+    end
+
+    subgraph backward pass
+    D
+    end
+
+    subgraph update
+    E
+    end
+</pre>
+</div>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="conclusion" class="level1">
@@ -621,7 +638,7 @@ Note
 <li><a href="https://colah.github.io/posts/2015-08-Backprop/">Calculus on Computational Graphs: Backpropagation</a></li>
 <li><a href="http://cs231n.stanford.edu/handouts/derivatives.pdf">Derivatives, Backpropagation, and Vectorization</a></li>
 <li><a href="https://youtu.be/eL-KzMXSXXI">Topological Sort Algorithm | Graph Theory</a></li>
-<li><a href="https://pytorch.org/tutorials/beginner/blitz/autograd_tutorial.html">A GENTLE INTRODUCTION TO TORCH.AUTOGRAD</a></li>
+<li><a href="https://pytorch.org/tutorials/beginner/blitz/autograd_tutorial.html">A Gentle Introduction To torch.autograd</a></li>
 </ul>
 
 
@@ -770,9 +787,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -837,6 +868,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {

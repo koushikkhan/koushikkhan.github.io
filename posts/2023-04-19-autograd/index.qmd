@@ -15,7 +15,7 @@ draft: false
 
 In our high school mathematics, we have learnt *Differential Calculus*, which has introduced the term 'differentiation' and 'derivative'.
 
-The concept of computing derivative has played a significant role in today's deep learning algorithms among many of its useful real life applications. 
+The concept of differentiating a function has played a significant role in today's deep learning algorithms among many of its useful real life applications. 
 
 I this post, I will revisit the core idea of computing derivative by looking at the geometrical interpretation of it and simultaneously try to put some light to the idea that is used behind the efficient learning process of a neural network, also known as *backpropagation*.
 
@@ -41,7 +41,7 @@ $$
 
 It's a ratio, where the denominator measures the change in the input $x$ and numerator measures the change in output $f(x)$, hence indicating the rate of change in $f$ w.r.t $x$.
 
-The animation below, made with [geogebra](https://www.geogebra.org), will make the definition easier to understand by giving geometrical sense.
+The animation below, made with [geogebra](https://www.geogebra.org), will make the definition easier to understand by giving geometrical sense, especially the limiting nature of the ratio.
 
 <iframe src="https://www.geogebra.org/calculator/jbdd9y5v?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
@@ -63,7 +63,7 @@ Note that, till now, we have discussed only on a scalar valued function with a s
 
 ## Derivative for different type of input mappings
 
-### Functions of type $f: \mathbb{R}^n \to \mathbb{R}$, vector in, scalar out
+### Functions of type $f: \mathbb{R}^n \to \mathbb{R}$ - vector in, scalar out
 
 Such functions take vector (s) as input (s) and return a scalar. Loss functions like **MSE** or **Cross Entropy** can be couple of examples.
 
@@ -75,7 +75,7 @@ $$
 
 This vector is often referred to as *gradient vector*.
 
-### Functions of type $f: \mathbb{R}^n \to \mathbb{R}^m$, vector in, vector out
+### Functions of type $f: \mathbb{R}^n \to \mathbb{R}^m$ - vector in, vector out
 
 Such functions take vector (s) as input (s) and return another vector with different dimension as output. 
 
@@ -114,7 +114,7 @@ $$
 
 and it is known as the *chain rule* of differentiation. 
 
-We perform derivatives in two steps,
+Here, the actual derivative is computed in two steps,
 
 + the local derivative of $z$ w.r.t $y$ as $z$ explicitly depends on $y$
 + the local derivative of $y$ w.r.t $x$ as $y$ explicitly depends on $x$
@@ -373,7 +373,7 @@ $$
 \frac{\partial l}{\partial \mathbf{W}} = \frac{\partial \vec{y}}{\partial \mathbf{W}} \times \frac{\partial l}{\partial \vec{y}}
 $$
 
-This gives us an idea to implement automatic differentiation (autograd) in code.
+Hopefully, it gives us an idea to implement automatic differentiation (autograd) for a large computational graph.
 
 
 ## The training loop
@@ -384,9 +384,23 @@ It is to be noted that, before entering into the loop, all the parameters are ra
 
 Below are the steps that are performed within atraining loop.
 
-+ step 1: Forward pass - computes loss with the given data samples and last updated network parameters
-+ step 2: Backward pass - computes gradients w.r.t all the parameters
-+ step 3: Updating parameters - updating the parameters with the help of computed gradients and a learning rate
+```{mermaid}
+flowchart TD
+    A(randomly initialize<br>parameters) --> B(compute output<br>for all the nodes<br>in each of the layers)-->|compare with<br>ground truth|C(compute loss) --> D(perform<br>backpropagation) --> E(update<br>parameters) --> B
+
+    subgraph forward pass
+    B
+    C
+    end
+
+    subgraph backward pass
+    D
+    end
+
+    subgraph update
+    E
+    end
+```
 
 
 # Conclusion
@@ -405,4 +419,4 @@ Thank you for taking the time to read this blog, and I hope to see you again soo
 + [Calculus on Computational Graphs: Backpropagation](https://colah.github.io/posts/2015-08-Backprop/)
 + [Derivatives, Backpropagation, and Vectorization](http://cs231n.stanford.edu/handouts/derivatives.pdf)
 + [Topological Sort Algorithm | Graph Theory](https://youtu.be/eL-KzMXSXXI)
-+ [A GENTLE INTRODUCTION TO TORCH.AUTOGRAD](https://pytorch.org/tutorials/beginner/blitz/autograd_tutorial.html)
++ [A Gentle Introduction To torch.autograd](https://pytorch.org/tutorials/beginner/blitz/autograd_tutorial.html)
