@@ -369,13 +369,13 @@ Tip
 <div>
 <div>
 <pre class="mermaid mermaid-js">graph LR
-  a(a) --&gt; c(c)
-  a(a) --&gt; d(d)
-  b(b) --&gt; d(d)
-  c(c) --&gt; e(e)
-  d(d) --&gt; e(e)
-  e(e) --&gt; l(l)
-  f(f) --&gt; l(l)
+  a(a) --&gt; c(c = a+1)
+  a(a) --&gt; d(d = a+b)
+  b(b) --&gt; d(d = a+b)
+  c(c = a+1) --&gt; e(e = c * d)
+  d(d = a+b) --&gt; e(e = c * d)
+  e(e = c * d) --&gt; l(l = e+f)
+  f(f) --&gt; l(l = e+f)
 </pre>
 </div>
 </div>
@@ -439,8 +439,8 @@ Tip
   z(z = x+y)
   end
 
-  x(x) --&gt; z(z = x+y) -.-&gt; x(x)
-  y(y) --&gt; z(z = x+y) -.-&gt; y(y)
+  x(x) --&gt; z(z = x+y)-.-&gt;|gradient of z|x(x)
+  y(y) --&gt; z(z = x+y)-.-&gt;|gradient of z|y(y)
 </pre>
 </div>
 </div>
@@ -453,6 +453,9 @@ Tip
 <div>
 <div>
 <pre class="mermaid mermaid-js">graph RL
+  x(x) --&gt; z(z = x*y)-.-&gt;|value of y * gradient of z|x(x)
+  y(y) --&gt; z(z = x*y)-.-&gt;|value of x * gradient of z|y(y)
+
   subgraph input
   x(x)
   y(y)
@@ -461,9 +464,6 @@ Tip
   subgraph output
   z(z = x*y)
   end
-
-  x(x) --&gt; z(z = x*y) -.-&gt; x(x)
-  y(y) --&gt; z(z = x*y) -.-&gt; y(y)
 </pre>
 </div>
 </div>
@@ -510,30 +510,30 @@ Note
 <div>
 <div>
 <pre class="mermaid mermaid-js">  graph LR
-  subgraph input layer
-  x1(x1) 
-  x2(x2)
-  end
+    x1(x1) --&gt; y1(y1)
+    x2(x2) --&gt; y1(y1)
+    x1(x1) --&gt; y2(y2)
+    x2(x2) --&gt; y2(y2)
+    x1(x1) --&gt; y3(y3)
+    x2(x2) --&gt; y3(y3)
+    y1(y1) --&gt; l(l)
+    y2(y2) --&gt; l(l)
+    y3(y3) --&gt; l(l)
 
-  subgraph hidden layer
-  y1(y1) 
-  y2(y2)
-  y3(y3)
-  end
+    subgraph input&lt;br&gt;layer
+    x1(x1) 
+    x2(x2)
+    end
 
-  subgraph output layer
-  l(l)
-  end
+    subgraph hidden&lt;br&gt;layer
+    y1(y1) 
+    y2(y2)
+    y3(y3)
+    end
 
-  x1(x1) --&gt; y1(y1)
-  x2(x2) --&gt; y1(y1)
-  x1(x1) --&gt; y2(y2)
-  x2(x2) --&gt; y2(y2)
-  x1(x1) --&gt; y3(y3)
-  x2(x2) --&gt; y3(y3)
-  y1(y1) --&gt; l(l)
-  y2(y2) --&gt; l(l)
-  y3(y3) --&gt; l(l)
+    subgraph output&lt;br&gt;layer
+    l(l)
+    end
 </pre>
 </div>
 </div>
@@ -561,8 +561,8 @@ Note
 <p>At this stage, we can definitely compute the jacobian matrix of <span class="math inline">\mathbf{\vec{f}}</span> w.r.t <span class="math inline">\vec{x}</span>, which is given below:</p>
 <p><span class="math display">
 \mathbf{J} = \begin{pmatrix}
-                \frac{\partial y_2}{\partial x_1} &amp; \frac{\partial y_2}{\partial x_2} \\
                 \frac{\partial y_1}{\partial x_1} &amp; \frac{\partial y_1}{\partial x_2} \\
+                \frac{\partial y_2}{\partial x_1} &amp; \frac{\partial y_2}{\partial x_2} \\
                 \frac{\partial y_3}{\partial x_1} &amp; \frac{\partial y_3}{\partial x_2}
               \end{pmatrix}
 </span></p>
