@@ -159,13 +159,13 @@ Let us take an example to understand it.
 ```{mermaid}
 %%| fig-width: 4.0
 graph LR
-  a(a) --> c(c)
-  a(a) --> d(d)
-  b(b) --> d(d)
-  c(c) --> e(e)
-  d(d) --> e(e)
-  e(e) --> l(l)
-  f(f) --> l(l)
+  a(a) --> c(c = a+1)
+  a(a) --> d(d = a+b)
+  b(b) --> d(d = a+b)
+  c(c = a+1) --> e(e = c * d)
+  d(d = a+b) --> e(e = c * d)
+  e(e = c * d) --> l(l = e+f)
+  f(f) --> l(l = e+f)
 ```
 
 The above diagram is typically referred to as a computational graph, where both **a** and **b** are inputs to the graph and $l$ is the output of the graph.
@@ -225,8 +225,8 @@ graph RL
   z(z = x+y)
   end
 
-  x(x) --> z(z = x+y) -.-> x(x)
-  y(y) --> z(z = x+y) -.-> y(y)
+  x(x) --> z(z = x+y)-.->|gradient of z|x(x)
+  y(y) --> z(z = x+y)-.->|gradient of z|y(y)
 ```
 
 computing gradients with respect to the input nodes is fairly simple as the backward gradient computation just copies the gradient of the output node to all the input nodes.
@@ -237,6 +237,9 @@ However, when we have a $'\times'$ operation in the graph, like the next one,
 ```{mermaid}
 %%| fig-width: 3.5
 graph RL
+  x(x) --> z(z = x*y)-.->|value of y * gradient of z|x(x)
+  y(y) --> z(z = x*y)-.->|value of x * gradient of z|y(y)
+
   subgraph input
   x(x)
   y(y)
@@ -245,9 +248,6 @@ graph RL
   subgraph output
   z(z = x*y)
   end
-
-  x(x) --> z(z = x*y) -.-> x(x)
-  y(y) --> z(z = x*y) -.-> y(y)
 ```
 
 gradient of one input node is just the product of the gradient of output node and value of other input node.
@@ -278,30 +278,30 @@ Consider our tiny network:
 ```{mermaid}
 %%| fig-width: 3.5
   graph LR
-  subgraph input layer
-  x1(x1) 
-  x2(x2)
-  end
+    x1(x1) --> y1(y1)
+    x2(x2) --> y1(y1)
+    x1(x1) --> y2(y2)
+    x2(x2) --> y2(y2)
+    x1(x1) --> y3(y3)
+    x2(x2) --> y3(y3)
+    y1(y1) --> l(l)
+    y2(y2) --> l(l)
+    y3(y3) --> l(l)
 
-  subgraph hidden layer
-  y1(y1) 
-  y2(y2)
-  y3(y3)
-  end
+    subgraph input<br>layer
+    x1(x1) 
+    x2(x2)
+    end
 
-  subgraph output layer
-  l(l)
-  end
+    subgraph hidden<br>layer
+    y1(y1) 
+    y2(y2)
+    y3(y3)
+    end
 
-  x1(x1) --> y1(y1)
-  x2(x2) --> y1(y1)
-  x1(x1) --> y2(y2)
-  x2(x2) --> y2(y2)
-  x1(x1) --> y3(y3)
-  x2(x2) --> y3(y3)
-  y1(y1) --> l(l)
-  y2(y2) --> l(l)
-  y3(y3) --> l(l)
+    subgraph output<br>layer
+    l(l)
+    end
 ```
 
 It has only two input nodes, a single output node and in between them three additional nodes forming the hidden layer.
@@ -333,8 +333,8 @@ At this stage, we can definitely compute the jacobian matrix of $\mathbf{\vec{f}
 
 $$
 \mathbf{J} = \begin{pmatrix}
-                \frac{\partial y_2}{\partial x_1} & \frac{\partial y_2}{\partial x_2} \\
                 \frac{\partial y_1}{\partial x_1} & \frac{\partial y_1}{\partial x_2} \\
+                \frac{\partial y_2}{\partial x_1} & \frac{\partial y_2}{\partial x_2} \\
                 \frac{\partial y_3}{\partial x_1} & \frac{\partial y_3}{\partial x_2} 
               \end{pmatrix}
 $$
