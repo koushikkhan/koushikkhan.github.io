@@ -510,15 +510,15 @@ Note
 <div>
 <div>
 <pre class="mermaid mermaid-js">  graph LR
-    x1(x1) --&gt; y1(y1)
-    x2(x2) --&gt; y1(y1)
-    x1(x1) --&gt; y2(y2)
-    x2(x2) --&gt; y2(y2)
-    x1(x1) --&gt; y3(y3)
-    x2(x2) --&gt; y3(y3)
-    y1(y1) --&gt; l(l)
-    y2(y2) --&gt; l(l)
-    y3(y3) --&gt; l(l)
+    x1(x1)--&gt;|w11|y1(y1)
+    x2(x2)--&gt;|w12|y1(y1)
+    x1(x1)--&gt;|w21|y2(y2)
+    x2(x2)--&gt;|w22|y2(y2)
+    x1(x1)--&gt;|w31|y3(y3)
+    x2(x2)--&gt;|w32|y3(y3)
+    y1(y1)--&gt;l(l)
+    y2(y2)--&gt;l(l)
+    y3(y3)--&gt;l(l)
 
     subgraph input&lt;br&gt;layer
     x1(x1) 
@@ -556,7 +556,7 @@ Note
                                 x_2
                               \end{pmatrix}
 </span></p>
-<p>and consider some differentiable scalar valued function <span class="math inline">g()</span> that combines hidden layer values to form the output <span class="math inline">l</span>.</p>
+<p>where <span class="math inline">w_{ij}; i=1(1)3, j=1(1)2</span> is the weight for the connection coming from <span class="math inline">j^{th}</span> node in the input layer to <span class="math inline">i^{th}</span> neuron in the hidden layer and consider a differentiable scalar valued function <span class="math inline">g()</span> that combines hidden layer output values to form the final output <span class="math inline">l</span>.</p>
 <p>Computing <span class="math inline">l</span> from the given fixed set of input values and with the help of some values of the parameters, is called the <em>forward pass</em>.</p>
 <p>At this stage, we can definitely compute the jacobian matrix of <span class="math inline">\mathbf{\vec{f}}</span> w.r.t <span class="math inline">\vec{x}</span>, which is given below:</p>
 <p><span class="math display">

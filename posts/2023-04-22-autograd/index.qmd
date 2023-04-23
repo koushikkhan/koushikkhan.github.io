@@ -278,15 +278,15 @@ Consider our tiny network:
 ```{mermaid}
 %%| fig-width: 3.5
   graph LR
-    x1(x1) --> y1(y1)
-    x2(x2) --> y1(y1)
-    x1(x1) --> y2(y2)
-    x2(x2) --> y2(y2)
-    x1(x1) --> y3(y3)
-    x2(x2) --> y3(y3)
-    y1(y1) --> l(l)
-    y2(y2) --> l(l)
-    y3(y3) --> l(l)
+    x1(x1)-->|w11|y1(y1)
+    x2(x2)-->|w12|y1(y1)
+    x1(x1)-->|w21|y2(y2)
+    x2(x2)-->|w22|y2(y2)
+    x1(x1)-->|w31|y3(y3)
+    x2(x2)-->|w32|y3(y3)
+    y1(y1)-->l(l)
+    y2(y2)-->l(l)
+    y3(y3)-->l(l)
 
     subgraph input<br>layer
     x1(x1) 
@@ -325,7 +325,7 @@ $$
                               \end{pmatrix}
 $$
 
-and consider some differentiable scalar valued function $g()$ that combines hidden layer values to form the output $l$. 
+where $w_{ij}; i=1(1)3, j=1(1)2$ is the weight for the connection coming from $j^{th}$ node in the input layer to $i^{th}$ neuron in the hidden layer and consider a differentiable scalar valued function $g()$ that combines hidden layer output values to form the final output $l$. 
 
 Computing $l$ from the given fixed set of input values and with the help of some values of the parameters, is called the *forward pass*.
 
