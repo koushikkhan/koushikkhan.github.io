@@ -47,7 +47,7 @@ The animation below, made with [geogebra](https://www.geogebra.org), will make t
 
 Once you open this animation in full screen mode, you get to see a slider controlling our $h$. On the left panel, there is a play button associated with $h$ and it can be used to play the animation. 
 
-If you make $h$ very close to zero, you will understand how the line segment $\overline{PQ}$ gradually becomes the tangent of the curve at point $A$.  
+If you make $h$ very close to zero, you will understand how the straight line passing through the points $P$ and $Q$ gradually becomes the tangent line of the curve at point $A$.  
 
 As you understand, the ratio $\frac{f(x+h) - f(x)}{(x+h) - x}$ is nothing but the *tangent* or $tan()$ of the angle $\angle{QPP'}$ from the triangle $\triangle{QPP'}$.
 
