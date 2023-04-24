@@ -214,7 +214,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#the-computational-graph" id="toc-the-computational-graph" class="nav-link" data-scroll-target="#the-computational-graph">The computational graph</a>
   <ul class="collapse">
   <li><a href="#differentiation-through-a-graph" id="toc-differentiation-through-a-graph" class="nav-link" data-scroll-target="#differentiation-through-a-graph">Differentiation through a graph</a></li>
-  <li><a href="#important-takeways" id="toc-important-takeways" class="nav-link" data-scroll-target="#important-takeways">Important takeways</a></li>
+  <li><a href="#important-takeaways" id="toc-important-takeaways" class="nav-link" data-scroll-target="#important-takeaways">Important takeaways</a></li>
   <li><a href="#sorting-nodes-before-performing-backpropagation" id="toc-sorting-nodes-before-performing-backpropagation" class="nav-link" data-scroll-target="#sorting-nodes-before-performing-backpropagation">Sorting nodes before performing backpropagation</a></li>
   <li><a href="#the-efficient-vector-jacobian-product" id="toc-the-efficient-vector-jacobian-product" class="nav-link" data-scroll-target="#the-efficient-vector-jacobian-product">The efficient vector-jacobian product</a></li>
   <li><a href="#the-training-loop" id="toc-the-training-loop" class="nav-link" data-scroll-target="#the-training-loop">The training loop</a></li>
@@ -422,8 +422,8 @@ Tip
 <p>If we would have started in the forward direction, then the learning algorithm would have travelled the entire graph for each of the input nodes at the very beginning. Unlike a simple graph like the above one, this forward mode differentiation is computationally very costly for a large network.</p>
 <p><a href="https://pytorch.org">Pytorch</a>, being most popular deep learning toolkit, has implemented a <code>.backward()</code> method to compute the derivatives for all the nodes (technically not all, only for them with <code>requires_grad=True</code>) in a computational graph with a single attempt.</p>
 </section>
-<section id="important-takeways" class="level2">
-<h2 class="anchored" data-anchor-id="important-takeways">Important takeways</h2>
+<section id="important-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="important-takeaways">Important takeaways</h2>
 <p>When we have a <span class="math inline">'+'</span> operation in the graph, like the one below,</p>
 <div class="cell" data-fig-width="3.5">
 <div class="cell-output-display">
