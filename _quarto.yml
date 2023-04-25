@@ -34,6 +34,7 @@ website:
 
 format:
   html:
+    mainfont: system-ui
     html-math-method: katex
     mermaid: 
       theme: default
