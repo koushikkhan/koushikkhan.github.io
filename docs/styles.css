@@ -1,12 +1,23 @@
 /* css styles */
 
-@font-face {
+/* @font-face {
     font-family: 'ComputerModern';
     src: url('resources/fonts/cmunrm.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
+
+@font-face {
+  font-family: 'Ubuntu-Regular';
+  src: url('resources/fonts/Ubuntu-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Ubuntu-Regular', sans-serif;
+}
   
-  body {
-    font-family: 'ComputerModern', sans-serif;
-  }
+body {
+  font-family: 'Ubuntu-Regular', sans-serif;
+} */
