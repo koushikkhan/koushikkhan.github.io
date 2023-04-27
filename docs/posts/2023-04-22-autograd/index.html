@@ -232,9 +232,10 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>In our high school mathematics, we have learnt <em>Differential Calculus</em>, which has introduced the term ‘differentiation’ and ‘derivative’.</p>
+<p>In our high school mathematics, we have learnt <em>Differential Calculus</em>, which has introduced the terms ‘differentiation’ and ‘derivative’.</p>
 <p>The concept of differentiating a function has played a significant role in today’s deep learning algorithms among many of its useful real life applications.</p>
 <p>In this post, I will revisit the core idea of computing derivative by looking at the geometrical interpretation of it and simultaneously try to put some light to the idea that is used behind the efficient learning process of a neural network, also known as <em>backpropagation</em>.</p>
+<p>This post is highly motivated by a series of lecture videos by Andrej Karpathy. I have given a reference to it at the end.</p>
 </section>
 <section id="differentiation" class="level1">
 <h1>Differentiation</h1>
@@ -263,7 +264,7 @@ Note
 <p>The animation below, made with <a href="https://www.geogebra.org">geogebra</a>, will make the definition easier to understand by giving geometrical sense, especially the limiting nature of the ratio.</p>
 <iframe src="https://www.geogebra.org/calculator/jbdd9y5v?embed" width="800" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
 </iframe>
-<p>Once you open this animation in full screen mode, you get to see a slider controlling our <span class="math inline">h</span>. On the left panel, there is a play button associated with <span class="math inline">h</span> and it can be used to play the animation.</p>
+<p>Once you open this animation in full screen mode, you get to see a slider that is controlling our <span class="math inline">h</span>. On the left panel, there is a play button associated with <span class="math inline">h</span> and it can be used to play the animation.</p>
 <p>If you make <span class="math inline">h</span> very close to zero, you will understand how the secant line passing through the points <span class="math inline">P</span> and <span class="math inline">Q</span> gradually becomes the tangent line of the curve at point <span class="math inline">A</span>.</p>
 <p>As you understand, the ratio <span class="math inline">\frac{f(x+h) - f(x)}{(x+h) - x}</span> is nothing but the <em>slope</em> or <span class="math inline">tan(.)</span> of the angle <span class="math inline">\angle{QPP'}</span> from the triangle <span class="math inline">\triangle{QPP'}</span>.</p>
 <p>Theoratically, when <span class="math inline">h</span> is very close to zero, the ratio gives you the value of the slope, that the tangent line of the curve has, at the point <span class="math inline">(x,0)</span>.</p>
@@ -698,12 +699,12 @@ Note
                                   \frac{\partial l}{\partial y_1} \\
                                   \frac{\partial l}{\partial y_2} \\
                                   \frac{\partial l}{\partial y_3} \\
-                              \end{pmatrix} \\
+                              \end{pmatrix} \nonumber \\
                            &amp;= \begin{pmatrix}
                                   \frac{\partial l}{\partial x_1} \\
                                   \frac{\partial l}{\partial x_2}
-                              \end{pmatrix} \\
-                           &amp;= \frac{\partial l}{\partial \vec{x}}
+                              \end{pmatrix} \nonumber \\
+                           &amp;= \frac{\partial l}{\partial \vec{x}} \nonumber
 \end{align}</span></p>
 <p>If we observe the dot product carefully, we will notice a series of chain rules being performed.</p>
 <p>Therefore, this vector-jacobian product helps us to compute the gradient of loss function w.r.t the nodes in another layer which, in reality, might be far behind the output layer in the computational graph and it does so with the help of a known gradient vector for the layer right next to it.</p>
