@@ -370,17 +370,17 @@ nll = -\sum_{i=1}^N \hat{y}_i log(p) + (1-\hat{y}_i) log(1-p)
 <p>A simple example can be a function <span class="math inline">f: \mathbb{R}^2 \to \mathbb{R}^3</span>:</p>
 <ul>
 <li>input: <span class="math inline">\vec{x} = \left(x_1, x_2\right)</span> and a matrix of parameters <span class="math inline">\mathbf{W}_{3 \times 2}</span></li>
-<li>output: <span class="math inline">\vec{y} = \mathbf{f(\vec{x})} = \left(w_{11}x_1+w_{12}x_2, w_{21}x_1+w_{22}x_2, w_{31}x_1+w_{32}x_2\right)</span></li>
+<li>output: <span class="math inline">\vec{y} = f(\vec{x}) = \left(w_{11}x_1+w_{12}x_2, w_{21}x_1+w_{22}x_2, w_{31}x_1+w_{32}x_2\right)</span></li>
 </ul>
-<p>In this case, derivative of <span class="math inline">\mathbf{f(\vec{x})}</span> will be a matrix of dimension <span class="math inline">m \times n</span>, as given below:</p>
+<p>In this case, derivative of <span class="math inline">f(\vec{x})</span> will be a matrix of dimension <span class="math inline">m \times n</span>, as given below:</p>
 <p><span class="math display">\begin{align}
-    \frac{d\vec{y}}{d\vec{x}} &amp;= \left(\frac{d\vec{y}}{dx_1}, \ldots, \frac{d\vec{y}}{dx_n}\right) \\
+    \frac{d\vec{y}}{d\vec{x}} &amp;= \left(\frac{d\vec{y}}{dx_1}, \ldots, \frac{d\vec{y}}{dx_n}\right) \nonumber \\
     &amp;= \begin{pmatrix}
             \frac{dy_1}{dx_1} &amp; \frac{dy_1}{dx_2} &amp; \ldots &amp; \frac{dy_1}{dx_n} \\
             \frac{dy_2}{dx_1} &amp; \frac{dy_2}{dx_2} &amp; \ldots &amp; \frac{dy_2}{dx_n} \\
             \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
             \frac{dy_m}{dx_1} &amp; \frac{dy_m}{dx_2} &amp; \ldots &amp; \frac{dy_m}{dx_n} \\
-        \end{pmatrix}
+        \end{pmatrix} \nonumber
 \end{align}</span></p>
 <p>This matrix is often referred to as <a href="https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant"><em>jacobian matrix</em></a> of <span class="math inline">\vec{y}</span> with respect to <span class="math inline">\vec{x}</span>.</p>
 </section>

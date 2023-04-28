@@ -167,18 +167,18 @@ Such functions take vector (s) as input (s) and return another vector with diffe
 A simple example can be a function $f: \mathbb{R}^2 \to \mathbb{R}^3$:
 
 + input: $\vec{x} = \left(x_1, x_2\right)$ and a matrix of parameters $\mathbf{W}_{3 \times 2}$
-+ output: $\vec{y} = \mathbf{f(\vec{x})} = \left(w_{11}x_1+w_{12}x_2, w_{21}x_1+w_{22}x_2, w_{31}x_1+w_{32}x_2\right)$
++ output: $\vec{y} = f(\vec{x}) = \left(w_{11}x_1+w_{12}x_2, w_{21}x_1+w_{22}x_2, w_{31}x_1+w_{32}x_2\right)$
 
-In this case, derivative of $\mathbf{f(\vec{x})}$ will be a matrix of dimension $m \times n$, as given below:
+In this case, derivative of $f(\vec{x})$ will be a matrix of dimension $m \times n$, as given below:
 
 \begin{align}
-    \frac{d\vec{y}}{d\vec{x}} &= \left(\frac{d\vec{y}}{dx_1}, \ldots, \frac{d\vec{y}}{dx_n}\right) \\
+    \frac{d\vec{y}}{d\vec{x}} &= \left(\frac{d\vec{y}}{dx_1}, \ldots, \frac{d\vec{y}}{dx_n}\right) \nonumber \\
     &= \begin{pmatrix}
             \frac{dy_1}{dx_1} & \frac{dy_1}{dx_2} & \ldots & \frac{dy_1}{dx_n} \\
             \frac{dy_2}{dx_1} & \frac{dy_2}{dx_2} & \ldots & \frac{dy_2}{dx_n} \\
             \vdots & \vdots & \ddots & \vdots \\
             \frac{dy_m}{dx_1} & \frac{dy_m}{dx_2} & \ldots & \frac{dy_m}{dx_n} \\
-        \end{pmatrix}
+        \end{pmatrix} \nonumber
 \end{align}
 
 This matrix is often referred to as [*jacobian matrix*](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant) of $\vec{y}$ with respect to $\vec{x}$.
