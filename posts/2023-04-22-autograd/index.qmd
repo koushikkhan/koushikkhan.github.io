@@ -427,7 +427,7 @@ Consider our tiny network:
 
 It has only two input nodes, a single output node and in between them three additional nodes forming the hidden layer.
 
-The mapping from input layer to hidden layer is supported by a matrix of parameters $\mathbf{W}_{3 \times 2}$ and ofcourse by a vector valued linear function, say, $\vec{f}$.
+The mapping from input layer to hidden layer is supported by a matrix of parameters $\mathbf{W}_{3 \times 2}$ and of course by a vector valued linear function, say, $\vec{f}$.
 
 Hidden layer values are formed using the equation below:
 
