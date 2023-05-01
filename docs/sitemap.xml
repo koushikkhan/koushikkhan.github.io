@@ -1,43 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>/resume.html</loc>
+    <lastmod>2023-05-01T15:13:15.204Z</lastmod>
+  </url>
+  <url>
     <loc>/about.html</loc>
-    <lastmod>2023-04-28T14:12:58.445Z</lastmod>
+    <lastmod>2023-05-01T15:13:15.564Z</lastmod>
   </url>
   <url>
     <loc>/index.html</loc>
-    <lastmod>2023-04-30T14:56:38.146Z</lastmod>
-  </url>
-  <url>
-    <loc>/posts/2023-03-19-stat-hypothesis-test/index.html</loc>
-    <lastmod>2023-04-28T14:13:05.135Z</lastmod>
-  </url>
-  <url>
-    <loc>/posts/2023-03-22-bash-commands-for-cloud-1/index.html</loc>
-    <lastmod>2023-04-28T14:13:09.162Z</lastmod>
-  </url>
-  <url>
-    <loc>/posts/2023-03-26-bash-commands-for-cloud-2/index.html</loc>
-    <lastmod>2023-04-28T14:13:15.387Z</lastmod>
-  </url>
-  <url>
-    <loc>/posts/2023-04-22-autograd/index.html</loc>
-    <lastmod>2023-04-30T14:56:28.370Z</lastmod>
+    <lastmod>2023-05-01T15:13:15.855Z</lastmod>
   </url>
   <url>
     <loc>/posts.html</loc>
-    <lastmod>2023-04-30T14:56:29.385Z</lastmod>
-  </url>
-  <url>
-    <loc>/projects.html</loc>
-    <lastmod>2023-04-28T14:13:26.578Z</lastmod>
-  </url>
-  <url>
-    <loc>/resume.html</loc>
-    <lastmod>2023-04-30T14:56:42.043Z</lastmod>
+    <lastmod>2023-05-01T15:13:16.695Z</lastmod>
   </url>
   <url>
     <loc>/skills.html</loc>
-    <lastmod>2023-04-28T14:13:35.114Z</lastmod>
+    <lastmod>2023-05-01T15:13:17.162Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts/2023-03-19-stat-hypothesis-test/index.html</loc>
+    <lastmod>2023-05-01T15:13:17.742Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts/2023-05-01-embeddings/index.html</loc>
+    <lastmod>2023-05-01T15:13:18.154Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts/2023-03-22-bash-commands-for-cloud-1/index.html</loc>
+    <lastmod>2023-05-01T15:13:18.738Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts/2023-04-22-autograd/index.html</loc>
+    <lastmod>2023-05-01T15:13:19.808Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts/2023-03-26-bash-commands-for-cloud-2/index.html</loc>
+    <lastmod>2023-05-01T15:13:20.847Z</lastmod>
+  </url>
+  <url>
+    <loc>/projects.html</loc>
+    <lastmod>2023-05-01T15:13:21.097Z</lastmod>
   </url>
 </urlset>

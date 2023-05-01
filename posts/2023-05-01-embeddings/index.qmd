@@ -1,0 +1,122 @@
+---
+title: "Make More Sense of Language Through Embeddings"
+description: "Representing texts in a better way that neural networks understand"
+from: markdown+emoji
+author:
+  - name: Koushik Khan
+    url: https://koushikkhan.github.io/ 
+date: 05-01-2023
+categories: [deep learning]
+image: network.jpg
+draft: false
+---
+
+# Introduction
+
+A computer algorithm is nothing but a sequence of carefully chosen steps having a specific goal, it needs some imput data to work on and produce some results. Achiving this goal depends on many many factors and representing the input data to the algorithm is one of them.
+
+Neural networks, being some complex algorithms, are capable of performing many useful tasks with human languages when represented both as texts and sound waves. Some useful examples can be *human sentiment detection* from written text, *language translation*, *image captioning* etc. 
+
+In all these cases, one interesting thing is to know how such a massive amount of textual data are supplied to a network so that it understands the inner meaning just like a human.  
+
+In this post I will focus on various ways to repesent textual dataset to a network, starting from very naive to very efficient as well as logical.
+
+# Some important terminologies
+
+Let us understand some basic yet important terminologies that are used while working with textual data. For the sake of convenience, we will consider *English* as the language to understand various concepts in this post, but the same are applicable for other languages too. 
+
++ **Corpus**: A corpus is a collection of textual data. It typically refers to a group of sentences or paragraphs. For example, the messages we send to someone in any messaging platform can be considered together to form a corpus.
+
++ **Token**: A token is the most granular part of a corpus. Depending on the requirement, it can be a single character, a single word or even a single sentence. The process of creating tokens out of a corpus is called *tokenization*.
+
++ **Vocabulary**: A vocabulary is the set of unique (non-repetitive) tokens. Technically, it is that set which generates the entire corpus.
+
+An example will help here to understand it better.
+
+```
+corpus = ['Mathematics is the language to understand the nature']
+
+word_level_tokens = [
+  'Mathematics', 'is', 'the', 
+  'language', 'to', 'understand', 
+  'the', 'nature'
+]
+
+vocabulary = {'Mathematics', 'is', 'the', 'language', 'to', 'understand', 'nature'}
+```
+
+Note that, the word `the` has appeared twice in the corpus and it is considered only once in the vocabulary.
+
+# Converting texts to numbers
+
+Converting texts to numbers are required because computer can only handle numbers, although typically not in the form we give. It converts numbers (decimal numbers) to the binary form which is basically a sequence of zeros and ones, before performing any task.
+
+Since the beginning of development of modern computers, we have something called [ASCII table](https://www.ascii-code.com/). This table used to have numeric representation of each character only in English but later on it has started supporting other languages as well.
+
+# Better ways to represent texts
+
+ASCII codes are certainly useful to represent characters in the computers' memory. But it does not fulfill the purpose while developing modern intelligent applications like a language translator.
+
+In natural language processing, tokens are usually represented by numerical arrays or vectors. Let us understand the various ways to create such vectors.
+
+Before proceeding further, let us consider a new corpus (a group of sentences quoted by [Shakuntala Devi](https://en.wikipedia.org/wiki/Shakuntala_Devi)) with a word level tokenization as below:
+
+```
+corpus = [
+  'without mathematics, there’s nothing you can do',
+  'everything around you is mathematics',
+  'everything around you is number'
+]
+
+word_level_tokens = [
+  "without", "mathematics", "there's",
+  "nothing", "you", "can", "do", 
+  "everything", "around", "you", "is", 
+  "mathematics", "everything", "around", 
+  "you", "is", "number"
+]
+
+sorted_vocabulary = [
+  'around',
+  'can',
+  'do',
+  'everything',
+  'is',
+  'mathematics',
+  'nothing',
+  'number',
+  "there's",
+  'without',
+  'you'
+]
+
+vocabulary_size = 11
+```
+
+## One-hot vector
+
+This is the simplest way to convert tokens into a vector. One-hot vector, for a token, is a vector of dimension `vocabulary_size` (often denoted by $|V|$). In this vector, all the elements are $0$'s except a single $1$. The position that holds the $1$ is basically the position of the token in the vocabulary.
+
+Example: 
+
+```
+one_hot_for_around = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+one_hot_for_can = [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+one_hot_for_number = [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
+```
+
+As you can imagnine, for a large corpus, one-hot vectors are very large dimensional sparse vectors.
+
+## Count vectorization
+
+
+## Tf-Idf vectorization
+
+
+## Embedding vectorization using neural networks
+
+
+
+
+
+

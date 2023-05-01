@@ -42,6 +42,48 @@
     "text": "Hello, myself Koushik Khan. I work as a Sr. Data Scientist at S&P Global Inc., Bangalore, India.\nI have more than seven years of industry experience in working with varied data sets with right set of tools to help stakeholders taking informed decisions.\nThis is my personal portfolio where I usually share my experiences in the form of blog posts.\nThe list below is to help you navigate through the site.\n\n Home: This is where you are at right now\n Blog: List of blog posts that I’ve written\n Projects: Links to my personal projects\n Skills: A curated list of projects with skills in academic and professional career\n Resume: My latest resume is attached here\n About: About myself\n\nThanks."
   },
   {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Blog Posts",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nMake More Sense of Language Through Embeddings\n\n\n\n\n\n\n\ndeep learning\n\n\n\n\nRepresenting texts in a better way that neural networks understand\n\n\n\n\n\n\nMay 1, 2023\n\n\nKoushik Khan\n\n\n\n\n\n\n  \n\n\n\n\nGradient Calculation Through Computational Graph\n\n\n\n\n\n\n\ndeep learning\n\n\n\n\nThe way, deep neural networks learn\n\n\n\n\n\n\nApr 22, 2023\n\n\nKoushik Khan\n\n\n\n\n\n\n  \n\n\n\n\nBash Commands to Get Started on Linux Clouds\n\n\n\n\n\n\n\nlinux\n\n\ncloud\n\n\n\n\nPart 2: Advanced Tools for Commandline\n\n\n\n\n\n\nMar 26, 2023\n\n\nKoushik Khan\n\n\n\n\n\n\n  \n\n\n\n\nBash Commands to Get Started on Linux Clouds\n\n\n\n\n\n\n\nlinux\n\n\ncloud\n\n\n\n\nPart 1: Basics\n\n\n\n\n\n\nMar 22, 2023\n\n\nKoushik Khan\n\n\n\n\n\n\n  \n\n\n\n\nTesting of Hypotheses: A Quick Refresher\n\n\n\n\n\n\n\nstatistics\n\n\n\n\nPart 1: Basics\n\n\n\n\n\n\nMar 19, 2023\n\n\nKoushik Khan\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "skills.html",
+    "href": "skills.html",
+    "title": "Skills and Expertises",
+    "section": "",
+    "text": "Along the journey in my career, I have worked on various projects, all of them may not be worth of mentioning. I have handpicked few of them here along with the tools and methodologies used."
+  },
+  {
+    "objectID": "skills.html#fa-building-columns-academics",
+    "href": "skills.html#fa-building-columns-academics",
+    "title": "Skills and Expertises",
+    "section": " Academics",
+    "text": "Academics\n\nDigitization of class notes, preparation of project reports\n\n Tools\n\n\\LaTeX as the rendering engine\nR with Sweave and knitr packages\n\n\nPerforming computations for ‘Design of Experiments’ problems\n\n Tools\n\nC programming"
+  },
+  {
+    "objectID": "skills.html#fa-briefcase-bcause-enterprise-pvt.-limited-2015-2016",
+    "href": "skills.html#fa-briefcase-bcause-enterprise-pvt.-limited-2015-2016",
+    "title": "Skills and Expertises",
+    "section": " BCausE Enterprise Pvt. Limited (2015-2016)",
+    "text": "BCausE Enterprise Pvt. Limited (2015-2016)\n\nPredicting the names of human body parts from a corpus of digitized prescriptions using text classification\n\n Tools\n\nHeavily relied on regex for data cleansing\nNLP libraries based on Python\nMongoDB at the back-end\nFlask for REST API as front-end"
+  },
+  {
+    "objectID": "skills.html#fa-briefcase-ibm-india-pvt.-ltd.-2016-2021",
+    "href": "skills.html#fa-briefcase-ibm-india-pvt.-ltd.-2016-2021",
+    "title": "Skills and Expertises",
+    "section": " IBM India Pvt. Ltd. (2016-2021)",
+    "text": "IBM India Pvt. Ltd. (2016-2021)\n\nAnalysing customer complaints (a.k.a tickets) from various sources and predicting root causes using clustering and text classification respectively\n\n Tools\n\nPython (as machine learning base)\nSQL at the back-end\nLittle bit of ShellScript to integrate the model with other modules\nFlask for REST API as front-end\ndocker for packaging the ml application\nKubernetes used for deployment of the docker image\n\n\nServing search queries to customers by designing a small scale search engine built on customer Feedbacks and FAQs using information retrieval algorithm\n\n Tools\n\nSingular value decomposition to understand word-to-word relationship\nPandas as data processing toolkit\nNumpy for matrix facorization implementation\n\n\nUnderstanding the effects of various factors like advertisement, promotion, weather on sales of several commodities, analysing ROI year-on-year basis and forecasting the furure sales using Marketing Mix Modeling\n\n Tools\n\nR with dplyr as the data processing toolkit\nBase R for model development\nSQL at the back-end"
+  },
+  {
+    "objectID": "skills.html#fa-briefcase-ihs-markit-and-sp-global-inc.-2021-present",
+    "href": "skills.html#fa-briefcase-ihs-markit-and-sp-global-inc.-2021-present",
+    "title": "Skills and Expertises",
+    "section": " IHS Markit and S&P Global Inc. (2021-Present)",
+    "text": "IHS Markit and S&P Global Inc. (2021-Present)\n\nAnalysing shipping data on a daily basis\n\n Tools\n\nPySpark as the data processing engine\nExcel for adhoc analysis and reporting\nAWS as the cloud platform\n\n\nCargo grade identification using text classification\n\n Tools\n\nPython (as machine learning base)\nS3 for Local Deployment\nShellScript for automation\n\n\nBuilding data pipeline incorporate external data from various sources\n\n Tools\n\nR for developing data pipelines\nShellScript for integration as automation\nAWS as cloud platform"
+  },
+  {
     "objectID": "posts/2023-03-19-stat-hypothesis-test/index.html",
     "href": "posts/2023-03-19-stat-hypothesis-test/index.html",
     "title": "Testing of Hypotheses: A Quick Refresher",
@@ -54,6 +96,41 @@
     "title": "Testing of Hypotheses: A Quick Refresher",
     "section": "Some Real Life Examples",
     "text": "Some Real Life Examples\nI will try to relate the definitions with couple of examples:\n\nSuppose the Honorable judge is about to give his verdict to the accused. Now let’s assume that our null hypothesis or prior belief about that person is, the person is not guilty. If the judge’s verdict is against the accused even if the person has really not done anything wrong, then it is the Type-I error, whereas if the verdict is in favor of the accused when in reality the person has done something wrong, then it is the Type-II error. If you’d think for a moment, you would understand the fact that Type-I error is more severe in nature.\nThis one is going to be of great impotance for the society. We know that almost every country has their own military radar system to detect any missilies aimed at them. Assume that, the null hypothesis is the enemy is in war mode, they will attack. Now, could you imagine the situation, if the military radar system would have failed to detect the missiles that had been aimed at your country and they were few miles away from their target…the lives of innocent citizens would have been devastated.\n\n\nHaving understood the importance of Type-I error in decision making, the usual tendency of the experimenter is to keep the chance of making Type-I error fixed at a very low level, which, by years of research and experimentations, has been chosen as 1% or 5%, depending on the situation."
+  },
+  {
+    "objectID": "posts/2023-05-01-embeddings/index.html",
+    "href": "posts/2023-05-01-embeddings/index.html",
+    "title": "Make More Sense of Language Through Embeddings",
+    "section": "",
+    "text": "A computer algorithm is nothing but a sequence of carefully chosen steps having a specific goal, it needs some imput data to work on and produce some results. Achiving this goal depends on many many factors and representing the input data to the algorithm is one of them.\nNeural networks, being some complex algorithms, are capable of performing many useful tasks with human languages when represented both as texts and sound waves. Some useful examples can be human sentiment detection from written text, language translation, image captioning etc.\nIn all these cases, one interesting thing is to know how such a massive amount of textual data are supplied to a network so that it understands the inner meaning just like a human.\nIn this post I will focus on various ways to repesent textual dataset to a network, starting from very naive to very efficient as well as logical."
+  },
+  {
+    "objectID": "posts/2023-05-01-embeddings/index.html#one-hot-vector",
+    "href": "posts/2023-05-01-embeddings/index.html#one-hot-vector",
+    "title": "Make More Sense of Language Through Embeddings",
+    "section": "One-hot vector",
+    "text": "One-hot vector\nThis is the simplest way to convert tokens into a vector. One-hot vector, for a token, is a vector of dimension vocabulary_size (often denoted by |V|). In this vector, all the elements are 0’s except a single 1. The position that holds the 1 is basically the position of the token in the vocabulary.\nExample:\none_hot_for_around = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\none_hot_for_can = [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]\none_hot_for_number = [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]\nAs you can imagnine, for a large corpus, one-hot vectors are very large dimensional sparse vectors."
+  },
+  {
+    "objectID": "posts/2023-05-01-embeddings/index.html#count-vectorization",
+    "href": "posts/2023-05-01-embeddings/index.html#count-vectorization",
+    "title": "Make More Sense of Language Through Embeddings",
+    "section": "Count vectorization",
+    "text": "Count vectorization"
+  },
+  {
+    "objectID": "posts/2023-05-01-embeddings/index.html#tf-idf-vectorization",
+    "href": "posts/2023-05-01-embeddings/index.html#tf-idf-vectorization",
+    "title": "Make More Sense of Language Through Embeddings",
+    "section": "Tf-Idf vectorization",
+    "text": "Tf-Idf vectorization"
+  },
+  {
+    "objectID": "posts/2023-05-01-embeddings/index.html#embedding-vectorization-using-neural-networks",
+    "href": "posts/2023-05-01-embeddings/index.html#embedding-vectorization-using-neural-networks",
+    "title": "Make More Sense of Language Through Embeddings",
+    "section": "Embedding vectorization using neural networks",
+    "text": "Embedding vectorization using neural networks"
   },
   {
     "objectID": "posts/2023-03-22-bash-commands-for-cloud-1/index.html",
@@ -75,20 +152,6 @@
     "title": "Bash Commands to Get Started on Linux Clouds",
     "section": "Working with files and directories",
     "text": "Working with files and directories\nNow, you know the basics of running commands and getting some simple yet useful information, it is the time to see a bit more interesting commands.\n\n👉 Creating a file with touch\n!touch my_first_file.txt\ntouch creates a file with the name given by the user right next to it followed by a space character.\n\n\n👉 Writing data to a file using tee\n# writing date to file, the file will be created if it does not exist\n!date | tee records.txt\n\n# writing data in append mode with flag '-a'\n!date | tee -a records.txt\n\n# evaluate and then write in append mode\n!echo $(date) | tee -a records.txt\nWed Mar 22 17:23:25 IST 2023\n\nWed Mar 22 17:23:25 IST 2023\n\nWed Mar 22 17:23:25 IST 2023\nBy default, tee overwrites the data to the file, -a is used to avoid this.\nWe have one more operator (|) here, it is called pipe operator. It takes the output of the previous command and passes to the next command.\nWriting same data to multiple files is also very intuitive as in date | tee -a file1.txt file2.txt file3.txt\nThe same operations can also be performed using redirect operator &gt;. date &gt; record.txt will write the system date time by overrwriting the file and date &gt;&gt; record.txt will write the data to the file in append mode.\nA file can be removed using the rm command, e.g. rm record.txt\n\n\n👉 Working with directory (folder)\n# create directory with 'mkdir'\n!mkdir test_dir_1\n!mkdir test_dir_2\n\n# create directory recussively along a path with flag '-p'\n!mkdir -p test_dir_1/sub_dir/sub_sub_dir\n\n# remove directories with 'rm'\n!rm -d test_dir_2 # '-d' flag (directory) is used to remove an empty directory\n!rm -r test_dir_1 # '-r' flag (recurive) is used to remove a directory and all of its contents\n# rm -rf test_dir_1 '-f' flag (force) is used to remove a directory and all of its contents forcefully\nmultiple directories can also be removed just by specifying their paths one by one. One very useful flag for rm command is -i, which makes the removal process interactive.\nNote: In linux, if you add a . before the file and diretory name, then it will be hidden which means simple ls command cannot show you these, you must to use ls -a to locate them 😉 .\n\n\n👉 Copying files and directories from source to destination\nTo copy a file or directory from source to destination, we have the command cp. See the examples below to understand how it works,\n\ncopy a file: cp source_path/file.txt destination_path/\ncopy a directory: cp -r source_path/test_dir/ destination_path/\n\n\n\n👉 Searching for files and directories using grep\nSometimes you may need a search for a file or directory inside the terminal. This can be done using the command called grep. It is used with ls through a pipe operator as if we are telling bash to filter the ls output by the pattern. See the examples below,\n# will only show files and directories with the word 'first' in their names \n!ls -lahts | grep first\n   0 -rw-r--r--  1 koushik koushik    0 Mar 22 17:23 my_first_file.txt\n\n\n👉 Editing a file with nano\nnano is a text editor which typically available in almost all linux based systems. It is very useful if you quickly want to edit a file without leaving the terminal.\nnano &lt;your_file_name&gt; is the command to open a file with nano. Once you are done with the editing, you can use Ctrl+S (Cmd+S in case you’re using clound from a Mac) to save the file and Ctrl+X (or Cmd+X in Mac) to close the editor.\n\n\n👉 Viewing the content of a file using cat\nIn case you want to see the content of a file, you have a command called cat. It has several flags to use based on your requirements. Be careful, when using cat for a large file, by default it will show you everything that is there in the file.\ncat records.txt\nWed Mar 22 17:23:25 IST 2023\nWed Mar 22 17:23:25 IST 2023\nWed Mar 22 17:23:25 IST 2023\nYou can use the flag -n to see the line numbers right before the lines.\ncat -n records.txt\n     1  Wed Mar 22 17:23:25 IST 2023\n     2  Wed Mar 22 17:23:25 IST 2023\n     3  Wed Mar 22 17:23:25 IST 2023\nThat’s all for the part 1. I hope you have enjoyed reading the post, stay tuned for the next part."
-  },
-  {
-    "objectID": "posts/2023-03-26-bash-commands-for-cloud-2/index.html",
-    "href": "posts/2023-03-26-bash-commands-for-cloud-2/index.html",
-    "title": "Bash Commands to Get Started on Linux Clouds",
-    "section": "",
-    "text": "In our previous post, we have seen examples to become confident enough for getting a grip on linux commands. This is the time now to jump into more advanced topics. Let’s go."
-  },
-  {
-    "objectID": "posts/2023-03-26-bash-commands-for-cloud-2/index.html#permission-in-numeric-mode",
-    "href": "posts/2023-03-26-bash-commands-for-cloud-2/index.html#permission-in-numeric-mode",
-    "title": "Bash Commands to Get Started on Linux Clouds",
-    "section": "Permission in numeric mode",
-    "text": "Permission in numeric mode\nAll these three characters i.e. ‘r’, ‘w’ and ‘x’ are also represented by numbers as follows:\n\nr (read): 4\nw (write): 2\nx (execute): 1\n\nand their sum is expressed as the desired permission for an user. Some examples below will make the concept clear.\n\nr = 4, w = 2, x = 1\n\nsum = 7\nthe user has read, write and execute permission for the corresponding file\n\nr = 4, w = 2, x = 0\n\nsum = 6\nthe user has read and write permission only for the corresponding file, but the file cannot be executed as a program\n\nr = 4, w = 0, x = 1\n\nsum = 5\nthe user has read and execute permission only for the corresponding file, but the file cannot be modified"
   },
   {
     "objectID": "posts/2023-04-22-autograd/index.html",
@@ -154,11 +217,18 @@
     "text": "The training loop\nThe last and one of the important parts of training a neural network is the training loop. Technically it is a for loop where in each iteration some steps are performed. Each of these iterations is also called epoch.\nIt is to be noted that, before entering into the loop, all the parameters are randomly initialized.\nBelow are the steps that are performed within atraining loop.\n\n\n\n\nflowchart TD\n    A(randomly initialize&lt;br&gt;parameters) --&gt; B(compute output&lt;br&gt;for all the nodes&lt;br&gt;in each of the layers)--&gt;|compare with&lt;br&gt;ground truth|C(compute loss) --&gt; D(perform&lt;br&gt;backpropagation) --&gt; E(update&lt;br&gt;parameters) --&gt; B\n\n    subgraph forward pass\n    B\n    C\n    end\n\n    subgraph backward pass\n    D\n    end\n\n    subgraph update\n    E\n    end"
   },
   {
-    "objectID": "posts.html",
-    "href": "posts.html",
-    "title": "Blog Posts",
+    "objectID": "posts/2023-03-26-bash-commands-for-cloud-2/index.html",
+    "href": "posts/2023-03-26-bash-commands-for-cloud-2/index.html",
+    "title": "Bash Commands to Get Started on Linux Clouds",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nGradient Calculation Through Computational Graph\n\n\n\n\n\n\n\ndeep learning\n\n\n\n\nThe way, deep neural networks learn\n\n\n\n\n\n\nApr 22, 2023\n\n\nKoushik Khan\n\n\n\n\n\n\n  \n\n\n\n\nBash Commands to Get Started on Linux Clouds\n\n\n\n\n\n\n\nlinux\n\n\ncloud\n\n\n\n\nPart 2: Advanced Tools for Commandline\n\n\n\n\n\n\nMar 26, 2023\n\n\nKoushik Khan\n\n\n\n\n\n\n  \n\n\n\n\nBash Commands to Get Started on Linux Clouds\n\n\n\n\n\n\n\nlinux\n\n\ncloud\n\n\n\n\nPart 1: Basics\n\n\n\n\n\n\nMar 22, 2023\n\n\nKoushik Khan\n\n\n\n\n\n\n  \n\n\n\n\nTesting of Hypotheses: A Quick Refresher\n\n\n\n\n\n\n\nstatistics\n\n\n\n\nPart 1: Basics\n\n\n\n\n\n\nMar 19, 2023\n\n\nKoushik Khan\n\n\n\n\n\n\nNo matching items"
+    "text": "In our previous post, we have seen examples to become confident enough for getting a grip on linux commands. This is the time now to jump into more advanced topics. Let’s go."
+  },
+  {
+    "objectID": "posts/2023-03-26-bash-commands-for-cloud-2/index.html#permission-in-numeric-mode",
+    "href": "posts/2023-03-26-bash-commands-for-cloud-2/index.html#permission-in-numeric-mode",
+    "title": "Bash Commands to Get Started on Linux Clouds",
+    "section": "Permission in numeric mode",
+    "text": "Permission in numeric mode\nAll these three characters i.e. ‘r’, ‘w’ and ‘x’ are also represented by numbers as follows:\n\nr (read): 4\nw (write): 2\nx (execute): 1\n\nand their sum is expressed as the desired permission for an user. Some examples below will make the concept clear.\n\nr = 4, w = 2, x = 1\n\nsum = 7\nthe user has read, write and execute permission for the corresponding file\n\nr = 4, w = 2, x = 0\n\nsum = 6\nthe user has read and write permission only for the corresponding file, but the file cannot be executed as a program\n\nr = 4, w = 0, x = 1\n\nsum = 5\nthe user has read and execute permission only for the corresponding file, but the file cannot be modified"
   },
   {
     "objectID": "projects.html",
@@ -166,40 +236,5 @@
     "title": "Personal Projects",
     "section": "",
     "text": "Below is the list of my personal projects.\n\nMy Portfolio [web development, technical writing] - github repository"
-  },
-  {
-    "objectID": "skills.html",
-    "href": "skills.html",
-    "title": "Skills and Expertises",
-    "section": "",
-    "text": "Along the journey in my career, I have worked on various projects, all of them may not be worth of mentioning. I have handpicked few of them here along with the tools and methodologies used."
-  },
-  {
-    "objectID": "skills.html#fa-building-columns-academics",
-    "href": "skills.html#fa-building-columns-academics",
-    "title": "Skills and Expertises",
-    "section": " Academics",
-    "text": "Academics\n\nDigitization of class notes, preparation of project reports\n\n Tools\n\n\\LaTeX as the rendering engine\nR with Sweave and knitr packages\n\n\nPerforming computations for ‘Design of Experiments’ problems\n\n Tools\n\nC programming"
-  },
-  {
-    "objectID": "skills.html#fa-briefcase-bcause-enterprise-pvt.-limited-2015-2016",
-    "href": "skills.html#fa-briefcase-bcause-enterprise-pvt.-limited-2015-2016",
-    "title": "Skills and Expertises",
-    "section": " BCausE Enterprise Pvt. Limited (2015-2016)",
-    "text": "BCausE Enterprise Pvt. Limited (2015-2016)\n\nPredicting the names of human body parts from a corpus of digitized prescriptions using text classification\n\n Tools\n\nHeavily relied on regex for data cleansing\nNLP libraries based on Python\nMongoDB at the back-end\nFlask for REST API as front-end"
-  },
-  {
-    "objectID": "skills.html#fa-briefcase-ibm-india-pvt.-ltd.-2016-2021",
-    "href": "skills.html#fa-briefcase-ibm-india-pvt.-ltd.-2016-2021",
-    "title": "Skills and Expertises",
-    "section": " IBM India Pvt. Ltd. (2016-2021)",
-    "text": "IBM India Pvt. Ltd. (2016-2021)\n\nAnalysing customer complaints (a.k.a tickets) from various sources and predicting root causes using clustering and text classification respectively\n\n Tools\n\nPython (as machine learning base)\nSQL at the back-end\nLittle bit of ShellScript to integrate the model with other modules\nFlask for REST API as front-end\ndocker for packaging the ml application\nKubernetes used for deployment of the docker image\n\n\nServing search queries to customers by designing a small scale search engine built on customer Feedbacks and FAQs using information retrieval algorithm\n\n Tools\n\nSingular value decomposition to understand word-to-word relationship\nPandas as data processing toolkit\nNumpy for matrix facorization implementation\n\n\nUnderstanding the effects of various factors like advertisement, promotion, weather on sales of several commodities, analysing ROI year-on-year basis and forecasting the furure sales using Marketing Mix Modeling\n\n Tools\n\nR with dplyr as the data processing toolkit\nBase R for model development\nSQL at the back-end"
-  },
-  {
-    "objectID": "skills.html#fa-briefcase-ihs-markit-and-sp-global-inc.-2021-present",
-    "href": "skills.html#fa-briefcase-ihs-markit-and-sp-global-inc.-2021-present",
-    "title": "Skills and Expertises",
-    "section": " IHS Markit and S&P Global Inc. (2021-Present)",
-    "text": "IHS Markit and S&P Global Inc. (2021-Present)\n\nAnalysing shipping data on a daily basis\n\n Tools\n\nPySpark as the data processing engine\nExcel for adhoc analysis and reporting\nAWS as the cloud platform\n\n\nCargo grade identification using text classification\n\n Tools\n\nPython (as machine learning base)\nS3 for Local Deployment\nShellScript for automation\n\n\nBuilding data pipeline incorporate external data from various sources\n\n Tools\n\nR for developing data pipelines\nShellScript for integration as automation\nAWS as cloud platform"
   }
 ]

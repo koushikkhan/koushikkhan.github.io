@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Koushik Khan">
+<meta name="dcterms.date" content="2023-05-01">
+<meta name="description" content="Representing texts in a better way that neural networks understand">
 
-<title>Koushik’s Page - Personal Projects</title>
+<title>Koushik’s Page - Make More Sense of Language Through Embeddings</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +26,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./resources/img/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../resources/img/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -62,8 +65,24 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -73,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Koushik’s Page</span>
     </a>
   </div>
@@ -84,29 +103,29 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts.html" rel="" target="">
+    <a class="nav-link" href="../../posts.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../projects.html" rel="" target="">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./skills.html" rel="" target="">
+    <a class="nav-link" href="../../skills.html" rel="" target="">
  <span class="menu-text">Skills</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resume.html" rel="" target="">
+    <a class="nav-link" href="../../resume.html" rel="" target="">
  <span class="menu-text">Resume</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -133,38 +152,156 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Make More Sense of Language Through Embeddings</h1>
+                  <div>
+        <div class="description">
+          Representing texts in a better way that neural networks understand
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">deep learning</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p><a href="https://koushikkhan.github.io/">Koushik Khan</a> </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 1, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#some-important-terminologies" id="toc-some-important-terminologies" class="nav-link" data-scroll-target="#some-important-terminologies">Some important terminologies</a></li>
+  <li><a href="#converting-texts-to-numbers" id="toc-converting-texts-to-numbers" class="nav-link" data-scroll-target="#converting-texts-to-numbers">Converting texts to numbers</a></li>
+  <li><a href="#better-ways-to-represent-texts" id="toc-better-ways-to-represent-texts" class="nav-link" data-scroll-target="#better-ways-to-represent-texts">Better ways to represent texts</a>
+  <ul class="collapse">
+  <li><a href="#one-hot-vector" id="toc-one-hot-vector" class="nav-link" data-scroll-target="#one-hot-vector">One-hot vector</a></li>
+  <li><a href="#count-vectorization" id="toc-count-vectorization" class="nav-link" data-scroll-target="#count-vectorization">Count vectorization</a></li>
+  <li><a href="#tf-idf-vectorization" id="toc-tf-idf-vectorization" class="nav-link" data-scroll-target="#tf-idf-vectorization">Tf-Idf vectorization</a></li>
+  <li><a href="#embedding-vectorization-using-neural-networks" id="toc-embedding-vectorization-using-neural-networks" class="nav-link" data-scroll-target="#embedding-vectorization-using-neural-networks">Embedding vectorization using neural networks</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Personal Projects</h1>
-</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-</header>
-
-<p>Below is the list of my personal projects.</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>A computer algorithm is nothing but a sequence of carefully chosen steps having a specific goal, it needs some imput data to work on and produce some results. Achiving this goal depends on many many factors and representing the input data to the algorithm is one of them.</p>
+<p>Neural networks, being some complex algorithms, are capable of performing many useful tasks with human languages when represented both as texts and sound waves. Some useful examples can be <em>human sentiment detection</em> from written text, <em>language translation</em>, <em>image captioning</em> etc.</p>
+<p>In all these cases, one interesting thing is to know how such a massive amount of textual data are supplied to a network so that it understands the inner meaning just like a human.</p>
+<p>In this post I will focus on various ways to repesent textual dataset to a network, starting from very naive to very efficient as well as logical.</p>
+</section>
+<section id="some-important-terminologies" class="level1">
+<h1>Some important terminologies</h1>
+<p>Let us understand some basic yet important terminologies that are used while working with textual data. For the sake of convenience, we will consider <em>English</em> as the language to understand various concepts in this post, but the same are applicable for other languages too.</p>
 <ul>
-<li>My Portfolio [web development, technical writing] - <a href="https://github.com/koushikkhan/koushikkhan.github.io">github repository</a></li>
+<li><p><strong>Corpus</strong>: A corpus is a collection of textual data. It typically refers to a group of sentences or paragraphs. For example, the messages we send to someone in any messaging platform can be considered together to form a corpus.</p></li>
+<li><p><strong>Token</strong>: A token is the most granular part of a corpus. Depending on the requirement, it can be a single character, a single word or even a single sentence. The process of creating tokens out of a corpus is called <em>tokenization</em>.</p></li>
+<li><p><strong>Vocabulary</strong>: A vocabulary is the set of unique (non-repetitive) tokens. Technically, it is that set which generates the entire corpus.</p></li>
 </ul>
+<p>An example will help here to understand it better.</p>
+<pre><code>corpus = ['Mathematics is the language to understand the nature']
+
+word_level_tokens = [
+  'Mathematics', 'is', 'the', 
+  'language', 'to', 'understand', 
+  'the', 'nature'
+]
+
+vocabulary = {'Mathematics', 'is', 'the', 'language', 'to', 'understand', 'nature'}</code></pre>
+<p>Note that, the word <code>the</code> has appeared twice in the corpus and it is considered only once in the vocabulary.</p>
+</section>
+<section id="converting-texts-to-numbers" class="level1">
+<h1>Converting texts to numbers</h1>
+<p>Converting texts to numbers are required because computer can only handle numbers, although typically not in the form we give. It converts numbers (decimal numbers) to the binary form which is basically a sequence of zeros and ones, before performing any task.</p>
+<p>Since the beginning of development of modern computers, we have something called <a href="https://www.ascii-code.com/">ASCII table</a>. This table used to have numeric representation of each character only in English but later on it has started supporting other languages as well.</p>
+</section>
+<section id="better-ways-to-represent-texts" class="level1">
+<h1>Better ways to represent texts</h1>
+<p>ASCII codes are certainly useful to represent characters in the computers’ memory. But it does not fulfill the purpose while developing modern intelligent applications like a language translator.</p>
+<p>In natural language processing, tokens are usually represented by numerical arrays or vectors. Let us understand the various ways to create such vectors.</p>
+<p>Before proceeding further, let us consider a new corpus (a group of sentences quoted by <a href="https://en.wikipedia.org/wiki/Shakuntala_Devi">Shakuntala Devi</a>) with a word level tokenization as below:</p>
+<pre><code>corpus = [
+  'without mathematics, there’s nothing you can do',
+  'everything around you is mathematics',
+  'everything around you is number'
+]
+
+word_level_tokens = [
+  "without", "mathematics", "there's",
+  "nothing", "you", "can", "do", 
+  "everything", "around", "you", "is", 
+  "mathematics", "everything", "around", 
+  "you", "is", "number"
+]
+
+sorted_vocabulary = [
+  'around',
+  'can',
+  'do',
+  'everything',
+  'is',
+  'mathematics',
+  'nothing',
+  'number',
+  "there's",
+  'without',
+  'you'
+]
+
+vocabulary_size = 11</code></pre>
+<section id="one-hot-vector" class="level2">
+<h2 class="anchored" data-anchor-id="one-hot-vector">One-hot vector</h2>
+<p>This is the simplest way to convert tokens into a vector. One-hot vector, for a token, is a vector of dimension <code>vocabulary_size</code> (often denoted by <span class="math inline">|V|</span>). In this vector, all the elements are <span class="math inline">0</span>’s except a single <span class="math inline">1</span>. The position that holds the <span class="math inline">1</span> is basically the position of the token in the vocabulary.</p>
+<p>Example:</p>
+<pre><code>one_hot_for_around = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+one_hot_for_can = [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+one_hot_for_number = [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]</code></pre>
+<p>As you can imagnine, for a large corpus, one-hot vectors are very large dimensional sparse vectors.</p>
+</section>
+<section id="count-vectorization" class="level2">
+<h2 class="anchored" data-anchor-id="count-vectorization">Count vectorization</h2>
+</section>
+<section id="tf-idf-vectorization" class="level2">
+<h2 class="anchored" data-anchor-id="tf-idf-vectorization">Tf-Idf vectorization</h2>
+</section>
+<section id="embedding-vectorization-using-neural-networks" class="level2">
+<h2 class="anchored" data-anchor-id="embedding-vectorization-using-neural-networks">Embedding vectorization using neural networks</h2>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -514,6 +651,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
+</script>
+<script src="https://utteranc.es/client.js" repo="koushikkhan/blog-discussions" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 
