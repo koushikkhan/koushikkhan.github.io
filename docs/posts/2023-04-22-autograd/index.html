@@ -349,13 +349,14 @@ P(Y = y) = p^y \times (1-p)^{1-y}; \text{where } Y \in \left\{{0,1}\right\}
 <p>Therefore we have, <span class="math display">\begin{align}
   log\left[P(Y_1=y_1, \dots, Y_N=y_N)\right] &amp;= \sum_{i=1}^N y_i log(p) + (1-y_i) log(1-p) \nonumber
 \end{align}</span></p>
-<p>the above quantity is a negative quantity as the log function returns negative values when the input is within zero and one and working with a negative quantity can be conceptually misleading. That is why, the above quantity is usually multiplied by negative one to make it positive.</p>
-<p>This positive quantity is typically referred to as <em>negative log likelihood (nll)</em> and is considered as the loss function for this type of binary classification problems.</p>
-<p>In reality, this loss function is evaluated for the predicted values.</p>
-<p>So,</p>
+<p>the above quantity is a negative quantity as the log function returns negative values when the input is within zero and one and working with a negative quantity can be conceptually misleading. That is why, it is usually multiplied by negative one to make it positive.</p>
+<p>This positive quantity is often referred to as <em>negative log likelihood (nll)</em> and is considered as the loss function for this type of binary classification problems.</p>
+<p>Hence, the <em>negative log-likelihood</em> loss function is finally expressed as,</p>
 <p><span class="math display">
-nll = -\sum_{i=1}^N \hat{y}_i log(p) + (1-\hat{y}_i) log(1-p)
+nll = -\sum_{i=1}^N y_i log(p) + (1-y_i) log(1-p)
 </span></p>
+<p>It should be noted that, the quantity <span class="math inline">p</span> is usually estimated by the model (like a FFN for binary classification or logistic regression), whereas <span class="math inline">y_i</span> being the true value in our data for the <span class="math inline">i^{th}</span> sample.</p>
+<p>NLL loss function tries to measure the similarity between predicted probability distribution (<em>i.e.&nbsp;distribution of <span class="math inline">p</span></em>) and actual probability distribution (<em>i.e.&nbsp;distribution of <span class="math inline">y_i</span></em>) of labels.</p>
 <p>The <a href="https://en.wikipedia.org/wiki/Cross_entropy"><em>cross entropy</em></a> loss function is just a generalization of this simple negative log likelihood giving the similar kind of information for a prediction when the data has, say, <span class="math inline">K</span> labels instead of just two.</p>
 </div>
 </div>
