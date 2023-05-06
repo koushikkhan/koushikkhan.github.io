@@ -202,8 +202,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#better-ways-to-represent-texts" id="toc-better-ways-to-represent-texts" class="nav-link" data-scroll-target="#better-ways-to-represent-texts">Better ways to represent texts</a>
   <ul class="collapse">
   <li><a href="#one-hot-vector" id="toc-one-hot-vector" class="nav-link" data-scroll-target="#one-hot-vector">One-hot vector</a></li>
-  <li><a href="#count-vectorization" id="toc-count-vectorization" class="nav-link" data-scroll-target="#count-vectorization">Count vectorization</a></li>
-  <li><a href="#tf-idf-vectorization" id="toc-tf-idf-vectorization" class="nav-link" data-scroll-target="#tf-idf-vectorization">Tf-Idf vectorization</a></li>
   <li><a href="#embedding-vectorization-using-neural-networks" id="toc-embedding-vectorization-using-neural-networks" class="nav-link" data-scroll-target="#embedding-vectorization-using-neural-networks">Embedding vectorization using neural networks</a></li>
   </ul></li>
   </ul>
@@ -283,21 +281,41 @@ sorted_vocabulary = [
 vocabulary_size = 11</code></pre>
 <section id="one-hot-vector" class="level2">
 <h2 class="anchored" data-anchor-id="one-hot-vector">One-hot vector</h2>
-<p>This is the simplest way to convert tokens into a vector. One-hot vector, for a token, is a vector of dimension <code>vocabulary_size</code> (often denoted by <span class="math inline">|V|</span>). In this vector, all the elements are <span class="math inline">0</span>’s except a single <span class="math inline">1</span>. The position that holds the <span class="math inline">1</span> is basically the position of the token in the vocabulary.</p>
+<p>This is the simplest way to convert tokens into a vector. One-hot vector, for a token, is a vector of dimension <code>vocabulary_size</code> (often denoted by <span class="math inline">|V|</span>). In this vector, all the elements are <span class="math inline">0</span>’s except a single <span class="math inline">1</span>. The index that holds the <span class="math inline">1</span> is called <em>hot</em> index and it is basically the index of the token in the vocabulary.</p>
 <p>Example:</p>
 <pre><code>one_hot_for_around = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 one_hot_for_can = [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 one_hot_for_number = [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]</code></pre>
 <p>As you can imagnine, for a large corpus, one-hot vectors are very large dimensional sparse vectors.</p>
-</section>
-<section id="count-vectorization" class="level2">
-<h2 class="anchored" data-anchor-id="count-vectorization">Count vectorization</h2>
-</section>
-<section id="tf-idf-vectorization" class="level2">
-<h2 class="anchored" data-anchor-id="tf-idf-vectorization">Tf-Idf vectorization</h2>
+<p>Also, if we represent any text using one-hot vectors (<em>technically a matrix made of one-hot vectors</em>), then basically we are not considering word-word relationship or similarity.</p>
+<p>Words (rather tokens) are considered independent chunks of the text for this kind of setup, but it is something that we do not like. Any language maintains some contexts through word-word relationships and those are completely ignored by one-hot representation.</p>
+<p>If we try to measure the similarity between two words with the help of one-hot representation, we will always get zero, but that does not mean the words are very close on the semantic space.</p>
 </section>
 <section id="embedding-vectorization-using-neural-networks" class="level2">
 <h2 class="anchored" data-anchor-id="embedding-vectorization-using-neural-networks">Embedding vectorization using neural networks</h2>
+<p>As you have observed, one-hot vectors do not consider context, so we definitely need something meaningful for representing the tokens mathematically.</p>
+<p>In the world of NLP, the term <em>embedding</em> usually refers to a dense vector (a vector that has most of its components as non-zero real numbers) that represent a token. As you know, depending on the problem, a token can be a character, a word or even a full sentence and an embedding vector is created to represent it accordingly.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Words</th>
+<th>Ch:</th>
+<th># In stock</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Juicy Apples</td>
+<td>1.99</td>
+<td><em>7</em></td>
+</tr>
+<tr class="even">
+<td>Bananas</td>
+<td><strong>1.89</strong></td>
+<td>5234</td>
+</tr>
+</tbody>
+</table>
 
 
 </section>

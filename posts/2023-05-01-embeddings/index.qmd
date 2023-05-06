@@ -95,7 +95,7 @@ vocabulary_size = 11
 
 ## One-hot vector
 
-This is the simplest way to convert tokens into a vector. One-hot vector, for a token, is a vector of dimension `vocabulary_size` (often denoted by $|V|$). In this vector, all the elements are $0$'s except a single $1$. The position that holds the $1$ is basically the position of the token in the vocabulary.
+This is the simplest way to convert tokens into a vector. One-hot vector, for a token, is a vector of dimension `vocabulary_size` (often denoted by $|V|$). In this vector, all the elements are $0$'s except a single $1$. The index that holds the $1$ is called *hot* index and it is basically the index of the token in the vocabulary.
 
 Example: 
 
@@ -107,13 +107,24 @@ one_hot_for_number = [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
 
 As you can imagnine, for a large corpus, one-hot vectors are very large dimensional sparse vectors.
 
-## Count vectorization
+Also, if we represent any text using one-hot vectors (*technically a matrix made of one-hot vectors*), then basically we are not considering word-word relationship or similarity. 
 
+Words (rather tokens) are considered independent chunks of the text for this kind of setup, but it is something that we do not like. Any language maintains some contexts through word-word relationships and those are completely ignored by one-hot representation.
 
-## Tf-Idf vectorization
-
+If we try to measure the similarity between two words with the help of one-hot representation, we will always get zero, but that does not mean the words are very close on the semantic space.
 
 ## Embedding vectorization using neural networks
+
+As you have observed, one-hot vectors do not consider context, so we definitely need something meaningful for representing the tokens mathematically. 
+
+In the world of NLP, the term *embedding* usually refers to a dense vector (a vector that has most of its components as non-zero real numbers) that represent a token. As you know, depending on the problem, a token can be a character, a word or even a full sentence and an embedding vector is created to represent it accordingly.
+
+| Words         | Ch:     | # In stock |
+|--------------|-----------|------------|
+| Juicy Apples | 1.99      | *7*        |
+| Bananas      | **1.89**  | 5234       |
+
+
 
 
 

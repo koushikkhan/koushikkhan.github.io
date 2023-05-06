@@ -109,7 +109,7 @@
     "href": "posts/2023-05-01-embeddings/index.html#one-hot-vector",
     "title": "Make More Sense of Language Through Embeddings",
     "section": "One-hot vector",
-    "text": "One-hot vector\nThis is the simplest way to convert tokens into a vector. One-hot vector, for a token, is a vector of dimension vocabulary_size (often denoted by |V|). In this vector, all the elements are 0’s except a single 1. The position that holds the 1 is basically the position of the token in the vocabulary.\nExample:\none_hot_for_around = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\none_hot_for_can = [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]\none_hot_for_number = [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]\nAs you can imagnine, for a large corpus, one-hot vectors are very large dimensional sparse vectors."
+    "text": "One-hot vector\nThis is the simplest way to convert tokens into a vector. One-hot vector, for a token, is a vector of dimension vocabulary_size (often denoted by |V|). In this vector, all the elements are 0’s except a single 1. The index that holds the 1 is called hot index and it is basically the index of the token in the vocabulary.\nExample:\none_hot_for_around = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\none_hot_for_can = [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]\none_hot_for_number = [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]\nAs you can imagnine, for a large corpus, one-hot vectors are very large dimensional sparse vectors.\nAlso, if we represent any text using one-hot vectors (technically a matrix made of one-hot vectors), then basically we are not considering word-word relationship or similarity.\nWords (rather tokens) are considered independent chunks of the text for this kind of setup, but it is something that we do not like. Any language maintains some contexts through word-word relationships and those are completely ignored by one-hot representation.\nIf we try to measure the similarity between two words with the help of one-hot representation, we will always get zero, but that does not mean the words are very close on the semantic space."
   },
   {
     "objectID": "posts/2023-05-01-embeddings/index.html#count-vectorization",
@@ -130,7 +130,7 @@
     "href": "posts/2023-05-01-embeddings/index.html#embedding-vectorization-using-neural-networks",
     "title": "Make More Sense of Language Through Embeddings",
     "section": "Embedding vectorization using neural networks",
-    "text": "Embedding vectorization using neural networks"
+    "text": "Embedding vectorization using neural networks\nAs you have observed, one-hot vectors do not consider context, so we definitely need something meaningful for representing the tokens mathematically.\nIn the world of NLP, the term embedding usually refers to a dense vector (a vector that has most of its components as non-zero real numbers) that represent a token. As you know, depending on the problem, a token can be a character, a word or even a full sentence and an embedding vector is created to represent it accordingly.\n\n\n\nWords\nCh:\n# In stock\n\n\n\n\nJuicy Apples\n1.99\n7\n\n\nBananas\n1.89\n5234"
   },
   {
     "objectID": "posts/2023-03-22-bash-commands-for-cloud-1/index.html",
