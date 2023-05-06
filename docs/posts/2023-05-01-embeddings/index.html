@@ -380,7 +380,7 @@ Tip
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="context-window-cbow.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure: 2 Finding target word based on context</figcaption>
+<figcaption class="figure-caption">Figure: 2 Predicting target word based on context</figcaption>
 </figure>
 </div>
 <p>In reality, this context window moves towards the right till the time we have covered all possible contexts and targets starting from the beginning of our text data to the end. Don’t worry, the code example, given below, will make this easier to understand.</p>
@@ -429,47 +429,79 @@ Tip
 <span id="cb5-8"><a href="#cb5-8"></a><span class="co"># prepare dataset for cbow network</span></span>
 <span id="cb5-9"><a href="#cb5-9"></a>cbow_data <span class="op">=</span> []</span>
 <span id="cb5-10"><a href="#cb5-10"></a></span>
-<span id="cb5-11"><a href="#cb5-11"></a><span class="co"># prepare data</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="co"># define start and end indices</span></span>
 <span id="cb5-12"><a href="#cb5-12"></a>start_ix <span class="op">=</span> CONTEXT_SIZE<span class="op">;</span> end_ix <span class="op">=</span> <span class="bu">len</span>(data) <span class="op">-</span> CONTEXT_SIZE</span>
 <span id="cb5-13"><a href="#cb5-13"></a></span>
 <span id="cb5-14"><a href="#cb5-14"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(start_ix, end_ix):</span>
-<span id="cb5-15"><a href="#cb5-15"></a>    context <span class="op">=</span> []</span>
-<span id="cb5-16"><a href="#cb5-16"></a>    target <span class="op">=</span> data[i]</span>
-<span id="cb5-17"><a href="#cb5-17"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>((i <span class="op">-</span> CONTEXT_SIZE), (i <span class="op">+</span> CONTEXT_SIZE <span class="op">+</span> <span class="dv">1</span>)):</span>
-<span id="cb5-18"><a href="#cb5-18"></a>        <span class="cf">if</span> j <span class="op">!=</span> i:</span>
-<span id="cb5-19"><a href="#cb5-19"></a>            context.append(data[j])</span>
-<span id="cb5-20"><a href="#cb5-20"></a>    </span>
-<span id="cb5-21"><a href="#cb5-21"></a>    <span class="co"># update cbow data</span></span>
-<span id="cb5-22"><a href="#cb5-22"></a>    cbow_data.append((context, target))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-15"><a href="#cb5-15"></a>    target <span class="op">=</span> data[i]</span>
+<span id="cb5-16"><a href="#cb5-16"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>((i <span class="op">-</span> CONTEXT_SIZE), (i <span class="op">+</span> CONTEXT_SIZE <span class="op">+</span> <span class="dv">1</span>)):</span>
+<span id="cb5-17"><a href="#cb5-17"></a>        <span class="cf">if</span> j <span class="op">!=</span> i:</span>
+<span id="cb5-18"><a href="#cb5-18"></a>            cbow_data.append((data[j], target))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>and here is the partial training set as the output,</p>
+<p>and here is the partial training data as the output,</p>
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>pprint(cbow_data[:<span class="dv">10</span>])</span>
 <span id="cb6-2"><a href="#cb6-2"></a></span>
-<span id="cb6-3"><a href="#cb6-3"></a>[([<span class="st">'we'</span>, <span class="st">'are'</span>, <span class="st">'to'</span>, <span class="st">'study'</span>], <span class="st">'about'</span>),</span>
-<span id="cb6-4"><a href="#cb6-4"></a> ([<span class="st">'are'</span>, <span class="st">'about'</span>, <span class="st">'study'</span>, <span class="st">'the'</span>], <span class="st">'to'</span>),</span>
-<span id="cb6-5"><a href="#cb6-5"></a> ([<span class="st">'about'</span>, <span class="st">'to'</span>, <span class="st">'the'</span>, <span class="st">'idea'</span>], <span class="st">'study'</span>),</span>
-<span id="cb6-6"><a href="#cb6-6"></a> ([<span class="st">'to'</span>, <span class="st">'study'</span>, <span class="st">'idea'</span>, <span class="st">'of'</span>], <span class="st">'the'</span>),</span>
-<span id="cb6-7"><a href="#cb6-7"></a> ([<span class="st">'study'</span>, <span class="st">'the'</span>, <span class="st">'of'</span>, <span class="st">'a'</span>], <span class="st">'idea'</span>),</span>
-<span id="cb6-8"><a href="#cb6-8"></a> ([<span class="st">'the'</span>, <span class="st">'idea'</span>, <span class="st">'a'</span>, <span class="st">'computational'</span>], <span class="st">'of'</span>),</span>
-<span id="cb6-9"><a href="#cb6-9"></a> ([<span class="st">'idea'</span>, <span class="st">'of'</span>, <span class="st">'computational'</span>, <span class="st">'process'</span>], <span class="st">'a'</span>),</span>
-<span id="cb6-10"><a href="#cb6-10"></a> ([<span class="st">'of'</span>, <span class="st">'a'</span>, <span class="st">'process'</span>, <span class="st">'computational'</span>], <span class="st">'computational'</span>),</span>
-<span id="cb6-11"><a href="#cb6-11"></a> ([<span class="st">'a'</span>, <span class="st">'computational'</span>, <span class="st">'computational'</span>, <span class="st">'processes'</span>], <span class="st">'process'</span>),</span>
-<span id="cb6-12"><a href="#cb6-12"></a> ([<span class="st">'computational'</span>, <span class="st">'process'</span>, <span class="st">'processes'</span>, <span class="st">'are'</span>], <span class="st">'computational'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href="#cb6-3"></a>[(<span class="st">'we'</span>, <span class="st">'about'</span>),</span>
+<span id="cb6-4"><a href="#cb6-4"></a> (<span class="st">'are'</span>, <span class="st">'about'</span>),</span>
+<span id="cb6-5"><a href="#cb6-5"></a> (<span class="st">'to'</span>, <span class="st">'about'</span>),</span>
+<span id="cb6-6"><a href="#cb6-6"></a> (<span class="st">'study'</span>, <span class="st">'about'</span>),</span>
+<span id="cb6-7"><a href="#cb6-7"></a> (<span class="st">'are'</span>, <span class="st">'to'</span>),</span>
+<span id="cb6-8"><a href="#cb6-8"></a> (<span class="st">'about'</span>, <span class="st">'to'</span>),</span>
+<span id="cb6-9"><a href="#cb6-9"></a> (<span class="st">'study'</span>, <span class="st">'to'</span>),</span>
+<span id="cb6-10"><a href="#cb6-10"></a> (<span class="st">'the'</span>, <span class="st">'to'</span>),</span>
+<span id="cb6-11"><a href="#cb6-11"></a> (<span class="st">'about'</span>, <span class="st">'study'</span>),</span>
+<span id="cb6-12"><a href="#cb6-12"></a> (<span class="st">'to'</span>, <span class="st">'study'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The source for training such a network is given in this <a href="https://colab.research.google.com/drive/16KM-Y-Ju8M_tiDZh5fN7vHDwDW3AbaxR?usp=sharing">colab notebook</a>.</p>
+<p>The source for training such a network is given in this <a href="https://colab.research.google.com/drive/1PJCyPULfcYcsUpkvPeQsu4GNsp5m3b3v?usp=sharing">colab notebook</a>.</p>
 </section>
 <section id="skip-gram-model" class="level3">
 <h3 class="anchored" data-anchor-id="skip-gram-model">Skip Gram Model</h3>
 <p>Skip gram, being the another variation of word2vec, does the exact opposite of what CBOW does.</p>
-<p>It tries to predict the context or surrounding words by looking at a specific word in a sentence.</p>
+<p>It tries to predict the context or surrounding words by looking at a specific word in a sentence as shown below,</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="context-window-skip-gram.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure: 4 Predicting context based on target word</figcaption>
+</figure>
+</div>
+<p>Here is the code example that helps to prepare the training data based on the same raw text,</p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># prepare dataset for cbow network</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>skip_gram_data <span class="op">=</span> []</span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="co"># define start and end indices</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>start_ix <span class="op">=</span> CONTEXT_SIZE<span class="op">;</span> end_ix <span class="op">=</span> <span class="bu">len</span>(data) <span class="op">-</span> CONTEXT_SIZE</span>
+<span id="cb7-6"><a href="#cb7-6"></a></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(start_ix, end_ix):</span>
+<span id="cb7-8"><a href="#cb7-8"></a>    target <span class="op">=</span> data[i]</span>
+<span id="cb7-9"><a href="#cb7-9"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>((i <span class="op">-</span> CONTEXT_SIZE), (i <span class="op">+</span> CONTEXT_SIZE <span class="op">+</span> <span class="dv">1</span>)):</span>
+<span id="cb7-10"><a href="#cb7-10"></a>        <span class="cf">if</span> j <span class="op">!=</span> i:</span>
+<span id="cb7-11"><a href="#cb7-11"></a>            skip_gram_data.append((target, data[j]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>and below is the partial training data as output,</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>pprint(skip_gram_data[:<span class="dv">10</span>])</span>
+<span id="cb8-2"><a href="#cb8-2"></a></span>
+<span id="cb8-3"><a href="#cb8-3"></a>[(<span class="st">'about'</span>, <span class="st">'we'</span>),</span>
+<span id="cb8-4"><a href="#cb8-4"></a> (<span class="st">'about'</span>, <span class="st">'are'</span>),</span>
+<span id="cb8-5"><a href="#cb8-5"></a> (<span class="st">'about'</span>, <span class="st">'to'</span>),</span>
+<span id="cb8-6"><a href="#cb8-6"></a> (<span class="st">'about'</span>, <span class="st">'study'</span>),</span>
+<span id="cb8-7"><a href="#cb8-7"></a> (<span class="st">'to'</span>, <span class="st">'are'</span>),</span>
+<span id="cb8-8"><a href="#cb8-8"></a> (<span class="st">'to'</span>, <span class="st">'about'</span>),</span>
+<span id="cb8-9"><a href="#cb8-9"></a> (<span class="st">'to'</span>, <span class="st">'study'</span>),</span>
+<span id="cb8-10"><a href="#cb8-10"></a> (<span class="st">'to'</span>, <span class="st">'the'</span>),</span>
+<span id="cb8-11"><a href="#cb8-11"></a> (<span class="st">'study'</span>, <span class="st">'about'</span>),</span>
+<span id="cb8-12"><a href="#cb8-12"></a> (<span class="st">'study'</span>, <span class="st">'to'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>CBOW and Skip-Gram training data look very similar, the only difference is in the usage of target and context words in the training data.</p>
 </section>
 </section>
 </section>
 <section id="reference" class="level1">
 <h1>Reference</h1>
 <ul>
-<li><a href="https://colab.research.google.com/drive/16KM-Y-Ju8M_tiDZh5fN7vHDwDW3AbaxR?usp=sharing">Colab notebook to play with the code</a></li>
+<li><a href="https://colab.research.google.com/drive/1PJCyPULfcYcsUpkvPeQsu4GNsp5m3b3v?usp=sharing">Colab notebook to play with the code</a></li>
 </ul>
 
 

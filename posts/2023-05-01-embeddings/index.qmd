@@ -165,7 +165,7 @@ Consider an incomplte sentence: *the birds are _____ on the sky*. By looking at 
 
 This is exactly what happens, when we use CBOW approach. CBOW looks at the context and tries to figure out the target word as shown below,
 
-![Figure: 2 Finding target word based on context](context-window-cbow.svg)
+![Figure: 2 Predicting target word based on context](context-window-cbow.svg)
 
 In reality, this context window moves towards the right till the time we have covered all possible contexts and targets starting from the beginning of our text data to the end. Don't worry, the code example, given below, will make this easier to understand. 
 
@@ -226,21 +226,17 @@ sorted_vocab = sorted(list(set(data)))
 # prepare dataset for cbow network
 cbow_data = []
 
-# prepare data
+# define start and end indices
 start_ix = CONTEXT_SIZE; end_ix = len(data) - CONTEXT_SIZE
 
 for i in range(start_ix, end_ix):
-    context = []
     target = data[i]
     for j in range((i - CONTEXT_SIZE), (i + CONTEXT_SIZE + 1)):
         if j != i:
-            context.append(data[j])
-    
-    # update cbow data
-    cbow_data.append((context, target))
+            cbow_data.append((data[j], target))
 ```
 
-and here is the partial training set as the output,
+and here is the partial training data as the output,
 
 ```{python}
 #| echo: true
@@ -248,36 +244,70 @@ and here is the partial training set as the output,
 
 pprint(cbow_data[:10])
 
-[(['we', 'are', 'to', 'study'], 'about'),
- (['are', 'about', 'study', 'the'], 'to'),
- (['about', 'to', 'the', 'idea'], 'study'),
- (['to', 'study', 'idea', 'of'], 'the'),
- (['study', 'the', 'of', 'a'], 'idea'),
- (['the', 'idea', 'a', 'computational'], 'of'),
- (['idea', 'of', 'computational', 'process'], 'a'),
- (['of', 'a', 'process', 'computational'], 'computational'),
- (['a', 'computational', 'computational', 'processes'], 'process'),
- (['computational', 'process', 'processes', 'are'], 'computational')]
+[('we', 'about'),
+ ('are', 'about'),
+ ('to', 'about'),
+ ('study', 'about'),
+ ('are', 'to'),
+ ('about', 'to'),
+ ('study', 'to'),
+ ('the', 'to'),
+ ('about', 'study'),
+ ('to', 'study')]
 ```
 
-The source for training such a network is given in this [colab notebook](https://colab.research.google.com/drive/16KM-Y-Ju8M_tiDZh5fN7vHDwDW3AbaxR?usp=sharing).
+The source for training such a network is given in this [colab notebook](https://colab.research.google.com/drive/1PJCyPULfcYcsUpkvPeQsu4GNsp5m3b3v?usp=sharing).
 
 ### Skip Gram Model
 
 Skip gram, being the another variation of word2vec, does the exact opposite of what CBOW does.
 
-It tries to predict the context or surrounding words by looking at a specific word in a sentence.
+It tries to predict the context or surrounding words by looking at a specific word in a sentence as shown below,
 
+![Figure: 4 Predicting context based on target word](context-window-skip-gram.svg)
+
+Here is the code example that helps to prepare the training data based on the same raw text,
+
+```{python}
+#| echo: true
+#| output: false
+
+# prepare dataset for cbow network
+skip_gram_data = []
+
+# define start and end indices
+start_ix = CONTEXT_SIZE; end_ix = len(data) - CONTEXT_SIZE
+
+for i in range(start_ix, end_ix):
+    target = data[i]
+    for j in range((i - CONTEXT_SIZE), (i + CONTEXT_SIZE + 1)):
+        if j != i:
+            skip_gram_data.append((target, data[j]))
+```
+
+and below is the partial training data as output,
+
+```{python}
+#| echo: true
+#| output: false
+
+pprint(skip_gram_data[:10])
+
+[('about', 'we'),
+ ('about', 'are'),
+ ('about', 'to'),
+ ('about', 'study'),
+ ('to', 'are'),
+ ('to', 'about'),
+ ('to', 'study'),
+ ('to', 'the'),
+ ('study', 'about'),
+ ('study', 'to')]
+```
+
+CBOW and Skip-Gram training data look very similar, the only difference is in the usage of target and context words in the training data. 
 
 
 # Reference
 
-- [Colab notebook to play with the code](https://colab.research.google.com/drive/16KM-Y-Ju8M_tiDZh5fN7vHDwDW3AbaxR?usp=sharing)
-
-
-
-
-
-
-
-
+- [Colab notebook to play with the code](https://colab.research.google.com/drive/1PJCyPULfcYcsUpkvPeQsu4GNsp5m3b3v?usp=sharing)
