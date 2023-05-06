@@ -23,6 +23,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -202,8 +236,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#better-ways-to-represent-texts" id="toc-better-ways-to-represent-texts" class="nav-link" data-scroll-target="#better-ways-to-represent-texts">Better ways to represent texts</a>
   <ul class="collapse">
   <li><a href="#one-hot-vector" id="toc-one-hot-vector" class="nav-link" data-scroll-target="#one-hot-vector">One-hot vector</a></li>
-  <li><a href="#embedding-vectorization-using-neural-networks" id="toc-embedding-vectorization-using-neural-networks" class="nav-link" data-scroll-target="#embedding-vectorization-using-neural-networks">Embedding vectorization using neural networks</a></li>
+  <li><a href="#embedding-vector" id="toc-embedding-vector" class="nav-link" data-scroll-target="#embedding-vector">Embedding vector</a></li>
+  <li><a href="#learning-word-embeddings" id="toc-learning-word-embeddings" class="nav-link" data-scroll-target="#learning-word-embeddings">Learning word embeddings</a>
+  <ul class="collapse">
+  <li><a href="#continuous-bag-of-words-cbow-model" id="toc-continuous-bag-of-words-cbow-model" class="nav-link" data-scroll-target="#continuous-bag-of-words-cbow-model">Continuous Bag of Words (CBOW) Model</a></li>
+  <li><a href="#skip-gram-model" id="toc-skip-gram-model" class="nav-link" data-scroll-target="#skip-gram-model">Skip Gram Model</a></li>
   </ul></li>
+  </ul></li>
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
   </ul>
 </nav>
     </div>
@@ -291,34 +331,148 @@ one_hot_for_number = [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]</code></pre>
 <p>Words (rather tokens) are considered independent chunks of the text for this kind of setup, but it is something that we do not like. Any language maintains some contexts through word-word relationships and those are completely ignored by one-hot representation.</p>
 <p>If we try to measure the similarity between two words with the help of one-hot representation, we will always get zero, but that does not mean the words are very close on the semantic space.</p>
 </section>
-<section id="embedding-vectorization-using-neural-networks" class="level2">
-<h2 class="anchored" data-anchor-id="embedding-vectorization-using-neural-networks">Embedding vectorization using neural networks</h2>
+<section id="embedding-vector" class="level2">
+<h2 class="anchored" data-anchor-id="embedding-vector">Embedding vector</h2>
 <p>As you have observed, one-hot vectors do not consider context, so we definitely need something meaningful for representing the tokens mathematically.</p>
 <p>In the world of NLP, the term <em>embedding</em> usually refers to a dense vector (a vector that has most of its components as non-zero real numbers) that represent a token. As you know, depending on the problem, a token can be a character, a word or even a full sentence and an embedding vector is created to represent it accordingly.</p>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Words</th>
-<th>Ch:</th>
-<th># In stock</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Juicy Apples</td>
-<td>1.99</td>
-<td><em>7</em></td>
-</tr>
-<tr class="even">
-<td>Bananas</td>
-<td><strong>1.89</strong></td>
-<td>5234</td>
-</tr>
-</tbody>
-</table>
-
-
+<p>Let us try to understand the way of expressing the meaning of words mathematically.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="word-features.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure: 1 Word features representation</figcaption>
+</figure>
+</div>
+<p>In the above table, we have four different words which are ‘Chocolate’, ‘Cat’, ‘Dog’ and ‘Ship’. For each of these words we have six randomly chosen features or characteristics.</p>
+<p>Each of features can have values in between zero and one. If the value for a feature is very close to zero, it indicates that the feature is not very applicable to the word. Similarly, having a value closer to one indicates that the feature is quite applicable to the word.</p>
+<p>As an example, the feature <em>‘can_play_with’</em> is not at all relevant to the word ‘Ship’, that’s why the score is 0.0.</p>
+<p>Interesting thing to note here is that, the words ‘Cat’ and ‘Dog’ are having very similar scores for all the features. This makes them very similar words and in reality, they do have many common characteristics too.</p>
+<p>If we consider a 6D vector space (also called <em>semantic space</em>) based on these features, then obviously, ‘Cat’ and ‘Dog’ are going to be very close to each other over there. However, the words ‘Chocolate’ and ‘Ship’ will be far way.</p>
+<p>This is how, by using vectors, we can mathematically express the meaning of words to a computer. These vectors are known as <em>embedding</em> vectors.</p>
+<p>Although embedding vectors are very helpful, but they are very difficult to design. We do not really know how to design the features.</p>
 </section>
+<section id="learning-word-embeddings" class="level2">
+<h2 class="anchored" data-anchor-id="learning-word-embeddings">Learning word embeddings</h2>
+<p>Neural networks, as versatile tools, come here to solve the problem. Here, we will learn an algorithm, called <a href="https://arxiv.org/abs/1301.3781"><strong>word2vec</strong></a> that helps us in getting embedding vectors by using a shallow (not very deep) neural network trained on some texts.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before delving into the algorithm, we must understand one simple yet very useful application of one-hot vector and matrix multiplication.</p>
+<p>Suppose, we have an embedding matrix (made of stacking the embedding vectors together) <span class="math inline">\mathbf{E}^T_{4 \times 6}</span> just like the above figure.</p>
+<p>If we consider our vocabulary as <code>['Cat', 'Dog', 'Chocolate', 'Ship']</code>, then one-hot vector for the word ‘Dog’ will be <span class="math inline">\vec{v}_{Dog} = \left(0, 1, 0, 0\right)</span>.</p>
+<p>Now, if we multiply <span class="math inline">\vec{v}_{Dog}</span> and <span class="math inline">\mathbf{E}^T</span>, then the result of <span class="math inline">\vec{v}_{Dog} \cdot \mathbf{E}^T</span> gives us the second row of <span class="math inline">\mathbf{E}^T</span> which is nothing but the embedding vector of the word ‘Dog’.</p>
+<p>Therefore, we can use on-hot vector and extract the corresponding embedding vector from the embedding matrix. This is why, embedding matrices are also called <em>lookup tables</em>.</p>
+</div>
+</div>
+<p>If we consider a word in a sentence, then it is very obvious to note that the surrounding words have some relationships with it.</p>
+<p>As an example, if we have a sentence <em>the dog is swimming in the pond</em>, then the words <em>swimming</em> and <em>pond</em> are related.</p>
+<p>The word <em>swimming</em> is the context here, if we know this, we can anticipate other words similar to <em>pond</em> as well just by following the context.</p>
+<section id="continuous-bag-of-words-cbow-model" class="level3">
+<h3 class="anchored" data-anchor-id="continuous-bag-of-words-cbow-model">Continuous Bag of Words (CBOW) Model</h3>
+<p>Consider an incomplte sentence: <em>the birds are _____ on the sky</em>. By looking at the words <em>the</em>, <em>birds</em>, <em>are</em>, <em>on</em>, <em>the</em>, <em>sky</em>, can we imagine the missing word? Ofcourse, it must be either <strong>flying</strong> or very similar to it.</p>
+<p>This is exactly what happens, when we use CBOW approach. CBOW looks at the context and tries to figure out the target word as shown below,</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="context-window-cbow.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure: 2 Finding target word based on context</figcaption>
+</figure>
+</div>
+<p>In reality, this context window moves towards the right till the time we have covered all possible contexts and targets starting from the beginning of our text data to the end. Don’t worry, the code example, given below, will make this easier to understand.</p>
+<p>We will now consider a sample text and prepare the training data using CBOW approach for a shallow feed-forward network. It’s going to have a single hidden layer. The number of neurons in the hidden layer is controlled by the dimension of the embedding vector.</p>
+<p>A pseudo network architecture is shown below,</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="shallow-network-cbow.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure: 3 A pseudo CBOW network</figcaption>
+</figure>
+</div>
+<p>In this network, each word in the context is fed to the network as an one-hot vector. Having the input vector, the network does some linear computations (i.e.&nbsp;simply <span class="math inline">\mathbf{E} \cdot X</span>) and tries to predict the target word.</p>
+<p>Note the output dimension of the network. It is exactly equal to the size of the vocabulary as there are that many number of possibilities while predicting the target word.</p>
+<p>So, essentially, this whole process is a multi-class classification process.</p>
+<p>It is stragne to know that prediction is not what we actually focus here. We are interested on the weight matrix <span class="math inline">\mathbf{E}</span>. This is our embedding matrix filled with optimally trained parameters.</p>
+<p><span class="math inline">\mathbf{E}</span> has the dimension <span class="math inline">dim(\text{embedding vector}) \times dim(\text{one-hot vector})</span>.</p>
+<p>Hence, <span class="math inline">\vec{v}_{word_j} \cdot \mathbf{E}^T</span> just gives us the embedding vector for <span class="math inline">word_j</span>.</p>
+<p>Let us now see the training data is prepared for CBOW network from a sample text.</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># imports</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="im">import</span> re</span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="im">from</span> pprint <span class="im">import</span> pprint</span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a>raw_text <span class="op">=</span> <span class="st">"""We are about to study the idea of a computational process.</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="st">Computational processes are abstract beings that inhabit computers.</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="st">As they evolve, processes manipulate other abstract things called data.</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="st">The evolution of a process is directed by a pattern of rules</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="st">called a program. People create programs to direct processes. In effect,</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="st">we conjure the spirits of the computer with our spells."""</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="co"># clean raw text</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a>cleaned_text <span class="op">=</span> re.sub(<span class="vs">r"[\.\,\-]"</span>, <span class="st">" "</span>, raw_text).lower().replace(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>,<span class="st">""</span>)</span>
+<span id="cb4-14"><a href="#cb4-14"></a>data <span class="op">=</span> cleaned_text.lower().split()<span class="op">;</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a></span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="co"># source: https://pytorch.org/tutorials/beginner/nlp/word_embeddings_tutorial.html</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We’ll now prepare the training data using the code below,</p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># specify context size and embedding dimension</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>CONTEXT_SIZE <span class="op">=</span> <span class="dv">2</span> <span class="co"># two words on the left and two words on the right</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>EMBEDDING_DIM <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="co"># create vocabulary</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>sorted_vocab <span class="op">=</span> <span class="bu">sorted</span>(<span class="bu">list</span>(<span class="bu">set</span>(data)))</span>
+<span id="cb5-7"><a href="#cb5-7"></a></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="co"># prepare dataset for cbow network</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a>cbow_data <span class="op">=</span> []</span>
+<span id="cb5-10"><a href="#cb5-10"></a></span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="co"># prepare data</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a>start_ix <span class="op">=</span> CONTEXT_SIZE<span class="op">;</span> end_ix <span class="op">=</span> <span class="bu">len</span>(data) <span class="op">-</span> CONTEXT_SIZE</span>
+<span id="cb5-13"><a href="#cb5-13"></a></span>
+<span id="cb5-14"><a href="#cb5-14"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(start_ix, end_ix):</span>
+<span id="cb5-15"><a href="#cb5-15"></a>    context <span class="op">=</span> []</span>
+<span id="cb5-16"><a href="#cb5-16"></a>    target <span class="op">=</span> data[i]</span>
+<span id="cb5-17"><a href="#cb5-17"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>((i <span class="op">-</span> CONTEXT_SIZE), (i <span class="op">+</span> CONTEXT_SIZE <span class="op">+</span> <span class="dv">1</span>)):</span>
+<span id="cb5-18"><a href="#cb5-18"></a>        <span class="cf">if</span> j <span class="op">!=</span> i:</span>
+<span id="cb5-19"><a href="#cb5-19"></a>            context.append(data[j])</span>
+<span id="cb5-20"><a href="#cb5-20"></a>    </span>
+<span id="cb5-21"><a href="#cb5-21"></a>    <span class="co"># update cbow data</span></span>
+<span id="cb5-22"><a href="#cb5-22"></a>    cbow_data.append((context, target))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>and here is the partial training set as the output,</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>pprint(cbow_data[:<span class="dv">10</span>])</span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a>[([<span class="st">'we'</span>, <span class="st">'are'</span>, <span class="st">'to'</span>, <span class="st">'study'</span>], <span class="st">'about'</span>),</span>
+<span id="cb6-4"><a href="#cb6-4"></a> ([<span class="st">'are'</span>, <span class="st">'about'</span>, <span class="st">'study'</span>, <span class="st">'the'</span>], <span class="st">'to'</span>),</span>
+<span id="cb6-5"><a href="#cb6-5"></a> ([<span class="st">'about'</span>, <span class="st">'to'</span>, <span class="st">'the'</span>, <span class="st">'idea'</span>], <span class="st">'study'</span>),</span>
+<span id="cb6-6"><a href="#cb6-6"></a> ([<span class="st">'to'</span>, <span class="st">'study'</span>, <span class="st">'idea'</span>, <span class="st">'of'</span>], <span class="st">'the'</span>),</span>
+<span id="cb6-7"><a href="#cb6-7"></a> ([<span class="st">'study'</span>, <span class="st">'the'</span>, <span class="st">'of'</span>, <span class="st">'a'</span>], <span class="st">'idea'</span>),</span>
+<span id="cb6-8"><a href="#cb6-8"></a> ([<span class="st">'the'</span>, <span class="st">'idea'</span>, <span class="st">'a'</span>, <span class="st">'computational'</span>], <span class="st">'of'</span>),</span>
+<span id="cb6-9"><a href="#cb6-9"></a> ([<span class="st">'idea'</span>, <span class="st">'of'</span>, <span class="st">'computational'</span>, <span class="st">'process'</span>], <span class="st">'a'</span>),</span>
+<span id="cb6-10"><a href="#cb6-10"></a> ([<span class="st">'of'</span>, <span class="st">'a'</span>, <span class="st">'process'</span>, <span class="st">'computational'</span>], <span class="st">'computational'</span>),</span>
+<span id="cb6-11"><a href="#cb6-11"></a> ([<span class="st">'a'</span>, <span class="st">'computational'</span>, <span class="st">'computational'</span>, <span class="st">'processes'</span>], <span class="st">'process'</span>),</span>
+<span id="cb6-12"><a href="#cb6-12"></a> ([<span class="st">'computational'</span>, <span class="st">'process'</span>, <span class="st">'processes'</span>, <span class="st">'are'</span>], <span class="st">'computational'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The source for training such a network is given in this <a href="https://colab.research.google.com/drive/16KM-Y-Ju8M_tiDZh5fN7vHDwDW3AbaxR?usp=sharing">colab notebook</a>.</p>
+</section>
+<section id="skip-gram-model" class="level3">
+<h3 class="anchored" data-anchor-id="skip-gram-model">Skip Gram Model</h3>
+<p>Skip gram, being the another variation of word2vec, does the exact opposite of what CBOW does.</p>
+<p>It tries to predict the context or surrounding words by looking at a specific word in a sentence.</p>
+</section>
+</section>
+</section>
+<section id="reference" class="level1">
+<h1>Reference</h1>
+<ul>
+<li><a href="https://colab.research.google.com/drive/16KM-Y-Ju8M_tiDZh5fN7vHDwDW3AbaxR?usp=sharing">Colab notebook to play with the code</a></li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->
