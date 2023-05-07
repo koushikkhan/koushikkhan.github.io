@@ -1,3 +1,5 @@
+A copy of my latest resume can also be downloaded from [here](resources/pdf/resume/koushik_khan_resume_one_page.pdf).
+
 <iframe
     width="1000"
     height="1000"
