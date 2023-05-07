@@ -342,27 +342,27 @@ P(Y = y) = p^y \times (1-p)^{1-y}; \text{where } Y \in \left\{{0,1}\right\}
 <p>Note that, putting <span class="math inline">y=1</span> in the above function will give you <span class="math inline">p</span>. This function always gives a value in between zero and one. It is also known as the <em>likelihood function</em> given that the quantity <span class="math inline">p</span> is unknown.</p>
 <p>Having defined the above expression, we are ready to look at the entire data. It is to be noted that each of the examples are independent of each other.</p>
 <p>Now, the next step is to find out the probability of having the target values themselves as <span class="math inline">y_1, y_2, \ldots, y_N</span> at some point of time that we are considering for the classification task.</p>
-<p>To be specific, we would want to know that whichever process has generated the data, what would be the probability of generating this sample again. This combined probability is called <em>joint likelihood</em>.</p>
-<p>According to the probability theory, the joint likelihood (equivalent to joint probability) of <span class="math inline">Y_1=y_1, \dots, Y_N=y_N</span> is product of the individual likelihoods i.e.&nbsp;</p>
+<p>To be specific, we would want to know that whichever process has generated the data, what would be the probability of generating this sample again. This combined probability is called <em>likelihood</em>.</p>
+<p>According to the probability theory, this likelihood (equivalent to joint probability) of <span class="math inline">Y_1=y_1, \dots, Y_N=y_N</span> is product of the individual likelihoods i.e.&nbsp;</p>
 <p><span class="math display">\begin{align}
   P(Y_1=y_1, \dots, Y_N=y_N) &amp;= \Pi_{i=1}^N P(Y_i = y_i) \nonumber \\
-                              &amp;= \Pi_{i=1}^N p^{y_i} \times (1-p)^{1-y_i} \nonumber \\
+                              &amp;= \Pi_{i=1}^N p_i^{y_i} \times (1-p_i)^{1-y_i} \nonumber \\
 \end{align}</span></p>
 <p>At this stage, a log function is typically applied to scale the above quantity for future calculations. The log function has same pattern as the function on which it is applied to i.e.&nbsp;mathematically speaking,</p>
 <p><span class="math display">
 \text{if } \forall a,b \in \mathbb{R}, a &gt; b  \Rightarrow f(a) &gt; f(b), \text{ then } log(f(a)) &gt; log(f(b))
 </span></p>
 <p>Therefore we have, <span class="math display">\begin{align}
-  log\left[P(Y_1=y_1, \dots, Y_N=y_N)\right] &amp;= \sum_{i=1}^N y_i log(p) + (1-y_i) log(1-p) \nonumber
+  log\left[P(Y_1=y_1, \dots, Y_N=y_N)\right] &amp;= \sum_{i=1}^N y_i log(p_i) + (1-y_i) log(1-p_i) \nonumber
 \end{align}</span></p>
 <p>The above quantity is a negative quantity as the log function returns negative values when the input is within zero and one and working with a negative quantity can be conceptually misleading. That is why it is usually multiplied by negative one to make it positive.</p>
 <p>This positive quantity is often referred to as <em>negative log likelihood (nll)</em> and is considered as the loss function for this type of binary classification problems.</p>
 <p>Hence, the <em>negative log-likelihood</em> loss function is finally expressed as,</p>
 <p><span class="math display">
-nll = -\sum_{i=1}^N y_i log(p) + (1-y_i) log(1-p)
+nll = -\sum_{i=1}^N \left\{y_i log(p_i) + (1-y_i) log(1-p_i)\right\}
 </span></p>
-<p>It should be noted that, the quantity <span class="math inline">p</span> is usually estimated by the model (like a FFN for binary classification or logistic regression), whereas <span class="math inline">y_i</span> being the true value in our data for the <span class="math inline">i^{th}</span> sample.</p>
-<p>NLL loss function tries to measure the similarity between predicted probability distribution (<em>i.e.&nbsp;distribution of <span class="math inline">p</span></em>) and actual probability distribution (<em>i.e.&nbsp;distribution of <span class="math inline">y_i</span></em>) of labels.</p>
+<p>It should be noted that, the quantity <span class="math inline">p_i</span> is usually estimated by the model (like a FFN for binary classification or logistic regression), whereas <span class="math inline">y_i</span> being the true value in our data for the <span class="math inline">i^{th}</span> sample.</p>
+<p>The NLL loss function tries to measure the similarity between the distribution of the predicted values <span class="math inline">p</span> and the distribution of actual values <span class="math inline">y</span> (i.e.&nbsp;labels).</p>
 <p>The <a href="https://en.wikipedia.org/wiki/Cross_entropy"><em>cross entropy</em></a> loss function is just a generalisation of this simple negative log likelihood giving the similar kind of information for a prediction when the data has, say, <span class="math inline">K</span> labels instead of just two.</p>
 </div>
 </div>

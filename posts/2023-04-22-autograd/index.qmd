@@ -125,13 +125,13 @@ Having defined the above expression, we are ready to look at the entire data. It
 
 Now, the next step is to find out the probability of having the target values themselves as $y_1, y_2, \ldots, y_N$ at some point of time that we are considering for the classification task. 
 
-To be specific, we would want to know that whichever process has generated the data, what would be the probability of generating this sample again. This combined probability is called *joint likelihood*.
+To be specific, we would want to know that whichever process has generated the data, what would be the probability of generating this sample again. This combined probability is called *likelihood*.
 
-According to the probability theory, the joint likelihood (equivalent to joint probability) of $Y_1=y_1, \dots, Y_N=y_N$ is product of the individual likelihoods i.e. 
+According to the probability theory, this likelihood (equivalent to joint probability) of $Y_1=y_1, \dots, Y_N=y_N$ is product of the individual likelihoods i.e. 
 
 \begin{align}
   P(Y_1=y_1, \dots, Y_N=y_N) &= \Pi_{i=1}^N P(Y_i = y_i) \nonumber \\
-                              &= \Pi_{i=1}^N p^{y_i} \times (1-p)^{1-y_i} \nonumber \\
+                              &= \Pi_{i=1}^N p_i^{y_i} \times (1-p_i)^{1-y_i} \nonumber \\
 \end{align}
 
 At this stage, a log function is typically applied to scale the above quantity for future calculations. The log function has same pattern as the function on which it is applied to i.e. mathematically speaking,
@@ -142,7 +142,7 @@ $$
 
 Therefore we have,
 \begin{align}
-  log\left[P(Y_1=y_1, \dots, Y_N=y_N)\right] &= \sum_{i=1}^N y_i log(p) + (1-y_i) log(1-p) \nonumber
+  log\left[P(Y_1=y_1, \dots, Y_N=y_N)\right] &= \sum_{i=1}^N y_i log(p_i) + (1-y_i) log(1-p_i) \nonumber
 \end{align}
 
 The above quantity is a negative quantity as the log function returns negative values when the input is within zero and one and working with a negative quantity can be conceptually misleading. That is why it is usually multiplied by negative one to make it positive. 
@@ -152,12 +152,12 @@ This positive quantity is often referred to as *negative log likelihood (nll)* a
 Hence, the *negative log-likelihood* loss function is finally expressed as,
 
 $$
-nll = -\sum_{i=1}^N y_i log(p) + (1-y_i) log(1-p)
+nll = -\sum_{i=1}^N \left\{y_i log(p_i) + (1-y_i) log(1-p_i)\right\}
 $$
 
-It should be noted that, the quantity $p$ is usually estimated by the model (like a FFN for binary classification or logistic regression), whereas $y_i$ being the true value in our data for the $i^{th}$ sample. 
+It should be noted that, the quantity $p_i$ is usually estimated by the model (like a FFN for binary classification or logistic regression), whereas $y_i$ being the true value in our data for the $i^{th}$ sample. 
 
-NLL loss function tries to measure the similarity between predicted probability distribution (*i.e. distribution of $p$*) and actual probability distribution (*i.e. distribution of $y_i$*) of labels.
+The NLL loss function tries to measure the similarity between the distribution of the predicted values $p$ and the distribution of actual values $y$ (i.e. labels).
 
 The [*cross entropy*](https://en.wikipedia.org/wiki/Cross_entropy) loss function is just a generalisation of this simple negative log likelihood giving the similar kind of information for a prediction when the data has, say, $K$ labels instead of just two.
 :::
