@@ -357,7 +357,7 @@ Photo by <a href="https://unsplash.com/@melpoole?utm_source=unsplash&amp;utm_med
 </figure>
 </div>
 <p>In the above table, we have four different words which are ‘Chocolate’, ‘Cat’, ‘Dog’ and ‘Ship’. For each of these words we have six randomly chosen features or characteristics.</p>
-<p>Each of features can have values in between zero and one. If the value for a feature is very close to zero, it indicates that the feature is not very applicable to the word. Similarly, having a value closer to one indicates that the feature is quite applicable to the word.</p>
+<p>Each of the features can have values in between zero and one. If the value for a feature is very close to zero, it indicates that the feature is not very applicable to the word. Similarly, having a value closer to one indicates that the feature is quite applicable to the word.</p>
 <p>As an example, the feature <em>‘can_play_with’</em> is not at all relevant to the word ‘Ship’, that’s why the score is 0.0.</p>
 <p>Interesting thing to note here is that the words ‘Cat’ and ‘Dog’ have very similar scores for all the features. This makes them very similar words and in reality, they do have many common characteristics too.</p>
 <p>If we consider a 6D vector space (also called <em>semantic space</em>) based on these features, then obviously, ‘Cat’ and ‘Dog’ are going to be very close to each other over there. However, the words ‘Chocolate’ and ‘Ship’ will be far away.</p>
@@ -518,7 +518,6 @@ Tip
 <span id="cb7-11"><a href="#cb7-11"></a> (<span class="st">'about'</span>, <span class="st">'study'</span>),</span>
 <span id="cb7-12"><a href="#cb7-12"></a> (<span class="st">'to'</span>, <span class="st">'study'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Finally, here is the source code to build the network architecture in PyTorch.</p>
 </section>
 <section id="skip-gram-model" class="level3">
 <h3 class="anchored" data-anchor-id="skip-gram-model">Skip-gram model</h3>
@@ -565,7 +564,7 @@ Tip
 </section>
 <section id="pre-trained-embedding-models" class="level2">
 <h2 class="anchored" data-anchor-id="pre-trained-embedding-models">Pre-trained embedding models</h2>
-<p>To get very accurate vector representations of words, we need to train such networks on very large corpus with a much larger embedding dimension. Researchers have come up with pre-trained embedding models which are trained on massive amounts of text such as the wikipedia. These models are typically of 300 to 600 dimensional and are ready for integration.</p>
+<p>To get very accurate vector representations of words, we need to train such networks on very large corpus with a much larger embedding dimension. Researchers have come up with pre-trained embedding models which are trained on massive amounts of text such as the wikipedia. These models are typically of 300 to 600 dimensional and are ready to be consumed..</p>
 <p>The only problem with pre-trained models is the training data is very generic. In case someone needs to work on a specific domain, then such a network should be trained on domain specific corpus.</p>
 </section>
 </section>
