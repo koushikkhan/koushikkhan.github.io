@@ -2,42 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>/resume.html</loc>
-    <lastmod>2023-05-06T02:48:08.931Z</lastmod>
+    <lastmod>2023-05-07T14:18:26.093Z</lastmod>
   </url>
   <url>
     <loc>/about.html</loc>
-    <lastmod>2023-05-06T02:48:09.240Z</lastmod>
+    <lastmod>2023-05-07T14:18:26.420Z</lastmod>
   </url>
   <url>
     <loc>/index.html</loc>
-    <lastmod>2023-05-06T02:48:09.530Z</lastmod>
+    <lastmod>2023-05-07T14:18:26.723Z</lastmod>
   </url>
   <url>
     <loc>/posts.html</loc>
-    <lastmod>2023-05-06T02:48:10.208Z</lastmod>
+    <lastmod>2023-05-07T15:00:49.705Z</lastmod>
   </url>
   <url>
     <loc>/skills.html</loc>
-    <lastmod>2023-05-06T02:48:10.572Z</lastmod>
+    <lastmod>2023-05-07T14:18:28.053Z</lastmod>
   </url>
   <url>
     <loc>/posts/2023-03-19-stat-hypothesis-test/index.html</loc>
-    <lastmod>2023-05-06T02:48:11.072Z</lastmod>
+    <lastmod>2023-05-07T14:19:46.827Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts/2023-05-01-embeddings/index.html</loc>
+    <lastmod>2023-05-07T14:18:29.620Z</lastmod>
   </url>
   <url>
     <loc>/posts/2023-03-22-bash-commands-for-cloud-1/index.html</loc>
-    <lastmod>2023-05-06T02:48:11.566Z</lastmod>
+    <lastmod>2023-05-07T14:18:30.150Z</lastmod>
   </url>
   <url>
     <loc>/posts/2023-04-22-autograd/index.html</loc>
-    <lastmod>2023-05-06T02:48:12.433Z</lastmod>
+    <lastmod>2023-05-07T15:00:49.063Z</lastmod>
   </url>
   <url>
     <loc>/posts/2023-03-26-bash-commands-for-cloud-2/index.html</loc>
-    <lastmod>2023-05-06T02:48:13.346Z</lastmod>
+    <lastmod>2023-05-07T14:18:31.969Z</lastmod>
   </url>
   <url>
     <loc>/projects.html</loc>
-    <lastmod>2023-05-06T02:48:13.584Z</lastmod>
+    <lastmod>2023-05-07T14:18:32.208Z</lastmod>
   </url>
 </urlset>
