@@ -139,7 +139,7 @@ Let us try to understand the way of expressing the meaning of words mathematical
 
 In the above table, we have four different words which are 'Chocolate', 'Cat', 'Dog' and 'Ship'. For each of these words we have six randomly chosen features or characteristics. 
 
-Each of features can have values in between zero and one. If the value for a feature is very close to zero, it indicates that the feature is not very applicable to the word. Similarly, having a value closer to one indicates that the feature is quite applicable to the word.
+Each of the features can have values in between zero and one. If the value for a feature is very close to zero, it indicates that the feature is not very applicable to the word. Similarly, having a value closer to one indicates that the feature is quite applicable to the word.
 
 As an example, the feature *'can_play_with'* is not at all relevant to the word 'Ship', that's why the score is 0.0.
 
@@ -325,10 +325,6 @@ pprint(cbow_data[:10])
  ('to', 'study')]
 ```
 
-Finally, here is the source code to build the network architecture in PyTorch.
-
-
-
 ### Skip-gram model
 
 Skip gram, being another variation of word2vec, does the exact opposite of what CBOW does.
@@ -382,7 +378,7 @@ The source code for training such a network is given in this [colab notebook](ht
 
 ## Pre-trained embedding models
 
-To get very accurate vector representations of words, we need to train such networks on very large corpus with a much larger embedding dimension. Researchers have come up with pre-trained embedding models which are trained on massive amounts of text such as the wikipedia. These models are typically of 300 to 600 dimensional and are ready for integration.
+To get very accurate vector representations of words, we need to train such networks on very large corpus with a much larger embedding dimension. Researchers have come up with pre-trained embedding models which are trained on massive amounts of text such as the wikipedia. These models are typically of 300 to 600 dimensional and are ready to be consumed..
 
 The only problem with pre-trained models is the training data is very generic. In case someone needs to work on a specific domain, then such a network should be trained on domain specific corpus.
 
