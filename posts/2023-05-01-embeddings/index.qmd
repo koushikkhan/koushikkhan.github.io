@@ -61,7 +61,7 @@ Note that, the word `the` has appeared twice in the corpus and it is considered 
 
 Converting texts to numbers are required because a computer can only handle numbers, although typically not in the form we give. It converts numbers (decimal numbers) to the binary form which is basically a sequence of zeros and ones, before performing any task.
 
-Since the beginning of development of modern computers, we had something called [ASCII table](https://www.ascii-code.com/). This table has numeric representation of each character only in English but later on it has started supporting other languages as well.
+Since the beginning of development of modern computers, we had something called [ASCII table](https://www.ascii-code.com/). This table has numeric representation of each character in English including numbers and some special characters.
 
 # Better ways to represent texts
 
