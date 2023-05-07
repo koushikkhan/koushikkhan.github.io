@@ -11,13 +11,19 @@ image: network.jpg
 draft: false
 ---
 
+<center>
+<img src="network.jpg" alt="alt text" title="" height="400" width="800"/>
+<figcaption>Photo by <a href="https://unsplash.com/@alinnnaaaa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alina Grubnyak</a> on <a href="https://unsplash.com/photos/ZiQkhI7417A?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+</figcaption>
+</center>
+
 # Introduction
 
 In our high school mathematics, we have learnt *Differential Calculus*, which has introduced the terms 'differentiation' and 'derivative'.
 
 The concept of differentiating a function has played a significant role in today's deep learning algorithms among many of its useful real life applications. 
 
-In this post, I will revisit the core idea of computing derivative by looking at the geometrical interpretation of it and simultaneously try to put some light to the idea that is used behind the efficient learning process of a neural network, also known as *backpropagation*.
+In this post, I will revisit the core idea of computing derivatives by looking at the geometrical interpretation of it and simultaneously try to put some light to the idea that is used behind the efficient learning process of a neural network, also known as *backpropagation*.
 
 This post is highly motivated by a series of lecture videos by Andrej Karpathy. I have given a reference to it at the end.
 
@@ -35,13 +41,13 @@ Read about conditions for differentiability and other related concepts [here](ht
 
 The process of differentiation may return *another function*, say, $g()$ or a *constant* depending on the structure of the function $f$.
 
-The definition of drivative of a function $f(.)$ w.r.t the input $x$ is given below:
+The definition of derivative of a function $f(.)$ w.r.t the input $x$ is given below:
 
 $$
 \frac{df}{dx} = \lim_{h \to 0} \frac{f(x+h) - f(x)}{(x+h) - x}
 $$
 
-It's a ratio, where the denominator measures the change in the input $x$ and numerator measures the change in output $f(x)$, hence indicating the rate of change in $f$ w.r.t $x$.
+It's a ratio, where the denominator measures the change in the input $x$ and the numerator measures the change in output $f(x)$, hence indicating the rate of change in $f$ w.r.t $x$.
 
 The animation below, made with [geogebra](https://www.geogebra.org), will make the definition easier to understand by giving geometrical sense, especially the limiting nature of the ratio.
 
@@ -53,7 +59,7 @@ If you make $h$ very close to zero, you will understand how the secant line pass
 
 As you understand, the ratio $\frac{f(x+h) - f(x)}{(x+h) - x}$ is nothing but the *slope* or $tan(.)$ of the angle $\angle{QPP'}$ from the triangle $\triangle{QPP'}$.
 
-Theoratically, when $h$ is very close to zero, the ratio gives you the value of the slope, that the tangent line of the curve has, at the point $(x,0)$.
+Theoretically, when $h$ is very close to zero, the ratio gives you the value of the slope that the tangent line of the curve has, at the point $(x,0)$.
 
 Therefore, the overall definition of derivative of a function, geometrically refers to the slope ($m$) for the tangent line of the curve $y = f(x)$ at the point $x$.
 
@@ -65,13 +71,13 @@ The tangent line of a curve at some point $x$ is important as it gives us an ide
 
 Similar information can also be obtained by evaluating the expression of derivative at some point $x$. If the limiting value of the ratio is positive, then obviously, there is a positive change on the output otherwise the change is negative and having a value as zero indicates there is no change on the output.
 
-Note that, till now, we have discussed only on a scalar valued function with a scalar valued input. We will now try to get some ideas to calculate derivative when either of the function and input or both of them are vector valued.
+Note that, till now, we have discussed only on a scalar valued function with a scalar valued input. We will now try to get some ideas to calculate derivatives when either of the function and input or both of them are vector valued.
 
 ## Derivative for different type of input mappings
 
 ### Functions of type $f: \mathbb{R}^n \to \mathbb{R}$ - vector in, scalar out
 
-Such functions take vector (s) as input (s) and return a scalar. The mean-squared-error and cross-entropy loss functions are couple of examples of such functions that are heavily used in neural network setup.
+Such functions take vector (s) as input (s) and return a scalar. The mean-squared-error and cross-entropy loss functions are a couple of examples of such functions that are heavily used in neural network setup.
 
 ::: {.callout-note}
 ## mean squared error (mse) loss for regression setup
@@ -113,11 +119,11 @@ $$
 P(Y = y) = p^y \times (1-p)^{1-y}; \text{where } Y \in \left\{{0,1}\right\}
 $$
 
-Note that, putting $y=1$ in the above function will give you $p$. This function always gives a value in between zero and one. It is also known as *likelihood function* given that the quantity $p$ is unknown.
+Note that, putting $y=1$ in the above function will give you $p$. This function always gives a value in between zero and one. It is also known as the *likelihood function* given that the quantity $p$ is unknown.
 
-Having defined the above expression, we are ready to look at entire data. It is to be noted that each of the examples are independent to each other. 
+Having defined the above expression, we are ready to look at the entire data. It is to be noted that each of the examples are independent of each other. 
 
-Now, the next step is to find out the probability of having the target values themselves as $y_1, y_2, \ldots, y_N$ at some point of time, that we are considering for the classification task. 
+Now, the next step is to find out the probability of having the target values themselves as $y_1, y_2, \ldots, y_N$ at some point of time that we are considering for the classification task. 
 
 To be specific, we would want to know that whichever process has generated the data, what would be the probability of generating this sample again. This combined probability is called *joint likelihood*.
 
@@ -139,7 +145,7 @@ Therefore we have,
   log\left[P(Y_1=y_1, \dots, Y_N=y_N)\right] &= \sum_{i=1}^N y_i log(p) + (1-y_i) log(1-p) \nonumber
 \end{align}
 
-the above quantity is a negative quantity as the log function returns negative values when the input is within zero and one and working with a negative quantity can be conceptually misleading. That is why, it is usually multiplied by negative one to make it positive. 
+The above quantity is a negative quantity as the log function returns negative values when the input is within zero and one and working with a negative quantity can be conceptually misleading. That is why it is usually multiplied by negative one to make it positive. 
 
 This positive quantity is often referred to as *negative log likelihood (nll)* and is considered as the loss function for this type of binary classification problems.
 
@@ -153,7 +159,7 @@ It should be noted that, the quantity $p$ is usually estimated by the model (lik
 
 NLL loss function tries to measure the similarity between predicted probability distribution (*i.e. distribution of $p$*) and actual probability distribution (*i.e. distribution of $y_i$*) of labels.
 
-The [*cross entropy*](https://en.wikipedia.org/wiki/Cross_entropy) loss function is just a generalization of this simple negative log likelihood giving the similar kind of information for a prediction when the data has, say, $K$ labels instead of just two.
+The [*cross entropy*](https://en.wikipedia.org/wiki/Cross_entropy) loss function is just a generalisation of this simple negative log likelihood giving the similar kind of information for a prediction when the data has, say, $K$ labels instead of just two.
 :::
 
 The vector of gradients of such a function $f$ is defined as below:
@@ -164,7 +170,7 @@ $$
 
 ### Functions of type $f: \mathbb{R}^n \to \mathbb{R}^m$ - vector in, vector out
 
-Such functions take vector (s) as input (s) and return another vector with different dimension as output. 
+Such functions take vector (s) as input (s) and return another vector with different dimensions as output. 
 
 A simple example can be a function $f: \mathbb{R}^2 \to \mathbb{R}^3$:
 
@@ -193,7 +199,7 @@ While forming $z$, $f(.)$ is the inner function and $g(.)$ is the outer function
 
 We want to measure the rate of change in $z$ w.r.t $x$ i.e. $\frac{dz}{dx}$. 
 
-This derivative is computed as follws:
+This derivative is computed as follows:
 
 $$
 \frac{dz}{dx} = \frac{dz}{dy} \times \frac{dy}{dx}
@@ -208,7 +214,7 @@ Here, the actual derivative is computed in two steps,
 
 and these are multiplied together to form the actual derivative.
 
-[Wikipedia](https://en.wikipedia.org/wiki/Chain_rule) has an intutive explanation to this as given below:
+[Wikipedia](https://en.wikipedia.org/wiki/Chain_rule) has an intuitive explanation to this as given below:
 
 ::: {.callout-tip}
 ## Understanding chain rule
@@ -234,7 +240,7 @@ $$
 $$
 
 ::: {.callout-note}
-In the neural network setup, we usually deal with complex functions that depends on several variables. Hence, it will be meaningful to use partial derivatives while demystifying the underlying operations.
+In the neural network setup, we usually deal with complex functions that depend on several variables. Hence, it will be meaningful to use partial derivatives while demystifying the underlying operations.
 :::
 
 # The computational graph
@@ -257,7 +263,7 @@ graph LR
 
 The above diagram is typically referred to as a computational graph, where both **a** and **b** are inputs to the graph and $l$ is the output of the graph.
 
-Each box in the graph is called a *node* where a mathematical operation is performed. So, if you imagine, deep neural network is actually such a massive computational graph where, depending on the depth of the network, millions (or may be billions) of mathematical operations are performed.
+Each box in the graph is called a *node* where a mathematical operation is performed. So, if you imagine, a deep neural network is actually such a massive computational graph where, depending on the depth of the network, millions (or maybe billions) of mathematical operations are performed.
 
 A partial view of a graph is shown below so that we can imagine how large and complex a computational graph can be for a real neural network:
 
@@ -297,7 +303,7 @@ graph LR
 
 ## Differentiation through a graph
 
-Neural networks learn (i.e. update the parameters) using an iterative process where at the core it uses backpropagation algorithm to compute derivative of a loss function w.r.t each node in the graph.
+Neural networks learn (i.e. update the parameters) using an iterative process where at the core it uses backpropagation algorithm to compute derivatives of a loss function w.r.t each node in the graph.
 
 Let us revisit the previously shown simple computational graph to understand it in a better way,
 
@@ -330,7 +336,7 @@ The real benefit of computing derivatives (a.k.a gradients) in the backward dire
 
 If we would have started in the forward direction, then the learning algorithm would have travelled the entire graph for each of the input nodes at the very beginning. Unlike a simple graph like the above one, this forward mode differentiation is computationally very costly for a large network.
 
-[Pytorch](https://pytorch.org), being most popular deep learning toolkit, has implemented a `.backward()` method for their neural network class to compute the derivatives for all the nodes (technically not all, only for them with `requires_grad=True`) in a computational graph with a single attempt.
+[Pytorch](https://pytorch.org), being a popular deep learning toolkit, has implemented a `.backward()` method for their neural network class to compute the derivatives for all the nodes (technically not all, only for them with `requires_grad=True`) in a computational graph with a single attempt.
 
 ## Important takeaways
 
@@ -352,7 +358,7 @@ graph RL
   y(y) --> z(z = x+y)-.->|gradient of z|y(y)
 ```
 
-computing gradients with respect to the input nodes is fairly simple as the backward gradient computation just copies the gradient of the output node to all the input nodes.
+Computing gradients with respect to the input nodes is fairly simple as the backward gradient computation just copies the gradient of the output node to all the input nodes.
 
 
 However, when we have a $'\times'$ operation in the graph, like the next one,
@@ -373,7 +379,7 @@ graph RL
   end
 ```
 
-gradient of one input node is just the product of the gradient of output node and value of other input node.
+The gradient of one input node is just the product of the gradient of the output node and the value of the other input node.
 
 ::: {.callout-note}
 $+$ and $\times$ are the two building blocks powering up any mathematical computation. 
@@ -388,11 +394,11 @@ graph LR
   b(b) --> c(c = a+b)
 ```
 
-If we observe the above graph, it clear that while performing backpropagation, computing gradient of any of the leaf nodes i.e. $\left\{a, b\right\}$ is possible only when gradient value for the node $c$ is already available. This is just because of the chain rule we use.
+If we observe the above graph, it is clear that while performing backpropagation, computing gradient of any of the leaf nodes i.e. $\left\{a, b\right\}$ is possible only when gradient value for the node $c$ is already available. This is just because of the chain rule we use.
 
-So the fact is that we cannot choose a node randomly and try computing gradient for it. We must compute the gradient of node $c$, which is essentially 1, then we can take either of node $a$ or node $b$.
+So the fact is that we cannot choose a node randomly and try computing the gradient for it. We must compute the gradient of node $c$, which is essentially 1, then we can take either of node $a$ or node $b$.
 
-Nodes must be sorted in order to perform backpropagation. [*Topological Sort*](https://www.hackerearth.com/practice/algorithms/graphs/topological-sort/tutorial/) is an way to achieve this ordering before performing the backpropagation.
+Nodes must be sorted in order to perform backpropagation. [*Topological Sort*](https://www.hackerearth.com/practice/algorithms/graphs/topological-sort/tutorial/) is a way to achieve this ordering before performing the backpropagation.
 
 ## The efficient vector-jacobian product
 
@@ -503,9 +509,9 @@ Hopefully, it gives us an idea to implement automatic differentiation (autograd)
 
 The last and one of the important parts of training a neural network is the *training loop*. Technically it is a `for` loop where in each iteration some steps are performed. Each of these iterations is also called *epoch*.
 
-It is to be noted that, before entering into the loop, all the parameters are randomly initialized.
+It is to be noted that, before entering into the loop, all the parameters are randomly initialised.
 
-Below are the steps that are performed within atraining loop.
+Below are the steps that are performed within a training loop.
 
 ```{mermaid}
 flowchart TD
@@ -528,7 +534,7 @@ flowchart TD
 
 # Conclusion
 
-In conclusion, I hope that this post has provided you with valuable insights and information about the learning process of a neural netwok. 
+In conclusion, I hope that this post has provided you with valuable insights and information about the learning process of a neural network. 
 
 Remember that learning is a never-ending process, and there is always more to discover and explore. I have created a [colab notebook](https://colab.research.google.com/drive/1GgqYuomhrSgXjLJi01soTX-0h6RU7F0J?usp=sharing) based on Andrej's lecture on YouTube, which will definitely be helpful to grasp the whole idea.
 

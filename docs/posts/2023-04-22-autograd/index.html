@@ -230,11 +230,17 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<center>
+<img src="network.jpg" alt="alt text" title="" height="400" width="800">
+<figcaption>
+Photo by <a href="https://unsplash.com/@alinnnaaaa?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Alina Grubnyak</a> on <a href="https://unsplash.com/photos/ZiQkhI7417A?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
+</figcaption>
+</center>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
 <p>In our high school mathematics, we have learnt <em>Differential Calculus</em>, which has introduced the terms ‘differentiation’ and ‘derivative’.</p>
 <p>The concept of differentiating a function has played a significant role in today’s deep learning algorithms among many of its useful real life applications.</p>
-<p>In this post, I will revisit the core idea of computing derivative by looking at the geometrical interpretation of it and simultaneously try to put some light to the idea that is used behind the efficient learning process of a neural network, also known as <em>backpropagation</em>.</p>
+<p>In this post, I will revisit the core idea of computing derivatives by looking at the geometrical interpretation of it and simultaneously try to put some light to the idea that is used behind the efficient learning process of a neural network, also known as <em>backpropagation</em>.</p>
 <p>This post is highly motivated by a series of lecture videos by Andrej Karpathy. I have given a reference to it at the end.</p>
 </section>
 <section id="differentiation" class="level1">
@@ -256,18 +262,18 @@ Note
 </div>
 </div>
 <p>The process of differentiation may return <em>another function</em>, say, <span class="math inline">g()</span> or a <em>constant</em> depending on the structure of the function <span class="math inline">f</span>.</p>
-<p>The definition of drivative of a function <span class="math inline">f(.)</span> w.r.t the input <span class="math inline">x</span> is given below:</p>
+<p>The definition of derivative of a function <span class="math inline">f(.)</span> w.r.t the input <span class="math inline">x</span> is given below:</p>
 <p><span class="math display">
 \frac{df}{dx} = \lim_{h \to 0} \frac{f(x+h) - f(x)}{(x+h) - x}
 </span></p>
-<p>It’s a ratio, where the denominator measures the change in the input <span class="math inline">x</span> and numerator measures the change in output <span class="math inline">f(x)</span>, hence indicating the rate of change in <span class="math inline">f</span> w.r.t <span class="math inline">x</span>.</p>
+<p>It’s a ratio, where the denominator measures the change in the input <span class="math inline">x</span> and the numerator measures the change in output <span class="math inline">f(x)</span>, hence indicating the rate of change in <span class="math inline">f</span> w.r.t <span class="math inline">x</span>.</p>
 <p>The animation below, made with <a href="https://www.geogebra.org">geogebra</a>, will make the definition easier to understand by giving geometrical sense, especially the limiting nature of the ratio.</p>
 <iframe src="https://www.geogebra.org/calculator/jbdd9y5v?embed" width="800" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
 </iframe>
 <p>Once you open this animation in full screen mode, you get to see a slider that is controlling our <span class="math inline">h</span>. On the left panel, there is a play button associated with <span class="math inline">h</span> and it can be used to play the animation.</p>
 <p>If you make <span class="math inline">h</span> very close to zero, you will understand how the secant line passing through the points <span class="math inline">P</span> and <span class="math inline">Q</span> gradually becomes the tangent line of the curve at point <span class="math inline">A</span>.</p>
 <p>As you understand, the ratio <span class="math inline">\frac{f(x+h) - f(x)}{(x+h) - x}</span> is nothing but the <em>slope</em> or <span class="math inline">tan(.)</span> of the angle <span class="math inline">\angle{QPP'}</span> from the triangle <span class="math inline">\triangle{QPP'}</span>.</p>
-<p>Theoratically, when <span class="math inline">h</span> is very close to zero, the ratio gives you the value of the slope, that the tangent line of the curve has, at the point <span class="math inline">(x,0)</span>.</p>
+<p>Theoretically, when <span class="math inline">h</span> is very close to zero, the ratio gives you the value of the slope that the tangent line of the curve has, at the point <span class="math inline">(x,0)</span>.</p>
 <p>Therefore, the overall definition of derivative of a function, geometrically refers to the slope (<span class="math inline">m</span>) for the tangent line of the curve <span class="math inline">y = f(x)</span> at the point <span class="math inline">x</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -284,12 +290,12 @@ Note
 </div>
 <p>The tangent line of a curve at some point <span class="math inline">x</span> is important as it gives us an idea about the nature of the curve locally. Geometrically, if the tangent line makes an acute angle with the x-axis (which is the case here), then it denotes a positive change on the output and when it makes an obtuse angle, it denotes a negative change on the output. If the tangent line is horizontal to the x-axis, then there is no change on the output.</p>
 <p>Similar information can also be obtained by evaluating the expression of derivative at some point <span class="math inline">x</span>. If the limiting value of the ratio is positive, then obviously, there is a positive change on the output otherwise the change is negative and having a value as zero indicates there is no change on the output.</p>
-<p>Note that, till now, we have discussed only on a scalar valued function with a scalar valued input. We will now try to get some ideas to calculate derivative when either of the function and input or both of them are vector valued.</p>
+<p>Note that, till now, we have discussed only on a scalar valued function with a scalar valued input. We will now try to get some ideas to calculate derivatives when either of the function and input or both of them are vector valued.</p>
 <section id="derivative-for-different-type-of-input-mappings" class="level2">
 <h2 class="anchored" data-anchor-id="derivative-for-different-type-of-input-mappings">Derivative for different type of input mappings</h2>
 <section id="functions-of-type-f-mathbbrn-to-mathbbr---vector-in-scalar-out" class="level3">
 <h3 class="anchored" data-anchor-id="functions-of-type-f-mathbbrn-to-mathbbr---vector-in-scalar-out">Functions of type <span class="math inline">f: \mathbb{R}^n \to \mathbb{R}</span> - vector in, scalar out</h3>
-<p>Such functions take vector (s) as input (s) and return a scalar. The mean-squared-error and cross-entropy loss functions are couple of examples of such functions that are heavily used in neural network setup.</p>
+<p>Such functions take vector (s) as input (s) and return a scalar. The mean-squared-error and cross-entropy loss functions are a couple of examples of such functions that are heavily used in neural network setup.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -333,9 +339,9 @@ cross entropy loss for classification setup
 <p><span class="math display">
 P(Y = y) = p^y \times (1-p)^{1-y}; \text{where } Y \in \left\{{0,1}\right\}
 </span></p>
-<p>Note that, putting <span class="math inline">y=1</span> in the above function will give you <span class="math inline">p</span>. This function always gives a value in between zero and one. It is also known as <em>likelihood function</em> given that the quantity <span class="math inline">p</span> is unknown.</p>
-<p>Having defined the above expression, we are ready to look at entire data. It is to be noted that each of the examples are independent to each other.</p>
-<p>Now, the next step is to find out the probability of having the target values themselves as <span class="math inline">y_1, y_2, \ldots, y_N</span> at some point of time, that we are considering for the classification task.</p>
+<p>Note that, putting <span class="math inline">y=1</span> in the above function will give you <span class="math inline">p</span>. This function always gives a value in between zero and one. It is also known as the <em>likelihood function</em> given that the quantity <span class="math inline">p</span> is unknown.</p>
+<p>Having defined the above expression, we are ready to look at the entire data. It is to be noted that each of the examples are independent of each other.</p>
+<p>Now, the next step is to find out the probability of having the target values themselves as <span class="math inline">y_1, y_2, \ldots, y_N</span> at some point of time that we are considering for the classification task.</p>
 <p>To be specific, we would want to know that whichever process has generated the data, what would be the probability of generating this sample again. This combined probability is called <em>joint likelihood</em>.</p>
 <p>According to the probability theory, the joint likelihood (equivalent to joint probability) of <span class="math inline">Y_1=y_1, \dots, Y_N=y_N</span> is product of the individual likelihoods i.e.&nbsp;</p>
 <p><span class="math display">\begin{align}
@@ -349,7 +355,7 @@ P(Y = y) = p^y \times (1-p)^{1-y}; \text{where } Y \in \left\{{0,1}\right\}
 <p>Therefore we have, <span class="math display">\begin{align}
   log\left[P(Y_1=y_1, \dots, Y_N=y_N)\right] &amp;= \sum_{i=1}^N y_i log(p) + (1-y_i) log(1-p) \nonumber
 \end{align}</span></p>
-<p>the above quantity is a negative quantity as the log function returns negative values when the input is within zero and one and working with a negative quantity can be conceptually misleading. That is why, it is usually multiplied by negative one to make it positive.</p>
+<p>The above quantity is a negative quantity as the log function returns negative values when the input is within zero and one and working with a negative quantity can be conceptually misleading. That is why it is usually multiplied by negative one to make it positive.</p>
 <p>This positive quantity is often referred to as <em>negative log likelihood (nll)</em> and is considered as the loss function for this type of binary classification problems.</p>
 <p>Hence, the <em>negative log-likelihood</em> loss function is finally expressed as,</p>
 <p><span class="math display">
@@ -357,7 +363,7 @@ nll = -\sum_{i=1}^N y_i log(p) + (1-y_i) log(1-p)
 </span></p>
 <p>It should be noted that, the quantity <span class="math inline">p</span> is usually estimated by the model (like a FFN for binary classification or logistic regression), whereas <span class="math inline">y_i</span> being the true value in our data for the <span class="math inline">i^{th}</span> sample.</p>
 <p>NLL loss function tries to measure the similarity between predicted probability distribution (<em>i.e.&nbsp;distribution of <span class="math inline">p</span></em>) and actual probability distribution (<em>i.e.&nbsp;distribution of <span class="math inline">y_i</span></em>) of labels.</p>
-<p>The <a href="https://en.wikipedia.org/wiki/Cross_entropy"><em>cross entropy</em></a> loss function is just a generalization of this simple negative log likelihood giving the similar kind of information for a prediction when the data has, say, <span class="math inline">K</span> labels instead of just two.</p>
+<p>The <a href="https://en.wikipedia.org/wiki/Cross_entropy"><em>cross entropy</em></a> loss function is just a generalisation of this simple negative log likelihood giving the similar kind of information for a prediction when the data has, say, <span class="math inline">K</span> labels instead of just two.</p>
 </div>
 </div>
 <p>The vector of gradients of such a function <span class="math inline">f</span> is defined as below:</p>
@@ -367,7 +373,7 @@ nll = -\sum_{i=1}^N y_i log(p) + (1-y_i) log(1-p)
 </section>
 <section id="functions-of-type-f-mathbbrn-to-mathbbrm---vector-in-vector-out" class="level3">
 <h3 class="anchored" data-anchor-id="functions-of-type-f-mathbbrn-to-mathbbrm---vector-in-vector-out">Functions of type <span class="math inline">f: \mathbb{R}^n \to \mathbb{R}^m</span> - vector in, vector out</h3>
-<p>Such functions take vector (s) as input (s) and return another vector with different dimension as output.</p>
+<p>Such functions take vector (s) as input (s) and return another vector with different dimensions as output.</p>
 <p>A simple example can be a function <span class="math inline">f: \mathbb{R}^2 \to \mathbb{R}^3</span>:</p>
 <ul>
 <li>input: <span class="math inline">\vec{x} = \left(x_1, x_2\right)</span> and a matrix of parameters <span class="math inline">\mathbf{W}_{3 \times 2}</span></li>
@@ -391,7 +397,7 @@ nll = -\sum_{i=1}^N y_i log(p) + (1-y_i) log(1-p)
 <p>Consider the situation, where you have two different functions <span class="math inline">f(.)</span> and <span class="math inline">g(.)</span> defined as follows <span class="math inline">y = f(x)</span> and <span class="math inline">z = g(y) = g\left(f(x)\right)</span>.</p>
 <p>While forming <span class="math inline">z</span>, <span class="math inline">f(.)</span> is the inner function and <span class="math inline">g(.)</span> is the outer function. This is known as function composition as often denoted as <span class="math inline">g \circ f(x)</span>.</p>
 <p>We want to measure the rate of change in <span class="math inline">z</span> w.r.t <span class="math inline">x</span> i.e.&nbsp;<span class="math inline">\frac{dz}{dx}</span>.</p>
-<p>This derivative is computed as follws:</p>
+<p>This derivative is computed as follows:</p>
 <p><span class="math display">
 \frac{dz}{dx} = \frac{dz}{dy} \times \frac{dy}{dx}
 </span></p>
@@ -402,7 +408,7 @@ nll = -\sum_{i=1}^N y_i log(p) + (1-y_i) log(1-p)
 <li>the local derivative of <span class="math inline">y</span> w.r.t <span class="math inline">x</span> as <span class="math inline">y</span> explicitly depends on <span class="math inline">x</span></li>
 </ul>
 <p>and these are multiplied together to form the actual derivative.</p>
-<p><a href="https://en.wikipedia.org/wiki/Chain_rule">Wikipedia</a> has an intutive explanation to this as given below:</p>
+<p><a href="https://en.wikipedia.org/wiki/Chain_rule">Wikipedia</a> has an intuitive explanation to this as given below:</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -438,7 +444,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In the neural network setup, we usually deal with complex functions that depends on several variables. Hence, it will be meaningful to use partial derivatives while demystifying the underlying operations.</p>
+<p>In the neural network setup, we usually deal with complex functions that depend on several variables. Hence, it will be meaningful to use partial derivatives while demystifying the underlying operations.</p>
 </div>
 </div>
 </section>
@@ -465,7 +471,7 @@ Note
 </div>
 </div>
 <p>The above diagram is typically referred to as a computational graph, where both <strong>a</strong> and <strong>b</strong> are inputs to the graph and <span class="math inline">l</span> is the output of the graph.</p>
-<p>Each box in the graph is called a <em>node</em> where a mathematical operation is performed. So, if you imagine, deep neural network is actually such a massive computational graph where, depending on the depth of the network, millions (or may be billions) of mathematical operations are performed.</p>
+<p>Each box in the graph is called a <em>node</em> where a mathematical operation is performed. So, if you imagine, a deep neural network is actually such a massive computational graph where, depending on the depth of the network, millions (or maybe billions) of mathematical operations are performed.</p>
 <p>A partial view of a graph is shown below so that we can imagine how large and complex a computational graph can be for a real neural network:</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -509,7 +515,7 @@ Note
 </div>
 <section id="differentiation-through-a-graph" class="level2">
 <h2 class="anchored" data-anchor-id="differentiation-through-a-graph">Differentiation through a graph</h2>
-<p>Neural networks learn (i.e.&nbsp;update the parameters) using an iterative process where at the core it uses backpropagation algorithm to compute derivative of a loss function w.r.t each node in the graph.</p>
+<p>Neural networks learn (i.e.&nbsp;update the parameters) using an iterative process where at the core it uses backpropagation algorithm to compute derivatives of a loss function w.r.t each node in the graph.</p>
 <p>Let us revisit the previously shown simple computational graph to understand it in a better way,</p>
 <div class="cell" data-fig-width="4.5">
 <div class="cell-output-display">
@@ -544,7 +550,7 @@ Note
 </ul>
 <p>The real benefit of computing derivatives (a.k.a gradients) in the backward direction is that it allows the learning algorithm to compute gradients for all the nodes with a single attempt.</p>
 <p>If we would have started in the forward direction, then the learning algorithm would have travelled the entire graph for each of the input nodes at the very beginning. Unlike a simple graph like the above one, this forward mode differentiation is computationally very costly for a large network.</p>
-<p><a href="https://pytorch.org">Pytorch</a>, being most popular deep learning toolkit, has implemented a <code>.backward()</code> method for their neural network class to compute the derivatives for all the nodes (technically not all, only for them with <code>requires_grad=True</code>) in a computational graph with a single attempt.</p>
+<p><a href="https://pytorch.org">Pytorch</a>, being a popular deep learning toolkit, has implemented a <code>.backward()</code> method for their neural network class to compute the derivatives for all the nodes (technically not all, only for them with <code>requires_grad=True</code>) in a computational graph with a single attempt.</p>
 </section>
 <section id="important-takeaways" class="level2">
 <h2 class="anchored" data-anchor-id="important-takeaways">Important takeaways</h2>
@@ -570,7 +576,7 @@ Note
 </div>
 </div>
 </div>
-<p>computing gradients with respect to the input nodes is fairly simple as the backward gradient computation just copies the gradient of the output node to all the input nodes.</p>
+<p>Computing gradients with respect to the input nodes is fairly simple as the backward gradient computation just copies the gradient of the output node to all the input nodes.</p>
 <p>However, when we have a <span class="math inline">'\times'</span> operation in the graph, like the next one,</p>
 <div class="cell" data-fig-width="3.5">
 <div class="cell-output-display">
@@ -593,7 +599,7 @@ Note
 </div>
 </div>
 </div>
-<p>gradient of one input node is just the product of the gradient of output node and value of other input node.</p>
+<p>The gradient of one input node is just the product of the gradient of the output node and the value of the other input node.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -622,9 +628,9 @@ Note
 </div>
 </div>
 </div>
-<p>If we observe the above graph, it clear that while performing backpropagation, computing gradient of any of the leaf nodes i.e.&nbsp;<span class="math inline">\left\{a, b\right\}</span> is possible only when gradient value for the node <span class="math inline">c</span> is already available. This is just because of the chain rule we use.</p>
-<p>So the fact is that we cannot choose a node randomly and try computing gradient for it. We must compute the gradient of node <span class="math inline">c</span>, which is essentially 1, then we can take either of node <span class="math inline">a</span> or node <span class="math inline">b</span>.</p>
-<p>Nodes must be sorted in order to perform backpropagation. <a href="https://www.hackerearth.com/practice/algorithms/graphs/topological-sort/tutorial/"><em>Topological Sort</em></a> is an way to achieve this ordering before performing the backpropagation.</p>
+<p>If we observe the above graph, it is clear that while performing backpropagation, computing gradient of any of the leaf nodes i.e.&nbsp;<span class="math inline">\left\{a, b\right\}</span> is possible only when gradient value for the node <span class="math inline">c</span> is already available. This is just because of the chain rule we use.</p>
+<p>So the fact is that we cannot choose a node randomly and try computing the gradient for it. We must compute the gradient of node <span class="math inline">c</span>, which is essentially 1, then we can take either of node <span class="math inline">a</span> or node <span class="math inline">b</span>.</p>
+<p>Nodes must be sorted in order to perform backpropagation. <a href="https://www.hackerearth.com/practice/algorithms/graphs/topological-sort/tutorial/"><em>Topological Sort</em></a> is a way to achieve this ordering before performing the backpropagation.</p>
 </section>
 <section id="the-efficient-vector-jacobian-product" class="level2">
 <h2 class="anchored" data-anchor-id="the-efficient-vector-jacobian-product">The efficient vector-jacobian product</h2>
@@ -720,8 +726,8 @@ Note
 <section id="the-training-loop" class="level2">
 <h2 class="anchored" data-anchor-id="the-training-loop">The training loop</h2>
 <p>The last and one of the important parts of training a neural network is the <em>training loop</em>. Technically it is a <code>for</code> loop where in each iteration some steps are performed. Each of these iterations is also called <em>epoch</em>.</p>
-<p>It is to be noted that, before entering into the loop, all the parameters are randomly initialized.</p>
-<p>Below are the steps that are performed within atraining loop.</p>
+<p>It is to be noted that, before entering into the loop, all the parameters are randomly initialised.</p>
+<p>Below are the steps that are performed within a training loop.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -750,7 +756,7 @@ Note
 </section>
 <section id="conclusion" class="level1">
 <h1>Conclusion</h1>
-<p>In conclusion, I hope that this post has provided you with valuable insights and information about the learning process of a neural netwok.</p>
+<p>In conclusion, I hope that this post has provided you with valuable insights and information about the learning process of a neural network.</p>
 <p>Remember that learning is a never-ending process, and there is always more to discover and explore. I have created a <a href="https://colab.research.google.com/drive/1GgqYuomhrSgXjLJi01soTX-0h6RU7F0J?usp=sharing">colab notebook</a> based on Andrej’s lecture on YouTube, which will definitely be helpful to grasp the whole idea.</p>
 <p>If you have any questions or feedback, please feel free to leave a comment or reach out to me directly.</p>
 <p>Thank you for taking the time to read this blog, and I hope to see you again soon.</p>

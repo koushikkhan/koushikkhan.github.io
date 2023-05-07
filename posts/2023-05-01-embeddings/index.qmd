@@ -9,9 +9,15 @@ author:
     url: https://koushikkhan.github.io/ 
 date: 05-01-2023
 categories: [deep learning]
-image: network.jpg
+image: text.jpg
 draft: false
 ---
+
+<center>
+<img src="text.jpg" alt="alt text" title="dfg" height="400" width="800"/>
+<figcaption>Photo by <a href="https://unsplash.com/@melpoole?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mel Poole</a> on <a href="https://unsplash.com/photos/lBsvzgYnzPU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  </figcaption>
+</center>
 
 # Introduction
 
@@ -384,9 +390,7 @@ The only problem with pre-trained models is the training data is very generic. I
 
 So we are now at the end of the story. Thanks for having some time reading this article. I hope you have enjoyed it and most probably have got the idea and intuition behind the algorithm as well. 
 
-If you have any comments, please feel free to leave them below. Thank you. 
-
-
+If you have any comments, please feel free to leave them below. Thank you.
 
 # Reference
 - [Efficient Estimation of Word Representations in Vector Space by Tomas Mikolov et al.](https://arxiv.org/abs/1301.3781)

@@ -11,6 +11,12 @@ image: numbers.jpg
 draft: false
 ---
 
+<center>
+<img src="numbers.jpg" alt="alt text" title="" height="400" width="800"/>
+<figcaption>Photo by <a href="https://unsplash.com/@shs521?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Susan Holt Simpson</a> on <a href="https://unsplash.com/photos/GQ327RPuxhI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+</figcaption>
+</center>
+
 # Motivation
 The small story, that I am going to share with you today, is on Statistical Testing of Hypothesis. It is a method of statistical inference with a very powerful theoretical support in the literature and a wide domain of application, especially in today's world of analytics and machine learning.
 
@@ -118,5 +124,3 @@ Regarding the final conclusion: well, we have seen that the null hypothesis is n
 In this article, testing procedure for a specific setup has been covered. There are lot more to look into, specifically the scenarios when population variability measure $\sigma$ is not known, comparing variabilities from two different populations etc. Those things will be covered in near future.
 
 Note that alternative hypothesis can also have three different variants: *less than type* and *unequal type*, we have only covered one.
-
-Preview Image Courtsy: [Susan Holt Simpson](https://unsplash.com/photos/GQ327RPuxhI)
