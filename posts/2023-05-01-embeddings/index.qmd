@@ -2,6 +2,8 @@
 title: "Make More Sense of Language Through Embeddings"
 description: "Representing texts in a better way that neural networks understand"
 from: markdown+emoji
+execute:
+  eval: false
 author:
   - name: Koushik Khan
     url: https://koushikkhan.github.io/ 
@@ -13,17 +15,17 @@ draft: false
 
 # Introduction
 
-A computer algorithm is nothing but a sequence of carefully chosen steps having a specific goal, it needs some imput data to work on and produce some results. Achiving this goal depends on many many factors and representing the input data to the algorithm is one of them.
+A computer algorithm is nothing but a sequence of carefully chosen steps having a specific goal, it needs some input data to work on and produce some results. Achieving this goal depends on many many factors and representing the input data to the algorithm is one of them.
 
 Neural networks, being some complex algorithms, are capable of performing many useful tasks with human languages when represented both as texts and sound waves. Some useful examples can be *human sentiment detection* from written text, *language translation*, *image captioning* etc. 
 
 In all these cases, one interesting thing is to know how such a massive amount of textual data are supplied to a network so that it understands the inner meaning just like a human.  
 
-In this post I will focus on various ways to repesent textual dataset to a network, starting from very naive to very efficient as well as logical.
+In this post I will focus on a couple of methods to represent a textual dataset to a network, collectively known as word2vec.
 
 # Some important terminologies
 
-Let us understand some basic yet important terminologies that are used while working with textual data. For the sake of convenience, we will consider *English* as the language to understand various concepts in this post, but the same are applicable for other languages too. 
+Let us understand some basic yet important terminologies that are used while working with textual data. For the sake of convenience, we will consider *English* as the language to understand various concepts in this post, but the same terminologies are applicable for other languages too. 
 
 + **Corpus**: A corpus is a collection of textual data. It typically refers to a group of sentences or paragraphs. For example, the messages we send to someone in any messaging platform can be considered together to form a corpus.
 
@@ -33,7 +35,9 @@ Let us understand some basic yet important terminologies that are used while wor
 
 An example will help here to understand it better.
 
-```
+```{python}
+#| echo: true
+#| output: false
 corpus = ['Mathematics is the language to understand the nature']
 
 word_level_tokens = [
@@ -49,9 +53,9 @@ Note that, the word `the` has appeared twice in the corpus and it is considered 
 
 # Converting texts to numbers
 
-Converting texts to numbers are required because computer can only handle numbers, although typically not in the form we give. It converts numbers (decimal numbers) to the binary form which is basically a sequence of zeros and ones, before performing any task.
+Converting texts to numbers are required because a computer can only handle numbers, although typically not in the form we give. It converts numbers (decimal numbers) to the binary form which is basically a sequence of zeros and ones, before performing any task.
 
-Since the beginning of development of modern computers, we have something called [ASCII table](https://www.ascii-code.com/). This table used to have numeric representation of each character only in English but later on it has started supporting other languages as well.
+Since the beginning of development of modern computers, we had something called [ASCII table](https://www.ascii-code.com/). This table has numeric representation of each character only in English but later on it has started supporting other languages as well.
 
 # Better ways to represent texts
 
@@ -61,7 +65,9 @@ In natural language processing, tokens are usually represented by numerical arra
 
 Before proceeding further, let us consider a new corpus (a group of sentences quoted by [Shakuntala Devi](https://en.wikipedia.org/wiki/Shakuntala_Devi)) with a word level tokenization as below:
 
-```
+```{python}
+#| echo: true
+#| output: false
 corpus = [
   'without mathematics, there’s nothing you can do',
   'everything around you is mathematics',
@@ -99,13 +105,15 @@ This is the simplest way to convert tokens into a vector. One-hot vector, for a 
 
 Example: 
 
-```
+```{python}
+#| echo: true
+#| output: false
 one_hot_for_around = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 one_hot_for_can = [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 one_hot_for_number = [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
 ```
 
-As you can imagnine, for a large corpus, one-hot vectors are very large dimensional sparse vectors.
+As you can imagine, for a large corpus, one-hot vectors are very large dimensional sparse vectors.
 
 Also, if we represent any text using one-hot vectors (*technically a matrix made of one-hot vectors*), then basically we are not considering word-word relationship or similarity. 
 
@@ -117,11 +125,11 @@ If we try to measure the similarity between two words with the help of one-hot r
 
 As you have observed, one-hot vectors do not consider context, so we definitely need something meaningful for representing the tokens mathematically. 
 
-In the world of NLP, the term *embedding* usually refers to a dense vector (a vector that has most of its components as non-zero real numbers) that represent a token. As you know, depending on the problem, a token can be a character, a word or even a full sentence and an embedding vector is created to represent it accordingly.
+In the world of NLP, the term *embedding* usually refers to a dense vector (a vector that has most of its components as non-zero real numbers) that represents a token. As you know, depending on the problem, a token can be a character, a word or even a full sentence and an embedding vector is created to represent it accordingly.
 
 Let us try to understand the way of expressing the meaning of words mathematically.
 
-![Figure: 1 Word features representation](word-features.svg)
+![Figure 1: Word features representation](word-features.svg){ width=60% }
 
 In the above table, we have four different words which are 'Chocolate', 'Cat', 'Dog' and 'Ship'. For each of these words we have six randomly chosen features or characteristics. 
 
@@ -129,13 +137,13 @@ Each of features can have values in between zero and one. If the value for a fea
 
 As an example, the feature *'can_play_with'* is not at all relevant to the word 'Ship', that's why the score is 0.0.
 
-Interesting thing to note here is that, the words 'Cat' and 'Dog' are having very similar scores for all the features. This makes them very similar words and in reality, they do have many common characteristics too. 
+Interesting thing to note here is that the words 'Cat' and 'Dog' have very similar scores for all the features. This makes them very similar words and in reality, they do have many common characteristics too. 
 
-If we consider a 6D vector space (also called *semantic space*) based on these features, then obviously, 'Cat' and 'Dog' are going to be very close to each other over there. However, the words 'Chocolate' and 'Ship' will be far way.
+If we consider a 6D vector space (also called *semantic space*) based on these features, then obviously, 'Cat' and 'Dog' are going to be very close to each other over there. However, the words 'Chocolate' and 'Ship' will be far away.
 
 This is how, by using vectors, we can mathematically express the meaning of words to a computer. These vectors are known as *embedding* vectors.
 
-Although embedding vectors are very helpful, but they are very difficult to design. We do not really know how to design the features.
+Although embedding vectors are very helpful, they are very difficult to design. We do not really know how to design the features.
 
 ## Learning word embeddings
 
@@ -150,22 +158,22 @@ If we consider our vocabulary as `['Cat', 'Dog', 'Chocolate', 'Ship']`, then one
 
 Now, if we multiply $\vec{v}_{Dog}$ and $\mathbf{E}^T$, then the result of $\vec{v}_{Dog} \cdot \mathbf{E}^T$ gives us the second row of $\mathbf{E}^T$ which is nothing but the embedding vector of the word 'Dog'.
 
-Therefore, we can use on-hot vector and extract the corresponding embedding vector from the embedding matrix. This is why, embedding matrices are also called *lookup tables*.
+Therefore, we can use an on-hot vector and extract the corresponding embedding vector from the embedding matrix. This is why embedding matrices are also called *lookup tables*.
 :::
 
 If we consider a word in a sentence, then it is very obvious to note that the surrounding words have some relationships with it. 
 
-As an example, if we have a sentence *the dog is swimming in the pond*, then the words *swimming* and *pond* are related. 
+As an example, if we have a sentence like '*the dog is swimming in the pond*', then the words *swimming* and *pond* are related. 
 
 The word *swimming* is the context here, if we know this, we can anticipate other words similar to *pond* as well just by following the context.
 
-### Continuous Bag of Words (CBOW) Model
+### Continuous bag of words (CBOW) model
 
-Consider an incomplte sentence: *the birds are _____ on the sky*. By looking at the words *the*, *birds*, *are*, *on*, *the*, *sky*, can we imagine the missing word? Ofcourse, it must be either **flying** or very similar to it.
+Consider an incompelte sentence: *the birds are _____ in the sky*. By looking at the words *the*, *birds*, *are*, *on*, *the*, *sky*, can we imagine the missing word? Ofcourse, it must be either **flying** or very similar to it.
 
-This is exactly what happens, when we use CBOW approach. CBOW looks at the context and tries to figure out the target word as shown below,
+This is exactly what happens when we use the CBOW approach. CBOW looks at the context and tries to figure out the target word as shown below,
 
-![Figure: 2 Predicting target word based on context](context-window-cbow.svg)
+![Figure 2: Predicting target word based on context](context-window-cbow.svg){ width=60% }
 
 In reality, this context window moves towards the right till the time we have covered all possible contexts and targets starting from the beginning of our text data to the end. Don't worry, the code example, given below, will make this easier to understand. 
 
@@ -173,21 +181,76 @@ We will now consider a sample text and prepare the training data using CBOW appr
 
 A pseudo network architecture is shown below,
 
-![Figure: 3 A pseudo CBOW network](shallow-network-cbow.svg)
+![Figure 3: A pseudo CBOW network](shallow-network-cbow.svg){ width=60% }
 
-In this network, each word in the context is fed to the network as an one-hot vector. Having the input vector, the network does some linear computations (i.e. simply $\mathbf{E} \cdot X$) and tries to predict the target word.
+In this network, each word in the context is fed to the network as an one-hot vector. Having the input vector, the network does some computations to form the hidden layer and eventually tries to predict the target word. The source code depicting the network architecture is given below.
+
+```{python}
+#| echo: true
+#| output: false
+
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+class Word2Vec(nn.Module):
+    def __init__(self, vocab_size, embedding_dim):
+        super(Word2Vec, self).__init__()
+        self.vocab_size = vocab_size
+        self.embedding_dim = embedding_dim
+        
+        # define weight matrices
+        self.weight_i2h = nn.Parameter(torch.randn(
+            (self.embedding_dim, self.vocab_size), 
+            dtype=torch.float
+        ))
+        self.weight_h2o = nn.Parameter(torch.randn(
+            (self.vocab_size, self.embedding_dim), 
+            dtype=torch.float
+        ))
+
+        self.params = nn.ParameterList(
+            [
+                self.weight_i2h, 
+                self.weight_h2o 
+            ]
+        )
+
+    def forward(self, input):
+        # create onehot vector of the input
+        input_onehot = F.one_hot(input, self.vocab_size)
+
+        # compute hidden layer
+        hidden = F.relu(
+            torch.matmul(
+                self.weight_i2h, 
+                input_onehot.view(self.vocab_size, -1).float()
+            )
+        )
+
+        # compute output
+        output = torch.matmul(
+            self.weight_h2o,
+            hidden
+        )
+
+        # compute log softmax
+        log_probs = F.log_softmax(output.view(1, -1), dim=1)
+
+        return log_probs
+```
 
 Note the output dimension of the network. It is exactly equal to the size of the vocabulary as there are that many number of possibilities while predicting the target word.
 
 So, essentially, this whole process is a multi-class classification process. 
 
-It is stragne to know that prediction is not what we actually focus here. We are interested on the weight matrix $\mathbf{E}$. This is our embedding matrix filled with optimally trained parameters. 
+It is strange to know that prediction is not what we actually focus on here. We are interested in the weight matrix $\mathbf{E}$. This is our embedding matrix filled with optimally trained parameters. 
 
 $\mathbf{E}$ has the dimension $dim(\text{embedding vector}) \times dim(\text{one-hot vector})$.
 
 Hence, $\vec{v}_{word_j} \cdot \mathbf{E}^T$ just gives us the embedding vector for $word_j$.
 
-Let us now see the training data is prepared for CBOW network from a sample text.
+Let us now see how the training data is prepared for the CBOW network from a sample text.
 
 ```{python}
 #| echo: true
@@ -256,15 +319,17 @@ pprint(cbow_data[:10])
  ('to', 'study')]
 ```
 
-The source for training such a network is given in this [colab notebook](https://colab.research.google.com/drive/1PJCyPULfcYcsUpkvPeQsu4GNsp5m3b3v?usp=sharing).
+Finally, here is the source code to build the network architecture in PyTorch.
 
-### Skip Gram Model
 
-Skip gram, being the another variation of word2vec, does the exact opposite of what CBOW does.
+
+### Skip-gram model
+
+Skip gram, being another variation of word2vec, does the exact opposite of what CBOW does.
 
 It tries to predict the context or surrounding words by looking at a specific word in a sentence as shown below,
 
-![Figure: 4 Predicting context based on target word](context-window-skip-gram.svg)
+![Figure 4: Predicting context based on target word](context-window-skip-gram.svg){ width=60% }
 
 Here is the code example that helps to prepare the training data based on the same raw text,
 
@@ -307,7 +372,22 @@ pprint(skip_gram_data[:10])
 
 CBOW and Skip-Gram training data look very similar, the only difference is in the usage of target and context words in the training data. 
 
+The source code for training such a network is given in this [colab notebook](https://colab.research.google.com/drive/1PJCyPULfcYcsUpkvPeQsu4GNsp5m3b3v?usp=sharing). It may not be optimised, but it will give you enough confidence to understand the whole story behind word2vec.
+
+## Pre-trained embedding models
+
+To get very accurate vector representations of words, we need to train such networks on very large corpus with a much larger embedding dimension. Researchers have come up with pre-trained embedding models which are trained on massive amounts of text such as the wikipedia. These models are typically of 300 to 600 dimensional and are ready for integration.
+
+The only problem with pre-trained models is the training data is very generic. In case someone needs to work on a specific domain, then such a network should be trained on domain specific corpus.
+
+# Conclusion
+
+So we are now at the end of the story. Thanks for having some time reading this article. I hope you have enjoyed it and most probably have got the idea and intuition behind the algorithm as well. 
+
+If you have any comments, please feel free to leave them below. Thank you. 
+
+
 
 # Reference
-
+- [Efficient Estimation of Word Representations in Vector Space by Tomas Mikolov et al.](https://arxiv.org/abs/1301.3781)
 - [Colab notebook to play with the code](https://colab.research.google.com/drive/1PJCyPULfcYcsUpkvPeQsu4GNsp5m3b3v?usp=sharing)
