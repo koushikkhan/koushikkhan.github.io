@@ -378,7 +378,7 @@ The source code for training such a network is given in this [colab notebook](ht
 
 ## Pre-trained embedding models
 
-To get very accurate vector representations of words, we need to train such networks on very large corpus with a much larger embedding dimension. Researchers have come up with pre-trained embedding models which are trained on massive amounts of text such as the wikipedia. These models are typically of 300 to 600 dimensional and are ready to be consumed..
+To get very accurate vector representations of words, we need to train such networks on very large corpus with a much larger embedding dimension. Researchers have come up with pre-trained embedding models which are trained on massive amounts of text such as the wikipedia. These models are typically of 300 to 600 dimensional and are ready to be consumed.
 
 The only problem with pre-trained models is the training data is very generic. In case someone needs to work on a specific domain, then such a network should be trained on domain specific corpus.
 
