@@ -119,7 +119,7 @@ $$
 P(Y = y) = p^y \times (1-p)^{1-y}; \text{where } Y \in \left\{{0,1}\right\}
 $$
 
-Note that, putting $y=1$ in the above function will give you $p$. This function always gives a value in between zero and one. It is also known as the *likelihood function* given that the quantity $p$ is unknown.
+Note that, putting $y=1$ in the above function will give you $p$. This function always gives a value in between zero and one. It is also known as the *likelihood function* given that the quantity $p$ is unknown, but $y$ is known.
 
 Having defined the above expression, we are ready to look at the entire data. It is to be noted that each of the examples are independent of each other. 
 
@@ -127,11 +127,11 @@ Now, the next step is to find out the probability of having the target values th
 
 To be specific, we would want to know that whichever process has generated the data, what would be the probability of generating this sample again. This combined probability is called *likelihood*.
 
-According to the probability theory, this likelihood (equivalent to joint probability) of $Y_1=y_1, \dots, Y_N=y_N$ is product of the individual likelihoods i.e. 
+Since these $Y_i$'s are independent of each other, this likelihood (equivalent to joint probability) of $Y_1=y_1, \dots, Y_N=y_N$ is just the product of the individual likelihoods i.e. 
 
 \begin{align}
-  P(Y_1=y_1, \dots, Y_N=y_N) &= \Pi_{i=1}^N P(Y_i = y_i) \nonumber \\
-                              &= \Pi_{i=1}^N p_i^{y_i} \times (1-p_i)^{1-y_i} \nonumber \\
+  P(Y_1=y_1, \dots, Y_N=y_N) &= \prod_{i=1}^N P(Y_i = y_i) \nonumber \\
+                              &= \prod_{i=1}^N p_i^{y_i} \times (1-p_i)^{1-y_i} \nonumber \\
 \end{align}
 
 At this stage, a log function is typically applied to scale the above quantity for future calculations. The log function has same pattern as the function on which it is applied to i.e. mathematically speaking,
@@ -160,6 +160,14 @@ It should be noted that, the quantity $p_i$ is usually estimated by the model (l
 The NLL loss function tries to measure the similarity between the distribution of the predicted values $p$ and the distribution of actual values $y$ (i.e. labels).
 
 The [*cross entropy*](https://en.wikipedia.org/wiki/Cross_entropy) loss function is just a generalisation of this simple negative log likelihood giving the similar kind of information for a prediction when the data has, say, $K$ labels instead of just two.
+
+It is expressed as,
+
+$$
+\text{cross entropy loss} = - \sum_{k=1}^K y_k log(\hat{y}_k)
+$$
+
+Where $y_k$'s are true probabilities (or give the true distribution of labels), whereas $\hat{y}_k$'s are predicted probabilities (or give the predicted/estimated distribution of labels).
 :::
 
 The vector of gradients of such a function $f$ is defined as below:
