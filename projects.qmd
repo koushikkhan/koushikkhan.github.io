@@ -6,3 +6,5 @@ from: markdown+emoji
 Below is the list of my personal projects.
 
 + My Portfolio [web development, technical writing] - [github repository](https://github.com/koushikkhan/koushikkhan.github.io)
+
+Working on enlisting few completed projects here. 
