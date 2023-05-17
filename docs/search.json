@@ -200,7 +200,7 @@
     "href": "projects.html",
     "title": "Personal Projects",
     "section": "",
-    "text": "Below is the list of my personal projects.\n\nMy Portfolio [web development, technical writing] - github repository\n\nWorking on enlisting few completed projects here."
+    "text": "Here are some projects that I have worked on so far while learning various things.\n\nMy Portfolio [web development, technical writing] - GitHub\nWriting gradient descent from scratch [computing, python] - GitHub\nA simple pipeline to deploy a machine learning app [ml, deployment, docker] - GitHub\nAutomating the boring stuffs after installing a linux distro [linux, shellscript] - GitHub\nA not so short introduction to object oriented programming using R [technical writing] - Medium\nStock price forecasting with LSTM network [forecasting, deep learning] - Colab\nPlaying with word2vec [neural net, nlp, pytorch] - Colab"
   },
   {
     "objectID": "resume.html",
