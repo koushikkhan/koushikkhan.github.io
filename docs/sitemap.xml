@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/resume.html</loc>
-    <lastmod>2023-05-08T13:51:11.767Z</lastmod>
-  </url>
-  <url>
     <loc>/about.html</loc>
-    <lastmod>2023-05-08T04:33:37.922Z</lastmod>
+    <lastmod>2023-05-17T03:59:12.328Z</lastmod>
   </url>
   <url>
     <loc>/index.html</loc>
-    <lastmod>2023-05-08T14:13:11.506Z</lastmod>
-  </url>
-  <url>
-    <loc>/posts.html</loc>
-    <lastmod>2023-05-08T14:13:16.906Z</lastmod>
-  </url>
-  <url>
-    <loc>/skills.html</loc>
-    <lastmod>2023-05-08T04:33:39.738Z</lastmod>
+    <lastmod>2023-05-17T03:59:34.308Z</lastmod>
   </url>
   <url>
     <loc>/posts/2023-03-19-stat-hypothesis-test/index.html</loc>
-    <lastmod>2023-05-08T13:51:21.939Z</lastmod>
-  </url>
-  <url>
-    <loc>/posts/2023-05-01-embeddings/index.html</loc>
-    <lastmod>2023-05-08T14:12:52.157Z</lastmod>
+    <lastmod>2023-05-17T03:59:14.167Z</lastmod>
   </url>
   <url>
     <loc>/posts/2023-03-22-bash-commands-for-cloud-1/index.html</loc>
-    <lastmod>2023-05-08T13:50:54.693Z</lastmod>
-  </url>
-  <url>
-    <loc>/posts/2023-04-22-autograd/index.html</loc>
-    <lastmod>2023-05-08T14:13:01.476Z</lastmod>
+    <lastmod>2023-05-17T03:59:15.177Z</lastmod>
   </url>
   <url>
     <loc>/posts/2023-03-26-bash-commands-for-cloud-2/index.html</loc>
-    <lastmod>2023-05-08T13:50:59.496Z</lastmod>
+    <lastmod>2023-05-17T03:59:17.381Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts/2023-04-22-autograd/index.html</loc>
+    <lastmod>2023-05-17T03:59:18.952Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts/2023-05-01-embeddings/index.html</loc>
+    <lastmod>2023-05-17T03:59:21.081Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts.html</loc>
+    <lastmod>2023-05-17T03:59:22.242Z</lastmod>
   </url>
   <url>
     <loc>/projects.html</loc>
-    <lastmod>2023-05-08T04:33:46.495Z</lastmod>
+    <lastmod>2023-05-17T03:59:22.913Z</lastmod>
+  </url>
+  <url>
+    <loc>/resume.html</loc>
+    <lastmod>2023-05-17T03:59:45.908Z</lastmod>
+  </url>
+  <url>
+    <loc>/skills.html</loc>
+    <lastmod>2023-05-17T03:59:24.472Z</lastmod>
   </url>
 </urlset>
