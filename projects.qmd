@@ -3,13 +3,13 @@ title: "Personal Projects"
 from: markdown+emoji
 ---
 
-Here are some projects that I have worked on so far while learning various things.
+Here are some personal projects that I have worked on so far while learning various things. I wish to bring many more in future.
 
 + My Portfolio [web development, technical writing] - [GitHub](https://github.com/koushikkhan/koushikkhan.github.io)
 
 + Writing gradient descent from scratch [computing, python] - [GitHub](https://github.com/koushikkhan/The-Gradient-Descent-Optimization)
 
-+ A simple pipeline to deploy a machine learning app [ml, deployment, docker] - [GitHub](https://github.com/koushikkhan/flask-ml-service)
++ A simple pipeline to package & deploy a machine learning app [ml, deployment, docker] - [GitHub](https://github.com/koushikkhan/flask-ml-service)
 
 + Automating the boring stuffs after installing a linux distro [linux, shellscript] - [GitHub](https://github.com/koushikkhan/configure-my-linux)
 
@@ -17,4 +17,4 @@ Here are some projects that I have worked on so far while learning various thing
 
 + Stock price forecasting with LSTM network [forecasting, deep learning] - [Colab](https://colab.research.google.com/drive/1xLgCoQF79MD61Ck45TEbWW9UtyymZGkF?usp=sharing)
 
-+ Playing with word2vec [neural net, nlp, pytorch] - [Colab](https://colab.research.google.com/drive/1PJCyPULfcYcsUpkvPeQsu4GNsp5m3b3v?usp=sharing)
++ Playing with word2vec [neural net, embedding] - [Colab](https://colab.research.google.com/drive/1PJCyPULfcYcsUpkvPeQsu4GNsp5m3b3v?usp=sharing)
