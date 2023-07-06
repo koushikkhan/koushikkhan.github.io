@@ -11,8 +11,7 @@ from: markdown+emoji
 ## {{< fa user-tie >}} Professional career history
 + BCausE Enterprise Pvt. Ltd. as a Junior Data Analyst (2015 - 2016)
 + IBM India Pvt. Ltd. as a Data Scientist (2016 - 2021)
-+ IHS Markit as a Sr. Data Scientist (2021 - 2022)
-+ S&P Global Inc. as a Sr. Data Scientist (2022 - Present)
++ S&P Global Inc. as a Sr. Data Scientist (2021 - Present)
 
 
 ## {{< fa laptop >}} Current job responsibilities
