@@ -45,7 +45,7 @@ Along the journey in my career, I have worked on various projects, all of them m
         + Base R for model development
         + SQL at the back-end
 
-## {{< fa briefcase >}} IHS Markit and S&P Global Inc. (2021-Present)
+## {{< fa briefcase >}} S&P Global Inc. (2021-Present)
 + Analysing shipping data on a daily basis
     + {{< fa screwdriver-wrench >}} Tools
         + PySpark as the data processing engine 
@@ -60,7 +60,7 @@ Along the journey in my career, I have worked on various projects, all of them m
 
 + Building data pipeline incorporate external data from various sources
     + {{< fa screwdriver-wrench >}} Tools
-        + R for developing data pipelines
-        + ShellScript for integration as automation
+        + R and PySpark for developing data pipelines
+        + ShellScript for automation
         + AWS as cloud platform
 
