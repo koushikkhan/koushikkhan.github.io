@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/about.html</loc>
-    <lastmod>2023-07-06T13:37:15.892Z</lastmod>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-    <lastmod>2023-07-06T13:37:23.719Z</lastmod>
-  </url>
-  <url>
-    <loc>/posts/2023-03-19-stat-hypothesis-test/index.html</loc>
-    <lastmod>2023-07-06T13:37:32.674Z</lastmod>
-  </url>
-  <url>
-    <loc>/posts/2023-03-22-bash-commands-for-cloud-1/index.html</loc>
-    <lastmod>2023-07-06T13:37:41.271Z</lastmod>
-  </url>
-  <url>
-    <loc>/posts/2023-03-26-bash-commands-for-cloud-2/index.html</loc>
-    <lastmod>2023-07-06T13:37:58.863Z</lastmod>
-  </url>
-  <url>
-    <loc>/posts/2023-04-22-autograd/index.html</loc>
-    <lastmod>2023-07-06T13:38:08.397Z</lastmod>
-  </url>
-  <url>
-    <loc>/posts/2023-05-01-embeddings/index.html</loc>
-    <lastmod>2023-07-06T13:38:25.160Z</lastmod>
-  </url>
-  <url>
-    <loc>/posts.html</loc>
-    <lastmod>2023-07-06T13:38:33.571Z</lastmod>
+    <loc>/skills.html</loc>
+    <lastmod>2023-08-06T14:16:52.446Z</lastmod>
   </url>
   <url>
     <loc>/projects.html</loc>
-    <lastmod>2023-07-06T13:38:41.466Z</lastmod>
+    <lastmod>2023-08-06T14:17:14.721Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts/2023-05-01-embeddings/index.html</loc>
+    <lastmod>2023-08-06T14:16:46.774Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts/2023-03-26-bash-commands-for-cloud-2/index.html</loc>
+    <lastmod>2023-08-06T14:16:42.520Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts/2023-03-19-stat-hypothesis-test/index.html</loc>
+    <lastmod>2023-08-06T14:16:38.566Z</lastmod>
+  </url>
+  <url>
+    <loc>/about.html</loc>
+    <lastmod>2023-08-06T14:16:35.631Z</lastmod>
+  </url>
+  <url>
+    <loc>/index.html</loc>
+    <lastmod>2023-08-06T14:17:03.593Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts/2023-03-22-bash-commands-for-cloud-1/index.html</loc>
+    <lastmod>2023-08-06T14:16:40.140Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts/2023-04-22-autograd/index.html</loc>
+    <lastmod>2023-08-06T14:16:44.669Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts.html</loc>
+    <lastmod>2023-08-06T14:16:48.495Z</lastmod>
   </url>
   <url>
     <loc>/resume.html</loc>
-    <lastmod>2023-07-06T13:38:49.894Z</lastmod>
-  </url>
-  <url>
-    <loc>/skills.html</loc>
-    <lastmod>2023-07-06T13:38:58.141Z</lastmod>
+    <lastmod>2023-08-06T14:16:51.015Z</lastmod>
   </url>
 </urlset>

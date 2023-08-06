@@ -18,3 +18,5 @@ Here are some personal projects that I have worked on so far while learning vari
 + Stock price forecasting with LSTM network [forecasting, deep learning] - [Colab](https://colab.research.google.com/drive/1xLgCoQF79MD61Ck45TEbWW9UtyymZGkF?usp=sharing)
 
 + Playing with word2vec [neural net, embedding] - [Colab](https://colab.research.google.com/drive/1PJCyPULfcYcsUpkvPeQsu4GNsp5m3b3v?usp=sharing)
+
++ A simple automation plan for time series forecasting: from data acquisition to model building and making forecast [time series, automation, rest api] - [GitHub](https://github.com/koushikkhan/automated-forecasting-pipeline)
