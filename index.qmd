@@ -5,7 +5,7 @@ from: markdown+emoji
 image: "resources/img/profile-pic.jpg"
 about:
   template: trestles
-  image-shape: round
+  image-shape: rounded
   image-width: 15em
   links:
     - icon: linkedin
@@ -13,7 +13,7 @@ about:
       href: https://linkedin.com/in/koushikkhan
     - icon: twitter
       text: Twitter
-      href: https://www.twitter.com/__koushikkhan__/
+      href: https://www.twitter.com/koushikkhan92/
     - icon: github
       text: GitHub
       href: https://github.com/koushikkhan
