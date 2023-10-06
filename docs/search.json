@@ -112,6 +112,13 @@
     "text": "A copy of my latest resume can also be downloaded from here."
   },
   {
+    "objectID": "bookmarks.html",
+    "href": "bookmarks.html",
+    "title": "Some Useful Bookmarks",
+    "section": "",
+    "text": "I have tried here to maintain some useful bookmarks that have been of great help to me in understanding various concepts. I hope it will be useful for the reader too.\n\nA friendly introduction to time series analysis: Website\nUnderstanding the LSTM Networks: Blog Post"
+  },
+  {
     "objectID": "projects.html",
     "href": "projects.html",
     "title": "Personal Projects",

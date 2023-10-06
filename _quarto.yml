@@ -17,6 +17,8 @@ website:
         text: Blog
       - href: projects.qmd
         text: Projects
+      - href: bookmarks.qmd
+        text: Bookmarks
       - href: skills.qmd
         text: Skills
       - href: resume.qmd
