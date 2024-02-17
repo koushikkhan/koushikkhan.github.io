@@ -398,8 +398,8 @@ $+$ and $\times$ are the two building blocks powering up any mathematical comput
 ```{mermaid}
 %%| fig-width: 3.5
 graph LR
-  a("$$a$$") --> c("$$c = a+b$$")
-  b("$$b$$") --> c("$$c = a+b$$")
+  a(a) --> c(c = a+b)
+  b(b) --> c(c = a+b)
 ```
 
 If we observe the above graph, it is clear that while performing backpropagation, computing gradient of any of the leaf nodes i.e. $\left\{a, b\right\}$ is possible only when gradient value for the node $c$ is already available. This is just because of the chain rule we use.

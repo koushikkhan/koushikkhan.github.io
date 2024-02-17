@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/index.html</loc>
+    <loc>/resume.html</loc>
+    <lastmod>2024-02-17T13:31:10.178Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts.html</loc>
     <lastmod>2024-02-17T13:31:10.150Z</lastmod>
   </url>
   <url>
@@ -9,43 +13,39 @@
     <lastmod>2024-02-17T13:31:10.178Z</lastmod>
   </url>
   <url>
-    <loc>/posts/2023-03-22-bash-commands-for-cloud-1/index.html</loc>
-    <lastmod>2024-02-17T13:31:10.162Z</lastmod>
+    <loc>/projects.html</loc>
+    <lastmod>2024-02-17T13:31:10.170Z</lastmod>
+  </url>
+  <url>
+    <loc>/posts/2023-04-22-autograd/index.html</loc>
+    <lastmod>2024-02-17T14:09:41.546Z</lastmod>
   </url>
   <url>
     <loc>/posts/2023-05-01-embeddings/index.html</loc>
     <lastmod>2024-02-17T13:31:10.170Z</lastmod>
   </url>
   <url>
-    <loc>/posts.html</loc>
-    <lastmod>2024-02-17T13:31:10.150Z</lastmod>
+    <loc>/posts/2023-03-19-stat-hypothesis-test/index.html</loc>
+    <lastmod>2024-02-17T13:31:10.154Z</lastmod>
   </url>
   <url>
-    <loc>/resume.html</loc>
-    <lastmod>2024-02-17T13:31:10.178Z</lastmod>
-  </url>
-  <url>
-    <loc>/bookmarks.html</loc>
-    <lastmod>2023-10-06T06:27:44.823Z</lastmod>
-  </url>
-  <url>
-    <loc>/projects.html</loc>
-    <lastmod>2024-02-17T13:31:10.170Z</lastmod>
+    <loc>/posts/2023-03-22-bash-commands-for-cloud-1/index.html</loc>
+    <lastmod>2024-02-17T13:31:10.162Z</lastmod>
   </url>
   <url>
     <loc>/posts/2023-03-26-bash-commands-for-cloud-2/index.html</loc>
     <lastmod>2024-02-17T13:31:10.170Z</lastmod>
   </url>
   <url>
-    <loc>/posts/2023-03-19-stat-hypothesis-test/index.html</loc>
-    <lastmod>2023-10-06T06:27:30.043Z</lastmod>
+    <loc>/bookmarks.html</loc>
+    <lastmod>2024-02-17T13:31:10.110Z</lastmod>
   </url>
   <url>
-    <loc>/posts/2023-04-22-autograd/index.html</loc>
-    <lastmod>2024-02-17T14:06:32.983Z</lastmod>
+    <loc>/index.html</loc>
+    <lastmod>2024-02-17T13:31:10.150Z</lastmod>
   </url>
   <url>
     <loc>/about.html</loc>
-    <lastmod>2023-10-06T06:27:32.079Z</lastmod>
+    <lastmod>2024-02-17T13:31:10.110Z</lastmod>
   </url>
 </urlset>
