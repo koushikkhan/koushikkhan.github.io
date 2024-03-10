@@ -25,28 +25,28 @@
     "href": "skills.html#academics",
     "title": "Skills and Expertises",
     "section": " Academics",
-    "text": "Academics\n\nDigitization of class notes, preparation of project reports\n\n Tools\n\n\\LaTeX as the rendering engine\nR with Sweave and knitr packages\n\n\nPerforming computations for ‘Design of Experiments’ problems\n\n Tools\n\nC programming"
+    "text": "Academics\n\nDigitization of class notes, preparation of project reports\n\n Tools\n\n\\LaTeX\nR with Sweave and knitr packages\n\n\nPerforming computations for ‘Design of Experiments’ problems\n\n Tools\n\nC programming"
   },
   {
     "objectID": "skills.html#bcause-enterprise-pvt.-limited-2015-2016",
     "href": "skills.html#bcause-enterprise-pvt.-limited-2015-2016",
     "title": "Skills and Expertises",
     "section": " BCausE Enterprise Pvt. Limited (2015-2016)",
-    "text": "BCausE Enterprise Pvt. Limited (2015-2016)\n\nPredicting the names of human body parts from a corpus of digitized prescriptions using text classification\n\n Tools\n\nHeavily relied on regex for data cleansing\nNLP libraries based on Python\nMongoDB at the back-end\nFlask for REST API as front-end"
+    "text": "BCausE Enterprise Pvt. Limited (2015-2016)\n\nDevelopment of customer segmentation model\n\n Tools\n\nClustering\nPython\nMongoDB\nPython Flask, used for developing REST API"
   },
   {
     "objectID": "skills.html#ibm-india-pvt.-ltd.-2016-2021",
     "href": "skills.html#ibm-india-pvt.-ltd.-2016-2021",
     "title": "Skills and Expertises",
     "section": " IBM India Pvt. Ltd. (2016-2021)",
-    "text": "IBM India Pvt. Ltd. (2016-2021)\n\nAnalysing customer complaints (a.k.a tickets) from various sources and predicting root causes using clustering and text classification respectively\n\n Tools\n\nPython (as machine learning base)\nSQL at the back-end\nLittle bit of ShellScript to integrate the model with other modules\nFlask for REST API as front-end\ndocker for packaging the ml application\nKubernetes used for deployment of the docker image\n\n\nServing search queries to customers by designing a small scale search engine built on customer Feedbacks and FAQs using information retrieval algorithm\n\n Tools\n\nSingular value decomposition to understand word-to-word relationship\nPandas as data processing toolkit\nNumpy for matrix facorization implementation\n\n\nUnderstanding the effects of various factors like advertisement, promotion, weather on sales of several commodities, analysing ROI year-on-year basis and forecasting the furure sales using Marketing Mix Modeling\n\n Tools\n\nR with dplyr as the data processing toolkit\nBase R for model development\nSQL at the back-end"
+    "text": "IBM India Pvt. Ltd. (2016-2021)\n\nAnalysing customer complaints (a.k.a tickets) from various sources and predicting root causes using clustering and text classification respectively\n\n Tools\n\nMachine Learning\nPython\nSQL\nShellScript\nPython Flask, used for developing REST API\nDocker\nKubernetes, used for deployment\n\n\nServing search queries to customers by designing a small scale search engine built on customer Feedbacks and FAQs using information retrieval algorithm\n\n Tools\n\nSingular value decomposition\nPython, Pandas and Numpy\n\n\nUnderstanding the effects of various factors like advertisement, promotion, weather on sales of several commodities, analysing ROI year-on-year basis and forecasting the furure sales using Marketing Mix Modeling\n\n Tools\n\nSales and ad data\nRegression Techniques\nR, Dplyr\nSQL"
   },
   {
     "objectID": "skills.html#sp-global-inc.-2021-present",
     "href": "skills.html#sp-global-inc.-2021-present",
     "title": "Skills and Expertises",
     "section": " S&P Global Inc. (2021-Present)",
-    "text": "S&P Global Inc. (2021-Present)\n\nAnalysing shipping data on a daily basis\n\n Tools\n\nPySpark as the data processing engine\nExcel for adhoc analysis and reporting\nAWS as the cloud platform\n\n\nCargo grade identification using text classification\n\n Tools\n\nPython (as machine learning base)\nS3 for Local Deployment\nShellScript for automation\n\n\nBuilding data pipeline incorporate external data from various sources\n\n Tools\n\nR and PySpark for developing data pipelines\nShellScript for automation\nAWS as cloud platform"
+    "text": "S&P Global Inc. (2021-Present)\n\nDevelopment of data driven products in shipping analytics\n\n Tools\n\nPython, PySpark, Polars\nExcel, used for reporting\nAmazon AWS\n\n\nTracking green house gas emission from ships\n\n Tools\n\nShipping data\nPython, PySpark, Polars\nExcel, used for reporting\nAmazon AWS\n\n\nBuilding data pipelines in Azure DevOps\n\n Tools\n\nR, Python, PySpark, Polars\nMicrosoft Azure as DevOps platform"
   },
   {
     "objectID": "projects.html",
