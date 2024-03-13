@@ -34,7 +34,7 @@ The list below is to help you navigate through the site.
 + {{< fa blog >}} Blog: List of blog posts that I've written 
 + {{< fa laptop-file >}} Projects: Links to my personal projects
 + {{< fa bookmark >}} Bookmarks: Links to some helpful books/articles
-+ {{< fa life-ring >}} Skills: A curated list of my personal projects
++ {{< fa life-ring >}} Skills: A curated list of projects I have delivered
 + {{< fa clipboard >}} Resume: My latest resume is attached here 
 + {{< fa id-card-clip >}} About: About myself
 
