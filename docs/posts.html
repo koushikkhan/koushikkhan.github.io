@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -285,7 +285,7 @@ window.Quarto = {
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="deep learning" data-listing-date-sort="1682879400000" data-listing-file-modified-sort="1708176670170" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2801">
+<div class="quarto-post image-right" data-index="0" data-categories="deep learning" data-listing-date-sort="1682879400000" data-listing-file-modified-sort="1711334728874" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2801">
 <div class="thumbnail">
 <p><a href="./posts/2023-05-01-embeddings/index.html" class="no-external"></a></p><a href="./posts/2023-05-01-embeddings/index.html" class="no-external">
 <p><img src="./posts/2023-05-01-embeddings/text.jpg" class="thumbnail-image"></p>
@@ -318,7 +318,7 @@ Koushik Khan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="deep learning" data-listing-date-sort="1682101800000" data-listing-file-modified-sort="1708178981546" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="24" data-listing-word-count-sort="4687">
+<div class="quarto-post image-right" data-index="1" data-categories="deep learning" data-listing-date-sort="1682101800000" data-listing-file-modified-sort="1711334728874" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="24" data-listing-word-count-sort="4687">
 <div class="thumbnail">
 <p><a href="./posts/2023-04-22-autograd/index.html" class="no-external"></a></p><a href="./posts/2023-04-22-autograd/index.html" class="no-external">
 <p><img src="./posts/2023-04-22-autograd/network.jpg" class="thumbnail-image"></p>
@@ -351,7 +351,7 @@ Koushik Khan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="linux,cloud" data-listing-date-sort="1679769000000" data-listing-file-modified-sort="1708176670170" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1620">
+<div class="quarto-post image-right" data-index="2" data-categories="linux,cloud" data-listing-date-sort="1679769000000" data-listing-file-modified-sort="1711334728874" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1620">
 <div class="thumbnail">
 <p><a href="./posts/2023-03-26-bash-commands-for-cloud-2/index.html" class="no-external"></a></p><a href="./posts/2023-03-26-bash-commands-for-cloud-2/index.html" class="no-external">
 <p><img src="./posts/2023-03-26-bash-commands-for-cloud-2/cloud.jpg" class="thumbnail-image"></p>
@@ -387,7 +387,7 @@ Koushik Khan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="linux,cloud" data-listing-date-sort="1679423400000" data-listing-file-modified-sort="1708176670162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2552">
+<div class="quarto-post image-right" data-index="3" data-categories="linux,cloud" data-listing-date-sort="1679423400000" data-listing-file-modified-sort="1711334728866" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2552">
 <div class="thumbnail">
 <p><a href="./posts/2023-03-22-bash-commands-for-cloud-1/index.html" class="no-external"></a></p><a href="./posts/2023-03-22-bash-commands-for-cloud-1/index.html" class="no-external">
 <p><img src="./posts/2023-03-22-bash-commands-for-cloud-1/cloud.jpg" class="thumbnail-image"></p>
@@ -423,7 +423,7 @@ Koushik Khan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="statistics" data-listing-date-sort="1679164200000" data-listing-file-modified-sort="1708176670154" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1712">
+<div class="quarto-post image-right" data-index="4" data-categories="statistics" data-listing-date-sort="1679164200000" data-listing-file-modified-sort="1711334728858" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1712">
 <div class="thumbnail">
 <p><a href="./posts/2023-03-19-stat-hypothesis-test/index.html" class="no-external"></a></p><a href="./posts/2023-03-19-stat-hypothesis-test/index.html" class="no-external">
 <p><img src="./posts/2023-03-19-stat-hypothesis-test/numbers.jpg" class="thumbnail-image"></p>
@@ -684,6 +684,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -718,7 +736,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
