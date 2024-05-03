@@ -154,32 +154,32 @@
     "text": "Throughout my career journey, I’ve engaged in numerous projects, not all of which are noteworthy. Here, I’ve curated a selection of key projects, showcasing the tools and methodologies employed."
   },
   {
-    "objectID": "skills.html#academics",
-    "href": "skills.html#academics",
+    "objectID": "skills.html#sp-global-inc.-2021-present",
+    "href": "skills.html#sp-global-inc.-2021-present",
     "title": "Skills and Expertises",
-    "section": " Academics",
-    "text": "Academics\n\nDigitization of class notes, preparation of project reports\n\n Tools\n\n\\LaTeX\nR with Sweave and knitr packages\n\n\nPerforming computations for ‘Design of Experiments’ problems\n\n Tools\n\nC programming"
-  },
-  {
-    "objectID": "skills.html#bcause-enterprise-pvt.-ltd.-2015-2016",
-    "href": "skills.html#bcause-enterprise-pvt.-ltd.-2015-2016",
-    "title": "Skills and Expertises",
-    "section": " BCausE Enterprise Pvt. Ltd. (2015-2016)",
-    "text": "BCausE Enterprise Pvt. Ltd. (2015-2016)\n\nDevelopment of customer segmentation model\n\n Tools\n\nClustering\nPython\nMongoDB\nPython Flask, used for developing REST API"
+    "section": " S&P Global Inc. (2021-Present)",
+    "text": "S&P Global Inc. (2021-Present)\n\nDevelopment of data driven products for maritime supply chain\n\n Tools\n\nPython, PySpark, Polars\nExcel and PowerBI (for reporting)\nAmazon AWS\n\n\nForecasting green house gas (GHG) emission from ships with the help of shipping data\n\n Tools\n\nPython, R, PySpark, Polars\nExcel and PowerBI (for reporting)\nAmazon AWS\n\n\nBuilding data pipelines in Azure DevOps\n\n Tools\n\nR, Python, PySpark, Polars\nMicrosoft Azure as DevOps platform"
   },
   {
     "objectID": "skills.html#ibm-india-pvt.-ltd.-2016-2021",
     "href": "skills.html#ibm-india-pvt.-ltd.-2016-2021",
     "title": "Skills and Expertises",
     "section": " IBM India Pvt. Ltd. (2016-2021)",
-    "text": "IBM India Pvt. Ltd. (2016-2021)\n\nAnalysing customer complaints (a.k.a tickets) from various sources and predicting root causes using clustering and text classification respectively\n\n Tools\n\nMachine Learning\nPython\nSQL\nShellScript\nPython Flask, used for developing REST API\nDocker\nKubernetes, used for deployment\n\n\nServing search queries to customers by designing a small scale search engine built on customer Feedbacks and FAQs using information retrieval algorithm\n\n Tools\n\nSingular value decomposition\nPython, Pandas and Numpy\n\n\nUnderstanding the effects of various factors like advertisement, promotion, weather on sales of several commodities, analysing ROI year-on-year basis and forecasting the furure sales using Marketing Mix Modeling\n\n Tools\n\nSales and ad data\nRegression Techniques\nR, Dplyr\nSQL"
+    "text": "IBM India Pvt. Ltd. (2016-2021)\n\nAnalysing customer complaints (a.k.a tickets) from various sources and predicting root causes using clustering and text classification respectively\n\n Tools\n\nMachine Learning\nPython\nSQL\nShellScript\nPython Flask (for developing REST API)\nDocker, Kubernetes (for deployment)\n\n\nServing search queries to customers by designing a small scale search engine built on customer Feedbacks and FAQs using information retrieval algorithm\n\n Tools\n\nSingular value decomposition\nPython, Pandas and Numpy\n\n\nUnderstanding the effects of various factors like advertisement, promotion, weather on sales of several commodities, analysing ROI year-on-year basis and forecasting the furure sales using Marketing Mix Modeling\n\n Tools\n\nSales and ad data\nRegression Techniques\nR, Dplyr\nSQL"
   },
   {
-    "objectID": "skills.html#sp-global-inc.-2021-present",
-    "href": "skills.html#sp-global-inc.-2021-present",
+    "objectID": "skills.html#bcause-enterprise-pvt.-ltd.-2015-2016",
+    "href": "skills.html#bcause-enterprise-pvt.-ltd.-2015-2016",
     "title": "Skills and Expertises",
-    "section": " S&P Global Inc. (2021-Present)",
-    "text": "S&P Global Inc. (2021-Present)\n\nDevelopment of data driven products in shipping analytics\n\n Tools\n\nPython, PySpark, Polars\nExcel and PowerBI, used for reporting\nAmazon AWS\n\n\nTracking green house gas emission from ships\n\n Tools\n\nShipping data\nPython, PySpark, Polars\nExcel and PowerBI, used for reporting\nAmazon AWS\n\n\nBuilding data pipelines in Azure DevOps\n\n Tools\n\nR, Python, PySpark, Polars\nMicrosoft Azure as DevOps platform"
+    "section": " BCausE Enterprise Pvt. Ltd. (2015-2016)",
+    "text": "BCausE Enterprise Pvt. Ltd. (2015-2016)\n\nDevelopment of customer segmentation model\n\n Tools\n\nClustering\nPython\nMongoDB\nPython Flask (for developing REST API)\n\n\nDevelopment of web scraping tools\n\n Tools\n\nPython\nObject Oriented Programming\nBeautifulSoup (for web scraping)"
+  },
+  {
+    "objectID": "skills.html#academics",
+    "href": "skills.html#academics",
+    "title": "Skills and Expertises",
+    "section": " Academics",
+    "text": "Academics\n\nDigitization of class notes, preparation of project reports\n\n Tools\n\n\\LaTeX\nR with Sweave and knitr packages\n\n\nPerforming computations for ‘Design of Experiments’ problems\n\n Tools\n\nC programming\n\n\nStatistical Simulation (Bayesian Estimation, MCMC etc.)\n\n Tools\n\nR Programming"
   },
   {
     "objectID": "bookmarks.html",
@@ -206,22 +206,22 @@
     "objectID": "about.html#professional-career-history",
     "href": "about.html#professional-career-history",
     "title": "About",
-    "section": " Professional career history",
-    "text": "Professional career history\n\nS&P Global Inc. as Principal Data Scientist (Sep, 2023 - Present)\nS&P Global Inc. as Sr. Data Scientist (Aug, 2021 - Aug, 2023)\nIBM India Pvt. Ltd. as Data Scientist (Oct, 2016 - Jul, 2021)\nBCausE Enterprise Pvt. Ltd. as Data Analyst (Oct, 2015 - Aug, 2016)"
+    "section": " Professional Career History",
+    "text": "Professional Career History\n\nS&P Global Inc. as Principal Data Scientist (Sep, 2023 - Present)\nS&P Global Inc. as Sr. Data Scientist (Aug, 2021 - Aug, 2023)\nIBM India Pvt. Ltd. as Data Scientist (Oct, 2016 - Jul, 2021)\nBCausE Enterprise Pvt. Ltd. as Data Analyst (Oct, 2015 - Aug, 2016)"
   },
   {
     "objectID": "about.html#current-job-responsibilities",
     "href": "about.html#current-job-responsibilities",
     "title": "About",
-    "section": " Current job responsibilities",
-    "text": "Current job responsibilities\n\nLeading the analytics team that analyses maritime supply chain data\nProduct development and maintenance"
+    "section": " Current Job Responsibilities",
+    "text": "Current Job Responsibilities\n\nLeading the analytics team that analyses maritime supply chain data\nProduct development and maintenance"
   },
   {
     "objectID": "about.html#things-i-like-to-do-apart-from-work",
     "href": "about.html#things-i-like-to-do-apart-from-work",
     "title": "About",
-    "section": " Things I like to do apart from work",
-    "text": "Things I like to do apart from work\n\nTravelling to historical places\nReading books, especially Bengali Novels\nAuthoring articles on something interesting I learn\nTeaching\nLearning and experimenting with different ideas and tools\nCooking - thanks to Covid for helping me in discovering this skill"
+    "section": " Things I Like To Do Apart From Work",
+    "text": "Things I Like To Do Apart From Work\n\nTravelling to historical places\nReading books, especially Bengali Novels\nAuthoring articles on something interesting I learn\nTeaching\nLearning and experimenting with different ideas and tools\nCooking - thanks to Covid for helping me in discovering this skill"
   },
   {
     "objectID": "posts/2023-03-26-bash-commands-for-cloud-2/index.html",
