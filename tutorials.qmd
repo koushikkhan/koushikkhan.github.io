@@ -5,8 +5,9 @@ resources:
   - .nojekyll
 ---
 
-This page contains tutorials that I have designed for teaching Statistics and Data Science. You can download the tutorials from the links given.
+The tutorials featured on this page have either been created or curated for the purpose of teaching Statistics and Data Science. All external resources are properly credited to their original authors. Download links for the tutorials are provided below.
 
 | Topic            | Resource Link                       |
 |-------------------|-------------------------------------|
 | Logistic Regression| [PDF](resources/pdf/tutorials/logistic_regression_tutorial.pdf) |
+| Pen & Paper Exercises in ML by [Michael U. Gutmann](https://michaelgutmann.github.io/)| [PDF](https://arxiv.org/pdf/2206.13446) |
