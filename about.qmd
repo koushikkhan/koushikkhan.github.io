@@ -26,10 +26,10 @@ resources:
 + Communication & Reporting: Present complex technical findings to non-technical stakeholders through visual storytelling and concise reporting.
 + Innovation & R&D: Stay up-to-date with the latest advancements in AI/ML and explore new techniques, tools, and frameworks to improve existing solutions.
 
-## {{< fa umbrella-beach >}} Things I Like To Do Apart From Work
+## {{< fa umbrella-beach >}} Things I Love Apart From Work
 + Travelling to historical places
 + Reading books, especially Bengali Novels
 + Authoring articles on something interesting I learn
 + Teaching
 + Learning and experimenting with different ideas and tools 
-+ Cooking - thanks to Covid for helping me in discovering this skill
++ Cooking - thanks to Covid for helping me to discover this skill

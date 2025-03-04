@@ -5,11 +5,11 @@ resources:
   - .nojekyll
 ---
 
-Please click [here](resources/pdf/resume/Koushik_Khan_Data_Scientist_Resume.pdf) in case you want to download my resume.
+Please click [here](resources/pdf/resume/Koushik_Khan_Data_Science_Resume.pdf) to download a copy of latest my resume.
 
 <iframe
     width="1000"
     height="1200"
-    src="resources/pdf/resume/Koushik_Khan_Data_Scientist_Resume.pdf">
+    src="resources/pdf/resume/Koushik_Khan_Data_Science_Resume.pdf">
 </iframe>
 

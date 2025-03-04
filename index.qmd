@@ -14,12 +14,8 @@ resources:
 
 # Welcome to My Portfolio
 
-Hello, myself Koushik. I am working as Lead Data Scientist at Tiger Analytics, based in Bangalore, India. With nine years of industry experience, I specialize in tackling diverse analytical challenges and empowering stakeholders with data-driven insights.
+Hello, myself Koushik. I am working as Lead Data Scientist at [Tiger Analytics](https://www.tigeranalytics.com/), based in Bangalore, India. With close to a decade of industry experience, I specialize in tackling diverse analytical challenges and empowering stakeholders to take data-driven decisions.
 
-## Explore My Portfolio
+Here, you will find updates on my career journey, insightful blog posts and tutorials covering a wide range of topics relevant to my expertise.
 
-Here, you will find updates on my career journey and insightful blog posts covering a range of topics relevant to my expertise, whether it's delving into cutting-edge data science techniques or discussing industry trends.
-
-## Thank You for Visiting
-
-Thank you for taking the time to explore my portfolio. Feel free to reach out at [koushik.khan.ds@gmail.com](mailto:koushik.khan.ds@gmail.com) if you have any questions or opportunities for collaboration.
+Thank you for taking the time to explore my portfolio. Feel free to drop an e-mail @ [koushik.khan.ds@gmail.com](mailto:koushik.khan.ds@gmail.com) if you have any questions or opportunities for collaboration.
