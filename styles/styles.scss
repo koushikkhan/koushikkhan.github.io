@@ -1,0 +1,66 @@
+/*-- scss:defaults --*/
+
+$font-family-base: 'LibreFranklin', sans-serif;
+$headings-font-family: 'LibreFranklin', sans-serif;
+$font-family-monospace: 'Inconsolata', monospace;
+
+@font-face {
+  font-family: 'LibreFranklin';
+  src: url('resources/fonts/LibreFranklin-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LibreFranklin';
+  src: url('resources/fonts/LibreFranklin-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('resources/fonts/Inconsolata-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+/*-- scss:rules --*/
+
+body {
+  font-family: $font-family-base;
+  // background-color: #ffffff; /* White background */
+  // color: #000000; /* White text */
+}
+
+h1, h2, h3 {
+  font-family: $headings-font-family;
+  font-weight: 400;
+}
+
+// a {
+//   color: #035822; /* Red links for some flair */
+// }
+
+// a:hover {
+//   color: #17ce5a; /* Optional: Change color on hover for better user experience */
+//   text-decoration: underline; /* Optional: Underline links on hover */
+// }
+
+// // navbar properties
+// .navbar {
+//   background-color: #035822; /* Dark blue navbar */
+//   padding: 10px 20px; /* Less padding for a slimmer look */
+//   justify-content: center; /* Center the items */
+// }
+
+// // title block banner on post pages
+// .quarto-title-block .quarto-title-banner {
+//   background-color: #035822 !important;
+//   padding: 5px 20px;
+// }
+
+// // style the text color for better contrast
+// .quarto-title-block .quarto-title-banner h1.title {
+//   color: white; /* or another color that contrasts well with your nav color */
+// }
