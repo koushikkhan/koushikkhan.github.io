@@ -1,32 +1,51 @@
-name: Render and Publish
+name: Quarto Portfolio CI/CD
+
+# Define two different workflows with separate triggers
 on:
   pull_request:
-    branches:
-      - main  # PR raised against the main branch will trigger a build.
+    branches: [ main ]  # Build and verify on PRs, but don't deploy
+  push:
+    branches: [ main ]  # Deploy only after merge to main
 
 jobs:
-  build-deploy:
-      runs-on: ubuntu-latest
-      permissions:
-        contents: write
-      steps:
-        - name: Check out repository
-          uses: actions/checkout@v3
-          
-        - name: Set up Quarto
-          uses: quarto-dev/quarto-actions/setup@v2
+  # This job runs on PRs to verify the build works
+  build-verification:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+        
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        
+      - name: Render Quarto Project
+        uses: quarto-dev/quarto-actions/render@v2
+        
+      # Upload artifacts for inspection
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: rendered-site
+          path: docs/
+          retention-days: 7
 
-        - name: Install Python and Dependencies
-          uses: actions/setup-python@v4
-          with:
-            python-version: '3.10'
-            cache: 'pip'
-        - run: pip install jupyter
-        - run: pip install -r requirements.txt
+  # This job runs only after merging to main
+  deploy-production:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+        
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
 
-        - name: Publish to GitHub Pages (and render)
-          uses: quarto-dev/quarto-actions/publish@v2
-          with:
-            target: gh-pages # renderred html files will be pushed here
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
+      - name: Publish to GitHub Pages
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
