@@ -259,13 +259,13 @@ Let us take an example to understand it.
 ```{mermaid}
 %%| fig-width: 4.0
 graph LR
-  a(a) --> c(c = a+1)
-  a(a) --> d(d = a+b)
-  b(b) --> d(d = a+b)
-  c(c = a+1) --> e(e = c * d)
-  d(d = a+b) --> e(e = c * d)
-  e(e = c * d) --> l(l = e+f)
-  f(f) --> l(l = e+f)
+  a("$$a$$") --> c("$$c = a+1$$")
+  a("$$a$$") --> d("$$d = a+b$$")
+  b("$$b$$") --> d("$$d = a+b$$")
+  c("$$c = a+1$$") --> e("$$e = c \times d$$")
+  d("$$d = a+b$$") --> e("$$e = c \times d$$")
+  e("$$e = c \times d$$") --> l("$$l = e+f$$")
+  f("$$f$$") --> l("$$l = e+f$$")
 ```
 
 The above diagram is typically referred to as a computational graph, where both **a** and **b** are inputs to the graph and $l$ is the output of the graph.
@@ -276,36 +276,36 @@ A partial view of a graph is shown below so that we can imagine how large and co
 
 ```{mermaid}
 graph LR
-  x1[x1] --> x1w11(x1*w11) 
-  w11((w11)) --> x1w11(x1*w11)
+  x1("$$x_1$$") --> x1w11("$$x_1 \times w_{11}$$")
+  w11("$$w_{11}$$") --> x1w11("$$x_1 \times w_{11}$$")
 
-  x2[x2] --> x2w12(x2*w12)
-  w12((w12)) --> x2w12(x2*w12)
+  x2("$$x_2$$") --> x2w12("$$x_2 \times w_{12}$$")
+  w12("$$w_{12}$$") --> x2w12("$$x_2 \times w_{12}$$")
 
-  x1w11(x1*w11) --> x1w11x2w12(x1w11+x2w12)
-  x2w12(x2*w12) --> x1w11x2w12(x1w11+x2w12)
+  x1w11("$$x_1 \times w_{11}$$") --> x1w11x2w12("$$(x_1 \times w_{11}) + (x_2 \times w_{12})$$")
+  x2w12("$$x_2 \times w_{12}$$") --> x1w11x2w12("$$(x_1 \times w_{11}) + (x_2 \times w_{12})$$")
 
-  x1w11x2w12(x1w11+x2w12) --> x1w11x2w12b1(x1w11+x2w12+b1)
-  b1((b1)) --> x1w11x2w12b1(x1w11+x2w12+b1)
+  x1w11x2w12("$$(x_1 \times w_{11}) + (x_2 \times w_{12})$$") --> x1w11x2w12b1("$$(x_1 \times w_{11}) + (x_2 \times w_{12}) + b_1$$")
+  b1("$$b_1$$") --> x1w11x2w12b1("$$(x_1 \times w_{11}) + (x_2 \times w_{12}) + b_1$$")
 
-  x1w11x2w12b1(x1w11+x2w12+b1) --> sigmoid1(sigmoid1)
+  x1w11x2w12b1("$$(x_1 \times w_{11}) + (x_2 \times w_{12}) + b_1$$") --> sigmoid1("$$\sigma_1$$")
 
-  x1[x1] --> x1w21(x1*w21) 
-  w21((w21)) --> x1w21(x1*w21)
+  x1("$$x_1$$") --> x1w21("$$x_1 \times w_{21}$$")
+  w21("$$w_{21}$$") --> x1w21("$$x_1 \times w_{21}$$")
 
-  x2[x2] --> x2w22(x2*w22)
-  w22((w22)) --> x2w22(x2*w22)
+  x2("$$x_2$$") --> x2w22("$$x_2 \times w_{22}$$")
+  w22("$$w_{22}$$") --> x2w22("$$x_2 \times w_{22}$$")
 
-  x1w21(x1*w21) --> x1w21x2w22(x1w21+x2w22)
-  x2w22(x2*w22) --> x1w21x2w22(x1w21+x2w22)
+  x1w21("$$x_1 \times w_{21}$$") --> x1w21x2w22("$$(x_1 \times w_{21}) + (x_2 \times w_{22})$$")
+  x2w22("$$x_2 \times w_{22}$$") --> x1w21x2w22("$$(x_1 \times w_{21}) + (x_2 \times w_{22})$$")
 
-  x1w21x2w22(x1w21+x2w22) --> x1w21x2w22b2(x1w21+x2w22+b2)
-  b2((b2)) --> x1w21x2w22b2(x1w21+x2w22+b2)
+  x1w21x2w22("$$(x_1 \times w_{21}) + (x_2 \times w_{22})$$") --> x1w21x2w22b2("$$(x_1 \times w_{21}) + (x_2 \times w_{22}) + b_2$$")
+  b2("$$b_2$$") --> x1w21x2w22b2("$$(x_1 \times w_{21}) + (x_2 \times w_{22}) + b_2$$")
 
-  x1w21x2w22b2(x1w21+x2w22+b2) --> sigmoid2(sigmoid2)
+  x1w21x2w22b2("$$(x_1 \times w_{21}) + (x_2 \times w_{22}) + b_2$$") --> sigmoid2("$$\sigma_2$$")
 
-  sigmoid1(sigmoid1) --> loss(loss)
-  sigmoid2(sigmoid2) --> loss(loss)
+  sigmoid1("$$\sigma_1$$") --> loss("$$loss$$")
+  sigmoid2("$$\sigma_2$$") --> loss("$$loss$$")
 ```
 
 ## Differentiation through a graph
@@ -317,13 +317,13 @@ Let us revisit the previously shown simple computational graph to understand it 
 ```{mermaid}
 %%| fig-width: 4.5
 graph LR
-  a(a) --> c(c = a+1)
-  a(a) --> d(d = a+b)
-  b(b) --> d(d = a+b)
-  c(c = a+1) --> e(e = c * d)
-  d(d = a+b) --> e(e = c * d)
-  e(e = c * d) --> l(l = e+f)
-  f(f) --> l(l = e+f)
+  a("$$a$$") --> c("$$c = a+1$$")
+  a("$$a$$") --> d("$$d = a+b$$")
+  b("$$b$$") --> d("$$d = a+b$$")
+  c("$$c = a+1$$") --> e("$$e = c \times d$$")
+  d("$$d = a+b$$") --> e("$$e = c \times d$$")
+  e("$$e = c \times d$$") --> l("$$l = e+f$$")
+  f("$$f$$") --> l("$$l = e+f$$")
 ```
 
 Here, we can assume $l$ as the *loss* and we want to measure the rate of change of loss w.r.t each of the nodes (including loss node itself) in the backward direction (why backward? ... I will explain later).
@@ -353,16 +353,16 @@ When we have a $'+'$ operation in the graph, like the one below,
 %%| fig-width: 3.5
 graph RL
   subgraph input
-  x(x)
-  y(y)
+  x("$$x$$")
+  y("$$y$$")
   end
 
   subgraph output
-  z(z = x+y)
+  z("$$z = x+y$$")
   end
 
-  x(x) --> z(z = x+y)-.->|gradient of z|x(x)
-  y(y) --> z(z = x+y)-.->|gradient of z|y(y)
+  x("$$x$$") --> z("$$z = x+y$$")-.->|gradient of z|x("$$x$$")
+  y("$$y$$") --> z("$$z = x+y$$")-.->|gradient of z|y("$$y$$")
 ```
 
 Computing gradients with respect to the input nodes is fairly simple as the backward gradient computation just copies the gradient of the output node to all the input nodes.
@@ -373,16 +373,16 @@ However, when we have a $'\times'$ operation in the graph, like the next one,
 ```{mermaid}
 %%| fig-width: 3.5
 graph RL
-  x(x) --> z(z = x*y)-.->|value of y * gradient of z|x(x)
-  y(y) --> z(z = x*y)-.->|value of x * gradient of z|y(y)
+  x("$$x$$") --> z("$$z = x \times y$$")-.->|value of y * gradient of z|x("$$x$$") 
+  y("$$y$$") --> z("$$z = x \times y$$")-.->|value of x * gradient of z|y("$$y$$")
 
   subgraph input
-  x(x)
-  y(y)
+  x("$$x$$")
+  y("$$y$$")
   end
 
   subgraph output
-  z(z = x*y)
+  z("$$z = x \times y$$")
   end
 ```
 
@@ -397,8 +397,8 @@ $+$ and $\times$ are the two building blocks powering up any mathematical comput
 ```{mermaid}
 %%| fig-width: 3.5
 graph LR
-  a(a) --> c(c = a+b)
-  b(b) --> c(c = a+b)
+  a("$$a$$") --> c("$$c = a + b$$")
+  b("$$b$$") --> c("$$c = a + b$$")
 ```
 
 If we observe the above graph, it is clear that while performing backpropagation, computing gradient of any of the leaf nodes i.e. $\left\{a, b\right\}$ is possible only when gradient value for the node $c$ is already available. This is just because of the chain rule we use.
@@ -413,31 +413,31 @@ Consider our tiny network:
 
 ```{mermaid}
 %%| fig-width: 3.5
-  graph LR
-    x1(x1)-->|w11|y1(y1)
-    x2(x2)-->|w12|y1(y1)
-    x1(x1)-->|w21|y2(y2)
-    x2(x2)-->|w22|y2(y2)
-    x1(x1)-->|w31|y3(y3)
-    x2(x2)-->|w32|y3(y3)
-    y1(y1)-->l(l)
-    y2(y2)-->l(l)
-    y3(y3)-->l(l)
+graph LR
+  x1("$$x_1$$")-->|"$$w_{11}$$"|y1("$$y_1$$")
+  x2("$$x_2$$")-->|"$$w_{12}$$"|y1("$$y_1$$")
+  x1("$$x_1$$")-->|"$$w_{21}$$"|y2("$$y_2$$")
+  x1("$$x_2$$")-->|"$$w_{22}$$"|y2("$$y_2$$")
+  x1("$$x_1$$")-->|"$$w_{31}$$"|y3("$$y_3$$")
+  x2("$$x_2$$")-->|"$$w_{32}$$"|y3("$$y_3$$")
+  y1("$$y_1$$")-->l("$$l$$")
+  y2("$$y_2$$")-->l("$$l$$")
+  y3("$$y_3$$")-->l("$$l$$")
 
-    subgraph input<br>layer
-    x1(x1) 
-    x2(x2)
-    end
+  subgraph "input layer"
+  x1("$$x_1$$") 
+  x2("$$x_2$$")
+  end
 
-    subgraph hidden<br>layer
-    y1(y1) 
-    y2(y2)
-    y3(y3)
-    end
+  subgraph "hidden layer"
+  y1("$$y_1$$")
+  y2("$$y_2$$")
+  y3("$$y_3$$")
+  end
 
-    subgraph output<br>layer
-    l(l)
-    end
+  subgraph "output layer"
+  l("$$l$$")
+  end
 ```
 
 It has only two input nodes, a single output node and in between them three additional nodes forming the hidden layer.
