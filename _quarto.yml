@@ -40,7 +40,9 @@ website:
 
 format:
   html:
-    theme: [flatly, custom.scss]
+    theme:
+      - default
+      - styles.scss
     html-math-method: katex
     mermaid: 
       theme: default
