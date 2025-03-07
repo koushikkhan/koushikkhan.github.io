@@ -33,7 +33,7 @@
 
 /* other quarto variables */
 :root {
-  --quarto-font-monospace: "Computer Modern Typewriter";
+  --quarto-font-monospace: "Inconsolata", monospace;
 }
 
 code span.al {
@@ -180,4 +180,4 @@ code span.wa {
   content: "</";
 }
 
-/*# sourceMappingURL=e719f9f5779c9eb7f887a7f56ee9051d.css.map */
+/*# sourceMappingURL=df35fbf91c5b9add2e083ebc6e4cb568.css.map */
