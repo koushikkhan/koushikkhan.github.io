@@ -22,9 +22,9 @@ jobs:
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
         
-      # Optionally upload artifacts for inspection
+      # Upload artifacts for inspection
       - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: rendered-site
           path: docs/
