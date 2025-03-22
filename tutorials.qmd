@@ -10,5 +10,5 @@ The tutorials featured on this page have either been created or curated for the 
 | Topic            | Resource Link                       |
 |-------------------|-------------------------------------|
 | Introduction to Logistic Regression| [PDF](resources/pdf/tutorials/logistic_regression_tutorial.pdf) |
-| Analysis of Time Series by [Aditya Guntuboyina](https://www.stat.berkeley.edu/~aditya/)| [PDF](https://www.stat.berkeley.edu/~aditya/resources/FullNotes248Spring2022TimeSeries.pdf) |
-| Pen & Paper Exercises in ML by [Michael U. Gutmann](https://michaelgutmann.github.io/)| [PDF](https://arxiv.org/pdf/2206.13446) |
+| Analysis of Time Series by [Aditya Guntuboyina](https://www.stat.berkeley.edu/~aditya/)| [PDF](resources/pdf/tutorials/FullNotes248Spring2022TimeSeries.pdf) |
+| Pen & Paper Exercises in ML by [Michael U. Gutmann](https://michaelgutmann.github.io/)| [PDF](resources/pdf/tutorials/Pen_and_Paper_Exercises_in_ML_1741020114.pdf) |
