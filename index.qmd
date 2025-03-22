@@ -3,10 +3,10 @@ title: "Koushik Khan"
 description: "A data scientist by profession, an avid learner and a techie by heart."
 from: markdown+emoji
 toc: false
-image: "resources/img/Koushik-DP.jpg"
+image: "resources/img/koushik-2024.jpg"
 about:
   template: solana
-  image-shape: rounded
+  image-shape: round
   image-width: 15em
 resources:
   - .nojekyll
