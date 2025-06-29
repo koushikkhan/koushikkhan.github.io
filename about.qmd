@@ -11,25 +11,20 @@ resources:
 + B.Sc. in Statistics (2013) - Visva Bharati University, India
 
 ## {{< fa user-tie >}} Professional Career History
-+ Tiger Analytics as Lead Data Scientist (Oct, 2024 - Present)
-+ S&P Global Inc. as Principal Data Scientist (Sep, 2023 - Sep, 2024)
-+ S&P Global Inc. as Sr. Data Scientist (Aug, 2021 - Aug, 2023)
-+ IBM India Pvt. Ltd. as Data Scientist (Oct, 2016 - Jul, 2021)
-+ BCausE Enterprise Pvt. Ltd. as Data Analyst (Oct, 2015 - Aug, 2016)
++ Lead Data Scientist at Tiger Analytics India Consulting Pvt. Ltd. (Oct, 2024 - Present)
++ Principal Data Scientist at S&P Global, Market Intelligence (Sep, 2023 - Sep, 2024)
++ Senior Data Scientist at S&P Global, Commodity Insights (Aug, 2021 - Sep, 2023)
++ Data Scientist at IBM India Pvt. Ltd. (Oct, 2016 - Jul, 2021)
++ Data Analyst at BCausE Enterprise Pvt. Ltd. (Oct, 2015 - Aug, 2016)
 
 ## {{< fa laptop >}} Current Job Responsibilities
-+ Data-Driven Solutions: Lead the design and implementation of advanced data science models to solve complex business challenges, ensuring alignment with organizational goals.
-+ End-to-End Model Development: Manage the entire lifecycle of machine learning models—from data exploration, feature engineering, and model training to validation and deployment.
-+ Strategic Consulting: Collaborate with stakeholders across departments to identify pain points, define data-driven strategies, and deliver actionable insights.
-+ Technical Leadership: Guide and mentor data science teams on best practices in model development, coding standards, and performance optimization.
-+ Project Management: Drive multiple data science initiatives simultaneously, ensuring timely delivery while maintaining high standards of accuracy and reliability.
-+ Communication & Reporting: Present complex technical findings to non-technical stakeholders through visual storytelling and concise reporting.
-+ Innovation & R&D: Stay up-to-date with the latest advancements in AI/ML and explore new techniques, tools, and frameworks to improve existing solutions.
++ Leading the development & maintenance for [TigerML](https://www.tigeranalytics.com/open-ip/foundation/tigerml/), an in-house product developed for addressing challenges in data science projects
++ Leading various cross functional analytics initiatives
++ Developing solutions for various customer facing engagements
 
 ## {{< fa umbrella-beach >}} Things I Love Apart From Work
-+ Travelling to historical places
-+ Reading books, especially Bengali Novels
-+ Authoring articles on something interesting I learn
++ Cooking
 + Teaching
-+ Learning and experimenting with different ideas and tools 
-+ Cooking - thanks to Covid for helping me to discover this skill
++ Reading books
++ Listening to audio stories, especially the Bengali Classics
++ Travelling to historical places
