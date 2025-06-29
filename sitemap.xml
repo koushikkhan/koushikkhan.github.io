@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://koushikkhan.github.io/resume.html</loc>
-    <lastmod>2025-03-22T09:09:10.307Z</lastmod>
-  </url>
-  <url>
     <loc>https://koushikkhan.github.io/posts.html</loc>
-    <lastmod>2025-03-22T09:09:10.246Z</lastmod>
+    <lastmod>2025-06-29T06:35:33.062Z</lastmod>
   </url>
   <url>
-    <loc>https://koushikkhan.github.io/skills.html</loc>
-    <lastmod>2025-03-22T09:09:10.307Z</lastmod>
-  </url>
-  <url>
-    <loc>https://koushikkhan.github.io/posts/2023-05-01-embeddings/index.html</loc>
-    <lastmod>2025-03-22T09:09:10.268Z</lastmod>
-  </url>
-  <url>
-    <loc>https://koushikkhan.github.io/posts/2023-04-22-autograd/index.html</loc>
-    <lastmod>2025-03-22T09:09:10.267Z</lastmod>
-  </url>
-  <url>
-    <loc>https://koushikkhan.github.io/bookmarks.html</loc>
-    <lastmod>2025-03-22T09:09:10.246Z</lastmod>
-  </url>
-  <url>
-    <loc>https://koushikkhan.github.io/index.html</loc>
-    <lastmod>2025-03-22T09:09:10.246Z</lastmod>
-  </url>
-  <url>
-    <loc>https://koushikkhan.github.io/about.html</loc>
-    <lastmod>2025-03-22T09:09:10.246Z</lastmod>
-  </url>
-  <url>
-    <loc>https://koushikkhan.github.io/posts/2023-03-26-bash-commands-for-cloud-2/index.html</loc>
-    <lastmod>2025-03-22T09:09:10.266Z</lastmod>
-  </url>
-  <url>
-    <loc>https://koushikkhan.github.io/posts/2023-03-22-bash-commands-for-cloud-1/index.html</loc>
-    <lastmod>2025-03-22T09:09:10.256Z</lastmod>
-  </url>
-  <url>
-    <loc>https://koushikkhan.github.io/posts/2023-03-19-stat-hypothesis-test/index.html</loc>
-    <lastmod>2025-03-22T09:09:10.247Z</lastmod>
-  </url>
-  <url>
-    <loc>https://koushikkhan.github.io/projects.html</loc>
-    <lastmod>2025-03-22T09:09:10.270Z</lastmod>
+    <loc>https://koushikkhan.github.io/resume.html</loc>
+    <lastmod>2025-06-29T06:35:33.122Z</lastmod>
   </url>
   <url>
     <loc>https://koushikkhan.github.io/tutorials.html</loc>
-    <lastmod>2025-03-22T09:09:10.307Z</lastmod>
+    <lastmod>2025-06-29T06:35:33.123Z</lastmod>
+  </url>
+  <url>
+    <loc>https://koushikkhan.github.io/posts/2023-04-22-autograd/index.html</loc>
+    <lastmod>2025-06-29T06:35:33.083Z</lastmod>
+  </url>
+  <url>
+    <loc>https://koushikkhan.github.io/posts/2023-05-01-embeddings/index.html</loc>
+    <lastmod>2025-06-29T06:35:33.084Z</lastmod>
+  </url>
+  <url>
+    <loc>https://koushikkhan.github.io/posts/2023-03-26-bash-commands-for-cloud-2/index.html</loc>
+    <lastmod>2025-06-29T06:35:33.083Z</lastmod>
+  </url>
+  <url>
+    <loc>https://koushikkhan.github.io/bookmarks.html</loc>
+    <lastmod>2025-06-29T06:35:33.062Z</lastmod>
+  </url>
+  <url>
+    <loc>https://koushikkhan.github.io/skills.html</loc>
+    <lastmod>2025-06-29T06:35:33.122Z</lastmod>
+  </url>
+  <url>
+    <loc>https://koushikkhan.github.io/posts/2023-03-22-bash-commands-for-cloud-1/index.html</loc>
+    <lastmod>2025-06-29T06:35:33.073Z</lastmod>
+  </url>
+  <url>
+    <loc>https://koushikkhan.github.io/posts/2023-03-19-stat-hypothesis-test/index.html</loc>
+    <lastmod>2025-06-29T06:35:33.063Z</lastmod>
+  </url>
+  <url>
+    <loc>https://koushikkhan.github.io/index.html</loc>
+    <lastmod>2025-06-29T06:35:33.062Z</lastmod>
+  </url>
+  <url>
+    <loc>https://koushikkhan.github.io/about.html</loc>
+    <lastmod>2025-06-29T06:35:33.062Z</lastmod>
+  </url>
+  <url>
+    <loc>https://koushikkhan.github.io/projects.html</loc>
+    <lastmod>2025-06-29T06:35:33.086Z</lastmod>
   </url>
 </urlset>
