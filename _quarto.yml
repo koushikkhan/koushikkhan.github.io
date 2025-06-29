@@ -22,8 +22,6 @@ website:
         text: Tutorials
       - href: projects.qmd
         text: Projects
-      - href: skills.qmd
-        text: Skills
       - href: resume.qmd
         text: Resume
       - href: about.qmd
