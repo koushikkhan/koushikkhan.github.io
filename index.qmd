@@ -5,7 +5,7 @@ from: markdown+emoji
 toc: false
 image: "resources/img/koushik-2024.jpg"
 about:
-  template: solana
+  template: trestles
   image-shape: round
   image-width: 15em
 resources:
