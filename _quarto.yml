@@ -39,8 +39,9 @@ website:
 format:
   html:
     theme:
-      - default
-      - styles/styles.scss
+      light: flatly
+      dark: darkly
+    css: styles/styles.scss
     html-math-method: katex
     mermaid: 
       theme: default
