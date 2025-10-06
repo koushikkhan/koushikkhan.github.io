@@ -1,14 +1,15 @@
 ---
-title: "Tutorials"
+title: "Books & Tutorials"
 from: markdown+emoji
 resources:
   - .nojekyll
 ---
 
-The tutorials featured on this page have either been created or curated for the purpose of teaching Statistics and Data Science. All external resources are properly credited to their original authors. Download links for the tutorials are provided below.
+The books and tutorials featured on this page have either been created or curated for the purpose of teaching Statistics and Data Science. All external resources are properly credited to their original authors. Legitimate download links for the materials are provided below.
 
 | Topic            | Resource Link                       |
 |-------------------|-------------------------------------|
 | Introduction to Logistic Regression| [PDF](resources/pdf/tutorials/logistic_regression_tutorial.pdf) |
 | Analysis of Time Series by [Aditya Guntuboyina](https://www.stat.berkeley.edu/~aditya/)| [PDF](resources/pdf/tutorials/FullNotes248Spring2022TimeSeries.pdf) |
 | Pen & Paper Exercises in ML by [Michael U. Gutmann](https://michaelgutmann.github.io/)| [PDF](resources/pdf/tutorials/Pen_and_Paper_Exercises_in_ML_1741020114.pdf) |
+| Introduction to Probability Models by [Sheldon M. Ross](https://en.wikipedia.org/wiki/Sheldon_M._Ross)| [PDF](resources/pdf/books/Introduction_to_Probability_Models_Tenth_Edition_Sheldon_M_Ross.pdf) |
