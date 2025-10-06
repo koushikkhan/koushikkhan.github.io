@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,18 +71,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../resources/img/favicon.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c1f63da3e08f13bc72dc17e92cfd001d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-e25bb2ec88b96ab004d13ad1d1924df4.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c1f63da3e08f13bc72dc17e92cfd001d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-a14e345711173c227b21482e2eb4cc70.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-6d7e0e055978adcb0dc3bbe98a6d8351.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-a14e345711173c227b21482e2eb4cc70.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-39307cf9afabfb5068daee3c99f61f74.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-80214f971b64893b28680400cc8b4a45.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-39307cf9afabfb5068daee3c99f61f74.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b8ae2860d51a4bd5c90a3c8c48b62e40.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-8968f1bbb3c1dc2e4834cf53524a7076.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-b8ae2860d51a4bd5c90a3c8c48b62e40.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -141,7 +142,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -329,6 +330,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Koushik Khan</span>
     </a>
@@ -484,7 +487,7 @@ Photo by <a href="https://unsplash.com/@melpoole?utm_source=unsplash&amp;utm_med
 </ul>
 <p>An example will help here to understand it better.</p>
 <div id="54c4d1c6" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>corpus <span class="op">=</span> [<span class="st">'Mathematics is the language to understand the nature'</span>]</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>corpus <span class="op">=</span> [<span class="st">'Mathematics is the language to understand the nature'</span>]</span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
 <span id="cb1-3"><a href="#cb1-3"></a>word_level_tokens <span class="op">=</span> [</span>
 <span id="cb1-4"><a href="#cb1-4"></a>  <span class="st">'Mathematics'</span>, <span class="st">'is'</span>, <span class="st">'the'</span>, </span>
@@ -492,7 +495,7 @@ Photo by <a href="https://unsplash.com/@melpoole?utm_source=unsplash&amp;utm_med
 <span id="cb1-6"><a href="#cb1-6"></a>  <span class="st">'the'</span>, <span class="st">'nature'</span></span>
 <span id="cb1-7"><a href="#cb1-7"></a>]</span>
 <span id="cb1-8"><a href="#cb1-8"></a></span>
-<span id="cb1-9"><a href="#cb1-9"></a>vocabulary <span class="op">=</span> {<span class="st">'Mathematics'</span>, <span class="st">'is'</span>, <span class="st">'the'</span>, <span class="st">'language'</span>, <span class="st">'to'</span>, <span class="st">'understand'</span>, <span class="st">'nature'</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href="#cb1-9"></a>vocabulary <span class="op">=</span> {<span class="st">'Mathematics'</span>, <span class="st">'is'</span>, <span class="st">'the'</span>, <span class="st">'language'</span>, <span class="st">'to'</span>, <span class="st">'understand'</span>, <span class="st">'nature'</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Note that, the word <code>the</code> has appeared twice in the corpus and it is considered only once in the vocabulary.</p>
 </section>
@@ -507,7 +510,7 @@ Photo by <a href="https://unsplash.com/@melpoole?utm_source=unsplash&amp;utm_med
 <p>In natural language processing, tokens are usually represented by numerical arrays or vectors. Let us understand the various ways to create such vectors.</p>
 <p>Before proceeding further, let us consider a new corpus (a group of sentences quoted by <a href="https://en.wikipedia.org/wiki/Shakuntala_Devi">Shakuntala Devi</a>) with a word level tokenization as below:</p>
 <div id="cd5fd48e" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>corpus <span class="op">=</span> [</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>corpus <span class="op">=</span> [</span>
 <span id="cb2-2"><a href="#cb2-2"></a>  <span class="st">'without mathematics, there’s nothing you can do'</span>,</span>
 <span id="cb2-3"><a href="#cb2-3"></a>  <span class="st">'everything around you is mathematics'</span>,</span>
 <span id="cb2-4"><a href="#cb2-4"></a>  <span class="st">'everything around you is number'</span></span>
@@ -535,16 +538,16 @@ Photo by <a href="https://unsplash.com/@melpoole?utm_source=unsplash&amp;utm_med
 <span id="cb2-26"><a href="#cb2-26"></a>  <span class="st">'you'</span></span>
 <span id="cb2-27"><a href="#cb2-27"></a>]</span>
 <span id="cb2-28"><a href="#cb2-28"></a></span>
-<span id="cb2-29"><a href="#cb2-29"></a>vocabulary_size <span class="op">=</span> <span class="dv">11</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-29"><a href="#cb2-29"></a>vocabulary_size <span class="op">=</span> <span class="dv">11</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="one-hot-vector" class="level2">
 <h2 class="anchored" data-anchor-id="one-hot-vector">One-hot vector</h2>
 <p>This is the simplest way to convert tokens into a vector. One-hot vector, for a token, is a vector of dimension <code>vocabulary_size</code> (often denoted by <span class="math inline">|V|</span>). In this vector, all the elements are <span class="math inline">0</span>’s except a single <span class="math inline">1</span>. The index that holds the <span class="math inline">1</span> is called <em>hot</em> index and it is basically the index of the token in the vocabulary.</p>
 <p>Example:</p>
 <div id="59d70994" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>one_hot_for_around <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>]</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>one_hot_for_around <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>]</span>
 <span id="cb3-2"><a href="#cb3-2"></a>one_hot_for_can <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>]</span>
-<span id="cb3-3"><a href="#cb3-3"></a>one_hot_for_number <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3"></a>one_hot_for_number <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>As you can imagine, for a large corpus, one-hot vectors are very large dimensional sparse vectors.</p>
 <p>Also, if we represent any text using one-hot vectors (<em>technically a matrix made of one-hot vectors</em>), then basically we are not considering word-word relationship or similarity.</p>
@@ -614,7 +617,7 @@ Tip
 </div>
 <p>In this network, each word in the context is fed to the network as an one-hot vector. Having the input vector, the network does some computations to form the hidden layer and eventually tries to predict the target word. The source code depicting the network architecture is given below.</p>
 <div id="6df78607" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> torch</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> torch</span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="im">import</span> torch.nn.functional <span class="im">as</span> F</span>
 <span id="cb4-4"><a href="#cb4-4"></a></span>
@@ -662,7 +665,7 @@ Tip
 <span id="cb4-46"><a href="#cb4-46"></a>        <span class="co"># compute log softmax</span></span>
 <span id="cb4-47"><a href="#cb4-47"></a>        log_probs <span class="op">=</span> F.log_softmax(output.view(<span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>), dim<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb4-48"><a href="#cb4-48"></a></span>
-<span id="cb4-49"><a href="#cb4-49"></a>        <span class="cf">return</span> log_probs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-49"><a href="#cb4-49"></a>        <span class="cf">return</span> log_probs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Note the output dimension of the network. It is exactly equal to the size of the vocabulary as there are that many number of possibilities while predicting the target word.</p>
 <p>So, essentially, this whole process is a multi-class classification process.</p>
@@ -671,7 +674,7 @@ Tip
 <p>Hence, <span class="math inline">\vec{v}_{word_j} \cdot \mathbf{E}^T</span> just gives us the embedding vector for <span class="math inline">word_j</span>.</p>
 <p>Let us now see how the training data is prepared for the CBOW network from a sample text.</p>
 <div id="afbf6ed6" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># imports</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># imports</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="im">import</span> re</span>
 <span id="cb5-3"><a href="#cb5-3"></a><span class="im">from</span> pprint <span class="im">import</span> pprint</span>
 <span id="cb5-4"><a href="#cb5-4"></a></span>
@@ -686,11 +689,11 @@ Tip
 <span id="cb5-13"><a href="#cb5-13"></a>cleaned_text <span class="op">=</span> re.sub(<span class="vs">r"</span><span class="pp">[</span><span class="ch">\.\,\-</span><span class="pp">]</span><span class="vs">"</span>, <span class="st">" "</span>, raw_text).lower().replace(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>,<span class="st">""</span>)</span>
 <span id="cb5-14"><a href="#cb5-14"></a>data <span class="op">=</span> cleaned_text.lower().split()<span class="op">;</span></span>
 <span id="cb5-15"><a href="#cb5-15"></a></span>
-<span id="cb5-16"><a href="#cb5-16"></a><span class="co"># source: https://pytorch.org/tutorials/beginner/nlp/word_embeddings_tutorial.html</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-16"><a href="#cb5-16"></a><span class="co"># source: https://pytorch.org/tutorials/beginner/nlp/word_embeddings_tutorial.html</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We’ll now prepare the training data using the code below,</p>
 <div id="ee4dc1e7" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># specify context size and embedding dimension</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># specify context size and embedding dimension</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a>CONTEXT_SIZE <span class="op">=</span> <span class="dv">2</span> <span class="co"># two words on the left and two words on the right</span></span>
 <span id="cb6-3"><a href="#cb6-3"></a>EMBEDDING_DIM <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb6-4"><a href="#cb6-4"></a></span>
@@ -707,11 +710,11 @@ Tip
 <span id="cb6-15"><a href="#cb6-15"></a>    target <span class="op">=</span> data[i]</span>
 <span id="cb6-16"><a href="#cb6-16"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>((i <span class="op">-</span> CONTEXT_SIZE), (i <span class="op">+</span> CONTEXT_SIZE <span class="op">+</span> <span class="dv">1</span>)):</span>
 <span id="cb6-17"><a href="#cb6-17"></a>        <span class="cf">if</span> j <span class="op">!=</span> i:</span>
-<span id="cb6-18"><a href="#cb6-18"></a>            cbow_data.append((data[j], target))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-18"><a href="#cb6-18"></a>            cbow_data.append((data[j], target))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>and here is the partial training data as the output,</p>
 <div id="904b7dd5" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>pprint(cbow_data[:<span class="dv">10</span>])</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>pprint(cbow_data[:<span class="dv">10</span>])</span>
 <span id="cb7-2"><a href="#cb7-2"></a></span>
 <span id="cb7-3"><a href="#cb7-3"></a>[(<span class="st">'we'</span>, <span class="st">'about'</span>),</span>
 <span id="cb7-4"><a href="#cb7-4"></a> (<span class="st">'are'</span>, <span class="st">'about'</span>),</span>
@@ -722,7 +725,7 @@ Tip
 <span id="cb7-9"><a href="#cb7-9"></a> (<span class="st">'study'</span>, <span class="st">'to'</span>),</span>
 <span id="cb7-10"><a href="#cb7-10"></a> (<span class="st">'the'</span>, <span class="st">'to'</span>),</span>
 <span id="cb7-11"><a href="#cb7-11"></a> (<span class="st">'about'</span>, <span class="st">'study'</span>),</span>
-<span id="cb7-12"><a href="#cb7-12"></a> (<span class="st">'to'</span>, <span class="st">'study'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-12"><a href="#cb7-12"></a> (<span class="st">'to'</span>, <span class="st">'study'</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="skip-gram-model" class="level3">
@@ -737,7 +740,7 @@ Tip
 </div>
 <p>Here is the code example that helps to prepare the training data based on the same raw text,</p>
 <div id="8cf89ff3" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># prepare dataset for cbow network</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># prepare dataset for cbow network</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>skip_gram_data <span class="op">=</span> []</span>
 <span id="cb8-3"><a href="#cb8-3"></a></span>
 <span id="cb8-4"><a href="#cb8-4"></a><span class="co"># define start and end indices</span></span>
@@ -747,11 +750,11 @@ Tip
 <span id="cb8-8"><a href="#cb8-8"></a>    target <span class="op">=</span> data[i]</span>
 <span id="cb8-9"><a href="#cb8-9"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>((i <span class="op">-</span> CONTEXT_SIZE), (i <span class="op">+</span> CONTEXT_SIZE <span class="op">+</span> <span class="dv">1</span>)):</span>
 <span id="cb8-10"><a href="#cb8-10"></a>        <span class="cf">if</span> j <span class="op">!=</span> i:</span>
-<span id="cb8-11"><a href="#cb8-11"></a>            skip_gram_data.append((target, data[j]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-11"><a href="#cb8-11"></a>            skip_gram_data.append((target, data[j]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>and below is the partial training data as output,</p>
 <div id="72f34aa4" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>pprint(skip_gram_data[:<span class="dv">10</span>])</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>pprint(skip_gram_data[:<span class="dv">10</span>])</span>
 <span id="cb9-2"><a href="#cb9-2"></a></span>
 <span id="cb9-3"><a href="#cb9-3"></a>[(<span class="st">'about'</span>, <span class="st">'we'</span>),</span>
 <span id="cb9-4"><a href="#cb9-4"></a> (<span class="st">'about'</span>, <span class="st">'are'</span>),</span>
@@ -762,7 +765,7 @@ Tip
 <span id="cb9-9"><a href="#cb9-9"></a> (<span class="st">'to'</span>, <span class="st">'study'</span>),</span>
 <span id="cb9-10"><a href="#cb9-10"></a> (<span class="st">'to'</span>, <span class="st">'the'</span>),</span>
 <span id="cb9-11"><a href="#cb9-11"></a> (<span class="st">'study'</span>, <span class="st">'about'</span>),</span>
-<span id="cb9-12"><a href="#cb9-12"></a> (<span class="st">'study'</span>, <span class="st">'to'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-12"><a href="#cb9-12"></a> (<span class="st">'study'</span>, <span class="st">'to'</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>CBOW and Skip-Gram training data look very similar, the only difference is in the usage of target and context words in the training data.</p>
 <p>The source code for training such a network is given in this <a href="https://colab.research.google.com/drive/1PJCyPULfcYcsUpkvPeQsu4GNsp5m3b3v?usp=sharing">colab notebook</a>. It may not be optimised, but it will give you enough confidence to understand the whole story behind word2vec.</p>
@@ -857,13 +860,14 @@ Tip
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
