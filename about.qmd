@@ -24,7 +24,7 @@ resources:
 
 ## {{< fa umbrella-beach >}} Things I Love Apart From Work
 + Cooking
-+ Teaching
 + Reading books
++ Collecting fountain pens and writing with them
 + Listening to audio stories, especially the Bengali Classics
 + Travelling to historical places
