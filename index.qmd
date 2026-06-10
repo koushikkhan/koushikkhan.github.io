@@ -3,7 +3,7 @@ title: "Koushik Khan"
 description: "A data scientist by profession, an avid learner and a techie by heart."
 from: markdown+emoji
 toc: false
-image: "resources/img/koushik-2024.jpg"
+image: "resources/img/koushik-2026.png"
 about:
   template: trestles
   image-shape: round
