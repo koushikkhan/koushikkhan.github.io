@@ -1,0 +1,18 @@
+[
+    {
+        "label": "Quarto: Live Preview Portfolio",
+        "command": "quarto",
+        "args": ["preview", "--no-navigate"],
+        "reveal": "always",
+        "use_new_terminal": false,
+        "allow_concurrent_runs": false
+    },
+    {
+        "label": "Quarto: Render Portfolio",
+        "command": "quarto",
+        "args": ["render"],
+        "reveal": "always",
+        "use_new_terminal": false,
+        "allow_concurrent_runs": false
+    }
+]
