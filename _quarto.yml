@@ -1,7 +1,7 @@
 project:
   type: website
   output-dir: docs
-  preview: 
+  preview:
     port: 4005
     browser: true
 
@@ -24,6 +24,8 @@ website:
         text: Projects
       - href: resume.qmd
         text: Resume
+      - href: fountain-pen-reviews.qmd
+        text: Nib Notes
       - href: about.qmd
 
     right:
@@ -43,7 +45,7 @@ format:
       dark: darkly
     css: styles/styles.scss
     html-math-method: katex
-    mermaid: 
+    mermaid:
       theme: default
     toc: true
     code-block-bg: true
