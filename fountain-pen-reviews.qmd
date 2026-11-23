@@ -1,0 +1,16 @@
+---
+title: "Fountain Pen Reviews"
+description: "Model-by-model notes on the Indian handmade ebonite pens in my collection — Ranga, Vazir, Click, Lotus and more."
+listing:
+  contents: fountain-pen-reviews
+  type: grid
+  grid-columns: 2
+  image-height: 220px
+  fields: [image, title, description, date-modified]
+  sort: "date-modified desc"
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+resources:
+  - .nojekyll
+---
