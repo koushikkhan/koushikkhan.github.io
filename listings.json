@@ -1,11 +1,5 @@
 [
   {
-    "listing": "/fountain-pen-reviews.html",
-    "items": [
-      "/fountain-pen-reviews/ranga-4c-r1.html"
-    ]
-  },
-  {
     "listing": "/posts.html",
     "items": [
       "/posts/2023-05-01-embeddings/index.html",
@@ -13,6 +7,12 @@
       "/posts/2023-03-26-bash-commands-for-cloud-2/index.html",
       "/posts/2023-03-22-bash-commands-for-cloud-1/index.html",
       "/posts/2023-03-19-stat-hypothesis-test/index.html"
+    ]
+  },
+  {
+    "listing": "/fountain-pen-reviews.html",
+    "items": [
+      "/fountain-pen-reviews/ranga-4c-r1.html"
     ]
   }
 ]
